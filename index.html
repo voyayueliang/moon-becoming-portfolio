@@ -1232,6 +1232,66 @@
       font-size: 13px;
     }
 
+    .research-board {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .research-card {
+      grid-column: span 4;
+      min-height: 270px;
+      padding: 22px;
+      background: var(--paper-2);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .research-card.is-wide {
+      grid-column: span 6;
+    }
+
+    .research-card:nth-child(2),
+    .research-card:nth-child(5) {
+      background: var(--mint);
+    }
+
+    .research-card span {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .research-card h3 {
+      max-width: 10em;
+      color: var(--ink);
+      font-size: clamp(28px, 3vw, 44px);
+      line-height: .98;
+    }
+
+    .research-card p {
+      margin: auto 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.74;
+    }
+
+    .research-card small {
+      display: block;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 780;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
     .reading-route {
       display: grid;
       grid-template-columns: minmax(210px, .82fr) minmax(0, 2.5fr);
@@ -2550,6 +2610,7 @@
       .artifact-board,
       .collection-grid,
       .proof-grid,
+      .research-board,
       .sample-shelf,
       .work-card,
       .pathways,
@@ -2570,6 +2631,8 @@
       .case-card,
       .case-card.is-wide,
       .case-card.is-dark,
+      .research-card,
+      .research-card.is-wide,
       .method > div:first-child,
       .method > div:last-child,
       .artifact-card,
@@ -2617,6 +2680,7 @@
       .reader-guide,
       .guide-grid,
       .proof-grid,
+      .research-board,
       .reading-route,
       .route-cards,
       .ledger-row,
@@ -2798,6 +2862,7 @@
       .artifact-card,
       .collection-card,
       .proof-item,
+      .research-card,
       .sample-card,
       .story-step {
         padding: 18px;
@@ -2852,6 +2917,7 @@
       }
 
       .work-card,
+      .research-card,
       .pathway,
       .fit-card,
       .method-step {
@@ -2874,6 +2940,7 @@
         <a href="#guide">导读</a>
         <a href="#story">路径</a>
         <a href="#works">作品</a>
+        <a href="#research">研究</a>
         <a href="#proof">能力</a>
         <a href="#appendix">索引</a>
         <button class="print-button" type="button" onclick="window.print()">打印 / PDF</button>
@@ -2918,7 +2985,7 @@
           <p class="hero-subhead">我写创业者、开发者生态和硅谷科技人物；主持 Becoming计划 / AI教育田野志；也组织超级个体实验室、WAIC 派对和 AI 跨界客厅。</p>
           <div class="quick-answer" aria-label="快速理解月亮正在做什么">
             <strong>Now / What I Do</strong>
-            <p>记录 AI 时代具体的人：创业者如何做判断，社区如何形成，年轻人如何用 AI 改变自己的学习和工作。</p>
+            <p>记录 AI 时代具体的人，也持续拆几个硬问题：Agent 与组织效率、算力和开发者生态、AI 教育、出海与年轻 builder。</p>
           </div>
           <div class="now-list" aria-label="现在主要做的三件事">
             <div class="now-item">
@@ -2941,6 +3008,7 @@
           <div class="chips" aria-label="关键词">
             <span class="chip teal">人物报道</span>
             <span class="chip coral">开发者生态</span>
+            <span class="chip teal">Agent & Infra</span>
             <span class="chip ochre">系列主持</span>
             <span class="chip">700+ 创造者社区</span>
             <span class="chip">海外 AI 观察</span>
@@ -2965,7 +3033,7 @@
           <div class="guide-lead">
             <p class="section-kicker">Reader Map</p>
             <h2>先看这三件事</h2>
-            <p>这份作品集会出现很多地点、人物和项目。先把它理解成三类能力：我能写什么，我做过什么，以及我正在持续追什么问题。</p>
+            <p>这份作品集会出现很多地点、人物和项目。先把它理解成三类能力：我能写什么，我能研究什么，以及我已经做过什么。</p>
           </div>
           <div class="guide-grid" aria-label="作品集阅读地图">
             <a class="guide-card" href="#works">
@@ -2973,15 +3041,15 @@
               <strong>我能写什么</strong>
               <p>AI 创业人物、开发者生态、硅谷科技人物、活动复盘和交互叙事作品。</p>
             </a>
+            <a class="guide-card" href="#research">
+              <span>02 / Research Desk</span>
+              <strong>我能研究什么</strong>
+              <p>Agent、AI Infra、开发者生态、AI 教育、出海和年轻 builder，都能继续发展成选题、访谈和长文。</p>
+            </a>
             <a class="guide-card" href="#proof">
-              <span>02 / Track Record</span>
+              <span>03 / Track Record</span>
               <strong>我已经做过什么</strong>
               <p>采写、约人、主持、组织现场、做系列栏目、建立 AI 创造者关系网络。</p>
-            </a>
-            <a class="guide-card" href="#story">
-              <span>03 / Path</span>
-              <strong>我从哪里来</strong>
-              <p>从大理教育和社区，到上海 AI 孵化器、WAIC 现场和海外教育访谈，这些经历解释作品从哪里长出来。</p>
             </a>
           </div>
         </div>
@@ -3172,6 +3240,50 @@
       </div>
     </section>
 
+    <section id="research">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Research Desk</p>
+          <div>
+            <h2>我正在追的 AI 议题</h2>
+            <p class="section-desc">这些题目来自孵化器、活动现场、播客长谈、开发者社区和海外交流。它们可以继续发展成选题 brief、深度访谈、人物稿或系列长文。</p>
+          </div>
+        </div>
+        <div class="research-board" aria-label="正在追踪的 AI 研究议题">
+          <article class="research-card is-wide">
+            <span>01 / Agent & Org</span>
+            <h3>AI-First 组织怎样真的运转</h3>
+            <p>我会追问：当 Agent 开始接管开发、对齐、排查和 review，工程师、产品经理、市场和创始人的边界怎样变化。这个题目适合从真实团队、工作流和失败案例里拆。</p>
+            <small>Agent / Harness / 组织效率 / 一人公司</small>
+          </article>
+          <article class="research-card">
+            <span>02 / Infra & Community</span>
+            <h3>算力、模型和开发者社区怎样互相牵动</h3>
+            <p>AMD / Datawhale 现场让我看到，AI 生态会同时发生在模型公司、开源贡献者、开发者工具链、社区组织和企业生态之间。</p>
+            <small>GPU / ROCm / ModelScope / Open Source</small>
+          </article>
+          <article class="research-card">
+            <span>03 / AI Education</span>
+            <h3>AI 进入教育后，人还要练什么能力</h3>
+            <p>从 AI 教育田野志、青少年黑客松到硅谷和欧洲教育访谈，我更关心一线老师、家长和教育创业者怎样重新理解学习、创造力和主体性。</p>
+            <small>教育科技 / 元能力 / 青少年 builder</small>
+          </article>
+          <article class="research-card">
+            <span>04 / Global Context</span>
+            <h3>中国 AI 团队怎样进入海外语境</h3>
+            <p>新加坡出海、Manus、Google、TikTok 新加坡团队交流，以及复旦 / UCL 工作坊，让我开始追问：产品、叙事和组织进入跨市场环境后，会被怎样重新翻译。</p>
+            <small>新加坡 / 硅谷 / 跨文化 / 出海</small>
+          </article>
+          <article class="research-card is-wide">
+            <span>05 / Young Builders</span>
+            <h3>年轻 builder 和超级个体从哪里长出来</h3>
+            <p>默子、乐乐、Tim 和超级个体实验室里的早期创造者，让我持续观察一个问题：在 AI 工具、开源社区和小团队时代，一个人如何形成判断、找到用户、走出作品。</p>
+            <small>00 后创业者 / 开源项目 / 创造者社区</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section id="proof" class="band">
       <div class="wrap">
         <div class="section-head">
@@ -3220,8 +3332,8 @@
           <article class="proof-item">
             <div class="proof-number">3</div>
             <div>
-              <h3>海外观察入口</h3>
-              <p>新加坡 AI 出海、硅谷科技人物研究、复旦 / UCL 跨文化工作坊，让我能把国内 AI 生态放到跨市场语境里理解。</p>
+              <h3>跨市场研究入口</h3>
+              <p>新加坡 AI 出海、硅谷科技人物研究、复旦 / UCL 跨文化工作坊和海外教育访谈，让我用英文资料和海外现场校准国内 AI 故事。</p>
             </div>
           </article>
         </div>
