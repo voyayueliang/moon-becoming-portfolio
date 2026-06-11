@@ -36,6 +36,10 @@
       box-sizing: border-box;
     }
 
+    [hidden] {
+      display: none !important;
+    }
+
     html {
       scroll-behavior: smooth;
     }
@@ -2123,34 +2127,86 @@
       font-size: 13px;
     }
 
-    .series-grid {
+    .series-narrative {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
-      border: 0;
-      background: transparent;
-    }
-
-    .series-card {
-      border: 0;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(22px, 3vw, 42px);
+      margin-top: 36px;
       border-top: 1px solid var(--line);
+      padding-top: 34px;
+    }
+
+    .series-thread {
+      grid-column: span 6;
+      border-top: 1px solid var(--line);
+      padding: 24px 0 0;
       background: transparent;
-      border-radius: 0;
-      padding: 22px 0 0;
     }
 
-    .series-card:last-child {
-      background: transparent;
+    .series-thread:nth-child(2) {
+      padding-left: clamp(0px, 2vw, 28px);
+      border-left: 1px solid var(--line-soft);
     }
 
-    .series-card h3 {
-      font-size: clamp(34px, 4vw, 64px);
-      line-height: .95;
+    .series-thread-kicker {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--teal);
     }
 
-    .series-card p {
+    .series-thread h3 {
+      max-width: 12em;
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: .98;
+      letter-spacing: 0;
+    }
+
+    .series-thread p {
+      max-width: 680px;
       color: var(--muted);
-      margin: 12px 0 0;
+      margin: 18px 0 0;
+      font-size: clamp(16px, 1.35vw, 20px);
+      line-height: 1.82;
+    }
+
+    .series-thread p:first-of-type {
+      color: var(--ink);
+      font-weight: 680;
+    }
+
+    .series-thread-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line-soft);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .series-thread-links a {
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      color: var(--teal);
+    }
+
+    .series-field-note {
+      max-width: 860px;
+      margin: 42px 0 0 auto;
+      padding: 18px 0 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: clamp(16px, 1.25vw, 19px);
+      line-height: 1.8;
     }
 
     .field-film {
@@ -2446,7 +2502,7 @@
       .sample-shelf,
       .work-card,
       .pathways,
-      .series-grid,
+      .series-narrative,
       .method,
       .footer .wrap {
         grid-template-columns: 1fr;
@@ -2477,8 +2533,15 @@
       .collection-card:nth-child(2),
       .collection-card:nth-child(3),
       .collection-card:nth-child(4),
-      .collection-card:nth-child(5) {
+      .collection-card:nth-child(5),
+      .series-thread,
+      .series-thread:nth-child(2) {
         grid-column: auto;
+      }
+
+      .series-thread:nth-child(2) {
+        padding-left: 0;
+        border-left: 0;
       }
 
       .hero-inner {
@@ -2633,7 +2696,7 @@
         padding: 0 0 16px;
       }
 
-      .series-card,
+      .series-thread,
       .principle-card {
         border-right: 0;
         border-bottom: 1px solid var(--line-soft);
@@ -2692,7 +2755,7 @@
       }
 
       .work-card,
-      .series-card,
+      .series-thread,
       .pathway,
       .fit-card,
       .artifact-card,
@@ -2752,7 +2815,7 @@
       }
 
       .work-card,
-      .series-card,
+      .series-thread,
       .pathway,
       .fit-card,
       .method-step {
@@ -2774,7 +2837,7 @@
       <div class="nav-links" aria-label="章节导航">
         <a href="#story">旅程</a>
         <a href="#works">作品</a>
-        <a href="#series">现场</a>
+        <a href="#series">系列</a>
         <a href="#method">方法</a>
         <a href="#appendix">索引</a>
         <button class="print-button" type="button" onclick="window.print()">打印 / PDF</button>
@@ -3210,34 +3273,42 @@
     <section id="series">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Series & Hosting</p>
+          <p class="section-kicker">Ongoing Series</p>
           <div>
-            <h2>系列访谈、主持与现场组织</h2>
-            <p class="section-desc">这里呈现的是连续性：我如何持续提出问题、邀请人进入对话、主持长谈，再从一次次声音和现场里找到新的内容线索。</p>
+            <h2>两条持续生长的线索</h2>
+            <p class="section-desc">有些问题不会在一篇文章里结束。我会把它们做成栏目：持续约人、持续追问、持续把现场经验放回同一张桌上。Becoming 追问一个人如何长出来，AI 教育田野志追问教育实践如何互相看见。</p>
           </div>
         </div>
 
-        <div class="series-grid">
-          <article class="series-card">
-            <h3>AI 教育田野志</h3>
-            <p>共同发起并主持，持续围绕 AI 如何进入教育、学习、青少年创造力和未来学校场景进行对谈。访谈对象覆盖国内 AI 教育从业者、硅谷 AI 教育科技从业者和欧洲 AI 教育创业者。</p>
-            <ul class="split-list">
-              <li>美国教育创新从业者：Alpha School、High Tech High、硅谷科技馆、PBL 与 AI 入校。</li>
-              <li>伦敦 AI、艺术与教育：欧洲慢教育、全人教育、硅谷效率崇拜与跨文化比较。</li>
-              <li>四位跨界教育者暑期实验：中国 AI 教育一线实践、青少年黑客松与 AI 文创。</li>
-            </ul>
+        <div class="series-narrative">
+          <article class="series-thread">
+            <span class="series-thread-kicker">Becoming计划 / 人如何成为</span>
+            <h3>从大理的一场见面，到一组关于主体性的长谈</h3>
+            <p>Becoming计划最早关心的是一个很朴素的问题：一个以热爱驱动、还能保有主动性的人，究竟怎样一步步长出来。</p>
+            <p>我们在大理做过线下分享，和当地关心创新教育、AI 创业与生活方式的朋友聊了一个晚上。后来这条线索进入播客和长文：乐乐、Tim 这样的 AI 创业者，会被放回他们一路走来的选择、热爱、犹豫和行动路径里看。</p>
+            <p>这个栏目留下的是一种人物叙事的方法：先陪一个人把生命路径讲完整，再看他如何在时代变化里长出自己的方向。对我来说，好的创业者报道也从这里开始，产品和公司要写，人如何走到这里同样要写。</p>
+            <div class="series-thread-links" aria-label="Becoming 计划作品入口">
+              <a href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer">Becoming 播客</a>
+              <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">Tim 访谈</a>
+              <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer">乐乐访谈</a>
+            </div>
           </article>
 
-          <article class="series-card">
-            <h3>Becoming计划</h3>
-            <p>一档关于“热爱、主动性与一个人如何成为自己”的深度访谈播客。我和共同发起人从教育、AI、创业、社区和生活方式的交叉处，寻找那些以热爱驱动、正在创造自己人生路径的人，并把长时间对谈转化为人物长文。</p>
-            <ul class="split-list">
-              <li>核心样本：Tim / Artflow.ai 创始人深访。</li>
-              <li>补充样本：乐乐 / AI 教育与游戏创业者访谈。</li>
-              <li>留下的方法：栏目策划、问题设计、深度主持、长文转化。</li>
-            </ul>
+          <article class="series-thread">
+            <span class="series-thread-kicker">AI 教育田野志 / 一线实践</span>
+            <h3>用田野的方法，把分散的教育实践连起来</h3>
+            <p>AI 教育田野志更像我的初心。AI 进入教育之后，很多老师、家长和创业者都在自己的地方做实验：有人带孩子做项目，有人把 AI 放进课堂，有人在二三线城市一点点摸索新的学习方式。</p>
+            <p>这些经验常常很具体，也很难被看见。我和乐乐一起发起对谈播客。乐乐曾获奇绩创坛投资，现在在硅谷做 AI 硬件创业；我们想把一线实践者请到同一张桌子上，让经验彼此照亮，也慢慢沉淀出 AI 教育的方法和问题意识。</p>
+            <p>这个系列已经延伸出一个两三百人的社群，里面有老师、学者、前沿家长，也有来自二三线城市的教育实践者。节目是入口，社群和方法论沉淀才是后面的路。</p>
+            <div class="series-thread-links" aria-label="AI 教育田野志作品入口">
+              <a href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">收听栏目</a>
+              <a href="https://mp.weixin.qq.com/s/Ttv2Pq7dIQhv3L1695wHyw" target="_blank" rel="noreferrer">一线实践</a>
+              <a href="https://mp.weixin.qq.com/s/qNgVznFUvZv3ohTekOKtxw" target="_blank" rel="noreferrer">田野方法</a>
+            </div>
           </article>
         </div>
+
+        <p class="series-field-note">线下分享会、直播、圆桌和工作坊，是这些栏目继续生长的地方。下面这些现场，是栏目背后真实发生过的见面、主持和组织。</p>
 
         <div class="field-film" aria-label="现场胶片">
           <figure class="field-frame">
