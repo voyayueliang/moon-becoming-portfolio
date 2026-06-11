@@ -1413,7 +1413,7 @@
     }
 
     .case-hero .case-visual {
-      min-height: clamp(360px, 52vw, 680px);
+      min-height: clamp(340px, 42vw, 560px);
     }
 
     .case-visual img {
@@ -1454,14 +1454,14 @@
 
     .case-hero h3 {
       max-width: 8.6em;
-      font-size: clamp(42px, 6vw, 92px);
-      line-height: .88;
+      font-size: clamp(42px, 5vw, 76px);
+      line-height: .9;
     }
 
     .case-card h3 {
       margin-top: 14px;
-      font-size: clamp(30px, 3.3vw, 52px);
-      line-height: .92;
+      font-size: clamp(27px, 2.55vw, 40px);
+      line-height: .98;
     }
 
     .case-copy p,
@@ -1513,7 +1513,7 @@
     .case-grid {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: clamp(20px, 3vw, 42px) clamp(18px, 2.6vw, 34px);
+      gap: clamp(34px, 4vw, 58px) clamp(22px, 3vw, 42px);
       align-items: start;
     }
 
@@ -1525,11 +1525,8 @@
     }
 
     .case-card.is-wide {
-      grid-column: span 8;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(240px, .66fr);
-      gap: clamp(18px, 2.8vw, 34px);
-      align-items: end;
+      grid-column: span 4;
+      display: block;
     }
 
     .case-card.is-tall {
@@ -1543,24 +1540,50 @@
     .case-card .case-visual {
       aspect-ratio: 4 / 3;
       border: 1px solid var(--line);
+      background: #f5f5f0;
     }
 
     .case-card.is-wide .case-visual {
-      aspect-ratio: 16 / 9;
+      aspect-ratio: 4 / 3;
     }
 
     .case-card.is-portrait .case-visual {
       aspect-ratio: 3 / 4;
     }
 
+    .case-card.is-square .case-visual {
+      aspect-ratio: 1 / 1;
+    }
+
+    .case-card.is-proof .case-visual {
+      aspect-ratio: 794 / 258;
+      background: #ededec;
+    }
+
+    .case-card.is-proof {
+      grid-column: span 4;
+    }
+
+    .case-card.is-proof .case-visual img,
+    .case-visual.is-contain img {
+      object-fit: contain;
+      padding: clamp(10px, 1.6vw, 18px);
+      background: #f5f5f0;
+    }
+
+    .case-card.is-proof .case-visual img {
+      padding: 0;
+      background: #ededec;
+    }
+
     .case-card.is-dark {
-      grid-column: span 8;
+      grid-column: span 4;
       padding: 22px;
-      min-height: 380px;
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1fr);
-      align-items: end;
-      gap: clamp(18px, 2.8vw, 34px);
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
       background: var(--poster-black);
       color: var(--paper);
     }
@@ -2904,7 +2927,7 @@
           </a>
 
           <div class="case-grid">
-            <a class="case-card is-wide" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
+            <a class="case-card is-proof" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
               <figure class="case-visual">
                 <img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图">
               </figure>
@@ -2916,8 +2939,8 @@
               </div>
             </a>
 
-            <a class="case-card is-portrait is-tall" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
-              <figure class="case-visual">
+            <a class="case-card is-square" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+              <figure class="case-visual is-contain">
                 <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
               </figure>
               <span class="case-index">03 / Builder Profile</span>
@@ -2927,7 +2950,7 @@
             </a>
 
             <a class="case-card is-portrait" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
-              <figure class="case-visual">
+              <figure class="case-visual is-contain">
                 <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
               </figure>
               <span class="case-index">04 / Founder Interview</span>
@@ -2937,8 +2960,8 @@
             </a>
 
             <a class="case-card is-wide is-lifted" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
-              <figure class="case-visual">
-                <img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报">
+              <figure class="case-visual is-contain">
+                <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育田野志直播海报">
               </figure>
               <div>
                 <span class="case-index">05 / Podcast Series</span>
