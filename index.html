@@ -1443,6 +1443,62 @@
       margin: 12px 0 0;
     }
 
+    .field-film {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(280px, 29vw);
+      gap: 16px;
+      overflow-x: auto;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: x proximity;
+      margin: 42px 0 38px;
+      padding: 22px 0 34px;
+      border-top: 1px solid var(--line);
+      border-bottom: 8px solid var(--teal);
+      scrollbar-width: thin;
+    }
+
+    .field-frame {
+      margin: 0;
+      display: grid;
+      grid-template-rows: auto minmax(88px, auto);
+      gap: 10px;
+      scroll-snap-align: start;
+    }
+
+    .field-frame:nth-child(2n) {
+      transform: translateY(24px);
+    }
+
+    .field-frame img {
+      width: 100%;
+      height: clamp(250px, 28vw, 380px);
+      display: block;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: var(--mint);
+      filter: saturate(.94) contrast(.98);
+    }
+
+    .field-frame:nth-child(3n) img {
+      height: clamp(310px, 34vw, 460px);
+    }
+
+    .field-frame figcaption {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .field-frame figcaption strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0;
+    }
+
     .evidence-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -1756,6 +1812,19 @@
       .sample-shelf {
         grid-template-columns: none;
         grid-auto-columns: minmax(280px, 82vw);
+      }
+
+      .field-film {
+        grid-auto-columns: minmax(270px, 82vw);
+      }
+
+      .field-frame:nth-child(2n) {
+        transform: none;
+      }
+
+      .field-frame img,
+      .field-frame:nth-child(3n) img {
+        height: clamp(260px, 70vw, 390px);
       }
 
       .work-meta {
@@ -2443,6 +2512,41 @@
               <li>留下的方法：栏目策划、问题设计、深度主持、长文转化。</li>
             </ul>
           </article>
+        </div>
+
+        <div class="field-film" aria-label="现场胶片">
+          <figure class="field-frame">
+            <img src="assets/field-film/research-ai-circle.jpg" alt="Research AI 合作活动中，参与者围坐讨论">
+            <figcaption><strong>Research AI</strong>AI 跨界客厅里，研究者、创业者和社区伙伴围坐，讨论研究如何进入产品和生活。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/researcher-party-group.jpg" alt="AI 研究者创业者派对合影">
+            <figcaption><strong>WAIC After Party</strong>WAIC 之后的研究者创业者派对，Research AI、Datawhale 和超级个体实验室在同一个现场。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/researcher-party-roundtable.jpg" alt="AI 研究者创业者派对中的小组讨论">
+            <figcaption><strong>Roundtable</strong>小组讨论里，我更容易看到谁在做产品、谁在找问题、谁在寻找同行者。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/2050-field-talk.jpg" alt="2050 草地上的小型恳谈会">
+            <figcaption><strong>2050</strong>2050 的草地上，我分享“AI 时代看见具体的人”，也把内容工作带回到教育和社区。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/amd-datawhale-booth.jpg" alt="AMD AI 开发者日 Datawhale 展台合影">
+            <figcaption><strong>AMD Developer Day</strong>AMD AI 开发者日，Datawhale 与 ModelScope 的开发者生态聚在一起。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/amd-dev-stage.jpg" alt="AMD 开发者日现场演讲">
+            <figcaption><strong>Developer Ecosystem</strong>在 AMD 现场听开发者拆解模型服务、工具链和开源社区的进展。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/amd-field-interview.jpg" alt="AMD 开发者日会场边的访谈现场">
+            <figcaption><strong>Field Interview</strong>会场边的访谈和追问，比通稿更接近一线开发者真实关心的问题。</figcaption>
+          </figure>
+          <figure class="field-frame">
+            <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育田野志线上客厅活动海报">
+            <figcaption><strong>AI 教育田野志</strong>线上客厅把一线教育者、家长和创业者放进同一场长谈。</figcaption>
+          </figure>
         </div>
 
         <div class="evidence-strip" aria-label="现场数字">
