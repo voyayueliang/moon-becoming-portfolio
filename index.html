@@ -1038,19 +1038,21 @@
     .sample-shelf {
       display: grid;
       grid-auto-flow: column;
-      grid-auto-columns: minmax(330px, 28vw);
-      gap: 14px;
+      grid-auto-columns: minmax(330px, 26vw);
+      align-items: end;
+      gap: 18px;
       overflow-x: auto;
       overscroll-behavior-inline: contain;
       scroll-snap-type: x proximity;
-      padding: 4px 0 18px;
+      padding: 8px 0 30px;
       margin-bottom: 42px;
       scrollbar-width: thin;
+      border-bottom: 8px solid var(--teal);
     }
 
     .sample-card {
-      min-height: 260px;
-      padding: 20px 4px 18px;
+      min-height: 520px;
+      padding: 0 4px 18px;
       background: transparent;
       border: 0;
       border-top: 1px solid var(--line);
@@ -1072,6 +1074,71 @@
 
     article.sample-card {
       cursor: default;
+    }
+
+    .sample-cover {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      margin: 0 0 18px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--mint);
+      box-shadow: 0 12px 24px rgba(23, 63, 31, .12);
+    }
+
+    .sample-cover img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: saturate(.96) contrast(.98);
+      transition: transform .35s ease, filter .35s ease;
+    }
+
+    a.sample-card:hover .sample-cover img,
+    a.sample-card:focus-visible .sample-cover img {
+      transform: scale(1.035);
+      filter: saturate(1.05) contrast(1.02);
+    }
+
+    .sample-cover-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px;
+      color: var(--paper);
+      background:
+        linear-gradient(135deg, rgba(16, 17, 18, .86), rgba(23, 63, 31, .72)),
+        repeating-linear-gradient(90deg, transparent 0 18px, rgba(114, 239, 117, .22) 18px 19px);
+    }
+
+    .sample-cover-text small,
+    .sample-cover-text em {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-style: normal;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sample-cover-text b {
+      font-family: var(--serif);
+      font-size: clamp(42px, 4.4vw, 68px);
+      font-weight: 500;
+      line-height: .86;
+    }
+
+    .sample-cover-text.museum-cover {
+      background:
+        linear-gradient(rgba(10, 12, 10, .82), rgba(10, 12, 10, .82)),
+        radial-gradient(circle at 20% 18%, rgba(114, 239, 117, .72), transparent 25%),
+        radial-gradient(circle at 86% 78%, rgba(225, 84, 86, .58), transparent 30%),
+        var(--poster-black);
+    }
+
+    .sample-copy {
+      padding: 0 2px;
     }
 
     .sample-card::before {
@@ -1110,7 +1177,7 @@
 
     .sample-card:nth-child(2),
     .sample-card:nth-child(5) {
-      background: rgba(232, 251, 225, .46);
+      background: transparent;
     }
 
     .sample-card strong {
@@ -2152,7 +2219,10 @@
 
         <div class="sample-shelf" aria-label="作品展架">
           <a class="sample-card" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
-            <div>
+            <figure class="sample-cover">
+              <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
+            </figure>
+            <div class="sample-copy">
               <strong>AI Infra / Field</strong>
               <h3>AMD / Datawhale 开发者生态</h3>
               <p>现场报道。把算力、模型、开源社区、开发者和青年研究者放进同一张生态图。</p>
@@ -2160,7 +2230,10 @@
             <span>现场报道</span>
           </a>
           <a class="sample-card" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
-            <div>
+            <figure class="sample-cover">
+              <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
+            </figure>
+            <div class="sample-copy">
               <strong>Builder Profile</strong>
               <h3>默子 / Redink 开源 AI 项目</h3>
               <p>人物报道。写一个 00 后独立开发者如何把开源项目带进投资人与创业网络视野。</p>
@@ -2168,7 +2241,10 @@
             <span>人物报道</span>
           </a>
           <a class="sample-card" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
-            <div>
+            <figure class="sample-cover">
+              <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
+            </figure>
+            <div class="sample-copy">
               <strong>Founder Interview</strong>
               <h3>Tim / Artflow.ai 创始人访谈</h3>
               <p>播客深访转长文。进入生成式 AI 创业者的工作节奏、技术冲击和生活转向。</p>
@@ -2176,7 +2252,12 @@
             <span>播客长文</span>
           </a>
           <a class="sample-card" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
-            <div>
+            <figure class="sample-cover sample-cover-text">
+              <small>Silicon Valley</small>
+              <b>AppLovin<br>CTO</b>
+              <em>Research Profile</em>
+            </figure>
+            <div class="sample-copy">
               <strong>Silicon Valley</strong>
               <h3>葛小川 / AppLovin CTO</h3>
               <p>硅谷科技人物稿。用公开材料整理华人技术领导者、公司机制和 AI 商业判断。</p>
@@ -2184,7 +2265,10 @@
             <span>硅谷人物</span>
           </a>
           <a class="sample-card" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
-            <div>
+            <figure class="sample-cover">
+              <img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报">
+            </figure>
+            <div class="sample-copy">
               <strong>Podcast Series</strong>
               <h3>AI 教育田野志</h3>
               <p>系列访谈。持续对谈国内、美国/硅谷和欧洲 AI 教育实践者。</p>
@@ -2192,7 +2276,10 @@
             <span>播客系列</span>
           </a>
           <a class="sample-card" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
-            <div>
+            <figure class="sample-cover">
+              <img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场">
+            </figure>
+            <div class="sample-copy">
               <strong>Event / Source</strong>
               <h3>WAIC AI 研究者创业者派对</h3>
               <p>现场组织与复盘。把研究者、创业者、投资机构和开发者社区带到同一个现场。</p>
@@ -2200,7 +2287,12 @@
             <span>活动复盘</span>
           </a>
           <article class="sample-card">
-            <div>
+            <figure class="sample-cover sample-cover-text museum-cover">
+              <small>Interactive Story</small>
+              <b>生命力<br>博物馆</b>
+              <em>Coming Archive</em>
+            </figure>
+            <div class="sample-copy">
               <strong>Interactive Story</strong>
               <h3>生命力博物馆</h3>
               <p>交互叙事实验。把访谈故事、创造者样本和互动体验整理成可回访的故事档案。</p>
