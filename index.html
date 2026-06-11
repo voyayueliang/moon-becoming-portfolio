@@ -1035,36 +1035,125 @@
       font-size: 13px;
     }
 
-    .sample-shelf {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(330px, 26vw);
-      align-items: end;
+    .shelf-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 18px;
+      margin: 10px 0 0;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .shelf-label {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .shelf-label span {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .shelf-label strong {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .shelf-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .shelf-button {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: 25px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    .shelf-button:hover,
+    .shelf-button:focus-visible {
+      background: var(--poster-green);
+      outline: none;
+    }
+
+    .sample-shelf {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 22px;
       overflow-x: auto;
       overscroll-behavior-inline: contain;
       scroll-snap-type: x proximity;
-      padding: 8px 0 30px;
+      scroll-padding-inline: 6px;
+      padding: 34px 2px 52px;
       margin-bottom: 42px;
       scrollbar-width: thin;
       border-bottom: 8px solid var(--teal);
     }
 
+    .sample-shelf::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 36px;
+      height: 12px;
+      background:
+        linear-gradient(90deg, var(--teal), var(--poster-green) 46%, var(--teal));
+      border: 1px solid var(--line);
+      z-index: 0;
+    }
+
     .sample-card {
-      min-height: 520px;
-      padding: 0 4px 18px;
-      background: transparent;
-      border: 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line-soft);
+      flex: 0 0 clamp(285px, 27vw, 390px);
+      min-height: 0;
+      padding: 10px 10px 18px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      border-radius: 0;
       text-decoration: none;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 22px;
+      gap: 18px;
       scroll-snap-align: start;
       position: relative;
-      transition: transform .22s ease, background-color .22s ease;
+      z-index: 1;
+      box-shadow: 9px 9px 0 rgba(23, 63, 31, .10);
+      transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
+    }
+
+    .sample-card.is-wide {
+      flex-basis: clamp(340px, 35vw, 500px);
+    }
+
+    .sample-card.is-slim {
+      flex-basis: clamp(250px, 23vw, 330px);
+    }
+
+    .sample-card:nth-child(2n) {
+      margin-bottom: 28px;
+    }
+
+    .sample-card:nth-child(3n) {
+      margin-bottom: 10px;
     }
 
     a.sample-card {
@@ -1083,7 +1172,15 @@
       overflow: hidden;
       border: 1px solid var(--line);
       background: var(--mint);
-      box-shadow: 0 12px 24px rgba(23, 63, 31, .12);
+      box-shadow: none;
+    }
+
+    .sample-card.is-wide .sample-cover {
+      aspect-ratio: 5 / 4;
+    }
+
+    .sample-card.is-slim .sample-cover {
+      aspect-ratio: 3 / 4;
     }
 
     .sample-cover img {
@@ -1142,42 +1239,41 @@
     }
 
     .sample-card::before {
-      content: "";
+      content: attr(data-issue);
       position: absolute;
-      left: 0;
-      right: 18%;
-      top: 16px;
-      height: 1px;
-      background: var(--line-soft);
-      transform: rotate(-1deg);
-      opacity: 0;
-      transition: opacity .2s ease;
+      left: 18px;
+      top: -15px;
+      min-width: 42px;
+      height: 30px;
+      padding: 0 9px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      background: var(--poster-green);
+      color: var(--ink);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .08em;
+      z-index: 2;
     }
 
     .sample-card:hover,
     .sample-card:focus-visible {
-      transform: translateY(-6px);
-      background: rgba(232, 251, 225, .4);
+      transform: translateY(-8px) rotate(-.35deg);
+      background: rgba(232, 251, 225, .64);
+      box-shadow: 13px 13px 0 rgba(23, 63, 31, .16);
       outline: none;
-    }
-
-    .sample-card:hover::before,
-    .sample-card:focus-visible::before {
-      opacity: 1;
     }
 
     article.sample-card:hover {
       transform: none;
-      background: transparent;
-    }
-
-    article.sample-card:hover::before {
-      opacity: 0;
+      background: var(--paper-2);
     }
 
     .sample-card:nth-child(2),
     .sample-card:nth-child(5) {
-      background: transparent;
+      background: var(--mint);
     }
 
     .sample-card strong {
@@ -1809,9 +1905,29 @@
         transform: none;
       }
 
+      .shelf-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .shelf-actions {
+        align-self: flex-end;
+      }
+
       .sample-shelf {
-        grid-template-columns: none;
-        grid-auto-columns: minmax(280px, 82vw);
+        gap: 16px;
+        padding-top: 30px;
+      }
+
+      .sample-card,
+      .sample-card.is-wide,
+      .sample-card.is-slim {
+        flex-basis: min(300px, 82vw);
+      }
+
+      .sample-card:nth-child(2n),
+      .sample-card:nth-child(3n) {
+        margin-bottom: 0;
       }
 
       .field-film {
@@ -2286,8 +2402,19 @@
           </div>
         </div>
 
-        <div class="sample-shelf" aria-label="作品展架">
-          <a class="sample-card" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
+        <div class="shelf-toolbar" aria-label="作品展架信息">
+          <div class="shelf-label">
+            <span>Field Notes Library</span>
+            <strong>7 件公开作品，一件交互叙事待补入口</strong>
+          </div>
+          <div class="shelf-actions" aria-label="作品展架翻页">
+            <button class="shelf-button" type="button" data-shelf-prev aria-label="向左翻阅作品">‹</button>
+            <button class="shelf-button" type="button" data-shelf-next aria-label="向右翻阅作品">›</button>
+          </div>
+        </div>
+
+        <div class="sample-shelf" aria-label="作品展架" data-work-shelf>
+          <a class="sample-card is-wide" data-issue="01" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
             <figure class="sample-cover">
               <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
             </figure>
@@ -2298,7 +2425,7 @@
             </div>
             <span>现场报道</span>
           </a>
-          <a class="sample-card" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+          <a class="sample-card" data-issue="02" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
             <figure class="sample-cover">
               <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
             </figure>
@@ -2309,7 +2436,7 @@
             </div>
             <span>人物报道</span>
           </a>
-          <a class="sample-card" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
+          <a class="sample-card is-slim" data-issue="03" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
             <figure class="sample-cover">
               <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
             </figure>
@@ -2320,7 +2447,7 @@
             </div>
             <span>播客长文</span>
           </a>
-          <a class="sample-card" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
+          <a class="sample-card" data-issue="04" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
             <figure class="sample-cover sample-cover-text">
               <small>Silicon Valley</small>
               <b>AppLovin<br>CTO</b>
@@ -2333,7 +2460,7 @@
             </div>
             <span>硅谷人物</span>
           </a>
-          <a class="sample-card" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
+          <a class="sample-card is-slim" data-issue="05" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
             <figure class="sample-cover">
               <img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报">
             </figure>
@@ -2344,7 +2471,7 @@
             </div>
             <span>播客系列</span>
           </a>
-          <a class="sample-card" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
+          <a class="sample-card is-wide" data-issue="06" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
             <figure class="sample-cover">
               <img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场">
             </figure>
@@ -2355,7 +2482,7 @@
             </div>
             <span>活动复盘</span>
           </a>
-          <article class="sample-card">
+          <article class="sample-card is-slim" data-issue="07">
             <figure class="sample-cover sample-cover-text museum-cover">
               <small>Interactive Story</small>
               <b>生命力<br>博物馆</b>
@@ -2659,5 +2786,25 @@
       <a href="#main">回到顶部</a>
     </div>
   </footer>
+  <script>
+    (() => {
+      const shelf = document.querySelector("[data-work-shelf]");
+      if (!shelf) return;
+
+      const step = () => Math.min(shelf.clientWidth * 0.86, 560);
+      const move = (direction) => {
+        shelf.scrollBy({ left: direction * step(), behavior: "smooth" });
+      };
+
+      document.querySelector("[data-shelf-prev]")?.addEventListener("click", () => move(-1));
+      document.querySelector("[data-shelf-next]")?.addEventListener("click", () => move(1));
+
+      shelf.addEventListener("wheel", (event) => {
+        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
+        event.preventDefault();
+        shelf.scrollBy({ left: event.deltaY, behavior: "auto" });
+      }, { passive: false });
+    })();
+  </script>
 </body>
 </html>
