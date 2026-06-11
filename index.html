@@ -224,6 +224,16 @@
       line-height: 1.52;
     }
 
+    .identity-line {
+      margin: 18px 0 0;
+      max-width: 820px;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(32px, 4vw, 58px);
+      line-height: .98;
+      font-weight: 500;
+    }
+
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -266,11 +276,47 @@
       flex-direction: column;
       justify-content: stretch;
       border: 1px solid var(--line);
-      background: var(--poster-black);
-      color: var(--paper);
+      background: var(--mint);
+      color: var(--ink);
       padding: 0;
       box-shadow: var(--shadow);
       min-height: 620px;
+    }
+
+    .portrait-frame {
+      position: relative;
+      margin: 0;
+      min-height: 0;
+      flex: 1;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: var(--teal);
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      min-height: 490px;
+      display: block;
+      object-fit: cover;
+      object-position: center 38%;
+      filter: saturate(.95) contrast(.98);
+    }
+
+    .portrait-frame figcaption {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      max-width: calc(100% - 36px);
+      padding: 8px 10px;
+      border: 1px solid rgba(255, 254, 250, .68);
+      background: rgba(5, 5, 5, .62);
+      color: #fffefa;
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
     .poster-plate {
@@ -313,7 +359,7 @@
 
     .hero-note p {
       margin: 0;
-      color: rgba(255, 255, 255, .86);
+      color: #3b342d;
       font-size: 15px;
       line-height: 1.7;
     }
@@ -325,7 +371,7 @@
       font-size: clamp(34px, 4.2vw, 64px);
       font-weight: 500;
       line-height: .9;
-      color: var(--poster-green);
+      color: var(--teal);
     }
 
     .issue-meta {
@@ -2473,38 +2519,30 @@
             <span>AI Field Notes</span>
             <span>2026</span>
           </div>
-          <p class="eyebrow">Moon's Becoming / AI Field Notes / Storytelling</p>
+          <p class="eyebrow">Moon's Becoming / AI Field Notes / Narrative Architect</p>
           <h1>月亮的 Becoming</h1>
-          <p class="hero-subhead">从人类学田野走向 AI 创业现场：大理创新教育、数字游民社区、上海 AI 营地、黑客松、创业孵化器、WAIC、AMD 开发者日、新加坡出海和海外 AI 教育访谈。每一段 Becoming，都留下了可以打开的作品。</p>
+          <p class="identity-line">向 AI 走去的人类学冒险家，擅长为创业生态写出人的故事。</p>
+          <p class="hero-subhead">我从大理创新教育和数字游民田野走来，在上海做 AI 创新教育与创业孵化，组织青少年黑客松和创业活动，发起「超级个体实验室」，汇聚 700+ 早期创业者。现在，我作为叙事架构师，记录 00 后 builder、出海创业团队、开发者生态与大型科技事件，积累近百个创业者案例，长期关注 AI 时代的超级个体、青少年教育、社区与开源生态。</p>
           <div class="hero-actions" aria-label="主要行动">
             <a class="button" href="#story">阅读旅程</a>
             <a class="button secondary" href="#works">查看作品</a>
           </div>
           <div class="chips" aria-label="关键词">
-            <span class="chip teal">AI Builder</span>
+            <span class="chip teal">叙事架构师</span>
             <span class="chip coral">现场研究</span>
-            <span class="chip ochre">播客主持</span>
-            <span class="chip">创始人叙事</span>
-            <span class="chip">海外 AI 生态</span>
+            <span class="chip ochre">700+ 创业者社区</span>
+            <span class="chip">AI Native Builder</span>
+            <span class="chip">全球化研究</span>
           </div>
         </div>
         <aside class="hero-note">
-          <div class="poster-plate" aria-hidden="true">
-            <svg viewBox="0 0 480 520" preserveAspectRatio="none">
-              <rect width="480" height="520" fill="#050505"/>
-              <path d="M56 0 C70 84 42 176 78 250 C116 330 80 414 104 520" fill="none" stroke="#72ef75" stroke-width="22" opacity=".88"/>
-              <path d="M182 -20 C168 88 204 148 190 238 C176 326 218 420 198 548" fill="none" stroke="#72ef75" stroke-width="15" opacity=".74"/>
-              <path d="M318 -18 C296 82 346 174 318 262 C286 364 348 438 338 548" fill="none" stroke="#72ef75" stroke-width="26" opacity=".9"/>
-              <path d="M420 -10 C398 78 442 170 416 254 C382 362 438 438 424 548" fill="none" stroke="#173f1f" stroke-width="22" opacity=".95"/>
-              <path d="M0 404 C76 366 128 420 198 390 C282 352 352 424 480 382 L480 520 L0 520 Z" fill="#72ef75" opacity=".9"/>
-              <path d="M8 430 C92 384 142 446 210 414 C298 372 352 446 474 398" fill="none" stroke="#fffefa" stroke-width="3" opacity=".58"/>
-              <path d="M-8 462 C88 422 154 476 232 440 C302 408 364 480 492 434" fill="none" stroke="#050505" stroke-width="3" opacity=".35"/>
-            </svg>
-            <div class="poster-word">BECOMING</div>
-          </div>
+          <figure class="portrait-frame">
+            <img src="assets/portrait/moon-field-portrait.jpg" alt="月亮在绿色庭院桥下的照片">
+            <figcaption>Anthropology / AI / Field Notes</figcaption>
+          </figure>
           <div class="note-copy">
-            <strong>Moon's Becoming</strong>
-            <p>像一份小杂志：旅程、作品、现场和方法，都从我真实进入过的地方长出来。</p>
+            <strong>Moon in the Field</strong>
+            <p>这份作品集像一份小杂志：旅程、作品、现场和方法，都从我真实进入过的地方长出来。</p>
           </div>
         </aside>
       </div>
@@ -2923,7 +2961,7 @@
             </div>
           </article>
           <article class="proof-item">
-            <div class="proof-number">500+</div>
+            <div class="proof-number">700+</div>
             <div>
               <h3>AI 创造者社区</h3>
               <p>从 0 到 1 发起超级个体实验室，聚集 AI 创业者、开发者、设计师和教育者。</p>
