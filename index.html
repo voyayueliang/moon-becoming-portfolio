@@ -547,9 +547,9 @@
     .story-step {
       position: relative;
       display: grid;
-      grid-template-columns: 74px minmax(0, 1fr);
+      grid-template-columns: 58px minmax(0, 1fr);
       gap: 18px;
-      padding: 22px;
+      padding: 24px 28px;
       border: 0;
       border-bottom: 1px solid var(--line-soft);
       background: transparent;
@@ -564,26 +564,40 @@
       width: auto;
       height: auto;
       display: grid;
-      place-items: center;
+      place-items: start;
       border: 0;
       background: transparent;
-      color: var(--pink);
-      font-family: var(--serif);
-      font-size: 52px;
-      font-weight: 500;
-      line-height: .9;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      line-height: 1.1;
+      padding-top: 6px;
       z-index: 1;
     }
 
     .story-step h3 {
-      font-size: 24px;
-      margin: 0 0 7px;
+      font-size: clamp(24px, 2.2vw, 34px);
+      line-height: 1;
+      margin: 0 0 10px;
     }
 
     .story-step p {
       margin: 0;
       color: var(--muted);
       font-size: 14px;
+    }
+
+    .story-step small {
+      display: block;
+      margin-top: 12px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
     .story-quote {
@@ -2991,45 +3005,49 @@
           <p class="section-kicker">Becoming Journey</p>
           <div>
             <h2>Becoming 之旅</h2>
-            <p class="section-desc">我从教育和社区走向 AI 创业现场。很多作品的源头，都在学校、黑客松、孵化器、播客、圆桌、工作坊和一次次线下见面里。</p>
+            <p class="section-desc">从这里读我的路径：先学会听人，再走近产品和团队，后来开始组织关系，最后把中国 AI 创业放进更大的市场里看。</p>
           </div>
         </div>
 
         <div class="story-grid">
           <div class="story-lead">
-            <p>我最早进入的是大理的学校、家庭和数字游民社区。孩子、家长、老师、社区组织者、远程工作者都在重新安排自己的学习和生活。那时我还没有把它称为“内容研究”，只是反复练习一件事：在一个陌生场域里，听懂具体的人正在经历什么。</p>
-            <p>来到上海以后，AI 夏令营、青少年黑客松、创业孵化器和开发者活动把我带到更快的现场。产品还很早，团队还很小，很多判断发生在一场路演、一张白板、一次用户反馈里。默子、核蛋、小鹅、Tim 和更多年轻 builder，就是从这些现场里被我看见的。</p>
-            <p>后来，我开始自己组织现场。超级个体实验室、WAIC 派对、AI 跨界客厅、播客和圆桌，把研究者、创业者、教育者、设计师和开发者带到同一张桌上。很多采访对象、选题线索和人物稿，都是这些真实见面之后继续追问的结果。</p>
-            <p>新加坡出海、复旦 / UCL 工作坊、硅谷和欧洲 AI 教育访谈，让我开始把中国 AI 创业现场放进海外市场、平台团队和跨文化语境里看。这个页面里的作品，也是在这条路径上留下的痕迹。</p>
+            <p>在大理，我最先练习的是坐下来听人说话。创新学校的孩子、焦虑又兴奋的家长、数字游民、社区组织者、远程工作者，都在重新安排自己的学习和生活。我带学生做过田野调查，也在这些日常对话里练习分辨：一个人的选择背后，往往藏着一整套环境、关系和时代变化。</p>
+            <p>来到上海后，节奏突然快了起来。AI 夏令营、青少年黑客松、创业孵化器和开发者活动，把我带到产品还很早、团队还很小的地方。很多判断发生在路演前后、白板旁边、用户反馈之后。默子、核蛋、小鹅、Tim 和更多年轻 builder，就是在这些还没有被整理成“案例”的时刻里被我看见的。</p>
+            <p>再往后，我开始自己组局。超级个体实验室从一次次见面长成 700+ AI 创造者社区；WAIC 之后的派对，把研究者、创业者、投资机构和开发者社区带到同一个夜晚；Becoming计划和 AI 教育田野志，则把长谈变成可以反复回看的栏目。</p>
+            <p>新加坡出海、Manus / Google / TikTok 新加坡团队交流、复旦 / UCL 工作坊、硅谷和欧洲 AI 教育访谈，让我开始把中国 AI 创业放到海外市场、平台团队和跨文化现场里看。这个页面里的作品，基本都从这些具体见面里长出来。</p>
           </div>
 
           <div class="story-timeline" aria-label="月亮的路径">
             <article class="story-step">
-              <span class="story-index">大理</span>
+              <span class="story-index">01</span>
               <div>
-                <h3>田野底色</h3>
-                <p>创新教育、数字游民、社区生活。留下的是对人、关系、地方和生活选择的敏感度。</p>
+                <h3>在大理，先听见人</h3>
+                <p>学校、家庭、数字游民社区和地方生活，让我开始关心一个人为什么改变路径，为什么重新理解学习、工作和生活。</p>
+                <small>创新教育 / 数字游民 / 田野调查</small>
               </div>
             </article>
             <article class="story-step">
-              <span class="story-index">上海</span>
+              <span class="story-index">02</span>
               <div>
-                <h3>AI 创业现场</h3>
-                <p>AI 营地、黑客松、孵化器、开发者社区。默子 / Redink、核蛋、小鹅和 AI 教育田野志都从这里生长出来。</p>
+                <h3>到上海，开始看早期产品</h3>
+                <p>夏令营、黑客松、孵化器和开发者社区，把我带到早期团队身边。默子 / Redink、核蛋、小鹅和 AI 教育田野志都从这里长出来。</p>
+                <small>AI 夏令营 / 黑客松 / 孵化器</small>
               </div>
             </article>
             <article class="story-step">
-              <span class="story-index">现场</span>
+              <span class="story-index">03</span>
               <div>
-                <h3>把人带到同一张桌上</h3>
-                <p>超级个体实验室、Becoming计划、WAIC 派对、AI 跨界客厅。Tim 访谈、WAIC 复盘和系列主持都来自这些见面。</p>
+                <h3>自己组局，把线索带到桌上</h3>
+                <p>超级个体实验室、Becoming计划、WAIC 派对和 AI 跨界客厅，让采访对象、选题线索和人物稿从真实见面里继续生长。</p>
+                <small>700+ 社区 / WAIC 派对 / 系列主持</small>
               </div>
             </article>
             <article class="story-step">
-              <span class="story-index">海外</span>
+              <span class="story-index">04</span>
               <div>
-                <h3>把中国 AI 放进更大的语境</h3>
-                <p>新加坡出海、硅谷科技人物、复旦 / UCL 工作坊、海外 AI 教育访谈，把材料推向跨市场和跨文化的现场。</p>
+                <h3>向海外看，重新校准问题</h3>
+                <p>新加坡出海、硅谷科技人物、复旦 / UCL 工作坊、海外 AI 教育访谈，让我把中国 AI 创业放进跨市场和跨文化的坐标里。</p>
+                <small>新加坡 / 硅谷 / 欧洲教育实践</small>
               </div>
             </article>
           </div>
