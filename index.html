@@ -1035,6 +1035,124 @@
       font-size: 13px;
     }
 
+    .reading-route {
+      display: grid;
+      grid-template-columns: minmax(210px, .82fr) minmax(0, 2.5fr);
+      align-items: center;
+      gap: clamp(18px, 3vw, 34px);
+      margin: 0 0 32px;
+      padding: 28px 0 30px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .route-note {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 180px;
+    }
+
+    .route-note span {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .route-note h3 {
+      margin: 0;
+      font-size: clamp(34px, 4vw, 60px);
+      line-height: .92;
+    }
+
+    .route-note p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .route-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      align-items: stretch;
+      gap: 14px;
+    }
+
+    .route-card {
+      position: relative;
+      min-height: 200px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(4, 38, 28, .07);
+      text-decoration: none;
+      transform: rotate(-.35deg);
+      transition: background-color .22s ease, box-shadow .22s ease, transform .22s ease;
+    }
+
+    .route-card:nth-child(2) {
+      background: var(--mint);
+      margin-top: 18px;
+      transform: rotate(.45deg);
+    }
+
+    .route-card:nth-child(3) {
+      margin-top: 6px;
+      transform: rotate(-.18deg);
+    }
+
+    .route-card:hover,
+    .route-card:focus-visible {
+      background: var(--poster-green);
+      box-shadow: 0 18px 42px rgba(4, 38, 28, .1);
+      outline: none;
+      transform: translateY(-6px) rotate(0deg);
+    }
+
+    .route-card strong {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .08em;
+    }
+
+    .route-card h4 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(26px, 2.5vw, 42px);
+      line-height: .98;
+      font-weight: 500;
+    }
+
+    .route-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .route-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .route-tags span {
+      border: 1px solid var(--line);
+      padding: 3px 6px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 10px;
+      line-height: 1;
+    }
+
     .shelf-toolbar {
       display: flex;
       align-items: center;
@@ -1895,6 +2013,8 @@
       .narrative-principles,
       .evidence-strip,
       .proof-grid,
+      .reading-route,
+      .route-cards,
       .museum-window,
       .sample-shelf {
         grid-template-columns: 1fr;
@@ -1942,6 +2062,17 @@
       .sample-card:nth-child(2n),
       .sample-card:nth-child(3n) {
         margin-bottom: 0;
+      }
+
+      .route-note {
+        min-height: auto;
+      }
+
+      .route-card,
+      .route-card:nth-child(2),
+      .route-card:nth-child(3) {
+        margin-top: 0;
+        transform: none;
       }
 
       .field-film {
@@ -2412,7 +2543,43 @@
           <p class="section-kicker">Selected Works</p>
           <div>
             <h2>精选作品</h2>
-            <p class="section-desc">这些代表作从现场开始：进入一个人、一场活动、一个社区或一次出海，再把关系里浮出来的线索写成作品。</p>
+            <p class="section-desc">如果只停留十分钟，可以先从三件作品进入：开发者生态、开源 builder、硅谷科技人物。再往下翻，是更完整的作品书架。</p>
+          </div>
+        </div>
+
+        <div class="reading-route" aria-label="推荐阅读路径">
+          <div class="route-note">
+            <div>
+              <span>Read First</span>
+              <h3>先读三篇</h3>
+            </div>
+            <p>从这里进入，会先看到我处理 AI 公司、产品、社区与技术变化的方式。</p>
+          </div>
+          <div class="route-cards">
+            <a class="route-card" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
+              <strong>01 / AI Infra</strong>
+              <div>
+                <h4>AMD / Datawhale 开发者生态</h4>
+                <p>从会场、展台和开发者社区里，写清算力、模型、工具链和开源协作。</p>
+              </div>
+              <div class="route-tags"><span>算力</span><span>开源</span><span>开发者</span></div>
+            </a>
+            <a class="route-card" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+              <strong>02 / Builder</strong>
+              <div>
+                <h4>默子 / Redink 开源 AI 项目</h4>
+                <p>一个 00 后 builder、一款开源产品和突然涌来的用户反馈。</p>
+              </div>
+              <div class="route-tags"><span>AI Native</span><span>GitHub</span><span>早期信号</span></div>
+            </a>
+            <a class="route-card" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
+              <strong>03 / Silicon Valley</strong>
+              <div>
+                <h4>葛小川 / AppLovin CTO</h4>
+                <p>用公开材料整理华人技术领导者、公司机制和 AI 商业判断。</p>
+              </div>
+              <div class="route-tags"><span>人物研究</span><span>公司机制</span><span>商业判断</span></div>
+            </a>
           </div>
         </div>
 
