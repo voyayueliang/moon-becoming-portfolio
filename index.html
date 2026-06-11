@@ -1183,6 +1183,20 @@
       aspect-ratio: 3 / 4;
     }
 
+    .sample-cover.article-snapshot {
+      aspect-ratio: 794 / 258;
+      padding: 8px;
+      background: #f4f4f2;
+    }
+
+    .sample-card.is-wide .sample-cover.article-snapshot {
+      aspect-ratio: 794 / 258;
+    }
+
+    .sample-cover.article-snapshot img {
+      object-fit: contain;
+    }
+
     .sample-cover img {
       width: 100%;
       height: 100%;
@@ -2447,11 +2461,9 @@
             </div>
             <span>播客长文</span>
           </a>
-          <a class="sample-card" data-issue="04" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
-            <figure class="sample-cover sample-cover-text">
-              <small>Silicon Valley</small>
-              <b>AppLovin<br>CTO</b>
-              <em>Research Profile</em>
+          <a class="sample-card is-wide" data-issue="04" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
+            <figure class="sample-cover article-snapshot">
+              <img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图，标题为 3 年从工程师到 CTO">
             </figure>
             <div class="sample-copy">
               <strong>Silicon Valley</strong>
