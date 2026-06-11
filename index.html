@@ -1588,6 +1588,30 @@
       color: var(--paper);
     }
 
+    .case-card.is-museum {
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .case-card.is-museum .case-visual {
+      border: 0;
+      border-bottom: 1px solid rgba(114, 239, 117, .46);
+      aspect-ratio: 4 / 3;
+      background: #060807;
+    }
+
+    .case-card.is-museum .case-visual img {
+      object-fit: cover;
+      object-position: 50% 20%;
+      padding: 0;
+      background: transparent;
+      filter: saturate(1.02) contrast(1.04);
+    }
+
+    .case-card.is-museum .case-copy {
+      padding: 22px;
+    }
+
     .case-card.is-dark p {
       color: rgba(255, 255, 255, .76);
     }
@@ -2981,17 +3005,15 @@
               <span class="case-link">Open recap ↗</span>
             </a>
 
-            <a class="case-card is-dark" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
-              <div>
+            <a class="case-card is-dark is-museum" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
+              <figure class="case-visual">
+                <img src="assets/covers/vitality-museum-life-map.png" alt="生命力博物馆生命力地图交互界面截图">
+              </figure>
+              <div class="case-copy">
                 <span class="case-index">07 / Interactive Story</span>
                 <h3>生命力博物馆</h3>
-                <p>交互叙事实验。把分散在访谈、播客、活动和人物稿里的创造者故事，整理成可以回访、连接和再发现的故事档案。</p>
+                <p>交互叙事实验。把 28 个创造者故事整理成地图、展厅和游乐园，让人物、命题和时代情绪可以被再次打开。</p>
                 <span class="case-link">Enter museum ↗</span>
-              </div>
-              <div class="museum-window" aria-hidden="true">
-                <span class="museum-node">访谈故事</span>
-                <span class="museum-node">创造者样本</span>
-                <span class="museum-node">互动档案</span>
               </div>
             </a>
           </div>
