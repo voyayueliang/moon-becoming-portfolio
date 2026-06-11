@@ -824,6 +824,14 @@
       transform: translate(0, 0);
     }
 
+    article.artifact-card {
+      cursor: default;
+    }
+
+    article.artifact-card::after {
+      display: none;
+    }
+
     .artifact-card h3 {
       margin-top: 14px;
       font-size: clamp(32px, 3.7vw, 58px);
@@ -860,6 +868,10 @@
       min-height: 310px;
       background: var(--poster-black);
       color: var(--paper);
+      transform: translateY(-8px) rotate(.25deg);
+    }
+
+    article.artifact-card.museum:hover {
       transform: translateY(-8px) rotate(.25deg);
     }
 
@@ -1053,6 +1065,15 @@
       transition: transform .22s ease, background-color .22s ease;
     }
 
+    a.sample-card {
+      color: inherit;
+      cursor: pointer;
+    }
+
+    article.sample-card {
+      cursor: default;
+    }
+
     .sample-card::before {
       content: "";
       position: absolute;
@@ -1076,6 +1097,15 @@
     .sample-card:hover::before,
     .sample-card:focus-visible::before {
       opacity: 1;
+    }
+
+    article.sample-card:hover {
+      transform: none;
+      background: transparent;
+    }
+
+    article.sample-card:hover::before {
+      opacity: 0;
     }
 
     .sample-card:nth-child(2),
@@ -2011,7 +2041,7 @@
             </div>
           </a>
 
-          <a class="artifact-card museum" href="#museum-work">
+          <article class="artifact-card museum">
             <div>
               <span class="collection-label">Interactive Story Museum</span>
               <h3>生命力博物馆</h3>
@@ -2027,7 +2057,7 @@
               <div class="museum-node">长出作品的方法</div>
               <div class="museum-node">找到位置的路径</div>
             </div>
-          </a>
+          </article>
 
           <a class="artifact-card overseas" href="#works">
             <div>
@@ -2121,62 +2151,62 @@
         </div>
 
         <div class="sample-shelf" aria-label="作品展架">
-          <article class="sample-card">
+          <a class="sample-card" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
             <div>
               <strong>AI Infra / Field</strong>
               <h3>AMD / Datawhale 开发者生态</h3>
               <p>现场报道。把算力、模型、开源社区、开发者和青年研究者放进同一张生态图。</p>
             </div>
             <span>现场报道</span>
-          </article>
-          <article class="sample-card">
+          </a>
+          <a class="sample-card" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
             <div>
               <strong>Builder Profile</strong>
               <h3>默子 / Redink 开源 AI 项目</h3>
               <p>人物报道。写一个 00 后独立开发者如何把开源项目带进投资人与创业网络视野。</p>
             </div>
             <span>人物报道</span>
-          </article>
-          <article class="sample-card">
+          </a>
+          <a class="sample-card" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
             <div>
               <strong>Founder Interview</strong>
               <h3>Tim / Artflow.ai 创始人访谈</h3>
               <p>播客深访转长文。进入生成式 AI 创业者的工作节奏、技术冲击和生活转向。</p>
             </div>
             <span>播客长文</span>
-          </article>
-          <article class="sample-card">
+          </a>
+          <a class="sample-card" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
             <div>
               <strong>Silicon Valley</strong>
               <h3>葛小川 / AppLovin CTO</h3>
               <p>硅谷科技人物稿。用公开材料整理华人技术领导者、公司机制和 AI 商业判断。</p>
             </div>
             <span>硅谷人物</span>
-          </article>
-          <article class="sample-card">
+          </a>
+          <a class="sample-card" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
             <div>
               <strong>Podcast Series</strong>
               <h3>AI 教育田野志</h3>
               <p>系列访谈。持续对谈国内、美国/硅谷和欧洲 AI 教育实践者。</p>
             </div>
             <span>播客系列</span>
-          </article>
-          <article class="sample-card">
+          </a>
+          <a class="sample-card" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
             <div>
               <strong>Event / Source</strong>
               <h3>WAIC AI 研究者创业者派对</h3>
               <p>现场组织与复盘。把研究者、创业者、投资机构和开发者社区带到同一个现场。</p>
             </div>
             <span>活动复盘</span>
-          </article>
-          <a class="sample-card" href="#museum-work">
+          </a>
+          <article class="sample-card">
             <div>
               <strong>Interactive Story</strong>
               <h3>生命力博物馆</h3>
               <p>交互叙事实验。把访谈故事、创造者样本和互动体验整理成可回访的故事档案。</p>
             </div>
-            <span>查看案例</span>
-          </a>
+            <span>待补入口</span>
+          </article>
         </div>
 
         <div class="works">
