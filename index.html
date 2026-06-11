@@ -2274,176 +2274,6 @@
       font-size: 13px;
     }
 
-    .series-narrative {
-      display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: clamp(22px, 3vw, 42px);
-      margin-top: 36px;
-      border-top: 1px solid var(--line);
-      padding-top: 34px;
-    }
-
-    .series-thread {
-      grid-column: span 6;
-      border-top: 1px solid var(--line);
-      padding: 24px 0 0;
-      background: transparent;
-    }
-
-    .series-thread:nth-child(2) {
-      padding-left: clamp(0px, 2vw, 28px);
-      border-left: 1px solid var(--line-soft);
-    }
-
-    .series-thread-kicker {
-      display: inline-block;
-      margin-bottom: 18px;
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .16em;
-      text-transform: uppercase;
-      color: var(--teal);
-    }
-
-    .series-thread h3 {
-      max-width: 12em;
-      font-size: clamp(34px, 4vw, 58px);
-      line-height: .98;
-      letter-spacing: 0;
-    }
-
-    .series-thread p {
-      max-width: 680px;
-      color: var(--muted);
-      margin: 18px 0 0;
-      font-size: clamp(16px, 1.35vw, 20px);
-      line-height: 1.82;
-    }
-
-    .series-thread p:first-of-type {
-      color: var(--ink);
-      font-weight: 680;
-    }
-
-    .series-thread-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 18px;
-      margin-top: 28px;
-      padding-top: 18px;
-      border-top: 1px solid var(--line-soft);
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .series-thread-links a {
-      text-decoration: none;
-      border-bottom: 1px solid currentColor;
-      color: var(--teal);
-    }
-
-    .series-field-note {
-      max-width: 860px;
-      margin: 42px 0 0 auto;
-      padding: 18px 0 0;
-      border-top: 1px solid var(--line);
-      color: var(--muted);
-      font-size: clamp(16px, 1.25vw, 19px);
-      line-height: 1.8;
-    }
-
-    .field-film {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: minmax(280px, 29vw);
-      gap: 16px;
-      overflow-x: auto;
-      overscroll-behavior-inline: contain;
-      scroll-snap-type: x proximity;
-      margin: 42px 0 38px;
-      padding: 22px 0 34px;
-      border-top: 1px solid var(--line);
-      border-bottom: 8px solid var(--teal);
-      scrollbar-width: thin;
-    }
-
-    .field-frame {
-      margin: 0;
-      display: grid;
-      grid-template-rows: auto minmax(88px, auto);
-      gap: 10px;
-      scroll-snap-align: start;
-    }
-
-    .field-frame:nth-child(2n) {
-      transform: translateY(24px);
-    }
-
-    .field-frame img {
-      width: 100%;
-      height: clamp(250px, 28vw, 380px);
-      display: block;
-      object-fit: cover;
-      border: 1px solid var(--line);
-      background: var(--mint);
-      filter: saturate(.94) contrast(.98);
-    }
-
-    .field-frame:nth-child(3n) img {
-      height: clamp(310px, 34vw, 460px);
-    }
-
-    .field-frame figcaption {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.55;
-    }
-
-    .field-frame figcaption strong {
-      display: block;
-      margin-bottom: 4px;
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0;
-    }
-
-    .evidence-strip {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 22px;
-      border: 0;
-      background: transparent;
-      margin-top: 34px;
-    }
-
-    .evidence-item {
-      background: transparent;
-      border-top: 1px solid var(--line);
-      padding: 16px 0 0;
-      min-height: 118px;
-    }
-
-    .evidence-item strong {
-      display: block;
-      font-family: var(--serif);
-      font-size: 46px;
-      line-height: .9;
-      font-weight: 500;
-      color: var(--teal);
-      margin-bottom: 8px;
-    }
-
-    .evidence-item span {
-      display: block;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
     .method {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2723,7 +2553,6 @@
       .sample-shelf,
       .work-card,
       .pathways,
-      .series-narrative,
       .method-story,
       .method,
       .footer .wrap {
@@ -2755,20 +2584,13 @@
       .collection-card:nth-child(2),
       .collection-card:nth-child(3),
       .collection-card:nth-child(4),
-      .collection-card:nth-child(5),
-      .series-thread,
-      .series-thread:nth-child(2) {
+      .collection-card:nth-child(5) {
         grid-column: auto;
       }
 
       .method-essay,
       .method-notes {
         grid-column: auto;
-      }
-
-      .series-thread:nth-child(2) {
-        padding-left: 0;
-        border-left: 0;
       }
 
       .hero-inner {
@@ -2789,7 +2611,6 @@
       .story-points,
       .story-arc,
       .narrative-principles,
-      .evidence-strip,
       .case-meta,
       .quick-answer,
       .now-list,
@@ -2908,26 +2729,12 @@
         transform: none;
       }
 
-      .field-film {
-        grid-auto-columns: minmax(270px, 82vw);
-      }
-
-      .field-frame:nth-child(2n) {
-        transform: none;
-      }
-
-      .field-frame img,
-      .field-frame:nth-child(3n) img {
-        height: clamp(260px, 70vw, 390px);
-      }
-
       .work-meta {
         border-right: 0;
         border-bottom: 1px solid var(--line);
         padding: 0 0 16px;
       }
 
-      .series-thread,
       .principle-card {
         border-right: 0;
         border-bottom: 1px solid var(--line-soft);
@@ -2986,7 +2793,6 @@
       }
 
       .work-card,
-      .series-thread,
       .pathway,
       .fit-card,
       .artifact-card,
@@ -3046,7 +2852,6 @@
       }
 
       .work-card,
-      .series-thread,
       .pathway,
       .fit-card,
       .method-step {
@@ -3070,7 +2875,6 @@
         <a href="#story">路径</a>
         <a href="#works">作品</a>
         <a href="#proof">能力</a>
-        <a href="#series">系列</a>
         <a href="#appendix">索引</a>
         <button class="print-button" type="button" onclick="window.print()">打印 / PDF</button>
       </div>
@@ -3174,10 +2978,10 @@
               <strong>我已经做过什么</strong>
               <p>采写、约人、主持、组织现场、做系列栏目、建立 AI 创造者关系网络。</p>
             </a>
-            <a class="guide-card" href="#series">
-              <span>03 / Ongoing Lines</span>
-              <strong>我正在追什么问题</strong>
-              <p>一个人如何成为创造者，以及 AI 进入教育后，一线实践者正在怎样改变学习。</p>
+            <a class="guide-card" href="#story">
+              <span>03 / Path</span>
+              <strong>我从哪里来</strong>
+              <p>从大理教育和社区，到上海 AI 孵化器、WAIC 现场和海外教育访谈，这些经历解释作品从哪里长出来。</p>
             </a>
           </div>
         </div>
@@ -3421,103 +3225,6 @@
             </div>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section id="series">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Ongoing Series</p>
-          <div>
-            <h2>两条持续生长的线索</h2>
-            <p class="section-desc">有些问题不会在一篇文章里结束。我会把它们做成栏目：持续约人、持续追问、持续把现场经验放回同一张桌上。Becoming 追问一个人如何长出来，AI 教育田野志追问教育实践如何互相看见。</p>
-          </div>
-        </div>
-
-        <div class="series-narrative">
-          <article class="series-thread">
-            <span class="series-thread-kicker">Becoming计划 / 人如何成为</span>
-            <h3>从大理的一场见面，到一组关于主体性的长谈</h3>
-            <p>Becoming计划最早关心的是一个很朴素的问题：一个以热爱驱动、还能保有主动性的人，究竟怎样一步步长出来。</p>
-            <p>我们在大理做过线下分享，和当地关心创新教育、AI 创业与生活方式的朋友聊了一个晚上。后来这条线索进入播客和长文：乐乐、Tim 这样的 AI 创业者，会被放回他们一路走来的选择、热爱、犹豫和行动路径里看。</p>
-            <p>这个栏目留下的是一种人物叙事的方法：先陪一个人把生命路径讲完整，再看他如何在时代变化里长出自己的方向。对我来说，好的创业者报道也从这里开始，产品和公司要写，人如何走到这里同样要写。</p>
-            <div class="series-thread-links" aria-label="Becoming 计划作品入口">
-              <a href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer">Becoming 播客</a>
-              <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">Tim 访谈</a>
-              <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer">乐乐访谈</a>
-            </div>
-          </article>
-
-          <article class="series-thread">
-            <span class="series-thread-kicker">AI 教育田野志 / 一线实践</span>
-            <h3>用田野的方法，把分散的教育实践连起来</h3>
-            <p>AI 教育田野志更像我的初心。AI 进入教育之后，很多老师、家长和创业者都在自己的地方做实验：有人带孩子做项目，有人把 AI 放进课堂，有人在二三线城市一点点摸索新的学习方式。</p>
-            <p>这些经验常常很具体，也很难被看见。我和乐乐一起发起对谈播客。乐乐曾获奇绩创坛投资，现在在硅谷做 AI 硬件创业；我们想把一线实践者请到同一张桌子上，让经验彼此照亮，也慢慢沉淀出 AI 教育的方法和问题意识。</p>
-            <p>这个系列已经延伸出一个两三百人的社群，里面有老师、学者、前沿家长，也有来自二三线城市的教育实践者。节目是入口，社群和方法论沉淀才是后面的路。</p>
-            <div class="series-thread-links" aria-label="AI 教育田野志作品入口">
-              <a href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">收听栏目</a>
-              <a href="https://mp.weixin.qq.com/s/Ttv2Pq7dIQhv3L1695wHyw" target="_blank" rel="noreferrer">一线实践</a>
-              <a href="https://mp.weixin.qq.com/s/qNgVznFUvZv3ohTekOKtxw" target="_blank" rel="noreferrer">田野方法</a>
-            </div>
-          </article>
-        </div>
-
-        <p class="series-field-note">线下分享会、直播、圆桌和工作坊，是这些栏目继续生长的地方。下面这些现场，是栏目背后真实发生过的见面、主持和组织。</p>
-
-        <div class="field-film" aria-label="现场胶片">
-          <figure class="field-frame">
-            <img src="assets/field-film/research-ai-circle.jpg" alt="Research AI 合作活动中，参与者围坐讨论">
-            <figcaption><strong>Research AI</strong>AI 跨界客厅里，研究者、创业者和社区伙伴围坐，讨论研究如何进入产品和生活。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/researcher-party-group.jpg" alt="AI 研究者创业者派对合影">
-            <figcaption><strong>WAIC After Party</strong>WAIC 之后的研究者创业者派对，Research AI、Datawhale 和超级个体实验室在同一个现场。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/researcher-party-roundtable.jpg" alt="AI 研究者创业者派对中的小组讨论">
-            <figcaption><strong>Roundtable</strong>小组讨论里，我更容易看到谁在做产品、谁在找问题、谁在寻找同行者。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/2050-field-talk.jpg" alt="2050 草地上的小型恳谈会">
-            <figcaption><strong>2050</strong>2050 的草地上，我分享“AI 时代看见具体的人”，也把内容工作带回到教育和社区。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/amd-datawhale-booth.jpg" alt="AMD AI 开发者日 Datawhale 展台合影">
-            <figcaption><strong>AMD Developer Day</strong>AMD AI 开发者日，Datawhale 与 ModelScope 的开发者生态聚在一起。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/amd-dev-stage.jpg" alt="AMD 开发者日现场演讲">
-            <figcaption><strong>Developer Ecosystem</strong>在 AMD 现场听开发者拆解模型服务、工具链和开源社区的进展。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/amd-field-interview.jpg" alt="AMD 开发者日会场边的访谈现场">
-            <figcaption><strong>Field Interview</strong>会场边的访谈和追问，比通稿更接近一线开发者真实关心的问题。</figcaption>
-          </figure>
-          <figure class="field-frame">
-            <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育田野志线上客厅活动海报">
-            <figcaption><strong>AI 教育田野志</strong>线上客厅把一线教育者、家长和创业者放进同一场长谈。</figcaption>
-          </figure>
-        </div>
-
-        <div class="evidence-strip" aria-label="现场数字">
-          <div class="evidence-item">
-            <strong>170+</strong>
-            <span>WAIC 期间 AI 研究者创业者派对报名人数</span>
-          </div>
-          <div class="evidence-item">
-            <strong>9</strong>
-            <span>具身智能、多模态、Agent、AI Infra 等圆桌议题</span>
-          </div>
-          <div class="evidence-item">
-            <strong>30+</strong>
-            <span>播客、直播与活动中持续对话的行业先行者</span>
-          </div>
-          <div class="evidence-item">
-            <strong>20-30</strong>
-            <span>两三个月内密集访谈的 AI 时代主动创造者</span>
-          </div>
-        </div>
-
       </div>
     </section>
 
