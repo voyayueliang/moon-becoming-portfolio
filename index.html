@@ -1382,6 +1382,212 @@
       text-align: right;
     }
 
+    .case-wall {
+      display: grid;
+      gap: clamp(28px, 4vw, 54px);
+      margin-top: 10px;
+      padding: 28px 0 10px;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.38fr) minmax(320px, .8fr);
+      gap: clamp(22px, 3.6vw, 58px);
+      align-items: end;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .case-hero:focus-visible,
+    .case-card:focus-visible {
+      outline: 2px solid var(--poster-green);
+      outline-offset: 5px;
+    }
+
+    .case-visual {
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      background: var(--teal);
+    }
+
+    .case-hero .case-visual {
+      min-height: clamp(360px, 52vw, 680px);
+    }
+
+    .case-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: inherit;
+      display: block;
+      object-fit: cover;
+      filter: saturate(.96) contrast(.98);
+      transition: transform .45s ease;
+    }
+
+    .case-hero:hover .case-visual img,
+    .case-card:hover .case-visual img {
+      transform: scale(1.035);
+    }
+
+    .case-copy {
+      padding: 0 0 12px;
+    }
+
+    .case-kicker,
+    .case-meta dt,
+    .case-index,
+    .case-link {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .case-kicker {
+      display: block;
+      margin-bottom: 16px;
+    }
+
+    .case-hero h3 {
+      max-width: 8.6em;
+      font-size: clamp(42px, 6vw, 92px);
+      line-height: .88;
+    }
+
+    .case-card h3 {
+      margin-top: 14px;
+      font-size: clamp(30px, 3.3vw, 52px);
+      line-height: .92;
+    }
+
+    .case-copy p,
+    .case-card p {
+      margin: 16px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin: 24px 0 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .case-meta div {
+      min-height: 92px;
+      padding: 12px 12px 14px;
+      background: var(--paper);
+    }
+
+    .case-meta dt,
+    .case-meta dd {
+      margin: 0;
+    }
+
+    .case-meta dd {
+      margin-top: 8px;
+      color: #2e302a;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: var(--ink);
+      border-bottom: 1px solid var(--line);
+      line-height: 1.8;
+    }
+
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(20px, 3vw, 42px) clamp(18px, 2.6vw, 34px);
+      align-items: start;
+    }
+
+    .case-card {
+      grid-column: span 4;
+      color: inherit;
+      text-decoration: none;
+      display: block;
+    }
+
+    .case-card.is-wide {
+      grid-column: span 8;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(240px, .66fr);
+      gap: clamp(18px, 2.8vw, 34px);
+      align-items: end;
+    }
+
+    .case-card.is-tall {
+      margin-top: 0;
+    }
+
+    .case-card.is-lifted {
+      margin-top: 0;
+    }
+
+    .case-card .case-visual {
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--line);
+    }
+
+    .case-card.is-wide .case-visual {
+      aspect-ratio: 16 / 9;
+    }
+
+    .case-card.is-portrait .case-visual {
+      aspect-ratio: 3 / 4;
+    }
+
+    .case-card.is-dark {
+      grid-column: span 8;
+      padding: 22px;
+      min-height: 380px;
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1fr);
+      align-items: end;
+      gap: clamp(18px, 2.8vw, 34px);
+      background: var(--poster-black);
+      color: var(--paper);
+    }
+
+    .case-card.is-dark p {
+      color: rgba(255, 255, 255, .76);
+    }
+
+    .case-card.is-dark .case-kicker,
+    .case-card.is-dark .case-index,
+    .case-card.is-dark .case-link {
+      color: var(--poster-green);
+      border-color: rgba(114, 239, 117, .72);
+    }
+
+    .case-card.is-dark .museum-window {
+      margin-top: 26px;
+    }
+
+    .case-index {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 12px;
+      color: var(--teal);
+    }
+
     .shelf-toolbar {
       display: flex;
       align-items: center;
@@ -2185,6 +2391,8 @@
       .section-head,
       .story-grid,
       .work-ledger,
+      .case-hero,
+      .case-grid,
       .artifact-board,
       .collection-grid,
       .proof-grid,
@@ -2205,6 +2413,9 @@
       .story-timeline,
       .work-meta,
       .work-body,
+      .case-card,
+      .case-card.is-wide,
+      .case-card.is-dark,
       .method > div:first-child,
       .method > div:last-child,
       .artifact-card,
@@ -2242,6 +2453,7 @@
       .story-arc,
       .narrative-principles,
       .evidence-strip,
+      .case-meta,
       .proof-grid,
       .reading-route,
       .route-cards,
@@ -2263,6 +2475,41 @@
       .ledger-type {
         justify-self: start;
         text-align: left;
+      }
+
+      .case-wall {
+        gap: 28px;
+      }
+
+      .case-hero {
+        align-items: start;
+      }
+
+      .case-hero .case-visual {
+        min-height: 320px;
+      }
+
+      .case-card,
+      .case-card.is-wide,
+      .case-card.is-tall,
+      .case-card.is-lifted,
+      .case-card.is-dark {
+        margin-top: 0;
+      }
+
+      .case-card.is-wide {
+        display: block;
+      }
+
+      .case-card.is-dark {
+        display: block;
+        min-height: auto;
+      }
+
+      .case-card.is-wide .case-visual,
+      .case-card .case-visual,
+      .case-card.is-portrait .case-visual {
+        aspect-ratio: 4 / 3;
       }
 
       .artifact-board {
@@ -2629,76 +2876,101 @@
           </div>
         </div>
 
-        <div class="work-ledger" aria-label="精选作品目录">
-          <a class="ledger-feature" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
-            <figure class="ledger-cover">
+        <div class="case-wall" aria-label="精选作品案例">
+          <a class="case-hero" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
+            <figure class="case-visual">
               <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
             </figure>
-            <div class="ledger-body">
-              <div>
-                <span class="ledger-kicker">Cover Story / 01</span>
-                <h3>AMD / Datawhale 开发者生态</h3>
-                <p>现场报道。把算力、模型、开源社区、开发者和青年研究者放进同一张生态图。</p>
-              </div>
-              <div class="ledger-tags"><span>AI Infra</span><span>开发者生态</span><span>现场报道</span></div>
+            <div class="case-copy">
+              <span class="case-kicker">01 / Cover Case</span>
+              <h3>AMD / Datawhale 开发者生态</h3>
+              <p>发生在 AMD AI 开发者日现场的生态报道。我把 AMD、苏姿丰、ModelScope、Datawhale、ROCm、开发者工作坊、开源贡献者、研究者社区和青年 builder 放在同一张现场地图里，写清算力、模型、开发者和社区怎样互相牵动。</p>
+              <dl class="case-meta">
+                <div>
+                  <dt>角色</dt>
+                  <dd>现场报道、生态转译、panel 组织</dd>
+                </div>
+                <div>
+                  <dt>产物</dt>
+                  <dd>深度长文、现场素材、开发者生态叙事</dd>
+                </div>
+                <div>
+                  <dt>入口</dt>
+                  <dd>打开原文阅读完整报道</dd>
+                </div>
+              </dl>
+              <span class="case-link">Read the case ↗</span>
             </div>
           </a>
 
-          <div class="ledger-list">
-            <a class="ledger-row" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
-              <span class="ledger-no">02</span>
-              <figure class="ledger-thumb"><img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图"></figure>
-              <div class="ledger-main">
-                <strong>默子 / Redink 开源 AI 项目</strong>
-                <p>一个 00 后 builder、一款开源产品和突然涌来的用户反馈。</p>
+          <div class="case-grid">
+            <a class="case-card is-wide" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
+              <figure class="case-visual">
+                <img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图">
+              </figure>
+              <div>
+                <span class="case-index">02 / Silicon Valley</span>
+                <h3>葛小川 / AppLovin CTO</h3>
+                <p>硅谷科技人物稿。用公开材料和行业语境，整理华人技术领导者的工程路径、公司机制和 AI 商业判断。阅读 2.4 万。</p>
+                <span class="case-link">Open article ↗</span>
               </div>
-              <span class="ledger-type">Builder Profile</span>
             </a>
-            <a class="ledger-row" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
-              <span class="ledger-no">03</span>
-              <figure class="ledger-thumb is-snapshot"><img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图"></figure>
-              <div class="ledger-main">
-                <strong>葛小川 / AppLovin CTO</strong>
-                <p>硅谷科技人物稿。整理华人技术领导者、公司机制和 AI 商业判断。</p>
-              </div>
-              <span class="ledger-type">Silicon Valley</span>
+
+            <a class="case-card is-portrait is-tall" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+              <figure class="case-visual">
+                <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
+              </figure>
+              <span class="case-index">03 / Builder Profile</span>
+              <h3>默子 / Redink 开源 AI 项目</h3>
+              <p>一个 00 后 builder、一款开源产品和突然涌来的用户反馈。重点写人如何在真实使用里修正产品。</p>
+              <span class="case-link">Open article ↗</span>
             </a>
-            <a class="ledger-row" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
-              <span class="ledger-no">04</span>
-              <figure class="ledger-thumb"><img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报"></figure>
-              <div class="ledger-main">
-                <strong>Tim / Artflow.ai 创始人访谈</strong>
-                <p>播客深访转长文，进入生成式 AI 创业者的工作节奏和生活转向。</p>
-              </div>
-              <span class="ledger-type">Founder Interview</span>
+
+            <a class="case-card is-portrait" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
+              <figure class="case-visual">
+                <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
+              </figure>
+              <span class="case-index">04 / Founder Interview</span>
+              <h3>Tim / Artflow.ai 创始人访谈</h3>
+              <p>播客深访转长文。进入生成式 AI 创业者的产品节奏、生活选择和创业状态。</p>
+              <span class="case-link">Open article ↗</span>
             </a>
-            <a class="ledger-row" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
-              <span class="ledger-no">05</span>
-              <figure class="ledger-thumb"><img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报"></figure>
-              <div class="ledger-main">
-                <strong>AI 教育田野志</strong>
-                <p>持续对谈国内、美国/硅谷和欧洲 AI 教育实践者。</p>
+
+            <a class="case-card is-wide is-lifted" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
+              <figure class="case-visual">
+                <img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报">
+              </figure>
+              <div>
+                <span class="case-index">05 / Podcast Series</span>
+                <h3>AI 教育田野志</h3>
+                <p>持续对谈国内、硅谷和欧洲的 AI 教育实践者。我的位置是主持、追问、整理现场反馈，把教育者、产品人和创业者的经验留成系列。</p>
+                <span class="case-link">Listen ↗</span>
               </div>
-              <span class="ledger-type">Podcast Series</span>
             </a>
-            <a class="ledger-row" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
-              <span class="ledger-no">06</span>
-              <figure class="ledger-thumb"><img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场"></figure>
-              <div class="ledger-main">
-                <strong>WAIC AI 研究者创业者派对</strong>
-                <p>现场组织与复盘，把研究者、创业者、投资机构和开发者社区带到同一个现场。</p>
-              </div>
-              <span class="ledger-type">Event / Source</span>
+
+            <a class="case-card" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
+              <figure class="case-visual">
+                <img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场">
+              </figure>
+              <span class="case-index">06 / Event Source</span>
+              <h3>WAIC AI 研究者创业者派对</h3>
+              <p>现场组织与复盘。把研究者、创业者、投资机构和开发者社区带到同一个夜晚。</p>
+              <span class="case-link">Open recap ↗</span>
             </a>
-            <article class="ledger-row">
-              <span class="ledger-no">07</span>
-              <figure class="ledger-thumb is-text">生命力<br>博物馆</figure>
-              <div class="ledger-main">
-                <strong>生命力博物馆</strong>
-                <p>交互叙事实验，把访谈故事、创造者样本和互动体验整理成可回访的故事档案。</p>
+
+            <a class="case-card is-dark" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
+              <div>
+                <span class="case-index">07 / Interactive Story</span>
+                <h3>生命力博物馆</h3>
+                <p>交互叙事实验。把分散在访谈、播客、活动和人物稿里的创造者故事，整理成可以回访、连接和再发现的故事档案。</p>
+                <span class="case-link">Enter museum ↗</span>
               </div>
-              <span class="ledger-type">Interactive Story</span>
-            </article>
+              <div class="museum-window" aria-hidden="true">
+                <span class="museum-node">访谈故事</span>
+                <span class="museum-node">创造者样本</span>
+                <span class="museum-node">互动档案</span>
+              </div>
+            </a>
           </div>
         </div>
 
@@ -2741,7 +3013,7 @@
         <div class="shelf-toolbar" hidden aria-label="作品展架信息">
           <div class="shelf-label">
             <span>Field Notes Library</span>
-            <strong>7 件公开作品，一件交互叙事待补入口</strong>
+            <strong>7 件公开作品，一件交互叙事入口</strong>
           </div>
           <div class="shelf-actions" aria-label="作品展架翻页">
             <button class="shelf-button" type="button" data-shelf-prev aria-label="向左翻阅作品">‹</button>
@@ -2816,19 +3088,19 @@
             </div>
             <span>活动复盘</span>
           </a>
-          <article class="sample-card is-slim" data-issue="07">
+          <a class="sample-card is-slim" data-issue="07" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
             <figure class="sample-cover sample-cover-text museum-cover">
               <small>Interactive Story</small>
               <b>生命力<br>博物馆</b>
-              <em>Coming Archive</em>
+              <em>Open Archive</em>
             </figure>
             <div class="sample-copy">
               <strong>Interactive Story</strong>
               <h3>生命力博物馆</h3>
               <p>交互叙事实验。把访谈故事、创造者样本和互动体验整理成可回访的故事档案。</p>
             </div>
-            <span>待补入口</span>
-          </article>
+            <span>进入作品</span>
+          </a>
         </div>
 
       </div>
