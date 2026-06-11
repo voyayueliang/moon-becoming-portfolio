@@ -2401,6 +2401,80 @@
       font-size: 14px;
     }
 
+    .method-story {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(24px, 3.4vw, 56px);
+      margin-top: 36px;
+      border-top: 1px solid var(--line);
+      padding-top: 32px;
+    }
+
+    .method-essay {
+      grid-column: 1 / span 8;
+      max-width: 900px;
+    }
+
+    .method-essay-kicker {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-family: var(--mono);
+      color: var(--teal);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .method-essay h3 {
+      max-width: 12em;
+      font-size: clamp(42px, 5.4vw, 78px);
+      line-height: .96;
+      margin-bottom: 24px;
+    }
+
+    .method-essay p {
+      max-width: 780px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.35vw, 20px);
+      line-height: 1.86;
+      margin: 0 0 18px;
+    }
+
+    .method-essay p:first-of-type {
+      color: var(--ink);
+      font-weight: 680;
+    }
+
+    .method-notes {
+      grid-column: 9 / span 4;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .method-note-card {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .method-note-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .method-note-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
     .appendix {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2503,6 +2577,7 @@
       .work-card,
       .pathways,
       .series-narrative,
+      .method-story,
       .method,
       .footer .wrap {
         grid-template-columns: 1fr;
@@ -2536,6 +2611,11 @@
       .collection-card:nth-child(5),
       .series-thread,
       .series-thread:nth-child(2) {
+        grid-column: auto;
+      }
+
+      .method-essay,
+      .method-notes {
         grid-column: auto;
       }
 
@@ -3082,135 +3162,6 @@
           </div>
         </div>
 
-        <div class="reading-route" hidden aria-label="推荐阅读路径">
-          <div class="route-note">
-            <div>
-              <span>Entry Points</span>
-              <h3>三个入口</h3>
-            </div>
-            <p>它们分别通向开发者生态、早期 builder 和硅谷科技人物，也集中呈现我如何把技术变化写回具体的人和现场。</p>
-          </div>
-          <div class="route-cards">
-            <a class="route-card" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
-              <strong>01 / AI Infra</strong>
-              <div>
-                <h4>AMD / Datawhale 开发者生态</h4>
-                <p>从会场、展台和开发者社区里，写清算力、模型、工具链和开源协作。</p>
-              </div>
-              <div class="route-tags"><span>算力</span><span>开源</span><span>开发者</span></div>
-            </a>
-            <a class="route-card" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
-              <strong>02 / Builder</strong>
-              <div>
-                <h4>默子 / Redink 开源 AI 项目</h4>
-                <p>一个 00 后 builder、一款开源产品和突然涌来的用户反馈。</p>
-              </div>
-              <div class="route-tags"><span>AI Native</span><span>GitHub</span><span>早期信号</span></div>
-            </a>
-            <a class="route-card" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
-              <strong>03 / Silicon Valley</strong>
-              <div>
-                <h4>葛小川 / AppLovin CTO</h4>
-                <p>用公开材料整理华人技术领导者、公司机制和 AI 商业判断。</p>
-              </div>
-              <div class="route-tags"><span>人物研究</span><span>公司机制</span><span>商业判断</span></div>
-            </a>
-          </div>
-        </div>
-
-        <div class="shelf-toolbar" hidden aria-label="作品展架信息">
-          <div class="shelf-label">
-            <span>Field Notes Library</span>
-            <strong>7 件公开作品，一件交互叙事入口</strong>
-          </div>
-          <div class="shelf-actions" aria-label="作品展架翻页">
-            <button class="shelf-button" type="button" data-shelf-prev aria-label="向左翻阅作品">‹</button>
-            <button class="shelf-button" type="button" data-shelf-next aria-label="向右翻阅作品">›</button>
-          </div>
-        </div>
-
-        <div class="sample-shelf" hidden aria-label="作品展架" data-work-shelf>
-          <a class="sample-card is-wide" data-issue="01" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
-            <figure class="sample-cover">
-              <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
-            </figure>
-            <div class="sample-copy">
-              <strong>AI Infra / Field</strong>
-              <h3>AMD / Datawhale 开发者生态</h3>
-              <p>现场报道。把算力、模型、开源社区、开发者和青年研究者放进同一张生态图。</p>
-            </div>
-            <span>现场报道</span>
-          </a>
-          <a class="sample-card" data-issue="02" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
-            <figure class="sample-cover">
-              <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
-            </figure>
-            <div class="sample-copy">
-              <strong>Builder Profile</strong>
-              <h3>默子 / Redink 开源 AI 项目</h3>
-              <p>人物报道。写一个 00 后独立开发者如何把开源项目带进投资人与创业网络视野。</p>
-            </div>
-            <span>人物报道</span>
-          </a>
-          <a class="sample-card is-slim" data-issue="03" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
-            <figure class="sample-cover">
-              <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
-            </figure>
-            <div class="sample-copy">
-              <strong>Founder Interview</strong>
-              <h3>Tim / Artflow.ai 创始人访谈</h3>
-              <p>播客深访转长文。进入生成式 AI 创业者的工作节奏、技术冲击和生活转向。</p>
-            </div>
-            <span>播客长文</span>
-          </a>
-          <a class="sample-card is-wide" data-issue="04" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
-            <figure class="sample-cover article-snapshot">
-              <img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图，标题为 3 年从工程师到 CTO">
-            </figure>
-            <div class="sample-copy">
-              <strong>Silicon Valley</strong>
-              <h3>葛小川 / AppLovin CTO</h3>
-              <p>硅谷科技人物稿。用公开材料整理华人技术领导者、公司机制和 AI 商业判断。</p>
-            </div>
-            <span>硅谷人物</span>
-          </a>
-          <a class="sample-card is-slim" data-issue="05" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
-            <figure class="sample-cover">
-              <img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报">
-            </figure>
-            <div class="sample-copy">
-              <strong>Podcast Series</strong>
-              <h3>AI 教育田野志</h3>
-              <p>系列访谈。持续对谈国内、美国/硅谷和欧洲 AI 教育实践者。</p>
-            </div>
-            <span>播客系列</span>
-          </a>
-          <a class="sample-card is-wide" data-issue="06" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
-            <figure class="sample-cover">
-              <img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场">
-            </figure>
-            <div class="sample-copy">
-              <strong>Event / Source</strong>
-              <h3>WAIC AI 研究者创业者派对</h3>
-              <p>现场组织与复盘。把研究者、创业者、投资机构和开发者社区带到同一个现场。</p>
-            </div>
-            <span>活动复盘</span>
-          </a>
-          <a class="sample-card is-slim" data-issue="07" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
-            <figure class="sample-cover sample-cover-text museum-cover">
-              <small>Interactive Story</small>
-              <b>生命力<br>博物馆</b>
-              <em>Open Archive</em>
-            </figure>
-            <div class="sample-copy">
-              <strong>Interactive Story</strong>
-              <h3>生命力博物馆</h3>
-              <p>交互叙事实验。把访谈故事、创造者样本和互动体验整理成可回访的故事档案。</p>
-            </div>
-            <span>进入作品</span>
-          </a>
-        </div>
-
       </div>
     </section>
 
@@ -3372,59 +3323,37 @@
         <div class="section-head">
           <p class="section-kicker">Method</p>
           <div>
-            <h2>我进入 AI 的几种现场</h2>
-            <p class="section-desc">我的辨识度来自一组交叉经验：创投与孵化器、社区涌现、年轻 builder、研究者网络、叙事训练、AI Native 实践和全球化视角。</p>
+            <h2>我怎样进入一个生态</h2>
+            <p class="section-desc">我的辨识度来自几种长期训练的交汇：孵化器里的早期判断、社区里的自下而上关系、教育现场对年轻人的理解、研究者网络、叙事训练，以及亲自用 AI 搭建内容系统的经验。</p>
           </div>
         </div>
-        <div class="narrative-principles" aria-label="工作辨识度">
-          <article class="principle-card">
-            <strong>创投与孵化器现场</strong>
-            <p>在 AI 孵化器和工研院生态里，我长期接触早期团队、路演、投资人、创业者和产品拐点。</p>
+        <div class="method-story" aria-label="工作方法叙事">
+          <article class="method-essay">
+            <span class="method-essay-kicker">Working Method</span>
+            <h3>先把自己放进关系里，再开始写判断。</h3>
+            <p>我做内容时，通常先去找一个真实场景。孵化器里的路演、黑客松里的白板、WAIC 后的夜谈、AI 教育田野志的线上客厅，都会让我看到同一个问题的不同侧面：谁在做产品，谁在寻找用户，谁在连接资源，谁在犹豫下一步。</p>
+            <p>这些现场把我训练成一个同时看三层的人：人的路径，产品和组织的具体变化，以及背后的社区、资本和全球语境。写默子时，我看的是一个 00 后 builder 怎么把开源项目推进真实使用；写 AMD 和 Datawhale 时，我看的是算力、模型、开发者和社区如何互相牵动；写葛小川时，我把公开材料放回硅谷公司的工程路径和商业机制里。</p>
+            <p>AI 对我来说是工作台：整理采访、搭建知识库、做交互原型、生成素材索引。真正的判断仍然来自现场、关系和长期追问。新加坡出海、复旦/UCL 工作坊和海外教育访谈，也让我开始把中国 AI 创业放进跨市场、跨文化和社会科学的语境里看。</p>
           </article>
-          <article class="principle-card">
-            <strong>自下而上的社区</strong>
-            <p>数字游民、开源学习者、超级个体实验室和 AI 跨界客厅，让我熟悉新生态怎样从人和关系里冒出来。</p>
-          </article>
-          <article class="principle-card">
-            <strong>年轻 builder 与教育</strong>
-            <p>AI 夏令营、黑客松、创新教育和青少年创造力现场，让我更早看见年轻创业者如何长出产品判断。</p>
-          </article>
-          <article class="principle-card">
-            <strong>研究者与技术转译</strong>
-            <p>Datawhale、Research AI、开发者活动和身边的研究者伙伴，让我能把技术变化写回具体生态。</p>
-          </article>
-          <article class="principle-card">
-            <strong>叙事、主持与信任</strong>
-            <p>我擅长把创始人、团队和事件放进长谈里，追问关键转折、犹豫、判断和行动细节。</p>
-          </article>
-          <article class="principle-card">
-            <strong>AI Native 与全球化视角</strong>
-            <p>我亲身用 AI 搭建内容体系，也把新加坡出海、硅谷人物和社会科学视角带进 AI 创业观察。</p>
-          </article>
-        </div>
-        <div class="method">
-          <div>
-            <blockquote class="quote">先到现场，再写清楚关系。</blockquote>
-            <p class="section-desc">默子、Tim、AMD、WAIC、新加坡出海和 AI 教育田野志，都从这些场域长出来：我先进入真实关系网络，再把人的选择、产品变化和生态结构写成可以被继续讨论的作品。</p>
-          </div>
-          <div class="method-steps">
-            <div class="method-step">
-              <strong>现场捕捉</strong>
-              <span>从活动、社区、孵化器、播客和工作坊进入真实关系网络。</span>
+
+          <aside class="method-notes" aria-label="方法中的关键经验">
+            <div class="method-note-card">
+              <strong>创投现场</strong>
+              <p>AI 孵化器和工研院生态，让我接近早期团队、路演、投资人和产品拐点。</p>
             </div>
-            <div class="method-step">
-              <strong>多轮深谈</strong>
-              <span>少问履历和结果，多追问关键转折、犹豫、判断和行动逻辑。</span>
+            <div class="method-note-card">
+              <strong>社区现场</strong>
+              <p>数字游民、开源学习者、超级个体实验室和 AI 跨界客厅，让我熟悉新生态怎样从人和关系里冒出来。</p>
             </div>
-            <div class="method-step">
-              <strong>生态拼图</strong>
-              <span>把公司、产品、社区、资本、开发者和海外语境放回同一张图里。</span>
+            <div class="method-note-card">
+              <strong>教育现场</strong>
+              <p>AI 夏令营、黑客松和创新教育，让我更早看见年轻 builder 怎样形成问题意识和产品判断。</p>
             </div>
-            <div class="method-step">
-              <strong>作品转化</strong>
-              <span>把材料转成深度稿、播客、活动复盘、交互档案和下一轮采访线索。</span>
+            <div class="method-note-card">
+              <strong>叙事现场</strong>
+              <p>主持、深访和长文训练，让我能陪一个人讲完关键转折，再把团队、事件和生态写清楚。</p>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
@@ -3463,25 +3392,5 @@
       <a href="#main">回到顶部</a>
     </div>
   </footer>
-  <script>
-    (() => {
-      const shelf = document.querySelector("[data-work-shelf]");
-      if (!shelf) return;
-
-      const step = () => Math.min(shelf.clientWidth * 0.86, 560);
-      const move = (direction) => {
-        shelf.scrollBy({ left: direction * step(), behavior: "smooth" });
-      };
-
-      document.querySelector("[data-shelf-prev]")?.addEventListener("click", () => move(-1));
-      document.querySelector("[data-shelf-next]")?.addEventListener("click", () => move(1));
-
-      shelf.addEventListener("wheel", (event) => {
-        if (Math.abs(event.deltaY) <= Math.abs(event.deltaX)) return;
-        event.preventDefault();
-        shelf.scrollBy({ left: event.deltaY, behavior: "auto" });
-      }, { passive: false });
-    })();
-  </script>
 </body>
 </html>
