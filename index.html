@@ -1153,6 +1153,189 @@
       line-height: 1;
     }
 
+    .work-ledger {
+      display: grid;
+      grid-template-columns: minmax(320px, .9fr) minmax(0, 1.25fr);
+      gap: clamp(20px, 3vw, 34px);
+      margin-top: 8px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 28px 0;
+    }
+
+    .ledger-feature {
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 100%;
+      color: inherit;
+      text-decoration: none;
+      background: var(--paper-2);
+      border: 1px solid var(--line);
+      transition: transform .22s ease, background-color .22s ease, box-shadow .22s ease;
+    }
+
+    .ledger-feature:hover,
+    .ledger-feature:focus-visible {
+      background: var(--mint);
+      box-shadow: 12px 12px 0 rgba(23, 63, 31, .12);
+      outline: none;
+      transform: translateY(-4px);
+    }
+
+    .ledger-cover {
+      margin: 0;
+      aspect-ratio: 16 / 5;
+      overflow: hidden;
+      border-bottom: 1px solid var(--line);
+      background: var(--mint);
+    }
+
+    .ledger-cover img,
+    .ledger-thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      filter: saturate(.96) contrast(.98);
+    }
+
+    .ledger-body {
+      padding: clamp(18px, 2.4vw, 28px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .ledger-kicker,
+    .ledger-type,
+    .ledger-note {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .ledger-feature h3 {
+      margin: 12px 0 0;
+      font-size: clamp(34px, 3.2vw, 48px);
+      line-height: .94;
+      max-width: 8.8em;
+    }
+
+    .ledger-feature p {
+      margin: 16px 0 0;
+      max-width: 620px;
+      color: var(--muted);
+    }
+
+    .ledger-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .ledger-tags span {
+      border: 1px solid var(--line);
+      padding: 5px 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--teal);
+    }
+
+    .ledger-list {
+      display: grid;
+      border-top: 1px solid var(--line);
+      align-content: start;
+    }
+
+    .ledger-row {
+      display: grid;
+      grid-template-columns: 46px minmax(86px, 120px) minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 16px;
+      min-height: 126px;
+      padding: 14px 0;
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      transition: background-color .22s ease, padding-left .22s ease;
+    }
+
+    .ledger-row:hover,
+    .ledger-row:focus-visible {
+      background: rgba(114, 239, 117, .12);
+      outline: none;
+      padding-left: 10px;
+    }
+
+    article.ledger-row {
+      color: inherit;
+    }
+
+    article.ledger-row:hover {
+      padding-left: 0;
+      background: transparent;
+    }
+
+    .ledger-no {
+      color: var(--pink);
+      font-family: var(--serif);
+      font-size: 42px;
+      line-height: .9;
+    }
+
+    .ledger-thumb {
+      margin: 0;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: var(--mint);
+    }
+
+    .ledger-thumb.is-snapshot img {
+      object-fit: contain;
+      padding: 5px;
+      background: #f4f4f2;
+    }
+
+    .ledger-thumb.is-text {
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      color: var(--paper);
+      background:
+        linear-gradient(rgba(10, 12, 10, .86), rgba(10, 12, 10, .86)),
+        repeating-linear-gradient(90deg, transparent 0 14px, rgba(114, 239, 117, .18) 14px 15px),
+        var(--poster-black);
+      font-family: var(--serif);
+      font-size: clamp(20px, 2vw, 28px);
+      line-height: .92;
+      text-align: center;
+    }
+
+    .ledger-main strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(24px, 2.4vw, 38px);
+      line-height: .98;
+      font-weight: 500;
+    }
+
+    .ledger-main p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .ledger-type {
+      justify-self: end;
+      max-width: 7.8em;
+      text-align: right;
+    }
+
     .shelf-toolbar {
       display: flex;
       align-items: center;
@@ -1955,6 +2138,7 @@
       .hero-inner,
       .section-head,
       .story-grid,
+      .work-ledger,
       .artifact-board,
       .collection-grid,
       .proof-grid,
@@ -2015,9 +2199,24 @@
       .proof-grid,
       .reading-route,
       .route-cards,
+      .ledger-row,
       .museum-window,
       .sample-shelf {
         grid-template-columns: 1fr;
+      }
+
+      .ledger-row {
+        align-items: start;
+        gap: 10px;
+      }
+
+      .ledger-thumb {
+        max-width: 180px;
+      }
+
+      .ledger-type {
+        justify-self: start;
+        text-align: left;
       }
 
       .artifact-board {
@@ -2388,11 +2587,84 @@
           <p class="section-kicker">Selected Works</p>
           <div>
             <h2>精选作品</h2>
-            <p class="section-desc">如果只停留十分钟，可以先从三件作品进入：开发者生态、开源 builder、硅谷科技人物。再往下翻，是更完整的作品书架。</p>
+            <p class="section-desc">这部分只放最能代表能力的作品：开发者生态、开源 builder、硅谷科技人物、创始人访谈、系列主持、现场组织和交互叙事。</p>
           </div>
         </div>
 
-        <div class="reading-route" aria-label="推荐阅读路径">
+        <div class="work-ledger" aria-label="精选作品目录">
+          <a class="ledger-feature" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
+            <figure class="ledger-cover">
+              <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
+            </figure>
+            <div class="ledger-body">
+              <div>
+                <span class="ledger-kicker">Cover Story / 01</span>
+                <h3>AMD / Datawhale 开发者生态</h3>
+                <p>现场报道。把算力、模型、开源社区、开发者和青年研究者放进同一张生态图。</p>
+              </div>
+              <div class="ledger-tags"><span>AI Infra</span><span>开发者生态</span><span>现场报道</span></div>
+            </div>
+          </a>
+
+          <div class="ledger-list">
+            <a class="ledger-row" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+              <span class="ledger-no">02</span>
+              <figure class="ledger-thumb"><img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图"></figure>
+              <div class="ledger-main">
+                <strong>默子 / Redink 开源 AI 项目</strong>
+                <p>一个 00 后 builder、一款开源产品和突然涌来的用户反馈。</p>
+              </div>
+              <span class="ledger-type">Builder Profile</span>
+            </a>
+            <a class="ledger-row" href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer">
+              <span class="ledger-no">03</span>
+              <figure class="ledger-thumb is-snapshot"><img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图"></figure>
+              <div class="ledger-main">
+                <strong>葛小川 / AppLovin CTO</strong>
+                <p>硅谷科技人物稿。整理华人技术领导者、公司机制和 AI 商业判断。</p>
+              </div>
+              <span class="ledger-type">Silicon Valley</span>
+            </a>
+            <a class="ledger-row" href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer">
+              <span class="ledger-no">04</span>
+              <figure class="ledger-thumb"><img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报"></figure>
+              <div class="ledger-main">
+                <strong>Tim / Artflow.ai 创始人访谈</strong>
+                <p>播客深访转长文，进入生成式 AI 创业者的工作节奏和生活转向。</p>
+              </div>
+              <span class="ledger-type">Founder Interview</span>
+            </a>
+            <a class="ledger-row" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
+              <span class="ledger-no">05</span>
+              <figure class="ledger-thumb"><img src="assets/covers/ai-education-field.jpg" alt="AI 教育田野志直播海报"></figure>
+              <div class="ledger-main">
+                <strong>AI 教育田野志</strong>
+                <p>持续对谈国内、美国/硅谷和欧洲 AI 教育实践者。</p>
+              </div>
+              <span class="ledger-type">Podcast Series</span>
+            </a>
+            <a class="ledger-row" href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer">
+              <span class="ledger-no">06</span>
+              <figure class="ledger-thumb"><img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场"></figure>
+              <div class="ledger-main">
+                <strong>WAIC AI 研究者创业者派对</strong>
+                <p>现场组织与复盘，把研究者、创业者、投资机构和开发者社区带到同一个现场。</p>
+              </div>
+              <span class="ledger-type">Event / Source</span>
+            </a>
+            <article class="ledger-row">
+              <span class="ledger-no">07</span>
+              <figure class="ledger-thumb is-text">生命力<br>博物馆</figure>
+              <div class="ledger-main">
+                <strong>生命力博物馆</strong>
+                <p>交互叙事实验，把访谈故事、创造者样本和互动体验整理成可回访的故事档案。</p>
+              </div>
+              <span class="ledger-type">Interactive Story</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="reading-route" hidden aria-label="推荐阅读路径">
           <div class="route-note">
             <div>
               <span>Read First</span>
@@ -2428,7 +2700,7 @@
           </div>
         </div>
 
-        <div class="shelf-toolbar" aria-label="作品展架信息">
+        <div class="shelf-toolbar" hidden aria-label="作品展架信息">
           <div class="shelf-label">
             <span>Field Notes Library</span>
             <strong>7 件公开作品，一件交互叙事待补入口</strong>
@@ -2439,7 +2711,7 @@
           </div>
         </div>
 
-        <div class="sample-shelf" aria-label="作品展架" data-work-shelf>
+        <div class="sample-shelf" hidden aria-label="作品展架" data-work-shelf>
           <a class="sample-card is-wide" data-issue="01" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer">
             <figure class="sample-cover">
               <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
@@ -2521,7 +2793,7 @@
           </article>
         </div>
 
-        <div class="works">
+        <div class="works" hidden>
           <article class="work-card">
             <div class="work-meta">
               <div class="work-number">01</div>
