@@ -2512,6 +2512,49 @@
       line-height: 1.7;
     }
 
+    .method-research {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      margin-top: 8px;
+    }
+
+    .method-research-item {
+      min-height: 180px;
+      padding: clamp(18px, 2vw, 28px);
+      border-right: 1px solid var(--line-soft);
+      background: rgba(255, 255, 255, .48);
+    }
+
+    .method-research-item:last-child {
+      border-right: 0;
+    }
+
+    .method-research-item span {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .method-research-item h4 {
+      font-size: clamp(25px, 2.6vw, 38px);
+      line-height: 1.06;
+      margin-bottom: 12px;
+    }
+
+    .method-research-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
     .appendix {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2652,8 +2695,21 @@
       }
 
       .method-essay,
-      .method-notes {
+      .method-notes,
+      .method-research {
         grid-column: auto;
+      }
+
+      .method-research {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .method-research-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .method-research-item:nth-child(n + 3) {
+        border-top: 1px solid var(--line-soft);
       }
 
       .hero-inner {
@@ -2859,6 +2915,7 @@
       .work-card,
       .pathway,
       .fit-card,
+      .method-research-item,
       .artifact-card,
       .collection-card,
       .proof-item,
@@ -2886,6 +2943,19 @@
 
       .story-index {
         font-size: 38px;
+      }
+
+      .method-research {
+        grid-template-columns: 1fr;
+      }
+
+      .method-research-item,
+      .method-research-item:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .method-research-item:nth-child(n + 2) {
+        border-top: 1px solid var(--line-soft);
       }
     }
 
@@ -3349,44 +3419,67 @@
           <p class="section-kicker">Method</p>
           <div>
             <h2>我的优势和内容方法</h2>
-            <p class="section-desc">我的优势来自几个长期现场：AI 孵化器、创新教育、开源社区、海外交流和创业者叙事项目。它们让我能同时看人、产品、社区和市场。</p>
+            <p class="section-desc">我的优势来自几种长期在场：孵化器、创新教育、社区、研究者网络、海外交流和创业者叙事项目。它们让我能同时看见人、产品、组织和市场。</p>
           </div>
         </div>
         <div class="method-story" aria-label="工作方法叙事">
           <article class="method-essay">
             <span class="method-essay-kicker">Working Method</span>
-            <h3>我擅长把早期 AI 创业生态写成能被理解的故事。</h3>
-            <p>我有真实入口。孵化器路演、黑客松白板、WAIC 后的夜谈、AI 教育田野志的线上客厅，让我能接触产品很早、团队很小、变化很快的阶段。每到一个现场，我会先记录三类线索：谁在做产品，谁在寻找用户，谁在连接资源。</p>
-            <p>我会用田野方式工作：先找到具体的人，听他怎么做决定，再沿着产品、用户、开源社区、资本和平台团队往外追。写默子时，我追的是一个 00 后 builder 怎样把开源项目推向真实使用；写 AMD 和 Datawhale 时，我追的是顶尖技术现场为什么开始拥抱国内 AI 开源生态；写葛小川时，我把公开材料放回硅谷公司的工程路径和商业机制里。</p>
-            <p>AI 是我的工作台：整理采访、搭建知识库、索引材料、检查线索。判断仍然来自现场、关系和多轮追问。最后的产出会落成人物稿、生态报道、播客、活动复盘、问题清单，也会变成生命力博物馆这样的交互档案。</p>
+            <h3>我能把两种现场放到同一张桌上。</h3>
+            <p>一边是孵化器、路演、投资人、平台团队和大型科技事件；一边是数字游民、开源学习者、教育实践者、年轻创业者和自发长出来的社区。我的内容工作，经常发生在这两条线相遇的地方。</p>
+            <p>在孵化器期间，我接触早期团队、AI 夏令营、黑客松和创业活动，也发起了「超级个体实验室」。这个 700+ AI 创造者社区，让我持续靠近早期创业者、开发者、设计师和教育者，看到一个项目还没被写成案例之前，团队如何找用户、改产品、找资源。</p>
+            <p>我的写作通常从一个具体的人开始，再沿着产品、社区、资本、平台和全球语境往外追。写默子时，我追的是一个 00 后 builder 怎样把开源项目推向真实使用；写 AMD 和 Datawhale 时，我追的是顶尖技术现场为什么拥抱国内 AI 开源生态；写葛小川时，我把公开材料放回硅谷公司的工程路径和商业机制里。</p>
+            <p>AI 是我的工作台：整理采访、搭建知识库、索引材料、检查线索，也帮助我做交互原型。判断仍然来自现场、关系和多轮追问。最后的产出会落成人物稿、生态报道、播客、活动复盘、问题清单，也会变成生命力博物馆这样的交互档案。</p>
           </article>
 
           <aside class="method-notes" aria-label="方法中的关键经验">
             <div class="method-note-card">
-              <strong>真实现场入口</strong>
-              <p>AI 孵化器、黑客松、开发者活动、WAIC 派对和出海交流，让我靠近早期团队和一手材料。</p>
+              <strong>孵化器和创投现场</strong>
+              <p>在 AI 孵化器和工研院生态里，我长期接触早期团队、路演、投资人和产品讨论。</p>
             </div>
             <div class="method-note-card">
-              <strong>社区和开源生态</strong>
-              <p>超级个体实验室、Datawhale、开源学习者和数字游民社区，让我理解新生态怎样从人、工具和关系里长出来。</p>
+              <strong>社区与开源生态</strong>
+              <p>数字游民社区、AI 开源学习者、Datawhale 和超级个体实验室，让我理解社区如何成为 AI 时代的基础设施。</p>
             </div>
             <div class="method-note-card">
-              <strong>年轻 builder 研究</strong>
-              <p>AI 创新教育、青少年黑客松和 AI 教育田野志，让我更早看见年轻创业者怎样形成问题意识和产品判断。</p>
+              <strong>创新教育和年轻 builder</strong>
+              <p>创新学校、AI 夏令营、青少年黑客松和 AI 教育田野志，让我更早看见年轻创业者如何形成问题意识。</p>
             </div>
             <div class="method-note-card">
               <strong>AI Native 工作台</strong>
-              <p>我把 AI 用在采访整理、知识库、素材索引和交互原型里，也亲手搭过自己的内容系统。</p>
+              <p>我把 AI 用在采访整理、知识库、素材索引、内容系统和交互原型里，亲身下场使用技术。</p>
             </div>
             <div class="method-note-card">
-              <strong>跨市场观察</strong>
-              <p>新加坡出海交流、海外教育访谈和复旦 / UCL 工作坊，让我把中国 AI 创业放进更大的语境里看。</p>
+              <strong>全球化和社会科学视角</strong>
+              <p>新加坡出海交流、海外教育访谈和复旦 / UCL 工作坊，让我把中国 AI 创业放进跨市场语境里看。</p>
             </div>
             <div class="method-note-card">
-              <strong>Storytelling 交付</strong>
-              <p>创业者人物稿、团队故事、科技事件报道、播客和交互档案，是我把复杂生态写清楚的主要形态。</p>
+              <strong>创始人、团队和事件叙事</strong>
+              <p>人物稿、团队故事、科技事件报道、播客和交互档案，是我把复杂生态写清楚的主要形态。</p>
             </div>
           </aside>
+          <div class="method-research" aria-label="持续研究的问题">
+            <div class="method-research-item">
+              <span>Research 01</span>
+              <h4>AI 时代的教育创新</h4>
+              <p>老师、家长、创业者和学生如何重新理解学习、表达和创造。</p>
+            </div>
+            <div class="method-research-item">
+              <span>Research 02</span>
+              <h4>创业孵化与创业者成为</h4>
+              <p>年轻 builder 如何从兴趣、项目、开源社区和孵化器里长出自己的方向。</p>
+            </div>
+            <div class="method-research-item">
+              <span>Research 03</span>
+              <h4>社区、社群与开源生态</h4>
+              <p>AI 时代的基础设施存在于模型、算力、开发者、组织者和学习者共同形成的关系网络里。</p>
+            </div>
+            <div class="method-research-item">
+              <span>Research 04</span>
+              <h4>中国 AI 创业的全球语境</h4>
+              <p>出海团队、海外平台、社会科学讨论和跨文化现场，如何重新校准中国 AI 故事的写法。</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
