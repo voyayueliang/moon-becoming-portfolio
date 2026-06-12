@@ -1308,6 +1308,7 @@
 
     .community-lead {
       grid-column: span 5;
+      grid-row: span 2;
       min-height: 440px;
       padding: clamp(22px, 3vw, 34px);
       background: var(--teal);
@@ -1371,6 +1372,66 @@
       display: block;
       margin-top: 8px;
       color: rgba(255, 255, 255, .78);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .community-project {
+      grid-column: span 7;
+      display: grid;
+      grid-template-columns: minmax(120px, .35fr) minmax(0, 1fr);
+      gap: clamp(18px, 3vw, 34px);
+      padding: clamp(20px, 2.6vw, 34px);
+      background: var(--paper-2);
+    }
+
+    .community-project span {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .community-project h3 {
+      margin: 10px 0 0;
+      color: var(--teal);
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: .96;
+    }
+
+    .community-project p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .community-project dl {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      margin: 22px 0 0;
+      background: var(--line-soft);
+      border: 1px solid var(--line-soft);
+    }
+
+    .community-project dl > div {
+      padding: 12px;
+      background: var(--paper);
+    }
+
+    .community-project dt {
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 46px);
+      line-height: .92;
+    }
+
+    .community-project dd {
+      margin: 8px 0 0;
+      color: var(--muted);
       font-size: 12px;
       line-height: 1.35;
     }
@@ -1875,6 +1936,34 @@
       margin-bottom: 16px;
     }
 
+    .case-index {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .case-hero .work-type,
+    .case-card .work-type {
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      min-height: 27px;
+      margin: 0 0 12px;
+      padding: 4px 8px;
+      border: 1px solid var(--line-soft);
+      color: var(--teal);
+      background: rgba(114, 239, 117, .1);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 820;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .case-card .case-index + .work-type,
+    .case-card .case-visual + .work-type {
+      margin-top: 0;
+    }
+
     .case-hero h3 {
       max-width: 8.6em;
       font-size: clamp(42px, 5vw, 76px);
@@ -2072,7 +2161,8 @@
     }
 
     .case-card.series-case .case-visual {
-      align-self: start;
+      align-self: stretch;
+      min-height: 100%;
     }
 
     .case-card.series-case .case-index {
@@ -2828,6 +2918,104 @@
       text-transform: uppercase;
     }
 
+    .interactive-lab {
+      display: grid;
+      gap: clamp(22px, 3vw, 38px);
+    }
+
+    .interactive-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, .8fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .interactive-card {
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: inherit;
+      text-decoration: none;
+      background: var(--paper-2);
+    }
+
+    .interactive-card.is-featured {
+      background: var(--poster-black);
+      color: var(--paper);
+    }
+
+    .interactive-card.is-pending {
+      background:
+        linear-gradient(rgba(238, 250, 232, .92), rgba(238, 250, 232, .92)),
+        repeating-linear-gradient(135deg, rgba(23, 63, 31, .14) 0 1px, transparent 1px 16px);
+    }
+
+    .interactive-shot {
+      margin: 0;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+      background: #080b08;
+    }
+
+    .interactive-shot img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .interactive-copy {
+      padding: clamp(20px, 2.8vw, 34px);
+    }
+
+    .interactive-copy span {
+      display: block;
+      margin-bottom: 14px;
+      color: var(--poster-green);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .interactive-card.is-pending .interactive-copy span {
+      color: var(--teal);
+    }
+
+    .interactive-copy h3 {
+      max-width: 8em;
+      font-size: clamp(32px, 3.5vw, 56px);
+      line-height: .96;
+    }
+
+    .interactive-copy p {
+      margin: 18px 0 0;
+      color: rgba(255, 255, 255, .76);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .interactive-card.is-pending .interactive-copy p {
+      color: var(--muted);
+    }
+
+    .interactive-status {
+      margin: clamp(18px, 2vw, 24px);
+      padding-top: 14px;
+      border-top: 1px solid rgba(23, 63, 31, .26);
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 820;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
     .residency-band {
       padding-top: clamp(48px, 6vw, 82px);
       padding-bottom: clamp(48px, 6vw, 82px);
@@ -3081,6 +3269,7 @@
       .research-card,
       .research-card.is-wide,
       .community-lead,
+      .community-project,
       .community-cards,
       .method > div:first-child,
       .method > div:last-child,
@@ -3144,7 +3333,10 @@
       .guide-grid,
       .proof-grid,
       .community-board,
+      .community-project,
+      .community-project dl,
       .community-cards,
+      .interactive-grid,
       .research-board,
       .reading-route,
       .route-cards,
@@ -3447,6 +3639,7 @@
         <a href="#guide">导读</a>
         <a href="#story">路径</a>
         <a href="#works">作品</a>
+        <a href="#interactive">交互</a>
         <a href="#research">研究</a>
         <a href="#proof">能力</a>
         <a href="#community">社区</a>
@@ -3564,7 +3757,7 @@
             </a>
           </div>
         </div>
-        <div class="quick-evidence" id="proof" aria-label="快速经历数字">
+        <div class="quick-evidence" aria-label="快速经历数字">
           <div class="quick-evidence-head">
             <strong>先看数字</strong>
             <span>先用几组数字理解我的内容、社区和现场能力。</span>
@@ -3645,31 +3838,12 @@
             <article class="story-step">
               <span class="story-index">04</span>
               <div>
-                <h3>作品：把相遇留下来</h3>
+                <h3>叙事作品：把相遇留下来</h3>
                 <p>人物稿、生态报道、播客、活动复盘和交互档案，是我把这些人和现场留下来的方式。</p>
                 <small>人物稿 / 团队故事 / 科技事件</small>
               </div>
             </article>
           </div>
-        </div>
-
-        <div class="story-arc" aria-label="旅程中的能力">
-          <article class="arc-step">
-            <strong>听见具体的人</strong>
-            <p>家长、老师、创业者和开发者愿意把自己的经历讲出来，故事才有最初的材料。</p>
-          </article>
-          <article class="arc-step">
-            <strong>靠近早期现场</strong>
-            <p>白板、路演、用户反馈、开源项目和早期产品，会露出一个团队真正的判断。</p>
-          </article>
-          <article class="arc-step">
-            <strong>把人带到一起</strong>
-            <p>技术人、非技术创造者、投资人和教育实践者在同一个场域里见面，新的线索会慢慢浮出来。</p>
-          </article>
-          <article class="arc-step">
-            <strong>把相遇留下来</strong>
-            <p>文章、播客、活动复盘和交互档案，让一次见面可以继续被回看、被连接。</p>
-          </article>
         </div>
       </div>
     </section>
@@ -3690,7 +3864,8 @@
               <img src="assets/covers/amd-datawhale.webp" alt="AMD AI 开发者日现场，苏姿丰在 Datawhale 展台前与开发者交流">
             </figure>
             <div class="case-copy">
-              <span class="case-kicker">01 / 产业事件报道</span>
+              <span class="case-kicker">01 / Industry Event Narrative</span>
+              <span class="work-type">作品类型 / 产业事件报道</span>
               <h3>AMD / Datawhale 开发者生态</h3>
               <p>大型产业事件叙事。发生在 AMD AI 开发者日现场，我把 AMD、苏姿丰、ModelScope、Datawhale、ROCm、开发者工作坊、开源贡献者、研究者社区和青年 builder 放在同一张现场地图里，写清顶尖技术现场如何拥抱国内 AI 开源生态，以及算力、模型、工具链和开发者社区怎样互相牵动。</p>
               <dl class="case-meta">
@@ -3717,7 +3892,8 @@
                 <img src="assets/covers/ge-xiaochuan-applovin.png" alt="葛小川 AppLovin CTO 人物稿卡片截图">
               </figure>
               <div>
-                <span class="case-index">02 / 硅谷科技人物稿</span>
+                <span class="case-index">02 / Silicon Valley</span>
+                <span class="work-type">作品类型 / 硅谷科技人物稿</span>
                 <h3>葛小川 / AppLovin CTO</h3>
                 <p>硅谷科技人物稿。用公开材料和行业语境，整理华人技术领导者的工程路径、公司机制、平台生态和 AI 商业判断。阅读 2.4 万。</p>
                 <span class="case-link">Open article ↗</span>
@@ -3729,7 +3905,8 @@
                 <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
               </figure>
               <div>
-                <span class="case-index">03 / Builder 人物稿</span>
+                <span class="case-index">03 / Super Individual Interview</span>
+                <span class="work-type">作品类型 / Builder 人物稿</span>
                 <h3>AI 浪潮下的超级个体访谈</h3>
                 <p>4 期公开人物稿。这个系列关注 AI 浪潮下的“俗世奇人”：00 后 builder、普通工作里的 AI 创造者、17 岁创业少年和设计型硬件 builder。</p>
                 <div class="case-result">
@@ -3761,7 +3938,8 @@
               <figure class="case-visual is-contain">
                 <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
               </figure>
-              <span class="case-index">04 / 播客栏目</span>
+              <span class="case-index">04 / Becoming Series</span>
+              <span class="work-type">作品类型 / 播客栏目</span>
               <h3>Becoming计划</h3>
               <p>4+ 期公开对谈。追问一个以热爱驱动、保有主体性的人怎样长出来；从大理线下分享、播客长谈到人物文章，持续记录创造者怎样形成判断、选择工具和走向行动。</p>
               <div class="case-tags" aria-label="Becoming 计划样本">
@@ -3777,7 +3955,8 @@
                 <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育田野志直播海报">
               </figure>
               <div>
-                <span class="case-index">05 / 播客栏目</span>
+                <span class="case-index">05 / AI Education Field Notes</span>
+                <span class="work-type">作品类型 / 播客栏目</span>
                 <h3>AI 教育田野志</h3>
                 <p>6 期公开节目。和乐乐一起持续对谈国内、硅谷和欧洲的 AI 教育实践者，我负责主持、追问、整理现场反馈，把教育现场里的 AI 使用、元能力和产品判断留成系列。</p>
                 <div class="case-tags" aria-label="AI 教育田野志样本">
@@ -3794,9 +3973,10 @@
               <figure class="case-visual">
                 <img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场">
               </figure>
-              <span class="case-index">06 / 活动复盘</span>
+              <span class="case-index">06 / AI 跨界客厅</span>
+              <span class="work-type">作品类型 / 活动复盘</span>
               <h3>WAIC AI 研究者创业者派对</h3>
-              <p>接触 AI 硬科技议题和研究者网络的现场证明。我参与组织 WAIC 期间的 AI 研究者创业者派对，和 Research AI+ 等伙伴围绕具身智能、多模态、Agent、RL、AI Infra、AI4S 等 9 个技术方向设计圆桌，把研究者、创业者、开发者和高校社区连接成后续的内容信源网络。</p>
+              <p>AI跨界客厅系列。WAIC 期间，我参与组织 AI 研究者创业者派对，和 Research AI+ 等伙伴围绕具身智能、多模态、Agent、RL、AI Infra、AI4S 等 9 个技术方向设计圆桌，把研究者、创业者、开发者和高校社区连接成后续内容信源网络。</p>
               <span class="case-link">Open recap ↗</span>
             </a>
 
@@ -3804,7 +3984,8 @@
               <figure class="case-visual">
                 <img src="assets/field-film/research-ai-circle.jpg" alt="AI 客厅圆桌交流现场">
               </figure>
-              <span class="case-index">07 / 活动复盘</span>
+              <span class="case-index">07 / AI 跨城客厅</span>
+              <span class="work-type">作品类型 / 活动复盘</span>
               <h3>良渚到上海的 AI 创业者夜谈</h3>
               <p>AI跨城客厅系列。把良渚、上海和不同社区里的 AI 创业者、社区组织者和创造者带到一起，记录一座城市和另一座城市之间，生活方式、创业判断和技术浪潮怎样彼此照亮。</p>
               <span class="case-link">Open recap ↗</span>
@@ -3815,21 +3996,13 @@
                 <img src="assets/covers/vitality-museum-life-map.png" alt="生命力博物馆生命力地图交互界面截图">
               </figure>
               <div class="case-copy">
-                <span class="case-index">08 / 交互叙事</span>
+                <span class="case-index">08 / Interactive Story</span>
+                <span class="work-type">作品类型 / 交互叙事</span>
                 <h3>生命力博物馆</h3>
                 <p>交互叙事。把 28 个创造者故事整理成地图、展厅和游乐园，让人物、命题和时代情绪可以被再次打开。</p>
                 <span class="case-link">Enter museum ↗</span>
               </div>
             </a>
-
-            <article class="case-card">
-              <figure class="case-visual">
-                <img src="assets/field-film/research-ai-circle.jpg" alt="超级个体实验室 AI 创造者社区线下现场">
-              </figure>
-              <span class="case-index">09 / 生态共建</span>
-              <h3>超级个体实验室</h3>
-              <p>从 0 到 1 发起的 700+ AI 创造者社区。我在 AI 孵化器期间把它做起来，从一次次线下见面长成连接创业者、开发者、设计师和教育者的社区，用社区和深度内容一起做信任驱动的增长。</p>
-            </article>
           </div>
         </div>
 
@@ -3855,7 +4028,7 @@
           <article class="research-card">
             <span>02 / Open Source Community</span>
             <h3>社区如何成为 AI 时代的基础设施</h3>
-            <p>AMD / Datawhale 现场让我看到，顶尖技术现场正在拥抱国内 AI 开源生态。模型、算力、工具链、开发者和社区组织之间的真实关系，是我想继续观察的生态题。</p>
+            <p>AMD / Datawhale 现场让我看到，顶尖技术现场正在拥抱国内 AI 开源生态。我长期浸润在开源学习者、孵化器和 AI 创造者社区里，更关心模型、算力、工具链、开发者和社区组织之间怎样形成真实协作。</p>
             <small>来源：AMD / Datawhale / ModelScope / 超级个体实验室｜可产出：生态专题</small>
           </article>
           <article class="research-card">
@@ -3869,8 +4042,64 @@
             <span>AI 进入教育后，人还要练什么能力</span>
             <span>AI 硬件与 Physical AI 的真实场景</span>
             <span>早期 AI 公司怎样讲清产品和市场</span>
-            <span>社区里的信任怎样变成真实的连接和增长</span>
+            <span>大会、客厅和社区怎样变成信源网络</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="proof" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Track Record</p>
+          <div>
+            <h2>我已经做过的事</h2>
+            <p class="section-desc">这组数字对应内容团队会关心的几个问题：有没有采写基本功，有没有稳定的人和选题来源，能不能主持、组织现场、持续做栏目，以及能不能把中国 AI 创业放进技术和海外语境里看。</p>
+          </div>
+        </div>
+        <div class="proof-grid" aria-label="能力与经历速览">
+          <article class="proof-item">
+            <div class="proof-number">20+</div>
+            <div>
+              <h3>采写基本功</h3>
+              <p>在报社与融媒体中心做过新闻、时评、实地走访、专家联系和栏目策划，知道一篇稿子从线索到成稿怎么跑。</p>
+            </div>
+          </article>
+          <article class="proof-item">
+            <div class="proof-number">700+</div>
+            <div>
+              <h3>真实选题网络</h3>
+              <p>在 AI 孵化器期间从 0 到 1 发起超级个体实验室，连接创业者、开发者、设计师和教育者，选题和采访对象有真实关系来源。</p>
+            </div>
+          </article>
+          <article class="proof-item">
+            <div class="proof-number">170+</div>
+            <div>
+              <h3>活动组织能力</h3>
+              <p>以 WAIC 期间 AI 研究者创业者派对为代表，和 Research AI+ 等伙伴围绕具身智能、多模态、Agent、RL、AI Infra、AI4S 等方向设计 9 个圆桌，现场报名 170+；同时持续组织 AI 跨界客厅、AI 跨城客厅等系列活动。</p>
+            </div>
+          </article>
+          <article class="proof-item">
+            <div class="proof-number">30+</div>
+            <div>
+              <h3>约人和追问</h3>
+              <p>通过播客、直播、活动和人物稿持续对话 AI 创业者、教育者、开发者与研究者，能把一次聊天推进成可发布内容和下一轮选题。</p>
+            </div>
+          </article>
+          <article class="proof-item">
+            <div class="proof-number">3组</div>
+            <div>
+              <h3>系列化产出</h3>
+              <p>超级个体访谈 4 期、Becoming计划 4+ 期、AI教育田野志 6 期，把人物稿、播客和教育田野做成可以持续更新的系列。</p>
+            </div>
+          </article>
+          <article class="proof-item">
+            <div class="proof-number">3</div>
+            <div>
+              <h3>跨市场研究入口</h3>
+              <p>新加坡 AI 出海、硅谷科技人物研究、复旦 / UCL 跨文化工作坊和海外教育访谈，让我用英文资料和海外现场校准国内 AI 故事。</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -3878,19 +4107,19 @@
     <section id="community" class="band">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Community &amp; Trust</p>
+          <p class="section-kicker">Community System</p>
           <div>
             <h2>社区是我构建信任的方式</h2>
-            <p class="section-desc">我从数字游民、开源学习者、AI 孵化器和年轻 builder 社区里走出来。社区对我来说，首先是建立信任的方式——把社区和深度内容（播客、直播对谈、深度叙事）放在一起，做以信任驱动的增长；同时我是社区里关系网络的编织者，能发现个体、创业者、创业团队和产业之间的需求，把他们连成有深度链接、能共赢的网络。</p>
+            <p class="section-desc">我从数字游民、开源学习者、AI 孵化器和年轻 builder 社区里走出来。社区对我来说，是理解需求、建立信任、发现信源和推动合作发生的现场。</p>
           </div>
         </div>
         <div class="community-board" aria-label="社区能力">
           <article class="community-lead">
             <div>
-              <span>超级个体实验室 / 700+ AI 创造者社区</span>
-              <h3>把人连起来，先建立信任。</h3>
+              <span>Community Builder</span>
+              <h3>用社区建立信任，用内容把关系留下来。</h3>
             </div>
-            <p>超级个体实验室是我最看重的一个代表。我做社区最在意信任：先找到一群正在行动的人，让他们见面、互相介绍、围绕真实问题聊起来；聊着聊着，我能看见谁缺什么、谁能帮谁，就把人和需求接到一起。社区和深度内容（播客、直播对谈、深度叙事）配在一起，就是我做信任驱动增长的方式。WAIC 后的派对是其中一个高密度样本，背后还有 AI 跨界客厅、AI 跨城客厅和一批长期社区伙伴。</p>
+            <p>我做社区时，最在意的是关系能不能变得真实。先让正在行动的人见面、互相介绍、说出自己在找什么，再用播客、直播对谈、深度叙事和活动复盘，把一次见面沉淀成可以继续回访的关系网络。很多选题、嘉宾、合作和下一次活动，都是从这种信任里长出来的。</p>
             <div class="community-stats" aria-label="社区数据">
               <div>
                 <strong>700+</strong>
@@ -3906,33 +4135,56 @@
               </div>
             </div>
           </article>
+          <article class="community-project">
+            <div>
+              <span>Representative Community Work</span>
+              <h3>超级个体实验室</h3>
+            </div>
+            <div>
+              <p>2025 年 3 月，我在孵化器期间发起「超级个体实验室」，面向 AI 时代的创造者和早期创业者。它从一次次线下见面长成 700+ 人的关系网络，也孵化出 AI 跨界客厅、AI 跨城客厅等系列现场，连接开发者、设计师、教育者、投资机构和产业伙伴。</p>
+              <dl aria-label="超级个体实验室成就">
+                <div>
+                  <dt>700+</dt>
+                  <dd>AI 创造者与早期创业者</dd>
+                </div>
+                <div>
+                  <dt>多场</dt>
+                  <dd>AI 跨界客厅、AI 跨城客厅和线下夜谈</dd>
+                </div>
+                <div>
+                  <dt>伙伴</dt>
+                  <dd>Datawhale、Research AI+、小红书、DIIS、真格基金等</dd>
+                </div>
+              </dl>
+            </div>
+          </article>
           <div class="community-cards">
             <article class="community-card">
-              <span>01 / Start</span>
+              <span>01 / Source</span>
               <div>
-                <h3>从 0 到 1 发起超级个体实验室</h3>
-                <p>在 AI 孵化器期间从一次次线下见面做起，长成 700+ AI 创造者社区，成员包括创业者、开发者、设计师和教育者。</p>
+                <h3>从社区里长出信源和选题</h3>
+                <p>人物稿、播客嘉宾、活动议题和创业团队故事，很多都来自我长期参与和维护的真实关系网络。</p>
               </div>
             </article>
             <article class="community-card">
               <span>02 / Convene</span>
               <div>
-                <h3>在现场发现需求，把人接起来</h3>
-                <p>AI 跨界客厅、AI 跨城客厅、WAIC 后派对等系列活动，让研究者、创业者、投资机构和开发者社区在同一张桌上交换问题，我在中间发现谁需要谁，把合适的人和需求接上。</p>
+                <h3>把线下活动变成信源网络</h3>
+                <p>AI 跨界客厅、AI 跨城客厅、WAIC 后派对等系列活动，让研究者、创业者、投资机构、开发者和高校社区在同一张桌上交换问题。</p>
               </div>
             </article>
             <article class="community-card">
               <span>03 / Connect</span>
               <div>
-                <h3>编织跨圈层的关系网络</h3>
+                <h3>连接不同圈层的人</h3>
                 <p>我和 Datawhale、Research AI+、小红书、DIIS AI 创新创业生态孵化器、真格基金等伙伴保持联系，也熟悉数字游民、开源学习者、出海团队和年轻创业者社区的语言。</p>
               </div>
             </article>
             <article class="community-card">
-              <span>04 / Grow</span>
+              <span>04 / Archive</span>
               <div>
-                <h3>让信任长成持续的合作</h3>
-                <p>活动结束后，我会把对话整理成复盘、播客、人物稿，也把关系和需求记下来，让信任和深度内容一起，长成下一轮合作和共赢的网络。</p>
+                <h3>让关系变成可继续合作的网络</h3>
+                <p>活动结束后，我会把对话整理成复盘、播客、人物稿、关系线索和选题库，让需求、信任和下一轮合作继续流动。</p>
               </div>
             </article>
           </div>
@@ -3986,6 +4238,51 @@
               <em>可交付：播客栏目 / 系列长文 / 内容档案</em>
             </div>
           </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="interactive" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Interactive Story Lab</p>
+          <div>
+            <h2>交互叙事项目</h2>
+            <p class="section-desc">有些内容可以写成文章，也可以被整理成能够反复进入的故事档案：地图、展厅、时间线、人物样本库和现场记忆。</p>
+          </div>
+        </div>
+        <div class="interactive-lab" aria-label="交互叙事项目列表">
+          <div class="interactive-grid">
+            <a class="interactive-card is-featured" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
+              <figure class="interactive-shot">
+                <img src="assets/covers/vitality-museum-life-map.png" alt="生命力博物馆生命力地图交互界面截图">
+              </figure>
+              <div class="interactive-copy">
+                <span>01 / Published Interactive Story</span>
+                <h3>生命力博物馆</h3>
+                <p>把 28 个创造者故事整理成生命力地图、展厅和游乐园，让读者可以从人物、命题和时代情绪之间反复进入。</p>
+                <span class="case-link">Enter museum ↗</span>
+              </div>
+            </a>
+
+            <article class="interactive-card is-pending">
+              <div class="interactive-copy">
+                <span>02 / Chaonao Project</span>
+                <h3>超脑交互叙事项目</h3>
+                <p>预留给我为超脑做过的交互叙事项目。后续会补入口、截图、项目目标和我承担的叙事/结构设计角色。</p>
+              </div>
+              <div class="interactive-status">素材待补 / link & screenshot</div>
+            </article>
+
+            <article class="interactive-card is-pending">
+              <div class="interactive-copy">
+                <span>03 / 2050 Learning Festival</span>
+                <h3>2050 学习节交互叙事</h3>
+                <p>预留给 2050 学习节相关的交互叙事作品。后续会补充页面入口、视觉截图和它如何承接学习节现场故事。</p>
+              </div>
+              <div class="interactive-status">素材待补 / link & screenshot</div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -4054,14 +4351,14 @@
             <h3>深度报道与人物</h3>
             <p>看我如何处理技术现场、创业者路径、公司机制和具体人物。</p>
             <div class="appendix-links">
-              <a href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>Industry Event</span><strong>AMD / Datawhale 开发者生态</strong><em>产业事件叙事</em></a>
-              <a href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer"><span>Silicon Valley Profile</span><strong>葛小川 / AppLovin CTO</strong><em>硅谷人物</em></a>
-              <a href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>默子 / AI 浪潮下的超级个体访谈</strong><em>人物稿</em></a>
-              <a href="https://mp.weixin.qq.com/s/pudO0eJISbL6BylC1BDC0Q" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>杨晨 / 白天是保安，夜里是 AI 创造者</strong><em>人物稿</em></a>
-              <a href="https://mp.weixin.qq.com/s/sEBMUapVyCz0tm073si_sg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>核蛋 / 17 岁创业少年</strong><em>人物稿</em></a>
-              <a href="https://mp.weixin.qq.com/s/7IHYXyU80C9vM8Tzz1KOrQ" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>小鹅 / AI 创意硬件与设计 builder</strong><em>人物稿</em></a>
-              <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>Tim / Artflow.ai 创始人</strong><em>长文</em></a>
-              <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>乐乐 / AI 教育与游戏创业者</strong><em>人物访谈</em></a>
+              <a href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>Industry Event</span><strong>七年时间，我们和苏妈握手了！</strong><em>产业事件报道</em></a>
+              <a href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer"><span>Silicon Valley Profile</span><strong>3 年从工程师到 CTO！华人将执掌硅谷千亿 AI 公司，毕业自中科大少年班</strong><em>硅谷科技人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>从小不写作业的 00 后，3 天做出了 4.5k+ Stars 的开源项目</strong><em>Builder 人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/pudO0eJISbL6BylC1BDC0Q" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>大厂离职后，白天是保安，夜里是 AI 创造者</strong><em>Builder 人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/sEBMUapVyCz0tm073si_sg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>住过厂区的 17 岁创业少年：不如先做个普通人</strong><em>Builder 人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/7IHYXyU80C9vM8Tzz1KOrQ" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>00 后小达芬奇养成记，小鹅和她的叽里咕咕家族</strong><em>Builder 人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>当一个创业者开始思考生活本身，Artflow.ai创始人Tim的人生哲学 | Becoming计划</strong><em>创始人深访</em></a>
+              <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>小城、留白与热爱：ENFP创业者乐乐的AI、教育与游戏｜Becoming计划</strong><em>创始人深访</em></a>
             </div>
           </article>
           <article class="appendix-group">
@@ -4069,7 +4366,7 @@
             <p>看我如何围绕一个问题持续约人、追问和沉淀栏目。</p>
             <div class="appendix-links">
               <a href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer"><span>Podcast Series</span><strong>AI 教育田野志</strong><em>系列节目</em></a>
-              <a href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer"><span>Podcast Series</span><strong>Becoming计划</strong><em>播客栏目</em></a>
+              <a href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer"><span>Podcast Series</span><strong>我们这一代，还能以热爱和理想躬身入局吗？| Becoming计划</strong><em>播客栏目</em></a>
               <a href="https://www.xiaoyuzhoufm.com/episode/679204d6247d51713cd3570b" target="_blank" rel="noreferrer"><span>Episode</span><strong>Tim 的 Becoming 计划播客单集</strong><em>播客</em></a>
             </div>
           </article>
@@ -4077,9 +4374,9 @@
             <h3>现场活动与社区</h3>
             <p>看我如何组织现场、主持圆桌，把一次见面变成可回访的内容。</p>
             <div class="appendix-links">
-              <a href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer"><span>Event Recap</span><strong>AI跨界客厅 / WAIC AI 研究者创业者派对复盘</strong><em>活动记录</em></a>
-              <a href="https://mp.weixin.qq.com/s/4b-KkxuvQMvNaPMThBv5Lw" target="_blank" rel="noreferrer"><span>Event Brief</span><strong>AI跨界客厅 / WAIC 期间派对预告</strong><em>活动预告</em></a>
-              <a href="https://mp.weixin.qq.com/s/Fugj4SWF5ueeW0pI9oeAzg" target="_blank" rel="noreferrer"><span>Community Field</span><strong>AI跨城客厅 / 良渚-上海 AI 创业者夜谈</strong><em>社区现场</em></a>
+              <a href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer"><span>Event Recap</span><strong>深夜不散场，AI研究者创业者派对｜超级个体实验室·AI跨界客厅</strong><em>活动复盘</em></a>
+              <a href="https://mp.weixin.qq.com/s/4b-KkxuvQMvNaPMThBv5Lw" target="_blank" rel="noreferrer"><span>Event Brief</span><strong>AI研究者创业者夏日派对！WAIC大会期间，来一场深度见面｜超级个体实验室·AI跨界客厅</strong><em>活动预告</em></a>
+              <a href="https://mp.weixin.qq.com/s/Fugj4SWF5ueeW0pI9oeAzg" target="_blank" rel="noreferrer"><span>Community Field</span><strong>当良渚遇见上海，AI创业者与社区人的跨城夜谈 ｜流动的社区</strong><em>活动复盘</em></a>
             </div>
           </article>
           <article class="appendix-group">
@@ -4087,8 +4384,8 @@
             <p>看我如何把访谈、田野和方法做成可展示、可讲述的作品。</p>
             <div class="appendix-links">
               <a href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer"><span>Interactive Story</span><strong>生命力博物馆</strong><em>交互叙事</em></a>
-              <a href="https://mp.weixin.qq.com/s/Ttv2Pq7dIQhv3L1695wHyw" target="_blank" rel="noreferrer"><span>Public Talk</span><strong>2050 舞台分享</strong><em>公开分享</em></a>
-              <a href="https://mp.weixin.qq.com/s/qNgVznFUvZv3ohTekOKtxw" target="_blank" rel="noreferrer"><span>Method Note</span><strong>把田野作为方法</strong><em>方法文章</em></a>
+              <a href="https://mp.weixin.qq.com/s/Ttv2Pq7dIQhv3L1695wHyw" target="_blank" rel="noreferrer"><span>Public Talk</span><strong>在AI浪潮之下，看见具体的人</strong><em>公开分享</em></a>
+              <a href="https://mp.weixin.qq.com/s/qNgVznFUvZv3ohTekOKtxw" target="_blank" rel="noreferrer"><span>Method Note</span><strong>把田野作为方法，观察AI时代创新如何在真实现场发生</strong><em>方法文章</em></a>
             </div>
           </article>
         </div>
