@@ -2153,16 +2153,30 @@
     .case-card.series-case {
       grid-column: span 8;
       display: grid;
-      grid-template-columns: minmax(190px, .62fr) minmax(0, 1.38fr);
+      grid-template-columns: minmax(220px, .42fr) minmax(0, .58fr);
       gap: clamp(16px, 2.4vw, 26px);
       padding: 18px;
       border: 1px solid var(--line);
       background: var(--paper-2);
+      overflow: hidden;
+      align-items: start;
+    }
+
+    .case-card.series-case > * {
+      min-width: 0;
     }
 
     .case-card.series-case .case-visual {
-      align-self: stretch;
-      min-height: 100%;
+      align-self: start;
+      justify-self: start;
+      width: 100%;
+      max-width: 460px;
+      min-height: 0;
+      aspect-ratio: 4 / 5;
+    }
+
+    .case-card.series-case .case-visual img {
+      object-fit: contain;
     }
 
     .case-card.series-case .case-index {
