@@ -1232,6 +1232,122 @@
       font-size: 13px;
     }
 
+    .community-board {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .community-lead {
+      grid-column: span 5;
+      min-height: 440px;
+      padding: clamp(22px, 3vw, 34px);
+      background: var(--teal);
+      color: var(--paper);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .community-lead span,
+    .community-card span {
+      color: var(--poster-green);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .community-lead h3 {
+      max-width: 8em;
+      margin: 14px 0 0;
+      font-size: clamp(36px, 4vw, 62px);
+      line-height: .96;
+    }
+
+    .community-lead p {
+      margin: 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 15px;
+      line-height: 1.78;
+    }
+
+    .community-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1px;
+      border: 1px solid rgba(255, 255, 255, .24);
+    }
+
+    .community-stats div {
+      padding: 12px;
+      border-right: 1px solid rgba(255, 255, 255, .24);
+    }
+
+    .community-stats div:last-child {
+      border-right: 0;
+    }
+
+    .community-stats strong {
+      display: block;
+      color: var(--poster-green);
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.4vw, 50px);
+      line-height: .9;
+      font-weight: 500;
+    }
+
+    .community-stats small {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .community-cards {
+      grid-column: span 7;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+    }
+
+    .community-card {
+      min-height: 220px;
+      padding: clamp(18px, 2vw, 26px);
+      background: var(--paper-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .community-card:nth-child(2),
+    .community-card:nth-child(3) {
+      background: var(--mint);
+    }
+
+    .community-card span {
+      color: var(--teal);
+    }
+
+    .community-card h3 {
+      max-width: 9em;
+      font-size: clamp(26px, 2.8vw, 40px);
+      line-height: 1;
+    }
+
+    .community-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.72;
+    }
+
     .research-board {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2751,6 +2867,7 @@
       .artifact-board,
       .collection-grid,
       .proof-grid,
+      .community-board,
       .research-board,
       .sample-shelf,
       .work-card,
@@ -2774,6 +2891,8 @@
       .case-card.is-dark,
       .research-card,
       .research-card.is-wide,
+      .community-lead,
+      .community-cards,
       .method > div:first-child,
       .method > div:last-child,
       .artifact-card,
@@ -2835,6 +2954,8 @@
       .reader-guide,
       .guide-grid,
       .proof-grid,
+      .community-board,
+      .community-cards,
       .research-board,
       .reading-route,
       .route-cards,
@@ -3117,6 +3238,7 @@
         <a href="#works">作品</a>
         <a href="#research">研究</a>
         <a href="#proof">能力</a>
+        <a href="#community">社区</a>
         <a href="#residency">驻场</a>
         <a href="#appendix">索引</a>
         <button class="print-button" type="button" onclick="window.print()">打印 / PDF</button>
@@ -3542,6 +3664,71 @@
               <p>新加坡 AI 出海、硅谷科技人物研究、复旦 / UCL 跨文化工作坊和海外教育访谈，让我用英文资料和海外现场校准国内 AI 故事。</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="community" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Community System</p>
+          <div>
+            <h2>社区是我的内容基础设施</h2>
+            <p class="section-desc">我从数字游民、开源学习者、AI 孵化器和年轻 builder 社区里走出来。社区对我来说，首先是嘉宾、选题、反馈和线下活动现场的来源。</p>
+          </div>
+        </div>
+        <div class="community-board" aria-label="社区能力">
+          <article class="community-lead">
+            <div>
+              <span>Community Builder</span>
+              <h3>把人聚到一起，再让故事继续发生。</h3>
+            </div>
+            <p>我做社区时，会把它当成一个长期内容系统来经营：先找到一群正在行动的人，让他们在线下见面、互相介绍、围绕真实议题展开对话，再把这些对话整理成文章、节目、选题和下一次活动。</p>
+            <div class="community-stats" aria-label="社区数据">
+              <div>
+                <strong>700+</strong>
+                <small>AI 创造者与早期创业者社区</small>
+              </div>
+              <div>
+                <strong>170+</strong>
+                <small>WAIC 后派对现场报名</small>
+              </div>
+              <div>
+                <strong>9</strong>
+                <small>Agent、开源、多模态等圆桌议题</small>
+              </div>
+            </div>
+          </article>
+          <div class="community-cards">
+            <article class="community-card">
+              <span>01 / Start</span>
+              <div>
+                <h3>从 0 到 1 发起社区</h3>
+                <p>在孵化器期间发起「超级个体实验室」，从一次次见面长成 700+ AI 创造者社区，成员包括创业者、开发者、设计师和教育者。</p>
+              </div>
+            </article>
+            <article class="community-card">
+              <span>02 / Convene</span>
+              <div>
+                <h3>把线下活动变成信源网络</h3>
+                <p>AI 跨界客厅、AI 跨城客厅和 WAIC 后派对，让研究者、创业者、投资机构和开发者社区在同一张桌上交换问题。</p>
+              </div>
+            </article>
+            <article class="community-card">
+              <span>03 / Connect</span>
+              <div>
+                <h3>连接不同圈层的人</h3>
+                <p>从数字游民、大理创新教育、Datawhale 到出海团队，我熟悉不同社区的语言，也知道怎样让人愿意开口、留下联系和继续对话。</p>
+              </div>
+            </article>
+            <article class="community-card">
+              <span>04 / Archive</span>
+              <div>
+                <h3>让社区回流成内容资产</h3>
+                <p>活动结束后，我会把对话整理成复盘、播客、人物稿、关系线索和选题库，让社区成为下一轮内容和合作的起点。</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
