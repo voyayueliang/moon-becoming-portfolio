@@ -3033,7 +3033,7 @@
 
     .interactive-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) repeat(2, minmax(0, .8fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       border: 1px solid var(--line);
       background: var(--line);
@@ -3050,6 +3050,10 @@
     }
 
     .interactive-card.is-featured {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      min-height: 0;
       background: var(--poster-black);
       color: var(--paper);
     }
@@ -3076,6 +3080,18 @@
       object-position: top center;
     }
 
+    .interactive-card.is-featured .interactive-shot {
+      height: 100%;
+      min-height: 420px;
+      border-right: 1px solid rgba(255, 255, 255, .18);
+      border-bottom: 0;
+    }
+
+    .interactive-card:not(.is-featured) .interactive-shot {
+      border-color: var(--line-soft);
+      background: var(--paper-3);
+    }
+
     .interactive-copy {
       padding: clamp(20px, 2.8vw, 34px);
     }
@@ -3091,7 +3107,7 @@
       text-transform: uppercase;
     }
 
-    .interactive-card.is-pending .interactive-copy span {
+    .interactive-card:not(.is-featured) .interactive-copy span {
       color: var(--teal);
     }
 
@@ -3108,7 +3124,7 @@
       line-height: 1.72;
     }
 
-    .interactive-card.is-pending .interactive-copy p {
+    .interactive-card:not(.is-featured) .interactive-copy p {
       color: var(--muted);
     }
 
@@ -3517,6 +3533,18 @@
       .case-card.is-dark {
         display: block;
         min-height: auto;
+      }
+
+      .interactive-card.is-featured {
+        display: flex;
+        grid-template-columns: 1fr;
+      }
+
+      .interactive-card.is-featured .interactive-shot {
+        min-height: 0;
+        height: auto;
+        border-right: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .18);
       }
 
       .case-card.is-wide .case-visual,
@@ -4379,20 +4407,35 @@
               </div>
             </a>
 
-            <article class="interactive-card is-pending">
+            <a class="interactive-card" href="https://2050stories-7rxdpbed.manus.space/" target="_blank" rel="noreferrer">
+              <figure class="interactive-shot">
+                <img src="assets/covers/2050-learning-festival.png" alt="2050 学习节交互叙事页面截图">
+              </figure>
               <div class="interactive-copy">
-                <span>02 / Chaonao Project</span>
-                <h3>超脑交互叙事项目</h3>
-                <p>预留给我为超脑做过的交互叙事项目。后续会补入口、截图、项目目标和我承担的叙事/结构设计角色。</p>
+                <span>02 / 2050 Learning Festival</span>
+                <h3>2050 学习节交互叙事</h3>
+                <p>把学习节现场里从六人到千人的故事，整理成可以向下滚动进入的交互叙事页面。</p>
+                <span class="case-link">Open story ↗</span>
               </div>
-              <div class="interactive-status">素材待补 / link & screenshot</div>
+            </a>
+
+            <article class="interactive-card">
+              <figure class="interactive-shot">
+                <img src="assets/covers/moon-zine-issue01.png" alt="流浪月亮 ZINE ISSUE 01 独立杂志截图">
+              </figure>
+              <div class="interactive-copy">
+                <span>03 / AI Zine Experiment</span>
+                <h3>流浪月亮 ZINE Issue 01</h3>
+                <p>一本 AI 参与制作的独立杂志实验，把人类学笔记、AI 时代的教育现场和视觉排版整理成一份可以翻阅的刊物样本。</p>
+                <span class="case-link">Visual sample</span>
+              </div>
             </article>
 
             <article class="interactive-card is-pending">
               <div class="interactive-copy">
-                <span>03 / 2050 Learning Festival</span>
-                <h3>2050 学习节交互叙事</h3>
-                <p>预留给 2050 学习节相关的交互叙事作品。后续会补充页面入口、视觉截图和它如何承接学习节现场故事。</p>
+                <span>04 / Chaonao Project</span>
+                <h3>超脑交互叙事项目</h3>
+                <p>预留给我为超脑做过的交互叙事项目。后续会补入口、截图、项目目标和我承担的叙事/结构设计角色。</p>
               </div>
               <div class="interactive-status">素材待补 / link & screenshot</div>
             </article>
