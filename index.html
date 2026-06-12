@@ -2465,8 +2465,8 @@
 
     .method-essay h3 {
       max-width: 12em;
-      font-size: clamp(42px, 5.4vw, 78px);
-      line-height: .96;
+      font-size: clamp(34px, 4.2vw, 60px);
+      line-height: 1;
       margin-bottom: 24px;
     }
 
@@ -2500,9 +2500,9 @@
       margin-bottom: 8px;
       color: var(--teal);
       font-family: var(--serif);
-      font-size: clamp(28px, 3vw, 42px);
+      font-size: clamp(23px, 2.2vw, 34px);
       font-weight: 500;
-      line-height: 1;
+      line-height: 1.08;
     }
 
     .method-note-card p {
@@ -2510,49 +2510,6 @@
       color: var(--muted);
       font-size: 14px;
       line-height: 1.7;
-    }
-
-    .method-research {
-      grid-column: 1 / -1;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      border: 1px solid var(--line);
-      margin-top: 8px;
-    }
-
-    .method-research-item {
-      min-height: 180px;
-      padding: clamp(18px, 2vw, 28px);
-      border-right: 1px solid var(--line-soft);
-      background: rgba(255, 255, 255, .48);
-    }
-
-    .method-research-item:last-child {
-      border-right: 0;
-    }
-
-    .method-research-item span {
-      display: block;
-      margin-bottom: 22px;
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    .method-research-item h4 {
-      font-size: clamp(25px, 2.6vw, 38px);
-      line-height: 1.06;
-      margin-bottom: 12px;
-    }
-
-    .method-research-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.72;
     }
 
     .residency-band {
@@ -2794,7 +2751,6 @@
 
       .method-essay,
       .method-notes,
-      .method-research,
       .residency-lead,
       .residency-cases {
         grid-column: auto;
@@ -2810,18 +2766,6 @@
 
       .residency-cases {
         grid-template-columns: 1fr;
-      }
-
-      .method-research {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .method-research-item:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .method-research-item:nth-child(n + 3) {
-        border-top: 1px solid var(--line-soft);
       }
 
       .hero-inner {
@@ -3027,7 +2971,6 @@
       .work-card,
       .pathway,
       .fit-card,
-      .method-research-item,
       .artifact-card,
       .collection-card,
       .proof-item,
@@ -3079,18 +3022,6 @@
         border-bottom: 0;
       }
 
-      .method-research {
-        grid-template-columns: 1fr;
-      }
-
-      .method-research-item,
-      .method-research-item:nth-child(2n) {
-        border-right: 0;
-      }
-
-      .method-research-item:nth-child(n + 2) {
-        border-top: 1px solid var(--line-soft);
-      }
     }
 
     @media print {
@@ -3580,68 +3511,42 @@
         <div class="section-head">
           <p class="section-kicker">Method</p>
           <div>
-            <h2>我的优势和内容方法</h2>
-            <p class="section-desc">我做内容时，最信任的还是现场。先和人建立关系，慢慢听见真实经历，再把分散在活动、访谈和社区里的材料整理出来。</p>
+            <h2>我怎样把现场写成内容</h2>
+            <p class="section-desc">给我一个活动、一个创业团队、一群早期 builder，或一个还没有说清楚的议题，我会先进入现场，找到关键人物，再把它整理成能被打开的故事、栏目和选题。</p>
           </div>
         </div>
         <div class="method-story" aria-label="工作方法叙事">
           <article class="method-essay">
             <span class="method-essay-kicker">Working Method</span>
-            <h3>我习惯先靠近人，再慢慢看见一个人身后的关系。</h3>
-            <p>我很早就发现，自己好像很容易让人把真实经历讲出来。本科做电台时，我请校园里卖煎饼的阿姨走进直播间，讲她自己的生活。后来在大理做田野，家长会把孩子从封闭到慢慢打开的过程讲给我听，有人讲到落泪。</p>
-            <p>来到上海之后，这种能力进入了 AI 创业现场。孵化器路演、AI 夏令营、黑客松白板、WAIC 后的夜谈、AI 教育田野志的线上客厅，让我持续遇见早期团队、投资人、平台团队、开源学习者、教育实践者和年轻创业者。</p>
-            <p>我写一个人时，会继续往外看：他怎样找到用户，产品如何被使用，背后有哪些社区、资本、平台和市场语境。写默子时，我追的是一个 00 后 builder 如何把开源项目推向真实使用；写 AMD 和 Datawhale 时，我追的是顶尖技术现场为什么拥抱国内 AI 开源生态；写葛小川时，我把公开材料放回硅谷公司的工程路径和商业机制里。</p>
-            <p>AI 对我来说更像工作台：整理采访、搭建知识库、索引材料、检查线索，也帮助我做交互原型。真正的判断，还是要回到现场、关系和一轮又一轮的追问里。最后的产出可能是人物稿、生态报道、播客、活动复盘、问题清单，也可能变成生命力博物馆这样的交互档案。</p>
+            <h3>我能从一个信息很多的现场里，带回可发布的内容。</h3>
+            <p>我做内容的起点通常很简单：先去现场，先找人聊天。本科做电台时，我请校园里卖煎饼的阿姨走进直播间，讲她自己的生活。后来在大理做田野，家长会把孩子从封闭到慢慢打开的过程讲给我听，有人讲到落泪。</p>
+            <p>来到上海之后，这种能力进入了 AI 创业现场。AI 夏令营、青少年黑客松、孵化器路演、白板旁的用户反馈、WAIC 后的夜谈，让我持续遇见早期团队、投资人、平台团队、开源学习者、教育实践者和年轻创业者。</p>
+            <p>我的工作就是把这些聊天继续往前推：谁在做产品，谁在找用户，谁在改工作流，谁在连接资源。写默子时，我从一个 00 后 builder 的开源项目进入 AI 应用层；写 AMD / Datawhale 时，我把开发者、开源社区和技术公司放到同一个现场；写葛小川时，我把公开材料整理成一个硅谷技术人的成长和商业路径。</p>
+            <p>所以我能持续交付几类内容：人物深访、创业团队故事、生态报道、活动报道、播客/圆桌策划，以及可以长期更新的栏目。AI 是我的工作台，帮我整理采访、搭建知识库、索引材料和检查线索；最后的判断仍然回到人、关系、产品和具体语境。</p>
           </article>
 
           <aside class="method-notes" aria-label="方法中的关键经验">
             <div class="method-note-card">
-              <strong>能把人约出来</strong>
+              <strong>从现场找到采访对象</strong>
               <p>从数字游民大会到 WAIC 后的派对，我常常在不同社区之间穿梭，把开发者、创业者、投资人、研究者和教育实践者带到一起。</p>
             </div>
             <div class="method-note-card">
-              <strong>能把话听完整</strong>
-              <p>我会给一段经历留下足够的时间，听见转折、犹豫、判断，也听见一个人没有立刻说出口的部分。</p>
+              <strong>从聊天里追出问题</strong>
+              <p>我会给一段经历留下足够的时间，听见转折、犹豫、判断，再把它变成下一轮采访和写作问题。</p>
             </div>
             <div class="method-note-card">
-              <strong>能在早期团队里待住</strong>
+              <strong>看见早期团队怎么变</strong>
               <p>AI 夏令营、青少年黑客松、孵化器路演和创业活动，让我见过产品很早、团队很小、判断还在形成的时候。</p>
             </div>
             <div class="method-note-card">
-              <strong>能读社区的暗线</strong>
+              <strong>从社区里找到信号</strong>
               <p>Datawhale、数字游民社区、AI 开源学习者和超级个体实验室，让我看到工具、知识和人是怎样在社区里流动起来的。</p>
             </div>
             <div class="method-note-card">
-              <strong>能把一场活动留下来</strong>
+              <strong>把材料整理成作品</strong>
               <p>活动、访谈和社区讨论结束后，我会把它们整理成文章、节目、选题库、关系线索和可以回访的档案。</p>
             </div>
-            <div class="method-note-card">
-              <strong>会用 AI 做工作台</strong>
-              <p>AI 帮我整理材料、搭知识库、做索引和原型；谁值得写、关系如何处理、哪些判断要留下，仍然由我负责。</p>
-            </div>
           </aside>
-          <div class="method-research" aria-label="持续研究的问题">
-            <div class="method-research-item">
-              <span>Research 01</span>
-              <h4>AI 进入课堂之后</h4>
-              <p>孩子用 AI 学语言，老师把 AI 带进项目制学习，家长重新理解学习和成长。</p>
-            </div>
-            <div class="method-research-item">
-              <span>Research 02</span>
-              <h4>年轻 builder 怎样长出来</h4>
-              <p>一个人如何从兴趣、开源项目、黑客松、社群和孵化器里找到用户和方向。</p>
-            </div>
-            <div class="method-research-item">
-              <span>Research 03</span>
-              <h4>社区如何成为基础设施</h4>
-              <p>Datawhale、开源学习者、数字游民和 AI 创造者社区，如何让工具、知识和人流动起来。</p>
-            </div>
-            <div class="method-research-item">
-              <span>Research 04</span>
-              <h4>中国 AI 创业如何出海</h4>
-              <p>新加坡出海交流、海外教育访谈、复旦 / UCL 工作坊和硅谷科技人物，帮助我校准跨市场叙事。</p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
