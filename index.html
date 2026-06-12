@@ -2555,6 +2555,101 @@
       line-height: 1.72;
     }
 
+    .residency-board {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(22px, 3vw, 42px);
+      border-top: 1px solid var(--line);
+      padding-top: 34px;
+    }
+
+    .residency-lead {
+      grid-column: 1 / span 5;
+      position: sticky;
+      top: 92px;
+      align-self: start;
+    }
+
+    .residency-lead h3 {
+      max-width: 9.5em;
+      font-size: clamp(42px, 5.2vw, 80px);
+      line-height: .96;
+      margin-bottom: 24px;
+    }
+
+    .residency-lead p {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.25vw, 19px);
+      line-height: 1.86;
+      margin: 0 0 18px;
+    }
+
+    .residency-outputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 24px;
+    }
+
+    .residency-outputs span {
+      border: 1px solid var(--line);
+      padding: 8px 10px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .residency-cases {
+      grid-column: 6 / span 7;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid var(--line);
+    }
+
+    .residency-case {
+      min-height: 260px;
+      padding: clamp(22px, 2.2vw, 34px);
+      border-right: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      background: rgba(255, 255, 255, .58);
+    }
+
+    .residency-case:nth-child(2n) {
+      border-right: 0;
+    }
+
+    .residency-case:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+
+    .residency-case span {
+      display: block;
+      margin-bottom: 22px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .residency-case h3 {
+      font-size: clamp(30px, 3vw, 52px);
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .residency-case p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.76;
+    }
+
     .appendix {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2696,8 +2791,22 @@
 
       .method-essay,
       .method-notes,
-      .method-research {
+      .method-research,
+      .residency-lead,
+      .residency-cases {
         grid-column: auto;
+      }
+
+      .residency-board {
+        grid-template-columns: 1fr;
+      }
+
+      .residency-lead {
+        position: static;
+      }
+
+      .residency-cases {
+        grid-template-columns: 1fr 1fr;
       }
 
       .method-research {
@@ -2945,6 +3054,23 @@
         font-size: 38px;
       }
 
+      .residency-cases {
+        grid-template-columns: 1fr;
+      }
+
+      .residency-case,
+      .residency-case:nth-child(2n) {
+        border-right: 0;
+      }
+
+      .residency-case:nth-last-child(-n + 2) {
+        border-bottom: 1px solid var(--line-soft);
+      }
+
+      .residency-case:last-child {
+        border-bottom: 0;
+      }
+
       .method-research {
         grid-template-columns: 1fr;
       }
@@ -3012,6 +3138,7 @@
         <a href="#works">作品</a>
         <a href="#research">研究</a>
         <a href="#proof">能力</a>
+        <a href="#residency">驻场</a>
         <a href="#appendix">索引</a>
         <button class="print-button" type="button" onclick="window.print()">打印 / PDF</button>
       </div>
@@ -3479,6 +3606,55 @@
               <h4>中国 AI 创业的全球语境</h4>
               <p>出海团队、海外平台、社会科学讨论和跨文化现场，如何重新校准中国 AI 故事的写法。</p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="residency" class="band">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Narrative Residency</p>
+          <div>
+            <h2>驻场叙事架构师</h2>
+            <p class="section-desc">我正在把 Storyteller 的工作往前移：进入早期 AI 团队 2-3 个月，理解产品、用户、创始人判断和市场语境，再把这些材料整理成可复用的叙事系统。</p>
+          </div>
+        </div>
+        <div class="residency-board" aria-label="驻场叙事架构师案例">
+          <article class="residency-lead">
+            <h3>把一个团队正在发生的变化，整理成能被理解的故事。</h3>
+            <p>很多早期团队并不缺技术、产品和行动力，真正难的是把正在发生的变化讲清楚：为什么现在做这件事，谁真的需要它，它进入哪个市场，又该如何被用户、投资人、媒体和候选人理解。</p>
+            <p>我的工作是进入团队现场，访谈创始人、观察产品场景、梳理用户反馈和行业语境，最后留下公司叙事、创始人叙事、产品叙事、内容选题和传播素材。</p>
+            <p>社区里有很多鲜活的故事和案例值得讲述，尤其是那些产品还在迭代、市场还在校准、团队正在寻找表达方式的阶段。</p>
+            <div class="residency-outputs" aria-label="驻场可能交付">
+              <span>Founder Story</span>
+              <span>Product Narrative</span>
+              <span>Market Context</span>
+              <span>Content System</span>
+            </div>
+          </article>
+
+          <div class="residency-cases">
+            <article class="residency-case">
+              <span>Current Field 01</span>
+              <h3>观猹</h3>
+              <p>围绕 AI 创业者、社区案例和具体人物故事，整理栏目线索、访谈方向和长期叙事主线。</p>
+            </article>
+            <article class="residency-case">
+              <span>Current Field 02</span>
+              <h3>Datawhale</h3>
+              <p>从开源学习者、开发者活动和技术现场进入，观察国内 AI 开源生态如何通过社区和协作长出来。</p>
+            </article>
+            <article class="residency-case">
+              <span>Current Field 03</span>
+              <h3>Frontier X</h3>
+              <p>Physical AI 出海美国市场团队。围绕创始人判断、产品场景和跨市场表达，整理进入海外语境的叙事材料。</p>
+            </article>
+            <article class="residency-case">
+              <span>Current Field 04</span>
+              <h3>超脑 AI 孵化器</h3>
+              <p>在 AI 创新教育、创业孵化和年轻 builder 生态中，持续观察早期团队如何从想法走向产品和市场。</p>
+            </article>
           </div>
         </div>
       </div>
