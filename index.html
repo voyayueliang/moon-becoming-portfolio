@@ -1292,58 +1292,6 @@
       text-transform: uppercase;
     }
 
-    .pitch-deck {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      margin-top: clamp(30px, 4vw, 54px);
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .pitch-card {
-      min-height: 430px;
-      padding: clamp(20px, 2.4vw, 30px);
-      background: var(--paper);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .pitch-card:nth-child(2) {
-      background: var(--mint);
-    }
-
-    .pitch-card span,
-    .pitch-label {
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .pitch-card h3 {
-      max-width: 8.4em;
-      font-size: clamp(30px, 3.2vw, 48px);
-      line-height: .96;
-    }
-
-    .pitch-card p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.72;
-    }
-
-    .pitch-row {
-      display: grid;
-      gap: 8px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(28, 68, 35, .24);
-    }
-
     .reading-route {
       display: grid;
       grid-template-columns: minmax(210px, .82fr) minmax(0, 2.5fr);
@@ -2804,7 +2752,6 @@
       .collection-grid,
       .proof-grid,
       .research-board,
-      .pitch-deck,
       .sample-shelf,
       .work-card,
       .pathways,
@@ -2902,7 +2849,6 @@
       .guide-grid,
       .proof-grid,
       .research-board,
-      .pitch-deck,
       .reading-route,
       .route-cards,
       .ledger-row,
@@ -3086,7 +3032,6 @@
       .collection-card,
       .proof-item,
       .research-card,
-      .pitch-card,
       .sample-card,
       .story-step {
         padding: 18px;
@@ -3518,7 +3463,7 @@
           <p class="section-kicker">Research Desk</p>
           <div>
             <h2>可持续展开的 AI 选题</h2>
-            <p class="section-desc">每条线索后面都有我进入过的现场和可以继续回访的人：孵化器、活动现场、播客长谈、开发者社区和海外交流。它们适合发展成深度访谈、圆桌、人物稿和系列长文。</p>
+            <p class="section-desc">这组内容想突出的是选题转化能力：每条线索后面都有我进入过的现场、可以继续回访的人，以及下一步能落成的深度访谈、圆桌、人物稿或系列长文。</p>
           </div>
         </div>
         <div class="research-board" aria-label="可持续展开的 AI 内容选题">
@@ -3526,13 +3471,13 @@
             <span>01 / Agent & Org</span>
             <h3>Agent 进入公司后，组织怎样真的运转</h3>
             <p>我会追问：当 Agent 开始接管开发、对齐、排查和 review，工程师、产品经理、市场和创始人的边界怎样变化。这个题目适合从真实团队、工作流和失败案例里拆。</p>
-            <small>Agent / Harness / 组织效率 / 一人公司</small>
+            <small>来源：AI跨界客厅 / 孵化器团队 / Agent 圆桌｜可产出：工作流拆解</small>
           </article>
           <article class="research-card">
             <span>02 / Open Source Community</span>
             <h3>社区如何成为 AI 时代的基础设施</h3>
             <p>AMD / Datawhale 现场让我看到，连顶尖技术现场也在拥抱国内 AI 开源生态。我长期浸润在 AI 开源社区、孵化器和创业现场，更能看见模型、算力、工具链、开发者和社区组织之间怎样形成真实关系。</p>
-            <small>Datawhale / ModelScope / ROCm / 开源社区 / 孵化器</small>
+            <small>来源：AMD / Datawhale 现场报道 / ModelScope / 开源社区｜可产出：生态专题</small>
           </article>
           <article class="research-card">
             <span>03 / AI Education</span>
@@ -3556,7 +3501,7 @@
             <span>06 / Physical AI</span>
             <h3>AI 硬件和 Physical AI 怎样进入真实场景</h3>
             <p>从乐乐进入硅谷 AI 硬件创业，到 Frontier X 这样的 Physical AI 出海团队，我想继续看见 AI 从屏幕、软件和工作流走向身体、空间和真实世界时，会遇到哪些产品和市场问题。</p>
-            <small>AI Hardware / Physical AI / 机器人 / 出海团队</small>
+            <small>来源：Frontier X / 乐乐 AI 硬件 / 新加坡出海交流｜可产出：创始人深访</small>
           </article>
           <article class="research-card">
             <span>07 / AI Media & Narrative</span>
@@ -3569,56 +3514,6 @@
             <h3>大会和客厅怎样变成高密度信源网络</h3>
             <p>AI跨界客厅、AI跨城客厅、WAIC 派对和 AMD 开发者日让我看到：真正有价值的选题常常从一次见面、一场圆桌、一段会后夜谈里长出来。活动可以承担传播、内容采集和关系生长几件事。</p>
             <small>AI 跨界客厅 / AI 跨城客厅 / WAIC / 开发者大会</small>
-          </article>
-        </div>
-        <div class="pitch-deck" aria-label="可以立刻展开的三组选题">
-          <article class="pitch-card">
-            <span>Ready Pitch 01</span>
-            <h3>Agent 进入公司后，谁在重新定义工作</h3>
-            <div class="pitch-row">
-              <strong class="pitch-label">Why now</strong>
-              <p>Harness、AI-First 和一人公司正在变成创业团队共同讨论的语言。真正值得拆的是一线团队怎样改流程、谁来 review、哪里会失控。</p>
-            </div>
-            <div class="pitch-row">
-              <strong class="pitch-label">Sources</strong>
-              <p>Agent 圆桌、孵化器团队、开发者社区、早期产品团队；可以从创始人、工程师、产品经理三类人开始约。</p>
-            </div>
-            <div class="pitch-row">
-              <strong class="pitch-label">Format</strong>
-              <p>播客圆桌、深度访谈、真实团队工作流拆解稿。</p>
-            </div>
-          </article>
-          <article class="pitch-card">
-            <span>Ready Pitch 02</span>
-            <h3>社区为什么正在成为 AI 基础设施</h3>
-            <div class="pitch-row">
-              <strong class="pitch-label">Why now</strong>
-              <p>模型和算力之外，开源学习者、开发者社区、孵化器和活动网络正在决定工具能否被使用、传播和贡献。</p>
-            </div>
-            <div class="pitch-row">
-              <strong class="pitch-label">Sources</strong>
-              <p>Datawhale、ModelScope、ROCm、开源贡献者、研究者社区、青年 builder；AMD / Datawhale 现场可以作为入口。</p>
-            </div>
-            <div class="pitch-row">
-              <strong class="pitch-label">Format</strong>
-              <p>生态报道、人物组稿、开源社区专题、开发者圆桌。</p>
-            </div>
-          </article>
-          <article class="pitch-card">
-            <span>Ready Pitch 03</span>
-            <h3>Physical AI 出海，第一批团队在踩什么坑</h3>
-            <div class="pitch-row">
-              <strong class="pitch-label">Why now</strong>
-              <p>AI 从软件走向硬件、空间和美国市场，创始人要同时处理供应链、真实场景、渠道、文化表达和产品叙事。</p>
-            </div>
-            <div class="pitch-row">
-              <strong class="pitch-label">Sources</strong>
-              <p>Frontier X、乐乐的硅谷 AI 硬件创业、新加坡出海交流、海外教育创业者和跨市场团队。</p>
-            </div>
-            <div class="pitch-row">
-              <strong class="pitch-label">Format</strong>
-              <p>创始人深访、出海专题、硅谷圆桌、产品叙事 case study。</p>
-            </div>
           </article>
         </div>
       </div>
