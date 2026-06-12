@@ -2624,21 +2624,51 @@
 
     .appendix {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 0 30px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
       border-top: 1px solid var(--line);
-      padding-top: 18px;
+      border-left: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .appendix-group {
+      min-height: 310px;
+      padding: clamp(18px, 2vw, 26px);
+      background: var(--paper);
+    }
+
+    .appendix-group:nth-child(2),
+    .appendix-group:nth-child(3) {
+      background: var(--paper-2);
+    }
+
+    .appendix-group h3 {
+      margin: 0;
+      color: var(--teal);
+      font-size: clamp(28px, 3vw, 42px);
+      line-height: 1;
+    }
+
+    .appendix-group p {
+      max-width: 520px;
+      margin: 10px 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
+    .appendix-links {
+      display: grid;
+      gap: 0;
     }
 
     .appendix a {
-      grid-column: span 6;
       display: grid;
-      grid-template-columns: 38px minmax(0, 1fr) auto;
-      gap: 12px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 10px;
       align-items: baseline;
-      min-height: 58px;
-      padding: 13px 0;
-      border-bottom: 1px solid var(--line-soft);
+      padding: 12px 0;
+      border-top: 1px solid var(--line-soft);
       color: #3b342d;
       font-family: var(--sans);
       font-size: 14px;
@@ -2647,9 +2677,10 @@
     }
 
     .appendix a span {
+      grid-column: 1 / -1;
       color: var(--coral);
       font-family: var(--mono);
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 760;
       letter-spacing: .06em;
     }
@@ -2657,7 +2688,7 @@
     .appendix a strong {
       color: var(--ink);
       font-family: var(--serif);
-      font-size: clamp(20px, 2vw, 28px);
+      font-size: clamp(19px, 1.8vw, 26px);
       font-weight: 500;
       line-height: 1.05;
       transition: color .2s ease;
@@ -2930,17 +2961,14 @@
 
       .appendix {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 1px;
       }
 
       .appendix a {
-        grid-column: auto;
-        grid-template-columns: 34px minmax(0, 1fr);
-        gap: 8px 10px;
+        grid-template-columns: minmax(0, 1fr);
       }
 
       .appendix a em {
-        grid-column: 2;
         justify-self: start;
       }
     }
@@ -3624,23 +3652,48 @@
           <p class="section-kicker">Archive Desk</p>
           <div>
             <h2>作品索引</h2>
-            <p class="section-desc">原文、节目和活动记录收在这里，像编辑桌上的线索卡。读完前面的旅程，再从这里继续打开具体作品。</p>
+            <p class="section-desc">这里按作品类型收束：深度报道、系列节目、现场活动和交互作品。想核对具体产出时，可以从对应抽屉打开。</p>
           </div>
         </div>
         <div class="appendix">
-          <a href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>01</span><strong>AMD / Datawhale 开发者生态</strong><em>产业事件叙事</em></a>
-          <a href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>02</span><strong>默子 / AI 浪潮下的超级个体访谈</strong><em>俗世奇人</em></a>
-          <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer"><span>03</span><strong>Tim / Artflow.ai 创始人</strong><em>长文</em></a>
-          <a href="https://www.xiaoyuzhoufm.com/episode/679204d6247d51713cd3570b" target="_blank" rel="noreferrer"><span>04</span><strong>Tim 的 Becoming 计划播客单集</strong><em>播客</em></a>
-          <a href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer"><span>05</span><strong>葛小川 / AppLovin CTO</strong><em>硅谷人物</em></a>
-          <a href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer"><span>06</span><strong>AI 教育田野志</strong><em>系列节目</em></a>
-          <a href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer"><span>07</span><strong>Becoming计划</strong><em>播客栏目</em></a>
-          <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer"><span>08</span><strong>乐乐 / AI 教育与游戏创业者</strong><em>人物访谈</em></a>
-          <a href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer"><span>09</span><strong>AI跨界客厅 / WAIC AI 研究者创业者派对复盘</strong><em>活动记录</em></a>
-          <a href="https://mp.weixin.qq.com/s/4b-KkxuvQMvNaPMThBv5Lw" target="_blank" rel="noreferrer"><span>10</span><strong>AI跨界客厅 / WAIC 期间派对预告</strong><em>活动预告</em></a>
-          <a href="https://mp.weixin.qq.com/s/Fugj4SWF5ueeW0pI9oeAzg" target="_blank" rel="noreferrer"><span>11</span><strong>AI跨城客厅 / 良渚-上海 AI 创业者夜谈</strong><em>社区现场</em></a>
-          <a href="https://mp.weixin.qq.com/s/Ttv2Pq7dIQhv3L1695wHyw" target="_blank" rel="noreferrer"><span>12</span><strong>2050 舞台分享</strong><em>公开分享</em></a>
-          <a href="https://mp.weixin.qq.com/s/qNgVznFUvZv3ohTekOKtxw" target="_blank" rel="noreferrer"><span>13</span><strong>把田野作为方法</strong><em>方法文章</em></a>
+          <article class="appendix-group">
+            <h3>深度报道与人物</h3>
+            <p>看我如何处理技术现场、创业者路径、公司机制和具体人物。</p>
+            <div class="appendix-links">
+              <a href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>Industry Event</span><strong>AMD / Datawhale 开发者生态</strong><em>产业事件叙事</em></a>
+              <a href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer"><span>Silicon Valley Profile</span><strong>葛小川 / AppLovin CTO</strong><em>硅谷人物</em></a>
+              <a href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>默子 / AI 浪潮下的超级个体访谈</strong><em>人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>Tim / Artflow.ai 创始人</strong><em>长文</em></a>
+              <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>乐乐 / AI 教育与游戏创业者</strong><em>人物访谈</em></a>
+            </div>
+          </article>
+          <article class="appendix-group">
+            <h3>系列节目</h3>
+            <p>看我如何围绕一个问题持续约人、追问和沉淀栏目。</p>
+            <div class="appendix-links">
+              <a href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer"><span>Podcast Series</span><strong>AI 教育田野志</strong><em>系列节目</em></a>
+              <a href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer"><span>Podcast Series</span><strong>Becoming计划</strong><em>播客栏目</em></a>
+              <a href="https://www.xiaoyuzhoufm.com/episode/679204d6247d51713cd3570b" target="_blank" rel="noreferrer"><span>Episode</span><strong>Tim 的 Becoming 计划播客单集</strong><em>播客</em></a>
+            </div>
+          </article>
+          <article class="appendix-group">
+            <h3>现场活动与社区</h3>
+            <p>看我如何组织现场、主持圆桌，把一次见面变成可回访的内容。</p>
+            <div class="appendix-links">
+              <a href="https://mp.weixin.qq.com/s/cC-TdC31B7C-RclI_FjRDw" target="_blank" rel="noreferrer"><span>Event Recap</span><strong>AI跨界客厅 / WAIC AI 研究者创业者派对复盘</strong><em>活动记录</em></a>
+              <a href="https://mp.weixin.qq.com/s/4b-KkxuvQMvNaPMThBv5Lw" target="_blank" rel="noreferrer"><span>Event Brief</span><strong>AI跨界客厅 / WAIC 期间派对预告</strong><em>活动预告</em></a>
+              <a href="https://mp.weixin.qq.com/s/Fugj4SWF5ueeW0pI9oeAzg" target="_blank" rel="noreferrer"><span>Community Field</span><strong>AI跨城客厅 / 良渚-上海 AI 创业者夜谈</strong><em>社区现场</em></a>
+            </div>
+          </article>
+          <article class="appendix-group">
+            <h3>交互作品与公开表达</h3>
+            <p>看我如何把访谈、田野和方法做成可展示、可讲述的作品。</p>
+            <div class="appendix-links">
+              <a href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer"><span>Interactive Story</span><strong>生命力博物馆</strong><em>交互叙事</em></a>
+              <a href="https://mp.weixin.qq.com/s/Ttv2Pq7dIQhv3L1695wHyw" target="_blank" rel="noreferrer"><span>Public Talk</span><strong>2050 舞台分享</strong><em>公开分享</em></a>
+              <a href="https://mp.weixin.qq.com/s/qNgVznFUvZv3ohTekOKtxw" target="_blank" rel="noreferrer"><span>Method Note</span><strong>把田野作为方法</strong><em>方法文章</em></a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
