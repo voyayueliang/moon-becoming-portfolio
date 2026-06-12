@@ -632,6 +632,72 @@
       line-height: 1.68;
     }
 
+    .quick-evidence {
+      margin-top: 22px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .quick-evidence-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .quick-evidence-head strong {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .quick-evidence-head span {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      text-align: right;
+    }
+
+    .quick-evidence-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .quick-evidence-item {
+      min-height: 132px;
+      padding: 14px 12px;
+      background: var(--paper-2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .quick-evidence-item:nth-child(2),
+    .quick-evidence-item:nth-child(5) {
+      background: var(--mint);
+    }
+
+    .quick-evidence-item b {
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(34px, 3.6vw, 54px);
+      line-height: .86;
+      font-weight: 500;
+    }
+
+    .quick-evidence-item span {
+      color: #34352f;
+      font-size: 13px;
+      line-height: 1.42;
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3089,6 +3155,18 @@
         grid-template-columns: 1fr;
       }
 
+      .quick-evidence-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .quick-evidence-head {
+        display: grid;
+      }
+
+      .quick-evidence-head span {
+        text-align: left;
+      }
+
       .ledger-row {
         align-items: start;
         gap: 10px;
@@ -3263,11 +3341,16 @@
       .artifact-card,
       .collection-card,
       .proof-item,
+      .quick-evidence-item,
       .research-card,
       .research-mini,
       .sample-card,
       .story-step {
         padding: 18px;
+      }
+
+      .quick-evidence-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .hero-copy {
@@ -3480,6 +3563,38 @@
               <strong>我已经做过什么</strong>
               <p>采写、约人、主持、组织现场、做系列栏目、建立 AI 创造者关系网络。</p>
             </a>
+          </div>
+        </div>
+        <div class="quick-evidence" aria-label="快速经历数字">
+          <div class="quick-evidence-head">
+            <strong>先看数字</strong>
+            <span>先用几组数字理解我的内容、社区和现场能力。</span>
+          </div>
+          <div class="quick-evidence-grid">
+            <div class="quick-evidence-item">
+              <b>20+</b>
+              <span>新闻采写、栏目策划和实地走访基础</span>
+            </div>
+            <div class="quick-evidence-item">
+              <b>700+</b>
+              <span>AI 创造者与早期创业者社区</span>
+            </div>
+            <div class="quick-evidence-item">
+              <b>170+</b>
+              <span>WAIC 后派对现场报名与圆桌组织</span>
+            </div>
+            <div class="quick-evidence-item">
+              <b>30+</b>
+              <span>播客、直播、活动和人物稿对谈</span>
+            </div>
+            <div class="quick-evidence-item">
+              <b>6</b>
+              <span>AI 教育田野志公开节目</span>
+            </div>
+            <div class="quick-evidence-item">
+              <b>3</b>
+              <span>新加坡、硅谷人物、复旦/UCL 跨文化入口</span>
+            </div>
           </div>
         </div>
       </div>
