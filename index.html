@@ -2918,6 +2918,82 @@
       text-transform: uppercase;
     }
 
+    .value-board {
+      display: grid;
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1.28fr);
+      gap: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
+    }
+
+    .value-lead,
+    .value-card {
+      background: var(--paper-2);
+      padding: clamp(20px, 2.6vw, 34px);
+    }
+
+    .value-lead {
+      display: flex;
+      min-height: 360px;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--teal);
+      color: var(--paper);
+    }
+
+    .value-lead span,
+    .value-card span {
+      color: var(--poster-green);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .value-lead h3 {
+      margin-top: 16px;
+      font-size: clamp(36px, 4vw, 62px);
+      line-height: .96;
+    }
+
+    .value-lead p {
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 15px;
+      line-height: 1.72;
+    }
+
+    .value-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .value-card:nth-child(2),
+    .value-card:nth-child(3) {
+      background: var(--mint);
+    }
+
+    .value-card span {
+      color: var(--teal);
+    }
+
+    .value-card h3 {
+      margin-top: 18px;
+      color: var(--teal);
+      font-size: clamp(25px, 2.4vw, 36px);
+      line-height: 1.04;
+    }
+
+    .value-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.68;
+    }
+
     .interactive-lab {
       display: grid;
       gap: clamp(22px, 3vw, 38px);
@@ -3249,6 +3325,8 @@
       .work-card,
       .pathways,
       .method-story,
+      .value-board,
+      .value-cards,
       .method,
       .footer .wrap {
         grid-template-columns: 1fr;
@@ -3271,6 +3349,8 @@
       .community-lead,
       .community-project,
       .community-cards,
+      .value-lead,
+      .value-cards,
       .method > div:first-child,
       .method > div:last-child,
       .artifact-card,
@@ -3291,6 +3371,8 @@
 
       .method-essay,
       .method-notes,
+      .value-lead,
+      .value-cards,
       .residency-lead,
       .residency-cases {
         grid-column: auto;
@@ -4195,49 +4277,43 @@
     <section id="method" class="band">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Method</p>
+          <p class="section-kicker">Editorial Value</p>
           <div>
-            <h2>我能带来的内容能力</h2>
-            <p class="section-desc">我做内容时会拆成几件具体的事：找到人，进入现场，追出问题，判断议题，再把材料做成可以发布、可以继续更新的内容。</p>
+            <h2>我能补上的内容增量</h2>
+            <p class="section-desc">这里收成内容团队最容易判断的四件事：我能带来什么题、什么人、什么对话，以及什么形态的产出。</p>
           </div>
         </div>
-        <div class="method-story" aria-label="工作方法叙事">
-          <article class="method-essay">
-            <span class="method-essay-kicker">Working Method</span>
-            <h3>从一个信息很多的现场里，带回可发布的内容。</h3>
-            <p>我做内容的起点通常很简单：先去现场，先找人聊天。本科做电台时，我请校园里卖煎饼的阿姨走进直播间，讲她自己的生活。后来在大理做田野，家长会把孩子从封闭到慢慢打开的过程讲给我听，有人讲到落泪。</p>
-            <p>来到上海之后，这种能力进入了 AI 创业现场。AI 夏令营、青少年黑客松、孵化器路演、白板旁的用户反馈、WAIC 后的夜谈，让我持续遇见早期团队、投资人、平台团队、开源学习者、教育实践者和年轻创业者。</p>
-            <p>我的工作就是把这些聊天继续往前推：谁在做产品，谁在找用户，谁在改工作流，谁在连接资源。写默子时，我从一个 00 后 builder 的开源项目进入 AI 应用层；写 AMD / Datawhale 时，我把开发者、开源社区和技术公司放到同一个现场；写葛小川时，我把公开材料整理成一个硅谷技术人的成长和商业路径。</p>
-            <p>所以我能持续交付几类内容：人物深访、创业团队故事、生态报道、活动报道、播客/圆桌策划，以及可以长期更新的栏目。AI 是我的工作台，帮我整理采访、搭建知识库、索引材料和检查线索；最后的判断仍然回到人、关系、产品和具体语境。</p>
+        <div class="value-board" aria-label="内容团队可使用的增量">
+          <article class="value-lead">
+            <div>
+              <span>Content Contribution</span>
+              <h3>把 AI 现场、信源和内容产出接起来。</h3>
+            </div>
+            <p>我可以补在内容生产链条的前中段：找到值得追的人和题，做背景研究、访谈提纲和主持追问，再把材料整理成文章、节目、活动复盘或系列栏目。</p>
           </article>
 
-          <aside class="method-notes" aria-label="五种内容能力">
-            <div class="method-note-card">
-              <strong>找到一线信源</strong>
-              <p>超级个体实验室、AI 跨界客厅、Datawhale、数字游民和 AI 开源学习者社区，让我能持续接触开发者、创业者、投资人、研究者和教育实践者。</p>
-              <em>可交付：嘉宾名单 / 采访约访 / 选题线索</em>
-            </div>
-            <div class="method-note-card">
-              <strong>进入高密度现场</strong>
-              <p>AI 夏令营、青少年黑客松、孵化器路演、WAIC 后夜谈和 AMD 开发者日，训练我在现场快速分辨人、议题和关键画面。</p>
-              <em>可交付：现场报道 / 活动复盘 / 圆桌策划</em>
-            </div>
-            <div class="method-note-card">
-              <strong>做人物和团队深访</strong>
-              <p>默子、Tim、乐乐、葛小川，以及我正在服务的 AI 团队，让我熟悉从个人经历进入产品、组织、市场和技术语境的写法。</p>
-              <em>可交付：人物稿 / 创始人故事 / 团队叙事</em>
-            </div>
-            <div class="method-note-card">
-              <strong>判断 AI 议题</strong>
-              <p>我长期看 AI 教育、开源社区、Agent 组织变化、年轻 builder 和出海团队，也会把中国现场放进海外技术和市场语境里校准。</p>
-              <em>可交付：选题 brief / 访谈提纲 / 背景研究</em>
-            </div>
-            <div class="method-note-card">
-              <strong>持续做成栏目</strong>
-              <p>Becoming计划、AI 教育田野志、AI 跨界客厅和生命力博物馆，让分散访谈、活动和人物故事沉淀成可以持续打开的系列。</p>
-              <em>可交付：播客栏目 / 系列长文 / 内容档案</em>
-            </div>
-          </aside>
+          <div class="value-cards">
+            <article class="value-card">
+              <span>01 / Topics</span>
+              <h3>持续供给 AI 选题</h3>
+              <p>长期关注 AI 创业、开源社区、Agent 工作流、AI 教育、出海团队和年轻 builder，可以把现场材料整理成选题 brief、背景资料和访谈问题。</p>
+            </article>
+            <article class="value-card">
+              <span>02 / Guests</span>
+              <h3>带来真实嘉宾和信源</h3>
+              <p>超级个体实验室、AI 跨界客厅、Datawhale、Research AI+ 和孵化器现场，让我能接触创业者、研究者、开发者、教育实践者和投资人。</p>
+            </article>
+            <article class="value-card">
+              <span>03 / Hosting</span>
+              <h3>把对话推进成节目</h3>
+              <p>我做过播客、直播、圆桌和线下主持，也习惯在访谈前做研究、现场追问、会后整理，把一次聊天变成可发布内容。</p>
+            </article>
+            <article class="value-card">
+              <span>04 / Output</span>
+              <h3>多形态内容产出</h3>
+              <p>人物稿、生态报道、播客栏目、活动复盘和交互档案都已经跑过。AI 会帮助我整理材料和索引线索，最后的判断回到人、产品、关系和语境。</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
