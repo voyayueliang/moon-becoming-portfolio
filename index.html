@@ -1867,6 +1867,80 @@
       line-height: 1.8;
     }
 
+    .case-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 16px;
+    }
+
+    .case-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 4px 7px;
+      border: 1px solid var(--line-soft);
+      color: var(--teal);
+      background: rgba(255, 255, 255, .48);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 780;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .case-result {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.62;
+    }
+
+    .case-result strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 10px;
+      font-weight: 820;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .case-series-list {
+      display: grid;
+      gap: 7px;
+      margin-top: 16px;
+    }
+
+    .case-series-list a {
+      display: grid;
+      grid-template-columns: minmax(92px, .72fr) minmax(0, 1.35fr);
+      gap: 10px;
+      padding: 9px 0;
+      border-top: 1px solid var(--line-soft);
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .case-series-list a:hover strong {
+      color: var(--teal);
+    }
+
+    .case-series-list strong {
+      color: var(--ink);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .case-series-list span {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
     .case-grid {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -1919,6 +1993,25 @@
 
     .case-card.is-proof {
       grid-column: span 4;
+    }
+
+    .case-card.series-case {
+      grid-column: span 8;
+      display: grid;
+      grid-template-columns: minmax(190px, .62fr) minmax(0, 1.38fr);
+      gap: clamp(16px, 2.4vw, 26px);
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .case-card.series-case .case-visual {
+      align-self: stretch;
+      min-height: 100%;
+    }
+
+    .case-card.series-case .case-index {
+      margin-top: 0;
     }
 
     .case-card.is-proof .case-visual img,
@@ -2918,6 +3011,7 @@
       .work-body,
       .case-card,
       .case-card.is-wide,
+      .case-card.series-case,
       .case-card.is-dark,
       .research-card,
       .research-card.is-wide,
@@ -3031,6 +3125,10 @@
 
       .case-card.is-wide {
         display: block;
+      }
+
+      .case-card.series-case {
+        grid-template-columns: 1fr;
       }
 
       .case-card.is-dark {
@@ -3512,15 +3610,38 @@
               </div>
             </a>
 
-            <a class="case-card is-square" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+            <article class="case-card is-square series-case">
               <figure class="case-visual is-contain">
                 <img src="assets/covers/redink-builder.webp" alt="默子 Redink 人物报道插图">
               </figure>
-              <span class="case-index">03 / Super Individual Interview</span>
-              <h3>AI 浪潮下的超级个体访谈</h3>
-              <p>默子 / Redink 案例。这个系列关注 AI 浪潮下的“俗世奇人”：一个 00 后 builder、一款开源产品和突然涌来的用户反馈，重点写人如何在真实工作流里修正产品。</p>
-              <span class="case-link">Open article ↗</span>
-            </a>
+              <div>
+                <span class="case-index">03 / Super Individual Interview</span>
+                <h3>AI 浪潮下的超级个体访谈</h3>
+                <p>4 期公开人物稿。这个系列关注 AI 浪潮下的“俗世奇人”：00 后 builder、普通工作里的 AI 创造者、17 岁创业少年和设计型硬件 builder。</p>
+                <div class="case-result">
+                  <strong>已知反馈</strong>
+                  系列阅读 8000+；默子稿发布后，20+ 投资机构、大厂和企业资源进入后续沟通，杨晨稿被百度秒达收录。
+                </div>
+                <div class="case-series-list" aria-label="AI 浪潮下的超级个体访谈四期">
+                  <a href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer">
+                    <strong>默子 / Redink</strong>
+                    <span>3 天做出 4.5k+ Stars 开源项目，进入投资人和大厂视野。</span>
+                  </a>
+                  <a href="https://mp.weixin.qq.com/s/pudO0eJISbL6BylC1BDC0Q" target="_blank" rel="noreferrer">
+                    <strong>杨晨 / AI 创造者</strong>
+                    <span>前大厂运营，白天做保安，夜里用 AI 重建行动感。</span>
+                  </a>
+                  <a href="https://mp.weixin.qq.com/s/sEBMUapVyCz0tm073si_sg" target="_blank" rel="noreferrer">
+                    <strong>核蛋 / 17 岁创业少年</strong>
+                    <span>在课业、创业比赛和产品实践之间长出商业判断。</span>
+                  </a>
+                  <a href="https://mp.weixin.qq.com/s/7IHYXyU80C9vM8Tzz1KOrQ" target="_blank" rel="noreferrer">
+                    <strong>小鹅 / 创意硬件 builder</strong>
+                    <span>黑客松金奖、AI 硬件和设计型一人公司样本。</span>
+                  </a>
+                </div>
+              </div>
+            </article>
 
             <a class="case-card is-portrait" href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer">
               <figure class="case-visual is-contain">
@@ -3528,7 +3649,12 @@
               </figure>
               <span class="case-index">04 / Becoming Series</span>
               <h3>Becoming计划</h3>
-              <p>系列栏目。追问一个以热爱驱动、保有主体性的人怎样长出来；从大理线下分享、播客长谈到人物文章，持续记录创造者怎样形成判断、选择工具和走向行动。</p>
+              <p>4+ 期公开对谈。追问一个以热爱驱动、保有主体性的人怎样长出来；从大理线下分享、播客长谈到人物文章，持续记录创造者怎样形成判断、选择工具和走向行动。</p>
+              <div class="case-tags" aria-label="Becoming 计划样本">
+                <span class="case-tag">Tim / Artflow.ai</span>
+                <span class="case-tag">乐乐 / AI 教育与游戏</span>
+                <span class="case-tag">长文转化</span>
+              </div>
               <span class="case-link">Listen ↗</span>
             </a>
 
@@ -3539,7 +3665,13 @@
               <div>
                 <span class="case-index">05 / AI Education Field Notes</span>
                 <h3>AI 教育田野志</h3>
-                <p>系列栏目。和乐乐一起持续对谈国内、硅谷和欧洲的 AI 教育实践者，我负责主持、追问、整理现场反馈，把教育现场里的 AI 使用、元能力和产品判断留成系列。</p>
+                <p>6 期公开节目。和乐乐一起持续对谈国内、硅谷和欧洲的 AI 教育实践者，我负责主持、追问、整理现场反馈，把教育现场里的 AI 使用、元能力和产品判断留成系列。</p>
+                <div class="case-tags" aria-label="AI 教育田野志样本">
+                  <span class="case-tag">中国一线实践</span>
+                  <span class="case-tag">美国 / 硅谷</span>
+                  <span class="case-tag">伦敦教育创新</span>
+                  <span class="case-tag">社区与信任</span>
+                </div>
                 <span class="case-link">Listen ↗</span>
               </div>
             </a>
@@ -3659,10 +3791,10 @@
             </div>
           </article>
           <article class="proof-item">
-            <div class="proof-number">6</div>
+            <div class="proof-number">3组</div>
             <div>
               <h3>系列化产出</h3>
-              <p>共同发起 AI 教育田野志，公开节目覆盖中国一线实践、美国/硅谷与伦敦教育创新，能持续围绕一个问题做栏目。</p>
+              <p>超级个体访谈 4 期、Becoming计划 4+ 期、AI教育田野志 6 期，把人物稿、播客和教育田野做成可以持续更新的系列。</p>
             </div>
           </article>
           <article class="proof-item">
@@ -3858,6 +3990,9 @@
               <a href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>Industry Event</span><strong>AMD / Datawhale 开发者生态</strong><em>产业事件叙事</em></a>
               <a href="https://mp.weixin.qq.com/s/Qaj7mgK1gfB0MHtN_FLxLA" target="_blank" rel="noreferrer"><span>Silicon Valley Profile</span><strong>葛小川 / AppLovin CTO</strong><em>硅谷人物</em></a>
               <a href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>默子 / AI 浪潮下的超级个体访谈</strong><em>人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/pudO0eJISbL6BylC1BDC0Q" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>杨晨 / 白天是保安，夜里是 AI 创造者</strong><em>人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/sEBMUapVyCz0tm073si_sg" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>核蛋 / 17 岁创业少年</strong><em>人物稿</em></a>
+              <a href="https://mp.weixin.qq.com/s/7IHYXyU80C9vM8Tzz1KOrQ" target="_blank" rel="noreferrer"><span>Builder Profile</span><strong>小鹅 / AI 创意硬件与设计 builder</strong><em>人物稿</em></a>
               <a href="https://mp.weixin.qq.com/s/wgFAtBLtW6yvm9acbR7FzQ" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>Tim / Artflow.ai 创始人</strong><em>长文</em></a>
               <a href="https://mp.weixin.qq.com/s/RWh69Q8JQmYlL40mfD1rKA" target="_blank" rel="noreferrer"><span>Founder Interview</span><strong>乐乐 / AI 教育与游戏创业者</strong><em>人物访谈</em></a>
             </div>
