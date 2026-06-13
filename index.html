@@ -435,6 +435,26 @@
 
     #interactive {
       padding-top: 72px;
+      background:
+        radial-gradient(circle at 72% 38%, rgba(114, 239, 117, .10), transparent 30%),
+        linear-gradient(180deg, #050505 0%, #070907 76%, #050505 100%);
+      color: var(--paper);
+    }
+
+    #interactive .section-head {
+      border-color: rgba(114, 239, 117, .52);
+    }
+
+    #interactive .section-kicker,
+    #interactive .section-desc {
+      color: rgba(255, 254, 250, .76);
+    }
+
+    #interactive h2 {
+      color: var(--paper);
+      max-width: 10.5em;
+      font-size: clamp(58px, 6.8vw, 112px);
+      line-height: .9;
     }
 
     .wrap {
@@ -3012,6 +3032,135 @@
       text-transform: uppercase;
     }
 
+    .interactive-lab {
+      gap: clamp(18px, 3vw, 38px);
+    }
+
+    .interactive-grid {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(18px, 2.4vw, 30px);
+      align-items: start;
+      background: transparent;
+      border: 0;
+    }
+
+    .interactive-card {
+      border: 0;
+      background: transparent;
+      overflow: visible;
+      box-shadow: none;
+    }
+
+    .interactive-card:hover,
+    .interactive-card:focus-visible {
+      background: transparent;
+      transform: translateY(-3px);
+    }
+
+    .interactive-card.is-featured {
+      grid-column: 1 / -1;
+      min-height: clamp(580px, 50vw, 720px);
+      overflow: hidden;
+      background: #050505;
+      box-shadow: 0 42px 120px rgba(0, 0, 0, .42);
+    }
+
+    .interactive-card.is-featured::before {
+      background:
+        linear-gradient(90deg, rgba(5, 5, 5, .94) 0%, rgba(5, 5, 5, .72) 38%, rgba(5, 5, 5, .26) 72%, rgba(5, 5, 5, .72) 100%),
+        linear-gradient(180deg, rgba(5, 5, 5, .06), rgba(5, 5, 5, .72));
+    }
+
+    .interactive-card.is-featured .interactive-shot {
+      inset: 0;
+      opacity: .82;
+    }
+
+    .interactive-card.is-featured .interactive-shot img {
+      object-position: center top;
+      filter: saturate(.9) contrast(1.08);
+    }
+
+    .interactive-card.is-featured .interactive-copy {
+      width: min(760px, 58%);
+      min-height: inherit;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: clamp(34px, 5vw, 76px);
+    }
+
+    .interactive-card.is-featured .interactive-copy h3 {
+      font-size: clamp(52px, 5.2vw, 82px);
+      line-height: .96;
+      white-space: nowrap;
+    }
+
+    .interactive-card.is-featured .interactive-copy p {
+      max-width: 30em;
+      color: rgba(255, 254, 250, .84);
+      font-size: clamp(16px, 1.2vw, 19px);
+    }
+
+    .interactive-proof-row small {
+      border-color: rgba(114, 239, 117, .5);
+      background: rgba(5, 5, 5, .36);
+      color: rgba(255, 254, 250, .9);
+    }
+
+    .interactive-card:not(.is-featured) {
+      grid-column: span 6;
+      display: grid;
+      grid-template-columns: minmax(132px, 180px) minmax(0, 1fr);
+      gap: clamp(14px, 2vw, 22px);
+      align-items: start;
+      min-height: auto;
+      padding-top: clamp(16px, 2vw, 26px);
+      border-top: 1px solid rgba(114, 239, 117, .42);
+    }
+
+    .interactive-card:not(.is-featured) .interactive-shot {
+      aspect-ratio: 4 / 3;
+      border: 1px solid rgba(114, 239, 117, .22);
+      background: #070907;
+      box-shadow: none;
+    }
+
+    .interactive-card:not(.is-featured) .interactive-copy {
+      margin-top: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    .interactive-card:not(.is-featured) .interactive-copy span {
+      margin-bottom: 10px;
+    }
+
+    .interactive-card:not(.is-featured) .interactive-copy h3 {
+      max-width: 12em;
+      color: var(--paper);
+      font-size: clamp(24px, 2.2vw, 34px);
+      line-height: 1.02;
+    }
+
+    .interactive-card:not(.is-featured) .interactive-copy p {
+      margin-top: 12px;
+      color: rgba(255, 254, 250, .7);
+      font-size: 13px;
+      line-height: 1.64;
+    }
+
+    .interactive-card:not(.is-featured) .case-link {
+      margin-top: 12px;
+      color: var(--poster-green);
+      border-color: rgba(114, 239, 117, .58);
+    }
+
+    .interactive-card:nth-child(2),
+    .interactive-card:nth-child(3) {
+      margin-top: 0;
+    }
+
     .residency-band {
       padding-top: clamp(48px, 6vw, 82px);
       padding-bottom: clamp(48px, 6vw, 82px);
@@ -3455,21 +3604,34 @@
       }
 
       .interactive-card.is-featured {
-        min-height: 500px;
+        min-height: 560px;
       }
 
       .interactive-card.is-featured .interactive-copy {
         width: auto;
+        min-height: inherit;
         padding: 28px;
+        justify-content: flex-start;
       }
 
       .interactive-card.is-featured .interactive-copy h3 {
-        font-size: clamp(38px, 11vw, 48px);
+        font-size: clamp(42px, 12vw, 58px);
         line-height: 1.02;
       }
 
       .interactive-card.is-featured .interactive-shot {
+        left: 0;
+        opacity: .62;
         border-bottom: 0;
+      }
+
+      .interactive-card.is-featured::before {
+        background:
+          linear-gradient(180deg, rgba(5, 5, 5, .94) 0%, rgba(5, 5, 5, .78) 48%, rgba(5, 5, 5, .56) 100%);
+      }
+
+      .interactive-card:not(.is-featured) .interactive-shot {
+        box-shadow: none;
       }
 
       .case-card.is-wide .case-visual,
@@ -4001,8 +4163,8 @@
         <div class="section-head">
           <p class="section-kicker">Interactive Story Lab</p>
           <div>
-            <h2>交互叙事项目</h2>
-            <p class="section-desc">把访谈、活动和人物稿再整理一次，让它们变成可以进入、回看和继续生长的故事空间。</p>
+            <h2>把故事做成可以进入的空间</h2>
+            <p class="section-desc">有些材料不只适合写成文章。它们可以变成地图、展厅、时间线，让读者从一个人进入一组关系。</p>
           </div>
         </div>
         <div class="interactive-lab" aria-label="交互叙事项目列表">
@@ -4014,12 +4176,12 @@
               <div class="interactive-copy">
                 <span>01 / Published Interactive Story</span>
                 <h3>生命力博物馆</h3>
-                <p>28 个创造者故事，被整理成地图、展厅和游乐园。读者可以先点亮一个故事，再沿着人物、命题和时代情绪继续走。</p>
+                <p>28 个创造者故事，被整理成地图、展厅和游乐园。读者先点亮一个故事，再沿着人物、命题和时代情绪继续走。</p>
                 <div class="interactive-proof-row" aria-label="生命力博物馆项目构成">
-                  <small>28 stories</small>
-                  <small>Life Map</small>
-                  <small>Story Archive</small>
-                  <small>Playable Entrance</small>
+                  <small>28 个故事</small>
+                  <small>生命力地图</small>
+                  <small>故事档案</small>
+                  <small>可进入的展厅</small>
                 </div>
                 <span class="case-link">Enter museum ↗</span>
               </div>
@@ -4032,7 +4194,7 @@
               <div class="interactive-copy">
                 <span>02 / 2050 Learning Festival</span>
                 <h3>2050 学习节交互叙事</h3>
-                <p>把学习节现场里从六人到千人的故事，整理成可以向下滚动进入的交互叙事页面。</p>
+                <p>把学习节现场里从六人到千人的故事，整理成一条可以向下进入的故事线。</p>
                 <span class="case-link">Open story ↗</span>
               </div>
             </a>
@@ -4044,7 +4206,7 @@
               <div class="interactive-copy">
                 <span>03 / Chaonao Narrative Project</span>
                 <h3>超脑叙事项目 / ZINE Issue 01</h3>
-                <p>为超脑叙事项目制作的一本独立杂志，把 AI 创新教育、青少年黑客松和人类学观察整理成可以翻阅的视觉刊物。</p>
+                <p>为超脑叙事项目制作的独立杂志，把 AI 创新教育、青少年黑客松和人类学观察整理成一册视觉刊物。</p>
                 <span class="case-link">Visual sample</span>
               </div>
             </article>
