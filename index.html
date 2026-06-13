@@ -266,39 +266,6 @@
       line-height: 1.72;
     }
 
-    .now-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      max-width: 860px;
-      margin-top: 16px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .now-item {
-      min-height: 118px;
-      padding: 15px 16px 16px;
-      background: rgba(255, 254, 250, .9);
-    }
-
-    .now-item strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--teal);
-      font-family: var(--serif);
-      font-size: 32px;
-      font-weight: 500;
-      line-height: .9;
-    }
-
-    .now-item p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.62;
-    }
-
     .hero-actions {
       display: flex;
       flex-wrap: wrap;
@@ -560,78 +527,6 @@
       background: rgba(114, 239, 117, .12);
     }
 
-    .reader-guide {
-      display: grid;
-      grid-template-columns: minmax(0, .9fr) minmax(0, 1.8fr);
-      gap: clamp(22px, 4vw, 64px);
-      align-items: start;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 34px 0;
-    }
-
-    .reader-guide h2 {
-      margin-bottom: 18px;
-      max-width: 7em;
-      font-size: clamp(38px, 4.6vw, 64px);
-      line-height: .96;
-    }
-
-    .guide-lead p {
-      max-width: 520px;
-      margin: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.78;
-    }
-
-    .guide-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .guide-card {
-      min-height: 250px;
-      padding: 20px;
-      background: var(--paper-2);
-      color: var(--ink);
-      text-decoration: none;
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .guide-card:nth-child(2) {
-      background: var(--mint);
-    }
-
-    .guide-card span {
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .guide-card strong {
-      color: var(--teal);
-      font-family: var(--serif);
-      font-size: clamp(30px, 3.2vw, 48px);
-      font-weight: 500;
-      line-height: .96;
-    }
-
-    .guide-card p {
-      margin: auto 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.68;
-    }
-
     .quick-evidence {
       margin-top: 22px;
       border: 1px solid var(--line);
@@ -698,152 +593,65 @@
       line-height: 1.42;
     }
 
+    .hero-evidence {
+      max-width: 860px;
+    }
+
+    .hero-evidence .quick-evidence-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
     }
 
-    .story-grid {
+    .origin-note {
+      background: var(--paper);
+    }
+
+    .origin-grid {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 18px;
-      align-items: start;
-    }
-
-    .story-lead {
-      grid-column: 1 / span 5;
-      border-left: 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 22px 0;
-      max-width: none;
-    }
-
-    .story-lead p {
-      margin: 0 0 16px;
-      font-size: 18px;
-      color: #3b342d;
-    }
-
-    .story-lead p:last-child {
-      margin-bottom: 0;
-    }
-
-    .story-timeline {
-      grid-column: 7 / span 6;
-      display: grid;
-      gap: 0;
-      position: relative;
-      border: 1px solid var(--line);
-      background: var(--paper-2);
-    }
-
-    .story-timeline::before {
-      display: none;
-    }
-
-    .story-step {
-      position: relative;
-      display: grid;
-      grid-template-columns: 58px minmax(0, 1fr);
-      gap: 18px;
-      padding: 24px 28px;
-      border: 0;
-      border-bottom: 1px solid var(--line-soft);
-      background: transparent;
-      border-radius: 0;
-    }
-
-    .story-step:last-child {
-      border-bottom: 0;
-    }
-
-    .story-index {
-      width: auto;
-      height: auto;
-      display: grid;
-      place-items: start;
-      border: 0;
-      background: transparent;
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 14px;
-      font-weight: 800;
-      letter-spacing: .12em;
-      line-height: 1.1;
-      padding-top: 6px;
-      z-index: 1;
-    }
-
-    .story-step h3 {
-      font-size: clamp(24px, 2.2vw, 34px);
-      line-height: 1;
-      margin: 0 0 10px;
-    }
-
-    .story-step p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .story-step small {
-      display: block;
-      margin-top: 12px;
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .story-quote {
-      margin: 38px 0 0;
-      max-width: 1050px;
-      font-family: var(--serif);
-      font-size: clamp(30px, 4.8vw, 76px);
-      line-height: 1;
-      font-weight: 500;
-      color: var(--teal);
-    }
-
-    .story-arc {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       border: 1px solid var(--line);
       background: var(--line);
-      margin-top: 34px;
+      gap: 1px;
     }
 
-    .arc-step {
+    .origin-card {
+      min-height: 220px;
+      padding: clamp(20px, 2.4vw, 30px);
       background: var(--paper-2);
-      min-height: 180px;
-      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
     }
 
-    .arc-step:nth-child(2),
-    .arc-step:nth-child(4) {
-      background: var(--paper-3);
+    .origin-card:nth-child(2) {
+      background: var(--mint);
     }
 
-    .arc-step strong {
-      display: block;
+    .origin-card span {
+      color: var(--teal);
       font-family: var(--mono);
       font-size: 11px;
+      font-weight: 820;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 18px;
     }
 
-    .arc-step p {
-      margin: 0;
-      color: #24241f;
+    .origin-card h3 {
+      color: var(--teal);
+      font-size: clamp(30px, 3.2vw, 48px);
+      line-height: .98;
+    }
+
+    .origin-card p {
+      margin: auto 0 0;
+      color: var(--muted);
       font-size: 15px;
-      line-height: 1.65;
+      line-height: 1.76;
     }
 
     .fit-card {
@@ -2654,28 +2462,6 @@
       margin: 5px 0;
     }
 
-    .story-points {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .story-point {
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .story-point strong {
-      display: block;
-      color: var(--teal);
-      margin-bottom: 4px;
-      font-size: 12px;
-      text-transform: uppercase;
-    }
-
     .link-row {
       display: flex;
       flex-wrap: wrap;
@@ -3386,7 +3172,6 @@
 
       .hero-inner,
       .section-head,
-      .story-grid,
       .work-ledger,
       .case-hero,
       .case-grid,
@@ -3395,6 +3180,7 @@
       .proof-grid,
       .community-board,
       .research-board,
+      .origin-grid,
       .sample-shelf,
       .work-card,
       .pathways,
@@ -3414,8 +3200,6 @@
       .hero-note,
       .section-kicker,
       .section-head > div,
-      .story-lead,
-      .story-timeline,
       .work-meta,
       .work-body,
       .case-card,
@@ -3486,14 +3270,9 @@
       }
 
       .grid-3,
-      .story-points,
-      .story-arc,
       .narrative-principles,
       .case-meta,
       .quick-answer,
-      .now-list,
-      .reader-guide,
-      .guide-grid,
       .proof-grid,
       .community-board,
       .community-project,
@@ -3718,11 +3497,15 @@
       .research-card,
       .research-mini,
       .sample-card,
-      .story-step {
+      .origin-card {
         padding: 18px;
       }
 
       .quick-evidence-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-evidence .quick-evidence-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -3736,14 +3519,6 @@
 
       .poster-plate {
         min-height: 260px;
-      }
-
-      .story-step {
-        grid-template-columns: 56px minmax(0, 1fr);
-      }
-
-      .story-index {
-        font-size: 38px;
       }
 
       .residency-cases {
@@ -3818,12 +3593,10 @@
         <span>Moon Becoming</span>
       </div>
       <div class="nav-links" aria-label="章节导航">
-        <a href="#guide">导读</a>
-        <a href="#story">路径</a>
         <a href="#works">作品</a>
-        <a href="#interactive">交互</a>
         <a href="#research">研究</a>
         <a href="#community">社区</a>
+        <a href="#interactive">交互</a>
         <a href="#residency">驻场</a>
         <a href="#appendix">索引</a>
         <button class="print-button" type="button" onclick="window.print()">打印 / PDF</button>
@@ -3868,25 +3641,35 @@
           <p class="hero-subhead">从大理创新教育和数字游民田野走来，在上海做 AI 创新教育和创业孵化；我发起「超级个体实验室」，长期进入开源社区、孵化器、黑客松和早期团队现场，也为创业者、出海团队和科技事件写故事。</p>
           <div class="quick-answer" aria-label="快速理解月亮正在做什么">
             <strong>Now / Where I Am</strong>
-            <p>我现在最常出现的地方，是开源社区、AI 孵化器、开发者活动和早期团队旁边。那里有人在做 Agent 工具，有人在做 AI 硬件和出海产品，也有很多年轻 builder 正在把想法推向真实用户。</p>
+            <p>最近，我更多在开源社区、AI 孵化器、开发者活动和早期团队旁边工作：有人做 Agent 工具，有人做 AI 硬件和出海产品，也有年轻 builder 正在把原型推向真实用户。</p>
           </div>
-          <div class="now-list" aria-label="现在主要做的三件事">
-            <div class="now-item">
-              <strong>写</strong>
-              <p>产业事件、科技人物、Builder 人物稿、创业团队故事和开源生态报道。</p>
+          <div class="quick-evidence hero-evidence" aria-label="快速经历数字">
+            <div class="quick-evidence-head">
+              <strong>先看数字</strong>
+              <span>采写、约人、组织现场和长期栏目。</span>
             </div>
-            <div class="now-item">
-              <strong>谈</strong>
-              <p>用播客、圆桌和直播，把创业者、教育实践者、开发者和研究者约出来问清楚。</p>
-            </div>
-            <div class="now-item">
-              <strong>聚</strong>
-              <p>用超级个体实验室、AI 跨界客厅和伙伴网络，持续找到人、议题和信源。</p>
+            <div class="quick-evidence-grid">
+              <div class="quick-evidence-item">
+                <b>20+</b>
+                <span>采写与选题基础</span>
+              </div>
+              <div class="quick-evidence-item">
+                <b>700+</b>
+                <span>AI 创造者社区</span>
+              </div>
+              <div class="quick-evidence-item">
+                <b>170+</b>
+                <span>WAIC 现场报名与圆桌组织</span>
+              </div>
+              <div class="quick-evidence-item">
+                <b>30+</b>
+                <span>播客、直播和人物对谈</span>
+              </div>
             </div>
           </div>
           <div class="hero-actions" aria-label="主要行动">
-            <a class="button" href="#story">阅读旅程</a>
-            <a class="button secondary" href="#works">查看作品</a>
+            <a class="button" href="#works">查看作品</a>
+            <a class="button secondary" href="#community">看社区现场</a>
           </div>
           <div class="chips" aria-label="关键词">
             <span class="chip teal">人类学田野</span>
@@ -3909,122 +3692,6 @@
             <p>我长期在 AI 创新教育与 AI 创业生态里工作和观察，熟悉创作者经济、超级个体网络、开源社区，也持续连接创投机构和产业方；擅长把 AI 创业者、早期团队和产业事件，写成有现场感、可传播、能继续讨论的深度内容，也持续做播客和系列访谈。</p>
           </div>
         </aside>
-      </div>
-    </section>
-
-    <section id="guide" class="band">
-      <div class="wrap">
-        <div class="reader-guide">
-          <div class="guide-lead">
-            <p class="section-kicker">Reader Map</p>
-            <h2>先判断这三件事</h2>
-            <p>这份作品集不用按时间硬读。先看我能写出什么样的内容，能不能持续追一条线，以及人和信源从哪里来。</p>
-          </div>
-          <div class="guide-grid" aria-label="作品集阅读地图">
-            <a class="guide-card" href="#works">
-              <span>01 / Works</span>
-              <strong>我能写出什么</strong>
-              <p>产业事件、科技人物、Builder 访谈、播客栏目和活动复盘。</p>
-            </a>
-            <a class="guide-card" href="#research">
-              <span>02 / Research Desk</span>
-              <strong>我会持续追什么</strong>
-              <p>开源社区、Agent 进入组织、中国 AI 团队出海、AI 教育和年轻 builder。</p>
-            </a>
-            <a class="guide-card" href="#community">
-              <span>03 / Community</span>
-              <strong>我怎样找到人</strong>
-              <p>超级个体实验室、AI 跨界客厅和伙伴网络，是我的信源和关系基础。</p>
-            </a>
-          </div>
-        </div>
-        <div class="quick-evidence" aria-label="快速经历数字">
-          <div class="quick-evidence-head">
-            <strong>可核对的经历</strong>
-            <span>这些数字对应内容团队会关心的几个问题。</span>
-          </div>
-          <div class="quick-evidence-grid">
-            <div class="quick-evidence-item">
-              <b>20+</b>
-              <span>采写和选题基础</span>
-            </div>
-            <div class="quick-evidence-item">
-              <b>700+</b>
-              <span>社区和真实信源</span>
-            </div>
-            <div class="quick-evidence-item">
-              <b>170+</b>
-              <span>活动召集和圆桌组织</span>
-            </div>
-            <div class="quick-evidence-item">
-              <b>30+</b>
-              <span>访谈和追问样本</span>
-            </div>
-            <div class="quick-evidence-item">
-              <b>6</b>
-              <span>持续栏目产出</span>
-            </div>
-            <div class="quick-evidence-item">
-              <b>3</b>
-              <span>跨市场观察入口</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="story">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Becoming Journey</p>
-          <div>
-            <h2>这些能力从哪里长出来</h2>
-            <p class="section-desc">我还是想从大理讲起。那时我在做创新教育田野，AI 像一个新的底色进入我的观察，后来又把我带进更真实的创业现场。</p>
-          </div>
-        </div>
-
-        <div class="story-grid">
-          <div class="story-lead">
-            <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛在聊“AI 时代，做面向未来的教育”。那时我还在摸索怎么用 GPT，创新学校里的孩子已经开始用 AI 学芬兰语了。AI 对教育的改变，最早就是这样很具体地出现在我面前。</p>
-            <p>后来我来到上海，进入 AI 创新教育和创业孵化现场。AI 夏令营、青少年黑客松、孵化器路演、白板旁的用户反馈、深夜修改方案，把我带到产品还很早、团队还很小的地方。很多早期 builder，就是在这些还没有被整理成“案例”的时刻被我遇见的。</p>
-            <p>超级个体实验室也在这段经历里长出来。它从一次次线下见面，慢慢长成 700+ AI 创造者社区；AI 跨界客厅、AI 跨城客厅和 WAIC 之后的派对，又把研究者、创业者、投资机构和开发者社区带到同一个夜晚。后来的文章、播客、活动复盘和交互档案，基本都从这些具体见面里长出来。</p>
-          </div>
-
-          <div class="story-timeline" aria-label="月亮的路径">
-            <article class="story-step">
-              <span class="story-index">01</span>
-              <div>
-                <h3>大理：看见 AI 正在改变教育</h3>
-                <p>我从创新学校、数字游民社区、家长和老师的谈话里，第一次具体感到 AI 正在改变教育。</p>
-                <small>创新教育 / 数字游民 / 田野调查</small>
-              </div>
-            </article>
-            <article class="story-step">
-              <span class="story-index">02</span>
-              <div>
-                <h3>上海：进入孵化器和早期团队</h3>
-                <p>AI 夏令营、青少年黑客松和孵化器，把我带到早期产品、年轻团队、路演和用户反馈旁边。</p>
-                <small>AI 创新教育 / 黑客松 / 创业孵化</small>
-              </div>
-            </article>
-            <article class="story-step">
-              <span class="story-index">03</span>
-              <div>
-                <h3>社区：把信任网络搭起来</h3>
-                <p>超级个体实验室从一次次见面长出来，也把开源学习者、投资机构、教育实践者和年轻创业者接到一起。</p>
-                <small>年轻 builder / 开源社区 / 创投生态</small>
-              </div>
-            </article>
-            <article class="story-step">
-              <span class="story-index">04</span>
-              <div>
-                <h3>叙事作品：把现场变成可读内容</h3>
-                <p>人物稿、生态报道、播客、活动复盘和交互档案，是我把这些人和现场整理成可回访内容的方式。</p>
-                <small>人物稿 / 团队故事 / 科技事件</small>
-              </div>
-            </article>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -4358,6 +4025,35 @@
               <p>在 AI 创新教育、创业孵化和年轻 builder 生态中，持续观察早期团队如何从想法走向产品和市场。</p>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" class="band origin-note">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Origin Note</p>
+          <div>
+            <h2>我的来路</h2>
+            <p class="section-desc">这段背景不需要先读。它只是解释：为什么我会从人、现场和关系里进入 AI 创业生态。</p>
+          </div>
+        </div>
+        <div class="origin-grid" aria-label="月亮的来路">
+          <article class="origin-card">
+            <span>01 / Dali</span>
+            <h3>大理的创新教育田野</h3>
+            <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛聊 AI，创新学校里的孩子已经开始用 AI 学芬兰语。AI 对教育的改变，最早就是这样具体地出现在我面前。</p>
+          </article>
+          <article class="origin-card">
+            <span>02 / Shanghai</span>
+            <h3>上海的孵化器和黑客松</h3>
+            <p>后来我进入 AI 创新教育和创业孵化现场。夏令营、青少年黑客松、路演、用户反馈和深夜改方案，让我持续靠近产品还很早、团队还很小的时刻。</p>
+          </article>
+          <article class="origin-card">
+            <span>03 / Community</span>
+            <h3>超级个体实验室</h3>
+            <p>超级个体实验室也是在这段经历里长出来的。它从一次次线下见面，慢慢变成 700+ AI 创造者社区，也成为我持续发现早期创业者、研究者和开源社区信源的地方。</p>
+          </article>
         </div>
       </div>
     </section>
