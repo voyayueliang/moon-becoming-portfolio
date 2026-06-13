@@ -3292,6 +3292,24 @@
       text-transform: uppercase;
     }
 
+    .residency-proof-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .residency-proof-line span {
+      border: 1px solid var(--line-soft);
+      background: var(--paper);
+      padding: 7px 9px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.2;
+    }
+
     .residency-cases {
       grid-column: 6 / span 7;
       display: grid;
@@ -3300,11 +3318,9 @@
     }
 
     .residency-case {
-      display: grid;
-      grid-template-columns: minmax(130px, .38fr) minmax(0, 1fr);
-      gap: 18px;
+      display: block;
       min-height: auto;
-      padding: 16px 0;
+      padding: 18px 0;
       border-right: 0;
       border-bottom: 1px solid var(--line-soft);
       background: transparent;
@@ -3326,9 +3342,10 @@
     }
 
     .residency-case h3 {
-      font-size: clamp(24px, 2.4vw, 36px);
+      color: var(--teal);
+      font-size: clamp(28px, 2.8vw, 42px);
       line-height: 1;
-      margin: 0;
+      margin: 0 0 12px;
     }
 
     .residency-case p {
@@ -4408,44 +4425,43 @@
           <article class="residency-lead">
             <p class="section-kicker">Narrative Residency</p>
             <h2>驻场叙事架构师</h2>
-            <p>进入早期 AI 团队 2-3 个月，理解产品、用户、创始人判断和市场语境，再把这些材料整理成可复用的叙事系统。</p>
-            <p>这里保留的是我正在进入的团队现场：产品还在迭代、市场还在校准、团队正在寻找更准确的表达方式。</p>
+            <p>进入早期 AI 团队 2-3 个月，陪团队把几件事讲清楚：产品到底在替谁解决问题，创始人为什么这样判断，外部最容易误读的地方是什么。</p>
+            <p>我会把访谈、会议、用户反馈、社群讨论和公开材料整理出来，最后留下团队可以继续使用的故事线、素材包和对外表达。</p>
             <div class="residency-outputs" aria-label="驻场可能交付">
               <span>Founder Story</span>
               <span>Product Narrative</span>
               <span>Market Context</span>
               <span>Content System</span>
             </div>
+            <div class="residency-proof-line" aria-label="正在进入的团队现场">
+              <span>观猹</span>
+              <span>Datawhale</span>
+              <span>Frontier X</span>
+              <span>超脑 AI 孵化器</span>
+            </div>
           </article>
 
           <div class="residency-cases">
             <article class="residency-case">
               <div>
-                <span>Current Field 01</span>
-                <h3>观猹</h3>
+                <span>01 / Founder & Team</span>
+                <h3>创业者和团队故事</h3>
               </div>
-              <p>围绕 AI 创业者、社区案例和具体人物故事，整理栏目线索、访谈方向和长期叙事主线。</p>
+              <p>把公开材料、深访和关键节点整理成一条外部能读懂的成长线：这个人为什么走到这里，这支团队如何形成自己的判断。</p>
             </article>
             <article class="residency-case">
               <div>
-                <span>Current Field 02</span>
-                <h3>Datawhale</h3>
+                <span>02 / Product & Market</span>
+                <h3>产品和市场语境</h3>
               </div>
-              <p>从开源学习者、开发者活动和技术现场进入，观察国内 AI 开源生态如何通过社区和协作长出来。</p>
+              <p>把产品正在解决的真实场景、用户语言、竞争语境和跨市场表达整理出来，让团队知道自己对外到底该怎样被理解。</p>
             </article>
             <article class="residency-case">
               <div>
-                <span>Current Field 03</span>
-                <h3>Frontier X</h3>
+                <span>03 / Content System</span>
+                <h3>栏目、案例和素材库</h3>
               </div>
-              <p>Physical AI 出海美国市场团队。围绕创始人判断、产品场景和跨市场表达，整理进入海外语境的叙事材料。</p>
-            </article>
-            <article class="residency-case">
-              <div>
-                <span>Current Field 04</span>
-                <h3>超脑 AI 孵化器</h3>
-              </div>
-              <p>在 AI 创新教育、创业孵化和年轻 builder 生态中，持续观察早期团队如何从想法走向产品和市场。</p>
+              <p>把访谈、活动、社群反馈和市场观察沉淀成可继续更新的栏目、案例和选题库。下一次对外表达，可以接着已有材料往前走。</p>
             </article>
           </div>
         </div>
