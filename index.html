@@ -3348,14 +3348,40 @@
     }
 
     @media (max-width: 860px) {
+      body::before {
+        display: none;
+      }
+
+      .topbar {
+        position: static;
+      }
+
       .nav {
-        align-items: flex-start;
+        align-items: stretch;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
       }
 
       .nav-links {
+        width: 100%;
+        flex-wrap: nowrap;
         justify-content: flex-start;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        flex: 0 0 auto;
+      }
+
+      .print-button {
+        display: none;
       }
 
       .hero-inner,
@@ -3380,6 +3406,10 @@
         grid-template-columns: 1fr;
       }
 
+      section {
+        scroll-margin-top: 24px;
+      }
+
       .hero-copy,
       .hero-note,
       .section-kicker,
@@ -3390,6 +3420,9 @@
       .work-body,
       .case-card,
       .case-card.is-wide,
+      .case-card.is-proof,
+      .case-card.is-portrait,
+      .case-card.is-square,
       .case-card.series-case,
       .case-card.is-dark,
       .research-card,
@@ -3516,6 +3549,9 @@
 
       .case-card,
       .case-card.is-wide,
+      .case-card.is-proof,
+      .case-card.is-portrait,
+      .case-card.is-square,
       .case-card.is-tall,
       .case-card.is-lifted,
       .case-card.is-dark {
@@ -3528,6 +3564,10 @@
 
       .case-card.series-case {
         grid-template-columns: 1fr;
+      }
+
+      .case-card.series-case .case-visual {
+        max-width: none;
       }
 
       .case-card.is-dark {
@@ -3636,7 +3676,7 @@
     @media (max-width: 560px) {
       section {
         padding: 54px 16px;
-        scroll-margin-top: 210px;
+        scroll-margin-top: 24px;
       }
 
       h2 {
@@ -3783,7 +3823,6 @@
         <a href="#works">作品</a>
         <a href="#interactive">交互</a>
         <a href="#research">研究</a>
-        <a href="#proof">能力</a>
         <a href="#community">社区</a>
         <a href="#residency">驻场</a>
         <a href="#appendix">索引</a>
@@ -3823,26 +3862,26 @@
             <span>AI Field Notes</span>
             <span>2026</span>
           </div>
-          <p class="eyebrow">月亮 / 向 AI 走去的人类学冒险家 / Field Storyteller</p>
+          <p class="eyebrow">月亮 / AI 创造者生态内容研究 / Field Storyteller</p>
           <h1>月亮的 Becoming</h1>
-          <p class="identity-line">我是月亮，一个向 AI 走去的人类学冒险家。</p>
-          <p class="hero-subhead">从大理创新教育和数字游民田野走来，在上海做 AI 创新教育和创业孵化；我发起「超级个体实验室」，也为创业者、出海团队和科技现场写故事。</p>
+          <p class="identity-line">我是月亮，做 AI 创造者生态的内容研究和现场叙事。</p>
+          <p class="hero-subhead">从大理创新教育和数字游民田野走来，在上海做 AI 创新教育和创业孵化；我发起「超级个体实验室」，长期进入开源社区、孵化器、黑客松和早期团队现场，也为创业者、出海团队和科技事件写故事。</p>
           <div class="quick-answer" aria-label="快速理解月亮正在做什么">
             <strong>Now / Where I Am</strong>
-            <p>我现在常在开源社区、AI 孵化器和早期团队里工作：有人在做 Agent 工具，有人在做 AI 硬件和出海产品，也有很多年轻 builder 正在把想法推向真实用户。</p>
+            <p>我现在最常出现的地方，是开源社区、AI 孵化器、开发者活动和早期团队旁边。那里有人在做 Agent 工具，有人在做 AI 硬件和出海产品，也有很多年轻 builder 正在把想法推向真实用户。</p>
           </div>
           <div class="now-list" aria-label="现在主要做的三件事">
             <div class="now-item">
               <strong>写</strong>
-              <p>AI 开源生态、Agent 产品、硅谷科技人物、出海团队和大型科技事件。</p>
+              <p>产业事件、科技人物、Builder 人物稿、创业团队故事和开源生态报道。</p>
             </div>
             <div class="now-item">
               <strong>谈</strong>
-              <p>Becoming计划、AI教育田野志，持续和创造者、教育实践者、开发者和研究者深聊。</p>
+              <p>用播客、圆桌和直播，把创业者、教育实践者、开发者和研究者约出来问清楚。</p>
             </div>
             <div class="now-item">
               <strong>聚</strong>
-              <p>在孵化器期间发起超级个体实验室，也把 AI 跨界客厅、AI 跨城客厅做成持续见面的现场。</p>
+              <p>用超级个体实验室、AI 跨界客厅和伙伴网络，持续找到人、议题和信源。</p>
             </div>
           </div>
           <div class="hero-actions" aria-label="主要行动">
@@ -3878,56 +3917,56 @@
         <div class="reader-guide">
           <div class="guide-lead">
             <p class="section-kicker">Reader Map</p>
-            <h2>先看这三件事</h2>
-            <p>这份作品集会出现很多地点、人物和项目。先把它理解成三类能力：我能写什么，我能把哪些 AI 议题继续拆下去，以及我已经做过什么。</p>
+            <h2>先判断这三件事</h2>
+            <p>这份作品集不用按时间硬读。先看我能写出什么样的内容，能不能持续追一条线，以及人和信源从哪里来。</p>
           </div>
           <div class="guide-grid" aria-label="作品集阅读地图">
             <a class="guide-card" href="#works">
               <span>01 / Works</span>
-              <strong>我能写什么</strong>
-              <p>AI 创业人物、AI 开源社区与开发者生态、Agent 工作流、硅谷科技人物和活动复盘。</p>
+              <strong>我能写出什么</strong>
+              <p>产业事件、科技人物、Builder 访谈、播客栏目和活动复盘。</p>
             </a>
             <a class="guide-card" href="#research">
               <span>02 / Research Desk</span>
-              <strong>我能研究什么</strong>
-              <p>Agent、AI 开源生态、出海、AI 教育和年轻 builder，都能继续发展成选题、访谈和长文。</p>
+              <strong>我会持续追什么</strong>
+              <p>开源社区、Agent 进入组织、中国 AI 团队出海、AI 教育和年轻 builder。</p>
             </a>
-            <a class="guide-card" href="#proof">
-              <span>03 / Track Record</span>
-              <strong>我已经做过什么</strong>
-              <p>采写、约人、主持、组织现场、做系列栏目、建立 AI 创造者关系网络。</p>
+            <a class="guide-card" href="#community">
+              <span>03 / Community</span>
+              <strong>我怎样找到人</strong>
+              <p>超级个体实验室、AI 跨界客厅和伙伴网络，是我的信源和关系基础。</p>
             </a>
           </div>
         </div>
         <div class="quick-evidence" aria-label="快速经历数字">
           <div class="quick-evidence-head">
-            <strong>先看数字</strong>
-            <span>先用几组数字理解我的内容、社区和现场能力。</span>
+            <strong>可核对的经历</strong>
+            <span>这些数字对应内容团队会关心的几个问题。</span>
           </div>
           <div class="quick-evidence-grid">
             <div class="quick-evidence-item">
               <b>20+</b>
-              <span>新闻采写、栏目策划和实地走访基础</span>
+              <span>采写和选题基础</span>
             </div>
             <div class="quick-evidence-item">
               <b>700+</b>
-              <span>AI 创造者与早期创业者社区</span>
+              <span>社区和真实信源</span>
             </div>
             <div class="quick-evidence-item">
               <b>170+</b>
-              <span>WAIC 后派对现场报名与圆桌组织</span>
+              <span>活动召集和圆桌组织</span>
             </div>
             <div class="quick-evidence-item">
               <b>30+</b>
-              <span>播客、直播、活动和人物稿对谈</span>
+              <span>访谈和追问样本</span>
             </div>
             <div class="quick-evidence-item">
               <b>6</b>
-              <span>AI 教育田野志公开节目</span>
+              <span>持续栏目产出</span>
             </div>
             <div class="quick-evidence-item">
               <b>3</b>
-              <span>新加坡、硅谷人物、复旦/UCL 跨文化入口</span>
+              <span>跨市场观察入口</span>
             </div>
           </div>
         </div>
@@ -3939,24 +3978,23 @@
         <div class="section-head">
           <p class="section-kicker">Becoming Journey</p>
           <div>
-            <h2>Becoming 之旅</h2>
-            <p class="section-desc">我想从大理讲起。那时我还在做创新教育田野，AI 像一个新的底色，慢慢进入我的观察，后来又把我带进更真实的创业现场。</p>
+            <h2>这些能力从哪里长出来</h2>
+            <p class="section-desc">我还是想从大理讲起。那时我在做创新教育田野，AI 像一个新的底色进入我的观察，后来又把我带进更真实的创业现场。</p>
           </div>
         </div>
 
         <div class="story-grid">
           <div class="story-lead">
-            <p>2023 年底，我在大理做创新教育田野。数字游民社区办第一场数字游民大会，教育分论坛聊“AI 时代，做面向未来的教育”。那时候 GPT 时刻刚刚到来不久，我还在慢慢摸索怎么用它，创新学校里的孩子已经开始用 AI 学芬兰语了。</p>
-            <p>这件事给了我很强的触动。AI 对教育的改变，最早是以很小的方式出现在我面前：一个孩子的学习，老师和家长的日常讨论，很多家庭重新寻找教育出口的过程。大理的田野让我练习坐下来听人说话：有的妈妈会把城市学校里的卡顿、家庭里的紧张、孩子如何被老师一点点打开讲给我听，讲到后来掉眼泪。</p>
-            <p>后来，因为一次很重要的缘分，我来到上海，进入 AI 创新教育和创业孵化现场。AI 夏令营、青少年黑客松、孵化器路演、白板旁的用户反馈、深夜修改方案，把我带到产品还很早、团队还很小的地方。默子、核蛋、小鹅、Tim、乐乐，还有很多早期 builder，都是在这些还没有被整理成“案例”的时刻被我遇见的。</p>
-            <p>超级个体实验室也是在这段经历里长出来的。它从一次次线下见面，慢慢长成 700+ AI 创造者社区；AI 跨界客厅、AI 跨城客厅和 WAIC 之后的派对，又把研究者、创业者、投资机构和开发者社区带到同一个夜晚。再往后，这些人和现场进入人物稿、创业团队故事、AMD / Datawhale 开发者生态报道、硅谷科技人物、新加坡出海和复旦 / UCL 工作坊，变成可以被打开、被回看的作品。</p>
+            <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛在聊“AI 时代，做面向未来的教育”。那时我还在摸索怎么用 GPT，创新学校里的孩子已经开始用 AI 学芬兰语了。AI 对教育的改变，最早就是这样很具体地出现在我面前。</p>
+            <p>后来我来到上海，进入 AI 创新教育和创业孵化现场。AI 夏令营、青少年黑客松、孵化器路演、白板旁的用户反馈、深夜修改方案，把我带到产品还很早、团队还很小的地方。很多早期 builder，就是在这些还没有被整理成“案例”的时刻被我遇见的。</p>
+            <p>超级个体实验室也在这段经历里长出来。它从一次次线下见面，慢慢长成 700+ AI 创造者社区；AI 跨界客厅、AI 跨城客厅和 WAIC 之后的派对，又把研究者、创业者、投资机构和开发者社区带到同一个夜晚。后来的文章、播客、活动复盘和交互档案，基本都从这些具体见面里长出来。</p>
           </div>
 
           <div class="story-timeline" aria-label="月亮的路径">
             <article class="story-step">
               <span class="story-index">01</span>
               <div>
-                <h3>大理：AI 慢慢成为田野底色</h3>
+                <h3>大理：看见 AI 正在改变教育</h3>
                 <p>我从创新学校、数字游民社区、家长和老师的谈话里，第一次具体感到 AI 正在改变教育。</p>
                 <small>创新教育 / 数字游民 / 田野调查</small>
               </div>
@@ -3964,7 +4002,7 @@
             <article class="story-step">
               <span class="story-index">02</span>
               <div>
-                <h3>上海：走进更快的现场</h3>
+                <h3>上海：进入孵化器和早期团队</h3>
                 <p>AI 夏令营、青少年黑客松和孵化器，把我带到早期产品、年轻团队、路演和用户反馈旁边。</p>
                 <small>AI 创新教育 / 黑客松 / 创业孵化</small>
               </div>
@@ -3972,7 +4010,7 @@
             <article class="story-step">
               <span class="story-index">03</span>
               <div>
-                <h3>社区：把同路人聚到一起</h3>
+                <h3>社区：把信任网络搭起来</h3>
                 <p>超级个体实验室从一次次见面长出来，也把开源学习者、投资机构、教育实践者和年轻创业者接到一起。</p>
                 <small>年轻 builder / 开源社区 / 创投生态</small>
               </div>
@@ -3980,8 +4018,8 @@
             <article class="story-step">
               <span class="story-index">04</span>
               <div>
-                <h3>叙事作品：把相遇留下来</h3>
-                <p>人物稿、生态报道、播客、活动复盘和交互档案，是我把这些人和现场留下来的方式。</p>
+                <h3>叙事作品：把现场变成可读内容</h3>
+                <p>人物稿、生态报道、播客、活动复盘和交互档案，是我把这些人和现场整理成可回访内容的方式。</p>
                 <small>人物稿 / 团队故事 / 科技事件</small>
               </div>
             </article>
@@ -3996,7 +4034,7 @@
           <p class="section-kicker">Work Samples</p>
           <div>
             <h2>内容系列和代表作品</h2>
-            <p class="section-desc">我希望这些作品被放回几条可以继续生长的系列里：Becoming计划、AI教育田野志、AI跨界客厅、AI跨城客厅、AI浪潮下的超级个体访谈，以及大型产业事件叙事。</p>
+            <p class="section-desc">这里保留最能说明我工作方式的作品：现场报道、人物稿、系列节目和活动复盘。交互叙事单独放在下一节。</p>
           </div>
         </div>
 
@@ -4009,7 +4047,7 @@
               <span class="case-kicker">01 / Industry Event Narrative</span>
               <span class="work-type">作品类型 / 产业事件报道</span>
               <h3>AMD / Datawhale 开发者生态</h3>
-              <p>大型产业事件叙事。发生在 AMD AI 开发者日现场，我把 AMD、苏姿丰、ModelScope、Datawhale、ROCm、开发者工作坊、开源贡献者、研究者社区和青年 builder 放在同一张现场地图里，写清顶尖技术现场如何拥抱国内 AI 开源生态，以及算力、模型、工具链和开发者社区怎样互相牵动。</p>
+              <p>大型产业事件叙事。发生在 AMD AI 开发者日现场，我把芯片公司、开源社区、开发者工作坊和青年 builder 放在同一张现场地图里，写清顶尖技术现场如何拥抱国内 AI 开源生态。</p>
               <dl class="case-meta">
                 <div>
                   <dt>角色</dt>
@@ -4118,7 +4156,7 @@
               <span class="case-index">06 / AI 跨界客厅</span>
               <span class="work-type">作品类型 / 活动复盘</span>
               <h3>WAIC AI 研究者创业者派对</h3>
-              <p>AI跨界客厅系列。WAIC 期间，我参与组织 AI 研究者创业者派对，和 Research AI+ 等伙伴围绕具身智能、多模态、Agent、RL、AI Infra、AI4S 等 9 个技术方向设计圆桌，把研究者、创业者、开发者和高校社区连接成后续内容信源网络。</p>
+              <p>AI跨界客厅系列。WAIC 期间，我和 Research AI+ 等伙伴围绕具身智能、多模态、Agent、RL、AI Infra、AI4S 等方向设计圆桌，把研究者、创业者、开发者和高校社区连接起来。</p>
               <span class="case-link">Open recap ↗</span>
             </a>
 
@@ -4129,21 +4167,8 @@
               <span class="case-index">07 / AI 跨城客厅</span>
               <span class="work-type">作品类型 / 活动复盘</span>
               <h3>良渚到上海的 AI 创业者夜谈</h3>
-              <p>AI跨城客厅系列。把良渚、上海和不同社区里的 AI 创业者、社区组织者和创造者带到一起，记录一座城市和另一座城市之间，生活方式、创业判断和技术浪潮怎样彼此照亮。</p>
+              <p>AI跨城客厅系列。把良渚、上海和不同社区里的 AI 创业者、社区组织者带到一起，记录跨城流动里的创业判断和生活方式。</p>
               <span class="case-link">Open recap ↗</span>
-            </a>
-
-            <a class="case-card is-dark is-museum" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/" target="_blank" rel="noreferrer">
-              <figure class="case-visual">
-                <img src="assets/covers/vitality-museum-life-map.png" alt="生命力博物馆生命力地图交互界面截图">
-              </figure>
-              <div class="case-copy">
-                <span class="case-index">08 / Interactive Story</span>
-                <span class="work-type">作品类型 / 交互叙事</span>
-                <h3>生命力博物馆</h3>
-                <p>交互叙事。把 28 个创造者故事整理成地图、展厅和游乐园，让人物、命题和时代情绪可以被再次打开。</p>
-                <span class="case-link">Enter museum ↗</span>
-              </div>
             </a>
           </div>
         </div>
@@ -4156,97 +4181,28 @@
         <div class="section-head">
           <p class="section-kicker">Research Desk</p>
           <div>
-            <h2>三条可持续展开的 AI 主线</h2>
-            <p class="section-desc">我更想把选题先收成几条长期问题。每条主线背后都有我进入过的现场、可以继续回访的人，也能继续长成深访、圆桌、人物稿或系列长文。</p>
+            <h2>我会继续追的几条线</h2>
+            <p class="section-desc">这些题目来自我已经进入过的孵化器、开源社区、活动现场和海外交流。它们可以继续长成深访、圆桌、人物稿和系列长文。</p>
           </div>
         </div>
         <div class="research-board" aria-label="可持续展开的 AI 内容选题">
           <article class="research-card">
             <span>01 / Agent & Org</span>
             <h3>Agent 进入团队后，工作怎样被改写</h3>
-            <p>我会从真实团队、工作流和失败案例里拆：Agent 开始接管开发、对齐、排查和 review 以后，工程师、产品经理、市场和创始人的边界怎样变化。</p>
-            <small>来源：孵化器团队 / AI跨界客厅 / Agent 圆桌｜可产出：工作流拆解</small>
+            <p>从真实团队和工作流里看，Agent 如何改变工程师、产品经理和创始人的边界。</p>
+            <small>来源：孵化器团队 / Agent 圆桌</small>
           </article>
           <article class="research-card">
             <span>02 / Open Source Community</span>
             <h3>社区如何成为 AI 时代的基础设施</h3>
-            <p>AMD / Datawhale 现场让我看到，顶尖技术现场正在拥抱国内 AI 开源生态。我长期浸润在开源学习者、孵化器和 AI 创造者社区里，更关心模型、算力、工具链、开发者和社区组织之间怎样形成真实协作。</p>
-            <small>来源：AMD / Datawhale / ModelScope / 超级个体实验室｜可产出：生态专题</small>
+            <p>从 AMD / Datawhale 现场、开源学习者和 AI 创造者社区里，看模型、工具链、开发者和社区组织怎样形成协作。</p>
+            <small>来源：AMD / Datawhale / 超级个体实验室</small>
           </article>
           <article class="research-card">
             <span>03 / Global Builders</span>
             <h3>中国 AI 团队和年轻 builder 怎样走向更大的市场</h3>
-            <p>从 Frontier X、乐乐的 AI 硬件创业，到新加坡出海和欧洲教育访谈，我想继续看产品、叙事和组织进入跨市场环境后，怎样重新被翻译。</p>
-            <small>来源：Frontier X / 乐乐 / 新加坡交流 / AI教育田野志｜可产出：创始人深访</small>
-          </article>
-          <div class="research-mini" aria-label="可继续展开的细分题">
-            <strong>还可以继续展开</strong>
-            <span>AI 进入教育后，人还要练什么能力</span>
-            <span>AI 硬件与 Physical AI 的真实场景</span>
-            <span>早期 AI 公司怎样讲清产品和市场</span>
-            <span>大会、客厅和社区怎样变成信源网络</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="proof" class="band">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Track Record</p>
-          <div>
-            <h2>这些经历怎么用在内容工作里</h2>
-            <p class="section-desc">前面的数字让人快速知道我做过多少事；这一页只讲它们可以怎么被继续使用：找人、约人、追问、写稿、主持现场，把一次见面沉淀成节目、文章和后续信源。</p>
-          </div>
-        </div>
-        <div class="proof-grid" aria-label="能力与经历速览">
-          <article class="proof-item">
-            <div>
-              <span class="proof-label">Writing</span>
-              <h3>从线索写到成稿</h3>
-              <p>我做过新闻、时评、实地走访、专家联系和栏目策划，也把这些训练带进 AI 创业人物、产业事件和开发者生态报道里。</p>
-            </div>
-            <span class="proof-evidence">对应材料 / 报社训练、AMD、葛小川、墨子人物稿</span>
-          </article>
-          <article class="proof-item">
-            <div>
-              <span class="proof-label">Source Network</span>
-              <h3>从社区里找到信源</h3>
-              <p>超级个体实验室、开源学习者社区、AI 孵化器和开发者活动，让我长期接触创业者、开发者、设计师、教育者和投资人。</p>
-            </div>
-            <span class="proof-evidence">对应材料 / 超级个体实验室、Datawhale、Research AI+</span>
-          </article>
-          <article class="proof-item">
-            <div>
-              <span class="proof-label">Field Hosting</span>
-              <h3>把人带到现场</h3>
-              <p>我能从议题出发组织圆桌、主持长谈、引导不同背景的人见面，让研究者、创业者、开发者和高校社区产生后续连接。</p>
-            </div>
-            <span class="proof-evidence">对应材料 / WAIC 派对、AI 跨界客厅、AI 跨城客厅</span>
-          </article>
-          <article class="proof-item">
-            <div>
-              <span class="proof-label">Interview</span>
-              <h3>把话题问深</h3>
-              <p>播客、直播、人物稿和活动现场训练了我的追问能力：从一个人的经历进入产品、团队、用户、资本和时代语境。</p>
-            </div>
-            <span class="proof-evidence">对应材料 / Becoming计划、AI教育田野志、人物访谈</span>
-          </article>
-          <article class="proof-item">
-            <div>
-              <span class="proof-label">Series</span>
-              <h3>把单篇变成栏目</h3>
-              <p>我已经形成几条稳定系列：超级个体访谈、Becoming计划、AI教育田野志，以及围绕 AI 跨界客厅沉淀的活动复盘和选题。</p>
-            </div>
-            <span class="proof-evidence">对应材料 / 人物稿、播客、直播对谈、活动复盘</span>
-          </article>
-          <article class="proof-item">
-            <div>
-              <span class="proof-label">Global Context</span>
-              <h3>把中国 AI 放进更大语境</h3>
-              <p>新加坡出海、硅谷科技人物研究、复旦 / UCL 工作坊和海外教育访谈，让我开始用英文资料、跨文化现场和海外市场校准问题。</p>
-            </div>
-            <span class="proof-evidence">对应材料 / 新加坡、硅谷人物、复旦 / UCL、海外教育访谈</span>
+            <p>从新加坡出海、AI 硬件创业和欧洲教育访谈里，看产品、叙事和组织如何进入跨市场语境。</p>
+            <small>来源：Frontier X / 新加坡交流 / AI教育田野志</small>
           </article>
         </div>
       </div>
@@ -4258,16 +4214,16 @@
           <p class="section-kicker">Community System</p>
           <div>
             <h2>社区是我构建信任的方式</h2>
-            <p class="section-desc">我从数字游民、开源学习者、AI 孵化器和年轻 builder 社区里走出来。社区对我来说，是理解需求、建立信任、发现信源和推动合作发生的现场。</p>
+            <p class="section-desc">我从数字游民、开源学习者、AI 孵化器和年轻 builder 社区里走出来。社区让我持续发现人、议题和信源。</p>
           </div>
         </div>
         <div class="community-board" aria-label="社区能力">
           <article class="community-lead">
             <div>
               <span>Community Builder</span>
-              <h3>用社区建立信任，用内容把关系留下来。</h3>
+              <h3>把人聚到一起，再让关系继续发生。</h3>
             </div>
-            <p>我做社区时，最在意的是关系能不能变得真实。先让正在行动的人见面、互相介绍、说出自己在找什么，再用播客、直播对谈、深度叙事和活动复盘，把一次见面沉淀成可以继续回访的关系网络。很多选题、嘉宾、合作和下一次活动，都是从这种信任里长出来的。</p>
+            <p>我做社区时，会先把正在行动的人带到同一个场域里：听他们在找什么、卡在哪里、需要谁。播客、直播对谈、深度叙事和活动复盘，是我把一次见面沉淀成长期信源和合作网络的方式。</p>
             <div class="community-stats" aria-label="社区数据">
               <div>
                 <strong>700+</strong>
@@ -4289,97 +4245,9 @@
               <h3>超级个体实验室</h3>
             </div>
             <div>
-              <p>2025 年 3 月，我在孵化器期间发起「超级个体实验室」，面向 AI 时代的创造者和早期创业者。它从一次次线下见面长成 700+ 人的关系网络，也孵化出 AI 跨界客厅、AI 跨城客厅等系列现场，连接开发者、设计师、教育者、投资机构和产业伙伴。</p>
-              <dl aria-label="超级个体实验室成就">
-                <div>
-                  <dt>700+</dt>
-                  <dd>AI 创造者与早期创业者</dd>
-                </div>
-                <div>
-                  <dt>多场</dt>
-                  <dd>AI 跨界客厅、AI 跨城客厅和线下夜谈</dd>
-                </div>
-                <div>
-                  <dt>伙伴</dt>
-                  <dd>Datawhale、Research AI+、小红书、DIIS、真格基金等</dd>
-                </div>
-              </dl>
+              <p>2025 年 3 月，我在孵化器期间发起「超级个体实验室」。它最初服务一群 AI 时代的创造者和早期创业者：有人找合伙人，有人找产品反馈，有人需要第一次把项目讲清楚。后来它长成 700+ 人的关系网络，并延伸出 AI 跨界客厅、AI 跨城客厅、WAIC 研究者创业者派对等系列现场。</p>
             </div>
           </article>
-          <div class="community-cards">
-            <article class="community-card">
-              <span>01 / Source</span>
-              <div>
-                <h3>从社区里长出信源和选题</h3>
-                <p>人物稿、播客嘉宾、活动议题和创业团队故事，很多都来自我长期参与和维护的真实关系网络。</p>
-              </div>
-            </article>
-            <article class="community-card">
-              <span>02 / Convene</span>
-              <div>
-                <h3>把线下活动变成信源网络</h3>
-                <p>AI 跨界客厅、AI 跨城客厅、WAIC 后派对等系列活动，让研究者、创业者、投资机构、开发者和高校社区在同一张桌上交换问题。</p>
-              </div>
-            </article>
-            <article class="community-card">
-              <span>03 / Connect</span>
-              <div>
-                <h3>连接不同圈层的人</h3>
-                <p>我和 Datawhale、Research AI+、小红书、DIIS AI 创新创业生态孵化器、真格基金等伙伴保持联系，也熟悉数字游民、开源学习者、出海团队和年轻创业者社区的语言。</p>
-              </div>
-            </article>
-            <article class="community-card">
-              <span>04 / Archive</span>
-              <div>
-                <h3>让关系变成可继续合作的网络</h3>
-                <p>活动结束后，我会把对话整理成复盘、播客、人物稿、关系线索和选题库，让需求、信任和下一轮合作继续流动。</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="method" class="band">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Field To Story</p>
-          <div>
-            <h2>从现场带回可以继续追的故事</h2>
-            <p class="section-desc">我做内容的起点通常在现场：活动、社区、孵化器、早期团队。先听见人正在解决什么问题，再判断哪些线索值得继续追、哪些人值得约来聊、哪些材料能做成系列。</p>
-          </div>
-        </div>
-        <div class="value-board" aria-label="从现场到叙事作品的工作方式">
-          <article class="value-lead">
-            <div>
-              <span>Field Notes</span>
-              <h3>一个现场结束后，我会先整理没有讲完的部分。</h3>
-            </div>
-            <p>谁在做产品，谁在找用户，谁在连接资源，谁的经历可以写成一篇人物稿，哪一句话值得再追一次。很多文章、播客、活动复盘和下一轮选题，都是从这些现场笔记里长出来的。</p>
-          </article>
-
-          <div class="value-cards">
-            <article class="value-card">
-              <span>01 / Question</span>
-              <h3>先带回问题</h3>
-              <p>在孵化器路演、WAIC 圆桌、AI 教育访谈和社区夜谈里，我会记录反复出现的问题：Agent 怎么进入组织，开源社区怎样支撑开发者，AI 进入教育后人的能力怎样变化。</p>
-            </article>
-            <article class="value-card">
-              <span>02 / People</span>
-              <h3>再找到具体的人</h3>
-              <p>一个好选题要落到人身上：创业者、研究者、开发者、老师、投资人。我的社区和活动经验，让我能继续约人、补资料、追到下一层关系。</p>
-            </article>
-            <article class="value-card">
-              <span>03 / Interview</span>
-              <h3>把一次聊天问完整</h3>
-              <p>访谈前做背景研究，现场追问转折、犹豫和判断，会后整理出可以发布的文章、播客或复盘。对我来说，追问比总结更重要。</p>
-            </article>
-            <article class="value-card">
-              <span>04 / Series</span>
-              <h3>让线索长成系列</h3>
-              <p>当一个问题持续出现，就可以继续长成系列：超级个体访谈、Becoming计划、AI教育田野志、AI跨界客厅，以及更适合做成交互档案的故事项目。</p>
-            </article>
-          </div>
         </div>
       </div>
     </section>
