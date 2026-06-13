@@ -1892,85 +1892,6 @@
       border-top: 1px solid var(--line);
     }
 
-    .work-map {
-      display: grid;
-      grid-template-columns: minmax(220px, .34fr) minmax(0, .66fr);
-      gap: 1px;
-      margin-top: 10px;
-      border: 1px solid var(--line);
-      background: var(--line);
-    }
-
-    .work-map-lead,
-    .work-map-card {
-      background: var(--paper);
-    }
-
-    .work-map-lead {
-      padding: clamp(20px, 2.4vw, 30px);
-      background: var(--teal);
-      color: var(--paper);
-    }
-
-    .work-map-lead span,
-    .work-map-card span {
-      display: block;
-      color: var(--poster-green);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 820;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .work-map-lead h3 {
-      max-width: 7em;
-      margin: 14px 0 0;
-      color: var(--paper);
-      font-size: clamp(34px, 4.4vw, 64px);
-      line-height: .95;
-    }
-
-    .work-map-lead p {
-      margin: 20px 0 0;
-      color: rgba(255, 255, 255, .76);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .work-map-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-    }
-
-    .work-map-card {
-      min-height: 176px;
-      padding: clamp(16px, 2vw, 24px);
-    }
-
-    .work-map-card:nth-child(2),
-    .work-map-card:nth-child(5) {
-      background: var(--mint);
-    }
-
-    .work-map-card strong {
-      display: block;
-      margin-top: 12px;
-      color: var(--teal);
-      font-family: var(--serif);
-      font-size: clamp(24px, 2.4vw, 36px);
-      line-height: 1;
-      font-weight: 560;
-    }
-
-    .work-map-card p {
-      margin: 14px 0 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.58;
-    }
-
     .case-hero {
       display: grid;
       grid-template-columns: minmax(0, 1.38fr) minmax(320px, .8fr);
@@ -3467,7 +3388,6 @@
       .section-head,
       .story-grid,
       .work-ledger,
-      .work-map,
       .case-hero,
       .case-grid,
       .artifact-board,
@@ -3574,7 +3494,6 @@
       .now-list,
       .reader-guide,
       .guide-grid,
-      .work-map-grid,
       .proof-grid,
       .community-board,
       .community-project,
@@ -3790,8 +3709,6 @@
       }
 
       .work-card,
-      .work-map-lead,
-      .work-map-card,
       .pathway,
       .fit-card,
       .artifact-card,
@@ -4117,47 +4034,7 @@
           <p class="section-kicker">Work Samples</p>
           <div>
             <h2>内容系列和代表作品</h2>
-            <p class="section-desc">这里按作品类型来读：从创业者、早期团队，到硅谷科技人物和大型产业事件；再到系列栏目、社区活动、交互叙事和驻场内容架构。</p>
-          </div>
-        </div>
-
-        <div class="work-map" aria-label="作品类型地图">
-          <div class="work-map-lead">
-            <span>Content Type Map</span>
-            <h3>我能交付的几类内容</h3>
-            <p>这张地图按作品类型来读：写人、写团队、写事件，也能把现场组织成活动，再沉淀成交互叙事和长期内容系统。</p>
-          </div>
-          <div class="work-map-grid">
-            <div class="work-map-card">
-              <span>01</span>
-              <strong>大型产业事件报道</strong>
-              <p>AMD / Datawhale 开发者生态，写技术公司、开源社区和产业现场。</p>
-            </div>
-            <div class="work-map-card">
-              <span>02</span>
-              <strong>硅谷科技人物报道</strong>
-              <p>葛小川 / AppLovin CTO，用公开资料和公司语境整理人物路径。</p>
-            </div>
-            <div class="work-map-card">
-              <span>03</span>
-              <strong>创业者与早期创业者报道</strong>
-              <p>超级个体访谈，记录 AI 浪潮下的 builder、早期创业者和产品行动。</p>
-            </div>
-            <div class="work-map-card">
-              <span>04</span>
-              <strong>播客与视频直播栏目</strong>
-              <p>Becoming计划和 AI 教育田野志，持续约人、主持、追问和沉淀。</p>
-            </div>
-            <div class="work-map-card">
-              <span>05</span>
-              <strong>社区活动策划与复盘</strong>
-              <p>AI 跨界客厅、AI 跨城客厅，把研究者、创业者和社区带到现场。</p>
-            </div>
-            <div class="work-map-card">
-              <span>06</span>
-              <strong>交互叙事与驻场内容架构</strong>
-              <p>把访谈、活动和团队现场整理成可回访、可展示、可持续更新的内容系统。</p>
-            </div>
+            <p class="section-desc">直接从案例进入。每个作品卡片会标出类型：产业事件、硅谷人物、早期创业者、栏目和社区活动；交互叙事与驻场内容架构在后面单独呈现。</p>
           </div>
         </div>
 
