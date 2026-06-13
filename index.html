@@ -633,30 +633,41 @@
 
     .origin-note {
       background: var(--paper);
+      padding-top: clamp(64px, 6vw, 84px);
     }
 
-    .origin-grid {
+    .origin-journey {
+      position: relative;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      border: 1px solid var(--line);
-      background: var(--line);
-      gap: 1px;
+      grid-template-columns: minmax(120px, .22fr) minmax(0, 1fr);
+      gap: clamp(20px, 3vw, 46px);
+      border-top: 1px solid var(--line);
+      padding-top: clamp(28px, 4vw, 54px);
     }
 
-    .origin-card {
-      min-height: 220px;
-      padding: clamp(20px, 2.4vw, 30px);
-      background: var(--paper-2);
+    .origin-rail {
+      position: sticky;
+      top: 96px;
+      align-self: start;
+      min-height: 420px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      justify-content: space-between;
+      border-left: 1px solid var(--line);
+      padding-left: 18px;
     }
 
-    .origin-card:nth-child(2) {
-      background: var(--mint);
+    .origin-rail strong {
+      color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(46px, 5vw, 78px);
+      font-weight: 500;
+      line-height: .92;
+      writing-mode: vertical-rl;
+      letter-spacing: .04em;
     }
 
-    .origin-card span {
+    .origin-rail span {
       color: var(--teal);
       font-family: var(--mono);
       font-size: 11px;
@@ -665,17 +676,87 @@
       text-transform: uppercase;
     }
 
-    .origin-card h3 {
+    .origin-scenes {
+      display: grid;
+      gap: clamp(22px, 3vw, 36px);
+    }
+
+    .origin-scene {
+      display: grid;
+      grid-template-columns: minmax(240px, .42fr) minmax(0, .58fr);
+      gap: clamp(18px, 2.6vw, 38px);
+      align-items: center;
+      padding: clamp(20px, 2.4vw, 32px) 0;
+      border-top: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .origin-scene:nth-child(even) {
+      background: transparent;
+    }
+
+    .origin-scene:nth-child(even) .origin-media {
+      order: 2;
+    }
+
+    .origin-scene:last-child {
+      padding-bottom: 0;
+    }
+
+    .origin-media {
+      margin: 0;
+      border: 1px solid var(--line-soft);
+      background: var(--paper);
+    }
+
+    .origin-media img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.95);
+    }
+
+    .origin-copy {
+      padding: clamp(8px, 1vw, 16px);
+    }
+
+    .origin-copy span {
       color: var(--teal);
-      font-size: clamp(30px, 3.2vw, 48px);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .origin-copy h3 {
+      color: var(--teal);
+      margin: 12px 0 18px;
+      font-size: clamp(30px, 3.4vw, 52px);
       line-height: .98;
     }
 
-    .origin-card p {
-      margin: auto 0 0;
+    .origin-copy p {
+      margin: 0;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.76;
+    }
+
+    .origin-note-line {
+      display: block;
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--teal);
+      font-family: var(--mono);
+      font-style: normal;
+      font-size: 11px;
+      font-weight: 760;
+      letter-spacing: .04em;
+      line-height: 1.5;
+      text-transform: uppercase;
     }
 
     .fit-card {
@@ -3415,7 +3496,8 @@
       .community-gallery,
       .community-proof-strip,
       .research-board,
-      .origin-grid,
+      .origin-journey,
+      .origin-scene,
       .sample-shelf,
       .work-card,
       .pathways,
@@ -3819,7 +3901,7 @@
       .research-card,
       .research-mini,
       .sample-card,
-      .origin-card {
+      .origin-scene {
         padding: 18px;
       }
 
@@ -3829,6 +3911,43 @@
 
       .hero-evidence .quick-evidence-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .origin-journey {
+        gap: 18px;
+      }
+
+      .origin-rail {
+        position: static;
+        min-height: auto;
+        flex-direction: row;
+        align-items: center;
+        border-left: 0;
+        border-top: 1px solid var(--line);
+        padding: 14px 0 0;
+      }
+
+      .origin-rail strong {
+        writing-mode: horizontal-tb;
+        font-size: clamp(34px, 9vw, 48px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .origin-scenes {
+        gap: 16px;
+      }
+
+      .origin-scene:nth-child(even) .origin-media {
+        order: 0;
+      }
+
+      .origin-copy {
+        padding: 2px 0 0;
+      }
+
+      .origin-copy h3 {
+        font-size: clamp(28px, 9vw, 38px);
       }
 
       .hero-copy {
@@ -4339,25 +4458,60 @@
           <p class="section-kicker">Origin Note</p>
           <div>
             <h2>我的来路</h2>
-            <p class="section-desc">这段背景不需要先读。它只是解释：为什么我会从人、现场和关系里进入 AI 创业生态。</p>
+            <p class="section-desc">我想从大理讲起。AI 先像一个新的底色进入教育田野，后来又把我带进更真实的创业现场。</p>
           </div>
         </div>
-        <div class="origin-grid" aria-label="月亮的来路">
-          <article class="origin-card">
-            <span>01 / Dali</span>
-            <h3>大理的创新教育田野</h3>
-            <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛聊 AI，创新学校里的孩子已经开始用 AI 学芬兰语。AI 对教育的改变，最早就是这样具体地出现在我面前。</p>
-          </article>
-          <article class="origin-card">
-            <span>02 / Shanghai</span>
-            <h3>上海的孵化器和黑客松</h3>
-            <p>后来我进入 AI 创新教育和创业孵化现场。夏令营、青少年黑客松、路演、用户反馈和深夜改方案，让我持续靠近产品还很早、团队还很小的时刻。</p>
-          </article>
-          <article class="origin-card">
-            <span>03 / Community</span>
-            <h3>超级个体实验室</h3>
-            <p>超级个体实验室也是在这段经历里长出来的。它从一次次线下见面，慢慢变成 700+ AI 创造者社区，也成为我持续发现早期创业者、研究者和开源社区信源的地方。</p>
-          </article>
+        <div class="origin-journey" aria-label="月亮进入 AI 创业现场的路径">
+          <aside class="origin-rail" aria-hidden="true">
+            <span>Route</span>
+            <strong>看见具体的人</strong>
+          </aside>
+          <div class="origin-scenes">
+            <article class="origin-scene">
+              <figure class="origin-media">
+                <img src="assets/portrait/moon-field-portrait.jpg" alt="月亮在田野中的人物照片">
+              </figure>
+              <div class="origin-copy">
+                <span>01 / Dali</span>
+                <h3>AI 最早出现在教育田野里</h3>
+                <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛聊起 AI，创新学校里的孩子已经开始用 AI 学芬兰语。那时我第一次很具体地感到：技术进入生活，常常先发生在一间教室、一次提问、一个孩子的探索里。</p>
+                <em class="origin-note-line">长出的能力 / 用田野方法观察技术如何进入具体生活</em>
+              </div>
+            </article>
+            <article class="origin-scene">
+              <figure class="origin-media">
+                <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育和创业孵化现场">
+              </figure>
+              <div class="origin-copy">
+                <span>02 / Shanghai</span>
+                <h3>走进产品还很早的地方</h3>
+                <p>来到上海后，AI 夏令营、青少年黑客松、孵化器路演、用户反馈和深夜改方案，把我带到团队还很小、判断还在形成的时候。我开始看见一个想法怎样变成产品，创业者怎样在不确定里找用户、找市场、找同路人。</p>
+                <em class="origin-note-line">长出的能力 / 读早期团队、产品判断和创业现场</em>
+              </div>
+            </article>
+            <article class="origin-scene">
+              <figure class="origin-media">
+                <img src="assets/field-film/research-ai-circle.jpg" alt="超级个体实验室 AI 跨界客厅现场">
+              </figure>
+              <div class="origin-copy">
+                <span>03 / Community</span>
+                <h3>把具体的人约到同一个房间</h3>
+                <p>超级个体实验室也是在这段经历里长出来的。我把教育者、设计师、开发者、研究者和早期创业者约到一起，让他们讲出自己的项目、卡点和热情。社区慢慢长成 700+ AI 创造者网络，也成为我持续发现人物、议题和信源的地方。</p>
+                <em class="origin-note-line">长出的能力 / 组织现场、建立信任、发现内容线索</em>
+              </div>
+            </article>
+            <article class="origin-scene">
+              <figure class="origin-media">
+                <img src="assets/field-film/amd-dev-stage.jpg" alt="AMD Datawhale 开发者生态报道现场">
+              </figure>
+              <div class="origin-copy">
+                <span>04 / Narrative Architect</span>
+                <h3>把创新发生的过程讲出来</h3>
+                <p>后来，我开始把这些现场里的材料整理成叙事作品：创业者人物、创业团队故事、开源生态报道和大型产业事件。我会把一个人为什么选择这条路、一支团队如何形成判断、一个行业事件怎样牵动生态写清楚，让更多人理解创新是怎样发生的。</p>
+                <em class="origin-note-line">长出的能力 / 创业者叙事、团队叙事、产业事件叙事</em>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
