@@ -1148,95 +1148,50 @@
       text-transform: uppercase;
     }
 
-    .community-board {
+    .community-story {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
+      gap: clamp(22px, 3.4vw, 54px);
+      align-items: end;
     }
 
-    .community-lead {
-      grid-column: span 5;
-      grid-row: span 2;
-      min-height: 440px;
-      padding: clamp(22px, 3vw, 34px);
-      background: var(--teal);
-      color: var(--paper);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 28px;
+    .community-section .section-head {
+      margin-bottom: clamp(34px, 4.6vw, 62px);
     }
 
-    .community-lead span,
-    .community-card span {
-      color: var(--poster-green);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 820;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .community-lead h3 {
-      max-width: 8em;
-      margin: 14px 0 0;
-      font-size: clamp(36px, 4vw, 62px);
-      line-height: .96;
-    }
-
-    .community-lead p {
+    .community-photo-lead {
       margin: 0;
-      color: rgba(255, 255, 255, .78);
-      font-size: 15px;
-      line-height: 1.78;
-    }
-
-    .community-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      border: 1px solid rgba(255, 255, 255, .24);
-    }
-
-    .community-stats div {
-      padding: 12px;
-      border-right: 1px solid rgba(255, 255, 255, .24);
-    }
-
-    .community-stats div:last-child {
-      border-right: 0;
-    }
-
-    .community-stats strong {
-      display: block;
-      color: var(--poster-green);
-      font-family: var(--serif);
-      font-size: clamp(30px, 3.4vw, 50px);
-      line-height: .9;
-      font-weight: 500;
-    }
-
-    .community-stats small {
-      display: block;
-      margin-top: 8px;
-      color: rgba(255, 255, 255, .78);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-
-    .community-project {
-      grid-column: span 7;
-      display: grid;
-      grid-template-columns: minmax(120px, .35fr) minmax(0, 1fr);
-      gap: clamp(18px, 3vw, 34px);
-      padding: clamp(20px, 2.6vw, 34px);
+      border: 1px solid var(--line);
       background: var(--paper-2);
     }
 
-    .community-project span {
-      color: var(--teal);
+    .community-photo-lead img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .community-photo-lead figcaption,
+    .community-gallery figcaption {
+      padding: 11px 13px;
+      border-top: 1px solid var(--line-soft);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .community-story-copy {
+      margin-left: clamp(-72px, -4vw, -28px);
+      padding: clamp(24px, 3.4vw, 46px);
+      border: 1px solid var(--line);
+      background: var(--teal);
+      color: var(--paper);
+    }
+
+    .community-story-copy span,
+    .community-gallery span {
+      color: var(--poster-green);
       font-family: var(--mono);
       font-size: 11px;
       font-weight: 820;
@@ -1244,58 +1199,37 @@
       text-transform: uppercase;
     }
 
-    .community-project h3 {
-      margin: 10px 0 0;
-      color: var(--teal);
-      font-size: clamp(34px, 4vw, 58px);
-      line-height: .96;
+    .community-story-copy h3 {
+      max-width: 8.6em;
+      margin: 14px 0 20px;
+      color: var(--paper);
+      font-size: clamp(34px, 4.3vw, 62px);
+      line-height: .94;
     }
 
-    .community-project p {
+    .community-story-copy p {
       margin: 0;
-      color: var(--muted);
+      color: rgba(255, 255, 255, .8);
       font-size: 15px;
-      line-height: 1.72;
+      line-height: 1.82;
     }
 
-    .community-project dl {
+    .community-story-copy p + p {
+      margin-top: 14px;
+    }
+
+    .community-proof-strip {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      margin: 22px 0 0;
-      background: var(--line-soft);
-      border: 1px solid var(--line-soft);
-    }
-
-    .community-project dl > div {
-      padding: 12px;
-      background: var(--paper);
-    }
-
-    .community-project dt {
-      color: var(--teal);
-      font-family: var(--serif);
-      font-size: clamp(28px, 3vw, 46px);
-      line-height: .92;
-    }
-
-    .community-project dd {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
-    }
-
-    .community-cards {
-      grid-column: span 7;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 1px;
+      border: 1px solid var(--line);
+      background: var(--line);
       gap: 1px;
     }
 
-    .community-card {
-      min-height: 220px;
-      padding: clamp(18px, 2vw, 26px);
+    .community-proof-strip div {
+      min-height: 150px;
+      padding: clamp(16px, 2vw, 24px);
       background: var(--paper-2);
       display: flex;
       flex-direction: column;
@@ -1303,26 +1237,45 @@
       gap: 18px;
     }
 
-    .community-card:nth-child(2),
-    .community-card:nth-child(3) {
-      background: var(--mint);
-    }
-
-    .community-card span {
+    .community-proof-strip strong {
       color: var(--teal);
+      font-family: var(--serif);
+      font-size: clamp(34px, 4.2vw, 66px);
+      font-weight: 500;
+      line-height: .9;
     }
 
-    .community-card h3 {
-      max-width: 9em;
-      font-size: clamp(26px, 2.8vw, 40px);
-      line-height: 1;
-    }
-
-    .community-card p {
-      margin: 0;
+    .community-proof-strip small {
       color: var(--muted);
-      font-size: 14px;
-      line-height: 1.72;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .community-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: clamp(14px, 2vw, 22px);
+      margin-top: clamp(18px, 2.6vw, 34px);
+    }
+
+    .community-gallery figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      background: var(--paper-2);
+    }
+
+    .community-gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      filter: saturate(.94);
+    }
+
+    .community-gallery span {
+      display: block;
+      padding: 14px 13px 0;
+      color: var(--teal);
     }
 
     .research-board {
@@ -3458,7 +3411,9 @@
       .artifact-board,
       .collection-grid,
       .proof-grid,
-      .community-board,
+      .community-story,
+      .community-gallery,
+      .community-proof-strip,
       .research-board,
       .origin-grid,
       .sample-shelf,
@@ -3492,9 +3447,6 @@
       .case-card.is-dark,
       .research-card,
       .research-card.is-wide,
-      .community-lead,
-      .community-project,
-      .community-cards,
       .value-lead,
       .value-cards,
       .method > div:first-child,
@@ -3558,10 +3510,9 @@
       .case-meta,
       .quick-answer,
       .proof-grid,
-      .community-board,
-      .community-project,
-      .community-project dl,
-      .community-cards,
+      .community-story,
+      .community-gallery,
+      .community-proof-strip,
       .interactive-grid,
       .research-board,
       .reading-route,
@@ -3600,6 +3551,27 @@
 
       .case-wall {
         gap: 28px;
+      }
+
+      .community-story {
+        gap: 0;
+      }
+
+      .community-story-copy {
+        margin-left: 0;
+        margin-top: -1px;
+      }
+
+      .community-story-copy h3 {
+        max-width: none;
+      }
+
+      .community-proof-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .community-gallery {
+        gap: 14px;
       }
 
       .case-hero {
@@ -3808,6 +3780,28 @@
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
+      }
+
+      .community-photo-lead img,
+      .community-gallery img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .community-story-copy {
+        padding: 24px 20px 26px;
+      }
+
+      .community-story-copy h3 {
+        font-size: clamp(34px, 10vw, 44px);
+        line-height: .98;
+      }
+
+      .community-proof-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .community-proof-strip div {
+        min-height: auto;
       }
 
       .button,
@@ -4172,46 +4166,61 @@
       </div>
     </section>
 
-    <section id="community" class="band">
+    <section id="community" class="band community-section">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-kicker">Community System</p>
+          <p class="section-kicker">Community Work</p>
           <div>
-            <h2>社区是我构建信任的方式</h2>
-            <p class="section-desc">我从数字游民、开源学习者、AI 孵化器和年轻 builder 社区里走出来。社区让我持续发现人、议题和信源。</p>
+            <h2>超级个体实验室</h2>
+            <p class="section-desc">它从一次次线下见面长出来：先把正在用 AI 做事的人约到同一个房间里，再让合伙人、产品反馈、研究问题和后续采访自然浮出来。</p>
           </div>
         </div>
-        <div class="community-board" aria-label="社区能力">
-          <article class="community-lead">
-            <div>
-              <span>Community Builder</span>
-              <h3>把人聚到一起，再让关系继续发生。</h3>
-            </div>
-            <p>我做社区时，会先把正在行动的人带到同一个场域里：听他们在找什么、卡在哪里、需要谁。播客、直播对谈、深度叙事和活动复盘，是我把一次见面沉淀成长期信源和合作网络的方式。</p>
-            <div class="community-stats" aria-label="社区数据">
-              <div>
-                <strong>700+</strong>
-                <small>AI 创造者与早期创业者社区</small>
-              </div>
-              <div>
-                <strong>多场</strong>
-                <small>AI 跨界客厅、AI 跨城客厅、WAIC 后派对等系列活动</small>
-              </div>
-              <div>
-                <strong>伙伴</strong>
-                <small>Datawhale / Research AI+ / 小红书 / DIIS / 真格基金等</small>
-              </div>
-            </div>
+        <div class="community-story" aria-label="超级个体实验室故事">
+          <figure class="community-photo-lead">
+            <img src="assets/field-film/research-ai-circle.jpg" alt="超级个体实验室 AI 跨界客厅围坐讨论现场">
+            <figcaption>AI 跨界客厅现场。很多后来可以写、可以约、可以继续追问的人，最早是在这样的房间里被看见。</figcaption>
+          </figure>
+          <article class="community-story-copy">
+            <span>Representative Community Work</span>
+            <h3>从一次聚会，长成 AI 创造者网络。</h3>
+            <p>2025 年 3 月，我在孵化器期间发起「超级个体实验室」。那时我遇到很多早期 builder：有人在做 Agent，有人在试 AI 硬件，有人在找合伙人，也有人需要第一次把自己的项目讲清楚。我想做的事情很简单，先把他们约出来，让人和人真实见面。</p>
+            <p>后来，这个社区慢慢长出 AI 跨界客厅、AI 跨城客厅、WAIC 研究者创业者派对等现场。我在里面做的，是发现人、设计问题、组织圆桌、主持长聊，再把一次见面沉淀成文章、播客、活动复盘和后续信源。</p>
           </article>
-          <article class="community-project">
-            <div>
-              <span>Representative Community Work</span>
-              <h3>超级个体实验室</h3>
-            </div>
-            <div>
-              <p>2025 年 3 月，我在孵化器期间发起「超级个体实验室」。它最初服务一群 AI 时代的创造者和早期创业者：有人找合伙人，有人找产品反馈，有人需要第一次把项目讲清楚。后来它长成 700+ 人的关系网络，并延伸出 AI 跨界客厅、AI 跨城客厅、WAIC 研究者创业者派对等系列现场。</p>
-            </div>
-          </article>
+        </div>
+        <div class="community-proof-strip" aria-label="超级个体实验室的可核对成果">
+          <div>
+            <strong>700+</strong>
+            <small>AI 创造者与早期创业者社区，从孵化器里的真实需求慢慢长出来。</small>
+          </div>
+          <div>
+            <strong>多场</strong>
+            <small>AI 跨界客厅、AI 跨城客厅、WAIC 研究者创业者派对等系列现场。</small>
+          </div>
+          <div>
+            <strong>170+</strong>
+            <small>WAIC 期间研究者创业者派对报名与现场组织，围绕 9 个技术方向展开圆桌。</small>
+          </div>
+          <div>
+            <strong>伙伴</strong>
+            <small>Datawhale、Research AI+、小红书、DIIS、真格基金等生态伙伴和信源网络。</small>
+          </div>
+        </div>
+        <div class="community-gallery" aria-label="超级个体实验室现场照片">
+          <figure>
+            <img src="assets/field-film/researcher-party-roundtable.jpg" alt="WAIC 研究者创业者派对圆桌讨论现场">
+            <span>Roundtable</span>
+            <figcaption>围绕具身智能、多模态、Agent、AI Infra 等方向，把研究者、创业者和开发者带到一桌。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/field-film/researcher-party-group.jpg" alt="WAIC 研究者创业者派对合影">
+            <span>Partner Network</span>
+            <figcaption>和 Research AI+、Datawhale、AI Nexus 等伙伴一起组织现场，后续也成为内容信源。</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/field-film/research-ai-circle.jpg" alt="AI 跨界客厅围坐交流">
+            <span>Salon</span>
+            <figcaption>用更松弛的围坐和长聊，让早期创业者、教育实践者和社区组织者把真实问题讲出来。</figcaption>
+          </figure>
         </div>
       </div>
     </section>
