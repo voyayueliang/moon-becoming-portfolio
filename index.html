@@ -1936,6 +1936,10 @@
       display: block;
     }
 
+    .case-card.is-half {
+      grid-column: span 6;
+    }
+
     .case-card.is-wide {
       grid-column: span 4;
       display: block;
@@ -3327,13 +3331,17 @@
       }
 
       .case-card,
+      .case-card.is-half,
       .case-card.is-wide,
       .case-card.is-proof,
       .case-card.is-portrait,
       .case-card.is-square,
+      .case-card.series-case,
       .case-card.is-tall,
       .case-card.is-lifted,
+      .case-card.is-museum,
       .case-card.is-dark {
+        grid-column: 1 / -1;
         margin-top: 0;
       }
 
@@ -3771,7 +3779,7 @@
               </div>
             </article>
 
-            <a class="case-card is-portrait" href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer">
+            <a class="case-card is-portrait is-half" href="https://www.xiaoyuzhoufm.com/podcast/675ed64384447b1bd00bbf63" target="_blank" rel="noreferrer">
               <figure class="case-visual is-contain">
                 <img src="assets/covers/becoming-visual.webp" alt="Becoming 计划绿色视觉海报">
               </figure>
@@ -3787,7 +3795,7 @@
               <span class="case-link">Listen ↗</span>
             </a>
 
-            <a class="case-card is-wide is-lifted" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
+            <a class="case-card is-wide is-lifted is-half" href="https://www.xiaoyuzhoufm.com/podcast/68d173caee4a4e6c3cb87349" target="_blank" rel="noreferrer">
               <figure class="case-visual is-contain">
                 <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育田野志直播海报">
               </figure>
@@ -3806,7 +3814,7 @@
               </div>
             </a>
 
-            <article class="case-card">
+            <article class="case-card is-half">
               <figure class="case-visual">
                 <img src="assets/covers/waic-party.webp" alt="WAIC AI 研究者创业者派对合影现场">
               </figure>
@@ -3826,7 +3834,7 @@
               </div>
             </article>
 
-            <a class="case-card" href="https://mp.weixin.qq.com/s/Fugj4SWF5ueeW0pI9oeAzg" target="_blank" rel="noreferrer">
+            <a class="case-card is-half" href="https://mp.weixin.qq.com/s/Fugj4SWF5ueeW0pI9oeAzg" target="_blank" rel="noreferrer">
               <figure class="case-visual">
                 <img src="assets/field-film/research-ai-circle.jpg" alt="AI 客厅圆桌交流现场">
               </figure>
