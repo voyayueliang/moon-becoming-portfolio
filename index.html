@@ -561,17 +561,17 @@
 
     .quick-evidence {
       margin-top: 22px;
-      border: 1px solid var(--hairline);
-      background: rgba(255, 255, 251, .72);
-      box-shadow: 0 16px 48px rgba(23, 63, 31, .06);
+      border: 0;
+      background: transparent;
+      box-shadow: none;
     }
 
     .quick-evidence-head {
       display: flex;
       justify-content: space-between;
       gap: 18px;
-      padding: 14px 16px;
-      border-bottom: 1px solid var(--hairline);
+      padding: 0 0 12px;
+      border-bottom: 1px solid var(--line-soft);
     }
 
     .quick-evidence-head strong {
@@ -593,14 +593,17 @@
     .quick-evidence-grid {
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
-      gap: 1px;
-      background: var(--hairline);
+      gap: 10px;
+      padding-top: 12px;
+      background: transparent;
     }
 
     .quick-evidence-item {
-      min-height: 142px;
-      padding: 16px 14px;
-      background: rgba(255, 255, 251, .9);
+      min-height: 132px;
+      padding: 16px 15px;
+      border: 1px solid var(--hairline);
+      background: rgba(255, 255, 251, .98);
+      box-shadow: 0 14px 38px rgba(23, 63, 31, .055);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -609,7 +612,7 @@
 
     .quick-evidence-item:nth-child(2),
     .quick-evidence-item:nth-child(5) {
-      background: rgba(236, 251, 229, .88);
+      background: rgba(236, 251, 229, .98);
     }
 
     .quick-evidence-item b {
@@ -4122,12 +4125,6 @@
             <circle cx="980" cy="528" r="7" fill="#173f1f"/>
             <circle cx="548" cy="730" r="7" fill="#72ef75"/>
           </g>
-          <g font-family="ui-sans-serif, sans-serif" font-size="18" fill="#17191f" opacity=".36">
-            <text x="1050" y="150">Silicon Valley</text>
-            <text x="550" y="390">AI Builders</text>
-            <text x="220" y="640">Field Notes</text>
-            <text x="900" y="562">Founder Stories</text>
-          </g>
         </svg>
       </div>
       <div class="hero-inner">
@@ -4148,7 +4145,7 @@
             </div>
             <div class="quick-evidence-grid">
               <div class="quick-evidence-item">
-                <b>看 Demo</b>
+                <b>看原型</b>
                 <span>在路演、夏令营和白板旁，看一个想法怎样变成产品反馈。</span>
               </div>
               <div class="quick-evidence-item">
@@ -4156,11 +4153,11 @@
                 <span>把创业者、研究者、开发者和教育者请进播客、直播、圆桌和深访。</span>
               </div>
               <div class="quick-evidence-item">
-                <b>写样本</b>
+                <b>写成稿</b>
                 <span>把材料写成产业事件报道、硅谷人物稿、builder 人物稿和团队故事。</span>
               </div>
               <div class="quick-evidence-item">
-                <b>做档案</b>
+                <b>留档案</b>
                 <span>把一次活动或一组访谈，继续整理成节目、复盘、故事地图和 ZINE。</span>
               </div>
             </div>
