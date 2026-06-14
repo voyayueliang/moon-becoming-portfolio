@@ -8,24 +8,26 @@
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=JetBrains+Mono:wght@500;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Work+Sans:wght@400;500;650;750&display=swap');
 
     :root {
-      --ink: #070807;
-      --muted: #46463f;
-      --paper: #fffefa;
-      --paper-2: #ffffff;
-      --paper-3: #effde9;
+      --ink: #080a08;
+      --muted: #4d4e47;
+      --paper: #fffdf6;
+      --paper-2: #fffffb;
+      --paper-3: #f0fbe9;
       --line: #173f1f;
-      --line-soft: rgba(23, 63, 31, .18);
+      --line-soft: rgba(23, 63, 31, .16);
+      --hairline: rgba(23, 63, 31, .24);
       --teal: #173f1f;
       --coral: #59ef63;
       --ochre: #6ff176;
       --sage: #99f19b;
       --pink: #72ef75;
-      --mint: #e8fbe1;
+      --mint: #ecfbe5;
       --poster-black: #050505;
       --poster-green: #72ef75;
       --blue: #4e6f9a;
       --charcoal: #06110a;
-      --shadow: none;
+      --shadow: 0 18px 54px rgba(23, 63, 31, .08);
+      --shadow-deep: 0 34px 100px rgba(5, 5, 5, .22);
       --max: 1320px;
       --mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
       --serif: "Cormorant Garamond", "Noto Serif SC", Georgia, "Times New Roman", "Songti SC", "STSong", serif;
@@ -48,9 +50,8 @@
       margin: 0;
       color: var(--ink);
       background:
-        linear-gradient(rgba(255, 254, 250, .97), rgba(255, 254, 250, .97)),
-        radial-gradient(circle at 18% 8%, rgba(114, 239, 117, .10), transparent 28%),
-        radial-gradient(circle at 84% 0%, rgba(23, 63, 31, .045), transparent 34%),
+        linear-gradient(rgba(255, 253, 246, .985), rgba(255, 253, 246, .975)),
+        repeating-linear-gradient(90deg, rgba(23, 63, 31, .035) 0 1px, transparent 1px 96px),
         repeating-linear-gradient(0deg, rgba(7, 8, 7, .018) 0 1px, transparent 1px 5px),
         var(--paper);
       font-family: var(--sans);
@@ -62,8 +63,8 @@
       content: "";
       position: fixed;
       inset: 0;
-      border: 6px solid var(--poster-green);
-      box-shadow: inset -8px -8px 0 var(--line);
+      border: 4px solid var(--poster-green);
+      box-shadow: inset -5px -5px 0 var(--line);
       pointer-events: none;
       z-index: 80;
     }
@@ -97,15 +98,16 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(251, 251, 246, .96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(14px);
+      background: rgba(255, 253, 246, .92);
+      border-bottom: 1px solid var(--hairline);
+      box-shadow: 0 10px 34px rgba(23, 63, 31, .045);
+      backdrop-filter: blur(16px);
     }
 
     .nav {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -125,8 +127,8 @@
     }
 
     .brand-mark {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       border: 2px solid var(--ink);
       display: grid;
       place-items: center;
@@ -160,25 +162,25 @@
 
     .nav-links a:hover,
     .print-button:hover {
-      border-color: var(--line);
+      border-color: var(--hairline);
       background: var(--mint);
     }
 
     .hero {
-      min-height: 92vh;
+      min-height: 82vh;
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(rgba(255, 254, 250, .92), rgba(255, 254, 250, .96)),
+        linear-gradient(rgba(255, 253, 246, .92), rgba(255, 253, 246, .98)),
         repeating-linear-gradient(90deg, rgba(23, 63, 31, .045) 0 1px, transparent 1px calc((100vw - 40px) / 12)),
         repeating-linear-gradient(0deg, rgba(23, 63, 31, .028) 0 1px, transparent 1px 64px);
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--hairline);
     }
 
     .hero-visual {
       position: absolute;
       inset: 0;
-      opacity: .88;
+      opacity: .72;
       pointer-events: none;
     }
 
@@ -192,8 +194,8 @@
       position: relative;
       max-width: var(--max);
       margin: 0 auto;
-      min-height: 92vh;
-      padding: 82px 20px 58px;
+      min-height: 82vh;
+      padding: 54px 24px 54px;
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 18px;
@@ -277,15 +279,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 10px 14px;
-      border: 2px solid var(--ink);
+      min-height: 44px;
+      padding: 10px 16px;
+      border: 1px solid var(--ink);
       background: var(--ink);
       color: white;
       text-decoration: none;
       font-weight: 720;
       font-size: 14px;
       border-radius: 0;
+      transition: transform .18s ease, background-color .18s ease, color .18s ease;
     }
 
     .button.secondary {
@@ -293,11 +296,15 @@
       color: var(--ink);
     }
 
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
     .hero-copy {
       grid-column: 1 / span 8;
       align-self: end;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
       padding: 28px 0 32px;
     }
 
@@ -307,7 +314,7 @@
       display: flex;
       flex-direction: column;
       justify-content: stretch;
-      border: 1px solid var(--line);
+      border: 1px solid var(--hairline);
       background: var(--mint);
       color: var(--ink);
       padding: 0;
@@ -321,7 +328,7 @@
       min-height: 0;
       flex: 1;
       overflow: hidden;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--hairline);
       background: var(--teal);
     }
 
@@ -421,13 +428,13 @@
     }
 
     section {
-      padding: 104px 20px;
+      padding: 78px 24px;
       scroll-margin-top: 92px;
     }
 
     .band {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
       background:
         linear-gradient(90deg, rgba(23, 63, 31, .035) 0 1px, transparent 1px 72px),
         var(--paper-2);
@@ -436,8 +443,9 @@
     #interactive {
       padding-top: 72px;
       background:
-        radial-gradient(circle at 72% 38%, rgba(114, 239, 117, .10), transparent 30%),
-        linear-gradient(180deg, #050505 0%, #070907 76%, #050505 100%);
+        linear-gradient(180deg, rgba(5, 5, 5, .98), rgba(7, 9, 7, .98)),
+        repeating-linear-gradient(90deg, rgba(114, 239, 117, .08) 0 1px, transparent 1px 104px),
+        #050505;
       color: var(--paper);
     }
 
@@ -467,8 +475,8 @@
       grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 18px;
       align-items: start;
-      margin-bottom: 38px;
-      border-top: 1px solid var(--line);
+      margin-bottom: clamp(26px, 3.2vw, 42px);
+      border-top: 1px solid var(--hairline);
       padding-top: 18px;
     }
 
@@ -490,7 +498,7 @@
     h2 {
       margin: 0;
       font-family: var(--serif);
-      font-size: clamp(42px, 6.5vw, 96px);
+      font-size: clamp(42px, 5.9vw, 88px);
       line-height: .92;
       letter-spacing: 0;
       font-weight: 500;
@@ -553,8 +561,9 @@
 
     .quick-evidence {
       margin-top: 22px;
-      border: 1px solid var(--line);
-      background: var(--paper);
+      border: 1px solid var(--hairline);
+      background: rgba(255, 255, 251, .72);
+      box-shadow: 0 16px 48px rgba(23, 63, 31, .06);
     }
 
     .quick-evidence-head {
@@ -562,7 +571,7 @@
       justify-content: space-between;
       gap: 18px;
       padding: 14px 16px;
-      border-bottom: 1px solid var(--line);
+      border-bottom: 1px solid var(--hairline);
     }
 
     .quick-evidence-head strong {
@@ -585,13 +594,13 @@
       display: grid;
       grid-template-columns: repeat(6, minmax(0, 1fr));
       gap: 1px;
-      background: var(--line);
+      background: var(--hairline);
     }
 
     .quick-evidence-item {
-      min-height: 132px;
-      padding: 14px 12px;
-      background: var(--paper-2);
+      min-height: 142px;
+      padding: 16px 14px;
+      background: rgba(255, 255, 251, .9);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -600,7 +609,7 @@
 
     .quick-evidence-item:nth-child(2),
     .quick-evidence-item:nth-child(5) {
-      background: var(--mint);
+      background: rgba(236, 251, 229, .88);
     }
 
     .quick-evidence-item b {
@@ -625,6 +634,12 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
+    .hero-evidence .quick-evidence-item b {
+      font-size: clamp(24px, 2.25vw, 34px);
+      line-height: 1.05;
+      word-break: keep-all;
+    }
+
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -636,127 +651,105 @@
       padding-top: clamp(64px, 6vw, 84px);
     }
 
-    .origin-journey {
-      position: relative;
+    .origin-simple {
       display: grid;
-      grid-template-columns: minmax(120px, .22fr) minmax(0, 1fr);
-      gap: clamp(20px, 3vw, 46px);
-      border-top: 1px solid var(--line);
+      grid-template-columns: minmax(0, .62fr) minmax(300px, .38fr);
+      gap: clamp(18px, 3vw, 42px);
+      border-top: 1px solid var(--hairline);
       padding-top: clamp(28px, 4vw, 54px);
     }
 
-    .origin-rail {
-      position: sticky;
-      top: 96px;
+    .origin-story-card {
+      border: 1px solid var(--hairline);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 251, .98), rgba(255, 253, 246, .9));
+      padding: clamp(24px, 3.4vw, 46px);
+      box-shadow: var(--shadow);
+    }
+
+    .origin-story-card > span,
+    .origin-milestone span,
+    .origin-note-footer span {
+      color: var(--teal);
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 820;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .origin-story-card h3 {
+      max-width: 760px;
+      margin: 18px 0 22px;
+      color: var(--ink);
+      font-size: clamp(38px, 5vw, 76px);
+      line-height: .95;
+    }
+
+    .origin-story-card p {
+      max-width: 780px;
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: clamp(16px, 1.25vw, 19px);
+      line-height: 1.82;
+    }
+
+    .origin-thesis {
+      border-left: 4px solid var(--poster-green);
+      padding-left: 16px;
+      color: var(--ink) !important;
+      font-weight: 720;
+    }
+
+    .origin-milestones {
       align-self: start;
-      min-height: 420px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-left: 1px solid var(--line);
-      padding-left: 18px;
+      border: 1px solid var(--hairline);
+      background: rgba(236, 251, 229, .62);
+      box-shadow: 0 14px 42px rgba(23, 63, 31, .055);
     }
 
-    .origin-rail strong {
-      color: var(--teal);
-      font-family: var(--serif);
-      font-size: clamp(46px, 5vw, 78px);
-      font-weight: 500;
-      line-height: .92;
-      writing-mode: vertical-rl;
-      letter-spacing: .04em;
-    }
-
-    .origin-rail span {
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 820;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .origin-scenes {
+    .origin-milestone {
       display: grid;
-      gap: clamp(22px, 3vw, 36px);
+      grid-template-columns: 48px minmax(0, 1fr);
+      gap: 18px;
+      padding: clamp(20px, 2.4vw, 30px);
+      border-bottom: 1px solid var(--line-soft);
     }
 
-    .origin-scene {
-      display: grid;
-      grid-template-columns: minmax(240px, .42fr) minmax(0, .58fr);
-      gap: clamp(18px, 2.6vw, 38px);
-      align-items: center;
-      padding: clamp(20px, 2.4vw, 32px) 0;
-      border-top: 1px solid var(--line);
-      background: transparent;
+    .origin-milestone:last-child {
+      border-bottom: 0;
     }
 
-    .origin-scene:nth-child(even) {
-      background: transparent;
-    }
-
-    .origin-scene:nth-child(even) .origin-media {
-      order: 2;
-    }
-
-    .origin-scene:last-child {
-      padding-bottom: 0;
-    }
-
-    .origin-media {
-      margin: 0;
-      border: 1px solid var(--line-soft);
-      background: var(--paper);
-    }
-
-    .origin-media img {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+    .origin-milestone strong {
       display: block;
-      filter: saturate(.95);
-    }
-
-    .origin-copy {
-      padding: clamp(8px, 1vw, 16px);
-    }
-
-    .origin-copy span {
-      color: var(--teal);
-      font-family: var(--mono);
-      font-size: 11px;
-      font-weight: 820;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .origin-copy h3 {
       color: var(--teal);
       margin: 12px 0 18px;
-      font-size: clamp(30px, 3.4vw, 52px);
+      font-family: var(--serif);
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 500;
       line-height: .98;
     }
 
-    .origin-copy p {
+    .origin-milestone p {
       margin: 0;
       color: var(--muted);
       font-size: 15px;
-      line-height: 1.76;
+      line-height: 1.72;
     }
 
-    .origin-note-line {
-      display: block;
-      margin-top: 18px;
-      padding-top: 12px;
+    .origin-note-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: clamp(22px, 3vw, 34px);
+      padding-top: 16px;
       border-top: 1px solid var(--line-soft);
-      color: var(--teal);
-      font-family: var(--mono);
-      font-style: normal;
-      font-size: 11px;
-      font-weight: 760;
-      letter-spacing: .04em;
-      line-height: 1.5;
-      text-transform: uppercase;
+    }
+
+    .origin-note-footer span {
+      border: 1px solid var(--line-soft);
+      padding: 8px 10px;
+      background: rgba(130, 240, 126, .08);
     }
 
     .fit-card {
@@ -1231,9 +1224,9 @@
 
     .community-story {
       display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(360px, .92fr);
-      gap: clamp(22px, 3.4vw, 54px);
-      align-items: end;
+      grid-template-columns: minmax(0, .98fr) minmax(380px, 1.02fr);
+      gap: clamp(20px, 3vw, 44px);
+      align-items: center;
     }
 
     .community-section .section-head {
@@ -1242,13 +1235,15 @@
 
     .community-photo-lead {
       margin: 0;
-      border: 1px solid var(--line);
+      border: 1px solid var(--hairline);
       background: var(--paper-2);
+      box-shadow: var(--shadow);
+      transform: rotate(-.6deg);
     }
 
     .community-photo-lead img {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      aspect-ratio: 16 / 11;
       object-fit: cover;
       display: block;
     }
@@ -1263,11 +1258,13 @@
     }
 
     .community-story-copy {
-      margin-left: clamp(-72px, -4vw, -28px);
-      padding: clamp(24px, 3.4vw, 46px);
-      border: 1px solid var(--line);
-      background: var(--teal);
+      margin-left: clamp(-56px, -3vw, -18px);
+      padding: clamp(24px, 3.5vw, 50px);
+      border: 1px solid rgba(114, 239, 117, .22);
+      background:
+        linear-gradient(135deg, rgba(23, 63, 31, .98), rgba(10, 29, 14, .98));
       color: var(--paper);
+      box-shadow: var(--shadow-deep);
     }
 
     .community-story-copy span,
@@ -1302,16 +1299,17 @@
     .community-proof-strip {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: 1px;
-      border: 1px solid var(--line);
-      background: var(--line);
+      margin-top: clamp(18px, 2.4vw, 30px);
+      border: 1px solid var(--hairline);
+      background: rgba(23, 63, 31, .16);
       gap: 1px;
+      box-shadow: 0 16px 42px rgba(23, 63, 31, .055);
     }
 
     .community-proof-strip div {
-      min-height: 150px;
+      min-height: 138px;
       padding: clamp(16px, 2vw, 24px);
-      background: var(--paper-2);
+      background: rgba(255, 255, 251, .9);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -1341,8 +1339,9 @@
 
     .community-gallery figure {
       margin: 0;
-      border: 1px solid var(--line);
+      border: 1px solid var(--hairline);
       background: var(--paper-2);
+      box-shadow: 0 14px 38px rgba(23, 63, 31, .05);
     }
 
     .community-gallery img {
@@ -1752,19 +1751,23 @@
 
     .case-wall {
       display: grid;
-      gap: clamp(28px, 4vw, 54px);
-      margin-top: 10px;
-      padding: 28px 0 10px;
-      border-top: 1px solid var(--line);
+      gap: clamp(32px, 4vw, 62px);
+      margin-top: 0;
+      padding: clamp(16px, 2.4vw, 28px) 0 10px;
+      border-top: 1px solid var(--hairline);
     }
 
     .case-hero {
       display: grid;
       grid-template-columns: minmax(0, 1.38fr) minmax(320px, .8fr);
       gap: clamp(22px, 3.6vw, 58px);
-      align-items: end;
+      align-items: center;
       color: inherit;
       text-decoration: none;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      box-shadow: none;
     }
 
     .case-hero:focus-visible,
@@ -1778,10 +1781,12 @@
       position: relative;
       overflow: hidden;
       background: var(--teal);
+      box-shadow: 0 24px 58px rgba(23, 63, 31, .10);
     }
 
     .case-hero .case-visual {
-      min-height: clamp(340px, 42vw, 560px);
+      min-height: clamp(320px, 38vw, 520px);
+      border: 1px solid var(--hairline);
     }
 
     .case-visual img {
@@ -1800,7 +1805,9 @@
     }
 
     .case-copy {
-      padding: 0 0 12px;
+      padding: clamp(14px, 1.8vw, 22px) 0 clamp(14px, 1.8vw, 22px);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--line-soft);
     }
 
     .case-kicker,
@@ -1833,9 +1840,9 @@
       min-height: 27px;
       margin: 0 0 12px;
       padding: 4px 8px;
-      border: 1px solid var(--line-soft);
+      border: 1px solid var(--hairline);
       color: var(--teal);
-      background: rgba(114, 239, 117, .1);
+      background: rgba(114, 239, 117, .12);
       font-family: var(--mono);
       font-size: 10px;
       font-weight: 820;
@@ -1850,8 +1857,8 @@
 
     .case-hero h3 {
       max-width: 8.6em;
-      font-size: clamp(42px, 5vw, 76px);
-      line-height: .9;
+      font-size: clamp(42px, 4.6vw, 70px);
+      line-height: .92;
     }
 
     .case-card h3 {
@@ -1873,15 +1880,15 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1px;
       margin: 24px 0 0;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: var(--line);
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      background: var(--hairline);
     }
 
     .case-meta div {
       min-height: 92px;
       padding: 12px 12px 14px;
-      background: var(--paper);
+      background: rgba(255, 253, 246, .86);
     }
 
     .case-meta dt,
@@ -1983,7 +1990,7 @@
     .case-grid {
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
-      gap: clamp(34px, 4vw, 58px) clamp(22px, 3vw, 42px);
+      gap: clamp(34px, 4vw, 64px) clamp(24px, 3vw, 46px);
       align-items: start;
     }
 
@@ -1992,6 +1999,14 @@
       color: inherit;
       text-decoration: none;
       display: block;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      transition: transform .2s ease, border-color .2s ease;
+    }
+
+    .case-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--teal);
     }
 
     .case-card.is-half {
@@ -2013,7 +2028,7 @@
 
     .case-card .case-visual {
       aspect-ratio: 4 / 3;
-      border: 1px solid var(--line);
+      border: 1px solid var(--hairline);
       background: #f5f5f0;
     }
 
@@ -2043,9 +2058,10 @@
       display: grid;
       grid-template-columns: minmax(220px, .42fr) minmax(0, .58fr);
       gap: clamp(16px, 2.4vw, 26px);
-      padding: 18px;
-      border: 1px solid var(--line);
-      background: var(--paper-2);
+      padding: clamp(16px, 2vw, 24px) 0 0;
+      border-top: 1px solid var(--hairline);
+      background: transparent;
+      box-shadow: none;
       overflow: hidden;
       align-items: start;
     }
@@ -2076,9 +2092,10 @@
       display: flex;
       flex-direction: column;
       gap: 0;
-      padding: 0;
-      border: 1px solid var(--line);
-      background: var(--paper-2);
+      padding: 16px 0 0;
+      border-top: 1px solid var(--hairline);
+      background: transparent;
+      box-shadow: none;
     }
 
     .case-card.series-channel > * {
@@ -2086,14 +2103,13 @@
     }
 
     .case-card.series-channel > div {
-      padding: clamp(18px, 2.4vw, 28px);
+      padding: clamp(16px, 2vw, 22px) 0 0;
     }
 
     .case-card.series-channel .case-visual {
       aspect-ratio: 16 / 8.2;
       min-height: 0;
-      border: 0;
-      border-bottom: 1px solid var(--line);
+      border: 1px solid var(--hairline);
       background: #f5f5f0;
     }
 
@@ -3138,10 +3154,11 @@
 
     .interactive-card.is-featured {
       grid-column: 1 / -1;
-      min-height: clamp(580px, 50vw, 720px);
+      min-height: clamp(520px, 47vw, 680px);
       overflow: hidden;
       background: #050505;
-      box-shadow: 0 42px 120px rgba(0, 0, 0, .42);
+      border: 1px solid rgba(114, 239, 117, .28);
+      box-shadow: 0 38px 110px rgba(0, 0, 0, .36);
     }
 
     .interactive-card.is-featured::before {
@@ -3152,16 +3169,16 @@
 
     .interactive-card.is-featured .interactive-shot {
       inset: 0;
-      opacity: .82;
+      opacity: .9;
     }
 
     .interactive-card.is-featured .interactive-shot img {
-      object-position: center top;
+      object-position: left top;
       filter: saturate(.9) contrast(1.08);
     }
 
     .interactive-card.is-featured .interactive-copy {
-      width: min(760px, 58%);
+      width: min(680px, 54%);
       min-height: inherit;
       display: flex;
       flex-direction: column;
@@ -3170,7 +3187,7 @@
     }
 
     .interactive-card.is-featured .interactive-copy h3 {
-      font-size: clamp(52px, 5.2vw, 82px);
+      font-size: clamp(50px, 5vw, 78px);
       line-height: .96;
       white-space: nowrap;
     }
@@ -3190,11 +3207,12 @@
     .interactive-card:not(.is-featured) {
       grid-column: span 6;
       display: grid;
-      grid-template-columns: minmax(132px, 180px) minmax(0, 1fr);
+      grid-template-columns: minmax(150px, 210px) minmax(0, 1fr);
       gap: clamp(14px, 2vw, 22px);
       align-items: start;
       min-height: auto;
       padding-top: clamp(16px, 2vw, 26px);
+      padding-bottom: 8px;
       border-top: 1px solid rgba(114, 239, 117, .42);
     }
 
@@ -3202,7 +3220,7 @@
       aspect-ratio: 4 / 3;
       border: 1px solid rgba(114, 239, 117, .22);
       background: #070907;
-      box-shadow: none;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, .18);
     }
 
     .interactive-card:not(.is-featured) .interactive-copy {
@@ -3249,9 +3267,9 @@
       display: grid;
       grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: clamp(20px, 3vw, 38px);
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      padding: 28px 0;
+      border-top: 1px solid var(--hairline);
+      border-bottom: 1px solid var(--hairline);
+      padding: clamp(28px, 3.5vw, 44px) 0;
       align-items: start;
     }
 
@@ -3282,9 +3300,10 @@
     }
 
     .residency-outputs span {
-      border: 1px solid var(--line);
+      border: 1px solid var(--hairline);
       padding: 8px 10px;
       color: var(--teal);
+      background: rgba(236, 251, 229, .5);
       font-family: var(--mono);
       font-size: 12px;
       font-weight: 800;
@@ -3314,7 +3333,7 @@
       grid-column: 6 / span 7;
       display: grid;
       grid-template-columns: 1fr;
-      border-top: 1px solid var(--line);
+      border-top: 1px solid var(--hairline);
     }
 
     .residency-case {
@@ -3513,8 +3532,7 @@
       .community-gallery,
       .community-proof-strip,
       .research-board,
-      .origin-journey,
-      .origin-scene,
+      .origin-simple,
       .sample-shelf,
       .work-card,
       .pathways,
@@ -3659,6 +3677,7 @@
       .community-story-copy {
         margin-left: 0;
         margin-top: -1px;
+        box-shadow: none;
       }
 
       .community-story-copy h3 {
@@ -3744,6 +3763,7 @@
       .interactive-card.is-featured .interactive-copy h3 {
         font-size: clamp(42px, 12vw, 58px);
         line-height: 1.02;
+        white-space: normal;
       }
 
       .interactive-card.is-featured .interactive-shot {
@@ -3886,6 +3906,10 @@
         aspect-ratio: 4 / 3;
       }
 
+      .community-photo-lead {
+        transform: none;
+      }
+
       .community-story-copy {
         padding: 24px 20px 26px;
       }
@@ -3918,53 +3942,48 @@
       .research-card,
       .research-mini,
       .sample-card,
-      .origin-scene {
+      .origin-story-card,
+      .origin-milestone {
         padding: 18px;
       }
 
       .quick-evidence-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .hero-evidence .quick-evidence-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .origin-journey {
+      .quick-evidence-item {
+        min-height: 92px;
+        padding: 10px 8px;
+        gap: 8px;
+      }
+
+      .quick-evidence-item b {
+        font-size: clamp(28px, 8vw, 36px);
+      }
+
+      .hero-evidence .quick-evidence-item b {
+        font-size: clamp(24px, 7vw, 30px);
+      }
+
+      .quick-evidence-item span {
+        font-size: 11px;
+        line-height: 1.32;
+      }
+
+      .origin-simple {
         gap: 18px;
       }
 
-      .origin-rail {
-        position: static;
-        min-height: auto;
-        flex-direction: row;
-        align-items: center;
-        border-left: 0;
-        border-top: 1px solid var(--line);
-        padding: 14px 0 0;
+      .origin-story-card h3 {
+        font-size: clamp(34px, 10vw, 46px);
       }
 
-      .origin-rail strong {
-        writing-mode: horizontal-tb;
-        font-size: clamp(34px, 9vw, 48px);
-        line-height: 1;
-        letter-spacing: 0;
-      }
-
-      .origin-scenes {
-        gap: 16px;
-      }
-
-      .origin-scene:nth-child(even) .origin-media {
-        order: 0;
-      }
-
-      .origin-copy {
-        padding: 2px 0 0;
-      }
-
-      .origin-copy h3 {
-        font-size: clamp(28px, 9vw, 38px);
+      .origin-milestone {
+        grid-template-columns: 40px minmax(0, 1fr);
       }
 
       .hero-copy {
@@ -3973,6 +3992,26 @@
 
       .hero-note {
         min-height: auto;
+      }
+
+      .portrait-frame {
+        flex: 0 0 auto;
+      }
+
+      .portrait-frame img {
+        height: 260px;
+        min-height: 0;
+        object-position: center 42%;
+      }
+
+      .portrait-frame figcaption {
+        left: 12px;
+        bottom: 10px;
+        font-size: 9px;
+      }
+
+      .note-copy {
+        padding: 18px;
       }
 
       .poster-plate {
@@ -4051,6 +4090,7 @@
         <span>Moon Becoming</span>
       </div>
       <div class="nav-links" aria-label="章节导航">
+        <a href="#story">来路</a>
         <a href="#works">作品</a>
         <a href="#community">社区</a>
         <a href="#interactive">交互</a>
@@ -4101,33 +4141,33 @@
           <h1>月亮的 Becoming</h1>
           <p class="identity-line">我是月亮，做 AI 创造者生态的内容研究和现场叙事。</p>
           <p class="hero-subhead">从大理创新教育和数字游民田野走来，在上海做 AI 创新教育和创业孵化；我发起「超级个体实验室」，长期进入开源社区、孵化器、黑客松和早期团队现场，也为创业者、出海团队和科技事件写故事。</p>
-          <div class="quick-evidence hero-evidence" aria-label="快速经历数字">
+          <div class="quick-evidence hero-evidence" aria-label="我进入 AI 创业生态的工作方式">
             <div class="quick-evidence-head">
-              <strong>先看数字</strong>
-              <span>采写、约人、组织现场和长期栏目。</span>
+              <strong>我常待在故事刚发生的地方</strong>
+              <span>黑客松、孵化器、开发者活动、社区夜谈和早期团队桌边。</span>
             </div>
             <div class="quick-evidence-grid">
               <div class="quick-evidence-item">
-                <b>20+</b>
-                <span>采写与选题基础</span>
+                <b>看 Demo</b>
+                <span>在路演、夏令营和白板旁，看一个想法怎样变成产品反馈。</span>
               </div>
               <div class="quick-evidence-item">
-                <b>700+</b>
-                <span>AI 创造者社区</span>
+                <b>约深聊</b>
+                <span>把创业者、研究者、开发者和教育者请进播客、直播、圆桌和深访。</span>
               </div>
               <div class="quick-evidence-item">
-                <b>170+</b>
-                <span>WAIC 现场报名与圆桌组织</span>
+                <b>写样本</b>
+                <span>把材料写成产业事件报道、硅谷人物稿、builder 人物稿和团队故事。</span>
               </div>
               <div class="quick-evidence-item">
-                <b>30+</b>
-                <span>播客、直播和人物对谈</span>
+                <b>做档案</b>
+                <span>把一次活动或一组访谈，继续整理成节目、复盘、故事地图和 ZINE。</span>
               </div>
             </div>
           </div>
           <div class="hero-actions" aria-label="主要行动">
             <a class="button" href="#works">查看作品</a>
-            <a class="button secondary" href="#community">看社区现场</a>
+            <a class="button secondary" href="#story">了解来路</a>
           </div>
         </div>
         <aside class="hero-note">
@@ -4137,9 +4177,60 @@
           </figure>
           <div class="note-copy">
             <strong>一句话理解我</strong>
-            <p>我长期在 AI 创新教育与 AI 创业生态里工作和观察，熟悉创作者经济、超级个体网络、开源社区，也持续连接创投机构和产业方；擅长把 AI 创业者、早期团队和产业事件，写成有现场感、可传播、能继续讨论的深度内容，也持续做播客和系列访谈。</p>
+            <p>我常出现的地方，是开源社区、AI 孵化器、黑客松和早期团队现场。那里有人在做 Agent 工具、AI 硬件和出海产品，也有年轻 builder 把想法推给真实用户。我擅长把这些人和事件写成有现场感、可传播、能继续讨论的深度内容，也持续做播客和系列访谈。</p>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <section id="story" class="band origin-note">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="section-kicker">Origin Note</p>
+          <div>
+            <h2>我的来路</h2>
+            <p class="section-desc">我想从大理讲起。AI 最早是从教育现场进入我的观察，后来把我带进创业团队、社区和产业事件。</p>
+          </div>
+        </div>
+        <div class="origin-simple" aria-label="月亮进入 AI 创业现场的路径">
+          <article class="origin-story-card">
+            <span>From Field To AI Scene</span>
+            <h3>从教育田野，走进 AI 创业现场</h3>
+            <p class="origin-thesis">我进入 AI 生态的方式，一直是先接近具体的人和场景，再把他们正在经历的变化写出来。</p>
+            <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛聊起 AI，创新学校里的孩子已经开始用 AI 学芬兰语。AI 对教育的改变，最早就是这样出现在我面前。</p>
+            <p>后来我来到上海，进入 AI 创新教育和创业孵化现场。AI 夏令营、青少年黑客松、孵化器路演、白板旁的用户反馈和深夜修改方案，把我带到产品还很早、团队还很小的地方。</p>
+            <p>超级个体实验室也在这段经历里长出来。它从一次次线下见面，慢慢成为 700+ AI 创造者网络。那些活动、访谈和关系，后来变成我写人物、团队和产业事件的入口。</p>
+            <div class="origin-note-footer" aria-label="这段经历长出的能力">
+              <span>田野观察</span>
+              <span>早期团队</span>
+              <span>社区信任</span>
+              <span>叙事作品</span>
+            </div>
+          </article>
+          <aside class="origin-milestones" aria-label="来路坐标">
+            <div class="origin-milestone">
+              <span>01</span>
+              <div>
+                <strong>大理</strong>
+                <p>在创新教育田野里，先看见 AI 如何进入孩子、老师和家庭的日常。</p>
+              </div>
+            </div>
+            <div class="origin-milestone">
+              <span>02</span>
+              <div>
+                <strong>上海</strong>
+                <p>在孵化器和黑客松现场，接近早期产品、创业团队和年轻 builder。</p>
+              </div>
+            </div>
+            <div class="origin-milestone">
+              <span>03</span>
+              <div>
+                <strong>社区</strong>
+                <p>用超级个体实验室把人聚到一起，也把信任、议题和信源慢慢沉淀下来。</p>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
     </section>
 
@@ -4149,7 +4240,7 @@
           <p class="section-kicker">Work Samples</p>
           <div>
             <h2>内容系列和代表作品</h2>
-            <p class="section-desc">先看最能证明能力的样本。这里保留产业事件、硅谷人物、早期创业者、栏目和社区活动；完整链接收在页尾索引，交互叙事与驻场内容架构在后面单独展开。</p>
+            <p class="section-desc">接下来直接看样本。这里保留报道、人物、栏目和社区活动；完整链接收在页尾索引，交互叙事与驻场内容架构在后面单独展开。</p>
           </div>
         </div>
 
@@ -4308,7 +4399,7 @@
           <p class="section-kicker">Community Work</p>
           <div>
             <h2>超级个体实验室</h2>
-            <p class="section-desc">我从数字游民、创新教育和 AI 孵化器走来，一直在意的都是在浪潮里看见具体的人。超级个体实验室就是从这种愿望里长出来的。</p>
+            <p class="section-desc">前面是作品。很多作品背后，是我长期在社区里建立的信任、关系和现场。</p>
           </div>
         </div>
         <div class="community-story" aria-label="超级个体实验室故事">
@@ -4321,7 +4412,7 @@
             <h3>从一次分享，长成 AI 创造者社区。</h3>
             <p>2025 年 3 月，上海第一场 un-AI 城市活动上，我分享了自己从人类学田野走向 AI 的故事。那次之后，我开始用「超级个体实验室发起者」这个身份，把身边正在用 AI 做事的人约出来：教育者、设计师、开发者、早期创业者，也包括很多非技术背景但想进入 AI 浪潮的人。</p>
             <p>我一直在意的是“被看见”的力量。一个人把项目讲出来，别人听见他的卡点、热情和判断，关系才会继续发生。三个月里，社区聚起四五百位伙伴，后来长到 700+，也慢慢长出 AI 跨界客厅、AI 跨城客厅、WAIC 研究者创业者派对等现场。</p>
-            <p>在这些现场，我做的是找人、设计问题、组织圆桌、主持长聊，把一次见面沉淀成文章、播客、活动复盘和后续信源。AI 对我来说更像一条线索：顺着它，我看到一个人如何改变学习、工作和生活路径。</p>
+            <p>在这些现场，我负责确定谁来、聊哪几个问题、现场怎么分桌、结束后哪些线索值得继续追。一次见面之后，材料会被整理成文章、播客、活动复盘和后续信源。AI 对我来说更像一条线索：顺着它，我看到一个人如何改变学习、工作和生活路径。</p>
           </article>
         </div>
         <div class="community-proof-strip" aria-label="超级个体实验室的可核对成果">
@@ -4330,16 +4421,16 @@
             <small>AI 创造者与早期创业者社区，从孵化器里的真实需求慢慢长出来。</small>
           </div>
           <div>
-            <strong>多场</strong>
-            <small>AI 跨界客厅、AI 跨城客厅、WAIC 研究者创业者派对等系列现场。</small>
+            <strong>AI 客厅</strong>
+            <small>发起 AI 跨界客厅、AI 跨城客厅，把不同城市和社区里的创业者带到同一个现场。</small>
           </div>
           <div>
             <strong>170+</strong>
             <small>WAIC 期间研究者创业者派对报名与现场组织，围绕 9 个技术方向展开圆桌。</small>
           </div>
           <div>
-            <strong>伙伴</strong>
-            <small>Datawhale、Research AI+、小红书、DIIS、真格基金等生态伙伴和信源网络。</small>
+            <strong>信源网络</strong>
+            <small>Datawhale、Research AI+、小红书、DIIS、真格基金等生态伙伴和长期联系。</small>
           </div>
         </div>
         <div class="community-gallery" aria-label="超级个体实验室现场照片">
@@ -4367,8 +4458,8 @@
         <div class="section-head">
           <p class="section-kicker">Interactive Story Lab</p>
           <div>
-            <h2>把故事做成可以进入的空间</h2>
-            <p class="section-desc">有些材料不只适合写成文章。它们可以变成地图、展厅、时间线，让读者从一个人进入一组关系。</p>
+            <h2>三件可打开的叙事作品</h2>
+            <p class="section-desc">人物访谈、活动记忆和教育现场，可以从文章继续长成网页、故事地图和视觉刊物。这里放三件样本：生命力博物馆、2050 学习节故事线和超脑 ZINE。</p>
           </div>
         </div>
         <div class="interactive-lab" aria-label="交互叙事项目列表">
@@ -4380,7 +4471,7 @@
               <div class="interactive-copy">
                 <span>01 / Published Interactive Story</span>
                 <h3>生命力博物馆</h3>
-                <p>28 个创造者故事，被整理成地图、展厅和游乐园。读者先点亮一个故事，再沿着人物、命题和时代情绪继续走。</p>
+                <p>把 28 个创造者故事整理成生命力地图、展厅和游乐园。读者可以先打开一个人，再沿着关键词、关系和时代情绪继续走。</p>
                 <div class="interactive-proof-row" aria-label="生命力博物馆项目构成">
                   <small>28 个故事</small>
                   <small>生命力地图</small>
@@ -4398,7 +4489,7 @@
               <div class="interactive-copy">
                 <span>02 / 2050 Learning Festival</span>
                 <h3>2050 学习节交互叙事</h3>
-                <p>把学习节现场里从六人到千人的故事，整理成一条可以向下进入的故事线。</p>
+                <p>把 2050 学习节里关于组织、学习和普通人上台的故事，整理成一条可以向下阅读的现场叙事。</p>
                 <span class="case-link">Open story ↗</span>
               </div>
             </a>
@@ -4410,7 +4501,7 @@
               <div class="interactive-copy">
                 <span>03 / Chaonao Narrative Project</span>
                 <h3>超脑叙事项目 / ZINE Issue 01</h3>
-                <p>为超脑叙事项目制作的独立杂志，把 AI 创新教育、青少年黑客松和人类学观察整理成一册视觉刊物。</p>
+                <p>为超脑叙事项目制作的独立杂志。把 AI 创新教育、青少年黑客松和人类学观察整理成一册视觉刊物。</p>
                 <span class="case-link">Visual sample</span>
               </div>
             </article>
@@ -4424,9 +4515,9 @@
         <div class="residency-board" aria-label="驻场叙事架构师案例">
           <article class="residency-lead">
             <p class="section-kicker">Narrative Residency</p>
-            <h2>驻场叙事架构师</h2>
-            <p>进入早期 AI 团队 2-3 个月，陪团队把几件事讲清楚：产品到底在替谁解决问题，创始人为什么这样判断，外部最容易误读的地方是什么。</p>
-            <p>我会把访谈、会议、用户反馈、社群讨论和公开材料整理出来，最后留下团队可以继续使用的故事线、素材包和对外表达。</p>
+            <h2>进入团队，把故事线搭起来</h2>
+            <p>很多早期团队已经有大量素材：创始人的判断、用户反馈、产品迭代、合作伙伴的理解差异。我的工作是进入团队一段时间，把这些材料整理成外部能听懂的故事线。</p>
+            <p>最后会留下团队之后还可以继续使用的一组材料：创始人故事、产品叙事、市场语境、案例和选题库。</p>
             <div class="residency-outputs" aria-label="驻场可能交付">
               <span>Founder Story</span>
               <span>Product Narrative</span>
@@ -4462,70 +4553,6 @@
                 <h3>栏目、案例和素材库</h3>
               </div>
               <p>把访谈、活动、社群反馈和市场观察沉淀成可继续更新的栏目、案例和选题库。下一次对外表达，可以接着已有材料往前走。</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="story" class="band origin-note">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="section-kicker">Origin Note</p>
-          <div>
-            <h2>我的来路</h2>
-            <p class="section-desc">我想从大理讲起。AI 先像一个新的底色进入教育田野，后来又把我带进更真实的创业现场。</p>
-          </div>
-        </div>
-        <div class="origin-journey" aria-label="月亮进入 AI 创业现场的路径">
-          <aside class="origin-rail" aria-hidden="true">
-            <span>Route</span>
-            <strong>看见具体的人</strong>
-          </aside>
-          <div class="origin-scenes">
-            <article class="origin-scene">
-              <figure class="origin-media">
-                <img src="assets/portrait/moon-field-portrait.jpg" alt="月亮在田野中的人物照片">
-              </figure>
-              <div class="origin-copy">
-                <span>01 / Dali</span>
-                <h3>AI 最早出现在教育田野里</h3>
-                <p>2023 年底，我在大理做创新教育田野。数字游民大会的教育分论坛聊起 AI，创新学校里的孩子已经开始用 AI 学芬兰语。那时我第一次很具体地感到：技术进入生活，常常先发生在一间教室、一次提问、一个孩子的探索里。</p>
-                <em class="origin-note-line">长出的能力 / 用田野方法观察技术如何进入具体生活</em>
-              </div>
-            </article>
-            <article class="origin-scene">
-              <figure class="origin-media">
-                <img src="assets/field-film/ai-education-live.jpg" alt="AI 教育和创业孵化现场">
-              </figure>
-              <div class="origin-copy">
-                <span>02 / Shanghai</span>
-                <h3>走进产品还很早的地方</h3>
-                <p>来到上海后，AI 夏令营、青少年黑客松、孵化器路演、用户反馈和深夜改方案，把我带到团队还很小、判断还在形成的时候。我开始看见一个想法怎样变成产品，创业者怎样在不确定里找用户、找市场、找同路人。</p>
-                <em class="origin-note-line">长出的能力 / 读早期团队、产品判断和创业现场</em>
-              </div>
-            </article>
-            <article class="origin-scene">
-              <figure class="origin-media">
-                <img src="assets/field-film/research-ai-circle.jpg" alt="超级个体实验室 AI 跨界客厅现场">
-              </figure>
-              <div class="origin-copy">
-                <span>03 / Community</span>
-                <h3>把具体的人约到同一个房间</h3>
-                <p>超级个体实验室也是在这段经历里长出来的。我把教育者、设计师、开发者、研究者和早期创业者约到一起，让他们讲出自己的项目、卡点和热情。社区慢慢长成 700+ AI 创造者网络，也成为我持续发现人物、议题和信源的地方。</p>
-                <em class="origin-note-line">长出的能力 / 组织现场、建立信任、发现内容线索</em>
-              </div>
-            </article>
-            <article class="origin-scene">
-              <figure class="origin-media">
-                <img src="assets/field-film/amd-dev-stage.jpg" alt="AMD Datawhale 开发者生态报道现场">
-              </figure>
-              <div class="origin-copy">
-                <span>04 / Narrative Architect</span>
-                <h3>把创新发生的过程讲出来</h3>
-                <p>后来，我开始把这些现场里的材料整理成叙事作品：创业者人物、创业团队故事、开源生态报道和大型产业事件。我会把一个人为什么选择这条路、一支团队如何形成判断、一个行业事件怎样牵动生态写清楚，让更多人理解创新是怎样发生的。</p>
-                <em class="origin-note-line">长出的能力 / 创业者叙事、团队叙事、产业事件叙事</em>
-              </div>
             </article>
           </div>
         </div>
