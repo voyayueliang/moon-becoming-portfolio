@@ -2,222 +2,491 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="月亮｜AI 创造者生态建设者 · 叙事与系统实践者" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="张婵媛（月亮）｜AI 创造者生态运营。社区、人物叙事、现场工具与开发者内容案例。" />
   <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="theme-color" content="#060706" />
   <link rel="canonical" href="https://voyayueliang.github.io/moon-becoming-portfolio/lanchi/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Moon｜AI Creator Ecosystem" />
-  <meta property="og:description" content="进入创造现场，发现人、理解项目、组织反馈，并把经验沉淀成可继续使用的系统。" />
+  <meta property="og:title" content="月亮｜AI 创造者生态运营" />
+  <meta property="og:description" content="我在早期 AI 创造者和开发者社区里找人、做活动、写人物，也把现场反复出现的问题做成能用的小工具。" />
   <meta property="og:url" content="https://voyayueliang.github.io/moon-becoming-portfolio/lanchi/" />
-  <meta property="og:image" content="https://voyayueliang.github.io/moon-becoming-portfolio/lanchi/assets/feishu/doc-profile-image.jpg" />
+  <meta property="og:image" content="https://voyayueliang.github.io/moon-becoming-portfolio/lanchi/assets/vitality/moon-field-portrait.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/feishu/doc-profile-image.jpg" />
-  <title>Moon｜AI Creator Ecosystem</title>
+  <title>月亮｜AI 创造者生态运营</title>
   <style>
-    :root{--black:#020303;--white:#f1f3f1;--muted:#9ba29e;--line:rgba(255,255,255,.24);--glass:rgba(126,145,147,.22);--accent:#dce9e5;--cond:"Arial Narrow","DIN Condensed","Helvetica Neue",sans-serif;--sans:Inter,"PingFang SC","Microsoft YaHei",sans-serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--black);color:var(--white);font-family:var(--cond);overflow-x:hidden}a{color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}.grid{background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);background-size:90px 90px}.hud{position:fixed;z-index:50;right:22px;top:20px;display:flex;align-items:center;gap:10px;text-transform:uppercase}.orb{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#d8fbef,#dfd5ee);box-shadow:0 0 20px rgba(255,255,255,.12)}.save{border:1px solid var(--line);padding:8px 12px;color:var(--muted);font:10px/1.3 var(--sans);letter-spacing:.04em}.plus{width:22px;height:22px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--muted)}
-    .opening{min-height:100svh;position:relative;background:#030404;overflow:hidden}.opening:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 68% 58%,transparent 0 22%,rgba(0,0,0,.12) 46%,#020303 82%);pointer-events:none}.opening-image{position:absolute;z-index:1;right:12%;bottom:-2%;width:min(58vw,820px);height:88vh}.opening-image img{object-fit:contain;object-position:center bottom;filter:contrast(1.12) brightness(.86)}.opening-image:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#020303 0,transparent 16%)}.game-menu{position:absolute;z-index:5;left:5.5vw;top:43%;width:225px;text-transform:uppercase}.new-game{font:10px var(--sans);letter-spacing:.1em;color:#aab0ad;display:flex;gap:10px;align-items:center;margin-bottom:14px}.box-plus,.box-empty{width:18px;height:18px;border:1px solid #9da3a0;display:grid;place-items:center}.continue{height:50px;background:#f1f1ef;color:#171918;text-decoration:none;display:grid;grid-template-columns:50px 1fr;align-items:center;font:18px var(--cond);letter-spacing:.06em}.continue b{height:100%;display:grid;place-items:center;border-right:1px solid #c9ccc8;font-size:24px}.minor{display:flex;align-items:center;gap:9px;color:#777e7a;font:10px var(--sans);letter-spacing:.09em;margin-top:25px}.minor+.minor{margin-top:14px}
-    .character{min-height:1180px;position:relative;border-top:1px solid #111}.char-nav{height:68px;border-block:1px solid #1b1d1c;display:flex;gap:26px;align-items:center;padding:0 4vw;font-size:10px;text-transform:uppercase;color:#777}.char-nav a:first-child{background:#f0f2f1;color:#111;padding:14px 22px}.char-title{position:absolute;z-index:5;left:4vw;top:110px}.char-title h2{font:900 clamp(56px,7vw,104px)/.88 Impact,var(--cond);margin:0;text-transform:uppercase;letter-spacing:.01em}.char-title p{font:10px var(--sans);color:#aaa;margin-top:18px}.char-photo{position:absolute;inset:250px 12% 70px 18%;filter:saturate(.55) contrast(1.2) brightness(.68)}.char-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#020303,transparent 25%,transparent 76%,#020303),linear-gradient(0deg,#020303,transparent 20%,transparent 75%,#020303)}.char-panel{position:absolute;z-index:4;width:310px;border-left:1px solid #777;padding-left:18px;font-family:var(--sans)}.char-panel h3{font:10px var(--cond);letter-spacing:.08em;text-transform:uppercase;color:#c8ccca}.char-panel p{font-size:11px;line-height:1.55;color:#aeb3b0}.char-panel b{color:#fff}.education{left:10%;top:440px}.experience{right:10%;top:310px}.attributes{right:10%;bottom:70px;width:390px}.stat{display:grid;grid-template-columns:105px 1fr 25px;gap:10px;align-items:center;margin:17px 0;font:11px var(--cond)}.bar{height:5px;background:#343837}.bar i{display:block;height:100%;background:#eef2f0}.confirm{height:42px;background:#eef1ef;color:#171918;display:grid;place-items:center;text-transform:uppercase;font-size:10px;margin-top:24px}
-    .archive{min-height:900px;padding:120px 0 140px;background:radial-gradient(circle at 24% 48%,#102530 0,transparent 30%),radial-gradient(circle at 68% 35%,#231c2c 0,transparent 34%),#020606;border-top:1px solid #161b1a}.archive h2{font:300 clamp(54px,6vw,92px)/.82 var(--cond);text-transform:uppercase;letter-spacing:.02em;margin:0 0 28px 4vw}.archive h2 span{display:block}.archive-intro{max-width:680px;margin:0 4vw 32px;color:#aeb7b3;font:13px/1.7 var(--sans)}.case-filters{display:flex;gap:8px;overflow-x:auto;margin:0 0 42px;padding:0 4vw 5px}.case-filter{flex:0 0 auto;border:1px solid #5f6b67;border-radius:999px;background:transparent;color:#aeb7b3;padding:9px 14px;font:10px var(--sans);letter-spacing:.05em;cursor:pointer}.case-filter span{margin-left:7px;color:#697470}.case-filter:hover,.case-filter:focus-visible{border-color:#dce6e2;color:#fff;outline:none}.case-filter.active{background:#edf2ef;border-color:#edf2ef;color:#111}.case-filter.active span{color:#59615e}.case-row{display:flex;gap:12px;overflow-x:auto;padding:0 4vw 28px;scroll-snap-type:x proximity;scrollbar-color:#65716f #111}.case-card{position:relative;flex:0 0 clamp(300px,28vw,410px);min-height:570px;border:1px solid #637176;border-radius:8px;padding:12px;background:linear-gradient(145deg,rgba(195,213,216,.24),rgba(61,77,82,.13));backdrop-filter:blur(14px);color:inherit;text-align:left;display:flex;flex-direction:column;cursor:pointer;scroll-snap-align:start}.case-card[hidden]{display:none}.case-id{width:max-content;border:1px solid #7b888b;border-radius:20px;padding:5px 9px;font:10px var(--cond);margin-bottom:10px}.case-type{margin:16px 0 0;font:9px var(--sans);letter-spacing:.1em;color:#a8c5bb;text-transform:uppercase}.case-card figure{aspect-ratio:16/10;height:auto;margin:0;background:#080a0a;overflow:hidden;border:1px solid rgba(255,255,255,.18)}.case-card img{filter:saturate(.72) contrast(1.08);object-position:center}.case-card[data-case="event"] img{object-position:center 58%}.case-card[data-case="education"] img{object-position:center 56%}.case-card[data-case="ai"] img,.case-card[data-case="map"] img{object-fit:contain;filter:none}.case-card h3{font:32px/1.05 var(--cond);margin:10px 0 11px}.case-card p{font:13px/1.65 var(--sans);color:#d2d7d4;margin:0}.case-card small{font:10px/1.55 var(--sans);letter-spacing:.04em;color:#96a29d;display:block;margin-top:16px}.case-open{margin-top:auto;padding-top:26px;font:10px var(--sans);letter-spacing:.12em;color:#edf2ef}.case-card:hover,.case-card:focus-visible{transform:translateY(-7px);border-color:#e9efec;transition:.25s;outline:none}.case-card:hover .case-open{color:#fff}
-    .case-dialog{width:min(1120px,calc(100vw - 32px));max-height:calc(100svh - 32px);padding:0;border:1px solid #697370;background:#070a0a;color:#eef2ef;box-shadow:0 30px 100px #000;overflow:auto}.case-dialog::backdrop{background:rgba(0,0,0,.82);backdrop-filter:blur(8px)}.dialog-close{position:sticky;z-index:4;top:14px;float:right;margin:14px 14px -54px 0;width:40px;height:40px;border:1px solid #77817e;border-radius:50%;background:#0b0e0d;color:#fff;font:22px var(--sans);cursor:pointer}.detail-hero{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);min-height:420px;border-bottom:1px solid #29302e}.detail-media{background:#020303;min-height:420px}.detail-media img{object-fit:cover}.detail-media.contain img{object-fit:contain;padding:24px}.detail-head{padding:70px clamp(28px,5vw,64px);display:flex;flex-direction:column;justify-content:flex-end}.detail-kicker{font:10px var(--sans);letter-spacing:.14em;color:#9eaaa5;text-transform:uppercase}.detail-head h3{font:clamp(44px,6vw,86px)/.9 var(--cond);margin:22px 0}.detail-head p{font:14px/1.8 var(--sans);color:#bdc5c1;margin:0}.detail-body{padding:52px clamp(24px,5vw,72px) 72px}.detail-question{max-width:850px;font:clamp(25px,3vw,42px)/1.25 var(--cond);margin:0 0 46px}.detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#303735;border:1px solid #303735}.detail-block{min-height:200px;padding:24px;background:#0a0d0c}.detail-block b{display:block;margin-bottom:18px;font:11px var(--sans);letter-spacing:.1em;color:#aeb8b4}.detail-block p{font:13px/1.75 var(--sans);color:#d8ddda;margin:0}.detail-transfer{display:grid;grid-template-columns:180px 1fr;gap:30px;margin-top:44px;padding-top:30px;border-top:1px solid #303735}.detail-transfer b{font:11px var(--sans);letter-spacing:.12em;color:#aeb8b4}.detail-transfer p{font:16px/1.75 var(--sans);margin:0}.detail-actions{display:flex;gap:10px;margin-top:34px}.detail-actions a{border:1px solid #8d9793;padding:11px 16px;text-decoration:none;font:10px var(--sans);letter-spacing:.1em;text-transform:uppercase}.detail-actions a:hover{background:#edf2ef;color:#090b0a}
-    .map{min-height:1050px;position:relative;border-top:1px solid #151918;overflow:hidden;background:#020505}.map-bg{position:absolute;inset:0;opacity:.3;filter:grayscale(.55) blur(1px)}.map-bg:after{content:"";position:absolute;inset:0;background:radial-gradient(circle,transparent,#020303 72%)}.map-title{position:absolute;left:4vw;top:46%;font:300 clamp(55px,7vw,104px)/.84 var(--cond);letter-spacing:.02em}.map-title span{display:block}.map-cluster{position:absolute;z-index:2}.map-cluster b{display:block;font:24px var(--cond);margin-bottom:12px;color:#b8c2be}.map-cluster p{font:600 clamp(22px,3vw,46px)/1.25 var(--sans);margin:0;color:#d7ddda}.m1{left:29%;top:22%}.m2{right:8%;top:25%}.m3{left:34%;bottom:18%}.m4{right:10%;bottom:14%}
-    .ending{min-height:100svh;position:relative;overflow:hidden;border-top:1px solid #161918}.ending img{position:absolute;inset:0;filter:grayscale(1) contrast(1.6) brightness(.55)}.ending:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#020303 0,rgba(0,0,0,.72) 34%,rgba(0,0,0,.1) 70%,#020303)}.end-menu{position:absolute;z-index:3;left:7%;bottom:10%;border-left:1px solid #eee;padding-left:16px;font-family:var(--sans)}.end-menu .system{font-size:10px;letter-spacing:.14em}.end-menu h2{font:900 clamp(48px,6vw,86px)/.84 Georgia,serif;font-style:italic;text-transform:uppercase;margin:14px 0}.find{display:inline-block;border:1px solid #fff;padding:7px 18px;font:10px var(--sans);text-transform:uppercase}.end-menu p{font:700 10px/1.8 var(--sans);letter-spacing:.12em;margin:12px 0 0}.reveal{opacity:0;transform:translateY(18px);transition:.65s}.reveal.visible{opacity:1;transform:none}
-    @media(max-width:800px){.hud{right:10px;top:12px;gap:7px}.orb{width:32px;height:32px}.save{display:block;font-size:8px;padding:7px 8px}.opening-image{right:-42%;width:105vw;height:62vh;bottom:4%}.game-menu{left:24px;top:44%;bottom:auto;width:220px}.character{min-height:1450px}.char-nav{overflow:hidden;gap:18px;padding-left:20px}.char-title{left:24px}.char-title h2{font-size:62px}.char-photo{inset:260px 0 500px 0}.char-panel{position:absolute;width:calc(100% - 48px);left:24px!important;right:auto!important}.education{top:790px}.experience{top:980px}.attributes{top:1185px;bottom:auto}.archive{padding-top:80px;min-height:760px}.archive h2{font-size:58px;margin-left:24px}.archive-intro{margin:0 24px 24px}.case-filters{padding-left:24px;padding-right:24px;margin-bottom:30px}.case-row{padding-left:24px;padding-right:24px;scroll-snap-type:x mandatory}.case-card{flex-basis:82vw;min-height:520px}.case-card h3{font-size:28px}.detail-hero{grid-template-columns:1fr}.detail-media{min-height:230px;max-height:310px}.detail-head{padding:36px 24px}.detail-grid{grid-template-columns:1fr}.detail-block{min-height:auto}.detail-transfer{grid-template-columns:1fr;gap:12px}.map{min-height:950px}.map-title{left:24px;top:70px;font-size:58px}.map-cluster{left:24px!important;right:auto!important}.m1{top:260px}.m2{top:420px}.m3{top:590px;bottom:auto}.m4{top:755px;bottom:auto}.map-cluster p{font-size:25px}.ending img{object-position:64% center}.end-menu{left:24px;bottom:9%}.end-menu h2{font-size:50px}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
-    .minor{text-decoration:none}.opening-name{display:block;width:360px;margin:30px 0 0;color:#f2f4f2;font:30px/1 var(--cond);font-weight:400;letter-spacing:.01em;text-transform:none}.opening-role{display:block;width:360px;margin:10px 0 0;color:#edf2ef;font:18px/1.2 var(--cond);font-weight:400;letter-spacing:.015em;text-transform:none}.opening-tagline{width:360px;margin:8px 0 0;color:#9fa7a3;font:10px/1.6 var(--sans);letter-spacing:.04em;text-transform:none}.opening-copy{width:360px;margin:12px 0 0;color:#9aa19d;font:11px/1.72 var(--sans);letter-spacing:.01em;text-transform:none}.opening-proof{width:390px;margin:14px 0 0;color:#6f7974;font:8px/1.7 var(--sans);letter-spacing:.08em;text-transform:uppercase}.opening-jumps{display:flex;gap:6px;width:410px;margin-top:12px}.opening-jumps a{border:1px solid #4f5854;padding:7px 9px;color:#aab2ae;text-decoration:none;font:8px var(--sans);letter-spacing:.07em;text-transform:uppercase}.opening-jumps a:hover,.opening-jumps a:focus-visible{background:#edf2ef;color:#111;outline:none}
-    .case-card figure{aspect-ratio:16/9}.case-card[data-case="ai"] img,.case-card[data-case="museum"] img{object-fit:contain;filter:none}.case-card[data-tier="flagship"]{flex-basis:clamp(360px,35vw,520px);min-height:610px;border-color:#a9bbb5;background:linear-gradient(145deg,rgba(198,218,216,.3),rgba(51,65,67,.13))}.case-card[data-tier="flagship"] .case-id{background:#edf2ef;color:#111;border-color:#edf2ef}.detail-media img{object-fit:contain;padding:18px}.detail-head h3{font-size:clamp(40px,4.5vw,64px);line-height:.98;text-wrap:balance}.detail-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}.detail-tags span{border:1px solid #53605c;border-radius:999px;padding:6px 9px;color:#aeb8b4;font:9px var(--sans);letter-spacing:.08em;text-transform:uppercase}.char-nav a{flex:0 0 auto;color:inherit;text-decoration:none}
-    .field-route{min-height:780px;padding:110px 4vw 120px;background:#050707;border-top:1px solid #171b1a}.route-head{display:grid;grid-template-columns:minmax(0,.8fr) minmax(360px,1.2fr);gap:9vw;align-items:end}.route-kicker{font:10px var(--sans);letter-spacing:.14em;text-transform:uppercase;color:#8f9995;margin-bottom:24px}.route-head h2{font:300 clamp(54px,6.4vw,96px)/.9 var(--cond);text-transform:uppercase;letter-spacing:.01em;margin:0}.route-head p{max-width:620px;margin:0 0 8px;color:#aeb6b2;font:14px/1.85 var(--sans)}.route-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:70px;border:1px solid #2b302e;background:#2b302e}.route-card{min-height:350px;padding:28px;background:#070a09;display:flex;flex-direction:column}.route-card span{font:10px var(--sans);letter-spacing:.12em;color:#83908a;text-transform:uppercase}.route-card h3{font:31px/1.06 var(--cond);margin:38px 0 18px}.route-card p{font:12px/1.8 var(--sans);color:#bac2be;margin:0}.route-card small{margin-top:auto;padding-top:38px;font:9px/1.6 var(--sans);letter-spacing:.11em;color:#74807b;text-transform:uppercase}
-    .current-practice{padding:120px 4vw 130px;background:#070908;border-top:1px solid #171b1a}.practice-head,.assets-head{display:grid;grid-template-columns:minmax(280px,.78fr) minmax(0,1.22fr);gap:8vw;align-items:end}.practice-head h2,.assets-head h2{font:300 clamp(54px,6vw,92px)/.88 var(--cond);text-transform:uppercase;margin:0}.practice-head p,.assets-head p{max-width:620px;color:#aab3af;font:13px/1.8 var(--sans);margin:0}.practice-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;margin-top:60px;background:#2a302d;border:1px solid #2a302d}.practice-card{min-height:310px;padding:27px;background:#0a0d0c;display:flex;flex-direction:column}.status{width:max-content;border:1px solid #65706c;border-radius:999px;padding:6px 9px;color:#aab4af;font:9px var(--sans);letter-spacing:.08em;text-transform:uppercase}.status.delivered{background:#edf2ef;border-color:#edf2ef;color:#101312}.practice-card h3{font:29px/1.08 var(--cond);margin:36px 0 16px}.practice-card p{font:12px/1.75 var(--sans);color:#aeb7b3;margin:0}.practice-card small{margin-top:auto;padding-top:28px;color:#707b76;font:9px/1.6 var(--sans);letter-spacing:.08em;text-transform:uppercase}
-    .open-assets{padding:115px 4vw 135px;background:radial-gradient(circle at 75% 25%,#1b1d2b 0,transparent 31%),#040606;border-top:1px solid #171b1a}.asset-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;margin-top:58px;background:#303633;border:1px solid #303633}.asset-link{min-height:170px;padding:24px;background:#080b0a;text-decoration:none;display:flex;flex-direction:column;transition:.2s}.asset-link:hover,.asset-link:focus-visible{background:#edf2ef;color:#101312;outline:none}.asset-link span{font:9px var(--sans);letter-spacing:.1em;color:#7f8a85;text-transform:uppercase}.asset-link b{font:27px/1.1 var(--cond);font-weight:400;margin-top:auto}.asset-link small{font:10px var(--sans);color:#87928d;margin-top:9px}.asset-link:hover span,.asset-link:hover small,.asset-link:focus-visible span,.asset-link:focus-visible small{color:#4f5753}
-    @media(min-width:801px){.game-menu{top:31%}}
-    .current-quests{padding:120px 4vw 140px;background:#050706;border-top:1px solid #171b1a}.quests-head{display:grid;grid-template-columns:minmax(260px,.75fr) minmax(0,1.25fr);gap:8vw;align-items:end}.quests-head h2{font:300 clamp(54px,6vw,92px)/.88 var(--cond);text-transform:uppercase;margin:0}.quests-head p{max-width:550px;color:#aab3af;font:13px/1.8 var(--sans);margin:0}.quest-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:#2b302e;border:1px solid #2b302e;margin-top:64px}.quest{min-height:300px;padding:28px;background:#080b0a;display:flex;flex-direction:column}.quest b{font:10px var(--sans);letter-spacing:.12em;color:#78857f}.quest h3{font:28px/1.18 var(--cond);font-weight:400;margin:42px 0 18px}.quest p{font:12px/1.8 var(--sans);color:#9fa9a4;margin:auto 0 0}.end-copy{max-width:420px!important;font-weight:400!important;letter-spacing:.01em!important;text-transform:none;font-size:12px!important;line-height:1.7!important;margin:0 0 18px!important;color:#c2c8c5}
-    @media(max-width:800px){.opening{min-height:760px}.game-menu{top:34%}.opening-name{width:265px;margin-top:24px;font-size:25px}.opening-role{width:265px;margin-top:8px;font-size:16px}.opening-tagline,.opening-copy{width:265px}.opening-copy{margin-top:8px;font-size:10px}.opening-proof{width:270px;margin-top:10px;font-size:7px}.opening-jumps{width:300px;flex-wrap:wrap;margin-top:9px}.opening-jumps a{font-size:7px;padding:6px 8px}.character{min-height:1570px}.char-photo{inset:260px 0 670px 0}.education{top:840px}.experience{top:1020px}.attributes{top:1220px}.stat{grid-template-columns:130px 1fr 48px}.confirm{height:auto;min-height:48px;padding:10px;text-align:center;line-height:1.45}.char-nav{overflow-x:auto}.field-route{padding:80px 24px 90px}.route-head,.quests-head,.practice-head,.assets-head{grid-template-columns:1fr;gap:28px}.route-head p,.practice-head p,.assets-head p{font-size:12px}.route-grid,.quest-grid,.practice-grid,.asset-grid{grid-template-columns:1fr;margin-top:46px}.route-card{min-height:245px;padding:24px}.route-card h3{margin-top:30px}.case-card[data-tier="flagship"]{flex-basis:86vw;min-height:560px}.current-practice,.open-assets{padding:80px 24px 95px}.practice-card{min-height:230px;padding:24px}.current-quests{padding:80px 24px 100px}.quest{min-height:230px;padding:24px}.quest h3{margin-top:32px}.asset-link{min-height:140px}.end-copy{max-width:270px!important}}
-    .route-story{max-width:1560px;margin:70px auto 0;display:grid;grid-template-columns:minmax(320px,.78fr) minmax(560px,1.22fr);border-block:1px solid #29302d}.route-photo{position:relative;min-height:760px;margin:0;overflow:hidden;background:#0a0d0c}.route-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(2,3,3,.92),transparent 42%),linear-gradient(90deg,transparent 70%,rgba(2,3,3,.5))}.route-photo img{filter:saturate(.68) contrast(1.08) brightness(.78);object-position:center 45%}.route-photo figcaption{position:absolute;z-index:2;left:28px;right:28px;bottom:26px;color:#d2d8d5;font:12px/1.65 var(--sans)}.route-photo figcaption span{display:block;margin-bottom:8px;color:#8c9993;font:9px var(--sans);letter-spacing:.12em;text-transform:uppercase}.route-notes{border-left:1px solid #29302d}.route-note{min-height:190px;display:grid;grid-template-columns:92px minmax(0,1fr);gap:24px;padding:34px 42px;border-bottom:1px solid #29302d}.route-note:last-child{border-bottom:0}.route-note>span{color:#829089;font:10px var(--sans);letter-spacing:.12em;text-transform:uppercase}.route-note h3{font:30px/1.08 var(--cond);font-weight:400;margin:0 0 16px}.route-note p{max-width:760px;margin:0;color:#b8c0bc;font:13px/1.82 var(--sans)}
-    .workflow-diagram{height:100%;min-height:100%;padding:24px;background:radial-gradient(circle at 82% 18%,rgba(168,207,196,.2),transparent 32%),linear-gradient(145deg,#111817,#050807);display:flex;flex-direction:column;justify-content:center}.workflow-diagram .workflow-label{font:9px var(--sans);letter-spacing:.13em;color:#93a29d;text-transform:uppercase}.workflow-pipeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;margin-top:22px}.workflow-step{position:relative;min-height:74px;border:1px solid #51605b;padding:11px 8px;color:#edf2ef;font:11px/1.4 var(--sans);display:flex;align-items:flex-end}.workflow-step:not(:last-child):after{content:"→";position:absolute;right:-8px;top:8px;z-index:2;color:#b8c8c2;background:#0d1311}.detail-workflow{min-height:420px;padding:clamp(28px,5vw,64px)}.detail-workflow .workflow-pipeline{gap:10px}.detail-workflow .workflow-step{min-height:105px;font-size:13px}
-    @media(max-width:800px){.route-story{grid-template-columns:1fr;margin-top:44px}.route-photo{min-height:430px;aspect-ratio:4/5}.route-notes{border-left:0;border-top:1px solid #29302d}.route-note{min-height:0;grid-template-columns:52px minmax(0,1fr);gap:12px;padding:30px 0}.route-note h3{font-size:25px}.route-note p{font-size:12px}.workflow-diagram{padding:16px}.workflow-pipeline{gap:4px}.workflow-step{min-height:66px;padding:8px 5px;font-size:9px}.detail-workflow{min-height:240px;padding:24px}.detail-workflow .workflow-step{min-height:72px;font-size:9px}}
+    :root {
+      --bg: #060706;
+      --ink: #f0efe9;
+      --paper: #e9e4d8;
+      --paper-ink: #151814;
+      --muted: #a3aaa5;
+      --faint: #737b76;
+      --rule: #303431;
+      --green: #263a30;
+      --green-light: #d9e2da;
+      --gold: #c7a875;
+      --pad: clamp(20px, 4.5vw, 72px);
+      --space: clamp(92px, 11vw, 170px);
+      --sans: "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+      --serif: "Songti SC", STSong, "Noto Serif CJK SC", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; color-scheme: dark; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); overflow-x: hidden; }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    ::selection { background: var(--paper); color: var(--paper-ink); }
+
+    .skip-link { position: fixed; z-index: 100; left: 16px; top: -60px; padding: 12px 16px; background: var(--paper); color: var(--paper-ink); text-decoration: none; transition: top .2s; }
+    .skip-link:focus { top: 16px; }
+    .wrap { width: min(1480px, 100%); margin-inline: auto; padding-inline: var(--pad); }
+    .section-label { margin: 0 0 18px; color: var(--faint); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; }
+    .section-title { margin: 0; max-width: 920px; font-family: var(--serif); font-size: clamp(44px, 6vw, 84px); font-weight: 400; line-height: 1.04; letter-spacing: -.045em; }
+    .section-lede { max-width: 720px; margin: 28px 0 0 auto; color: var(--muted); font-size: clamp(15px, 1.35vw, 18px); line-height: 1.85; }
+    .text-link { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; border-bottom: 1px solid currentColor; text-decoration: none; font-size: 14px; }
+    .text-link .arrow { transition: transform .25s ease; }
+    .text-link:hover .arrow, .text-link:focus-visible .arrow { transform: translateX(5px); }
+    :focus-visible { outline: 2px solid var(--gold); outline-offset: 5px; }
+
+    .site-header { position: fixed; z-index: 50; inset: 0 0 auto; height: 64px; background: rgba(6,7,6,.86); border-bottom: 1px solid rgba(255,255,255,.08); backdrop-filter: blur(6px); }
+    .site-header .inner { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-size: 12px; letter-spacing: .08em; text-decoration: none; }
+    .site-nav { display: flex; align-items: center; gap: clamp(18px, 2.4vw, 38px); }
+    .site-nav a { color: var(--muted); font-size: 12px; text-decoration: none; }
+    .site-nav a:hover, .site-nav a:focus-visible { color: var(--ink); }
+
+    .hero { min-height: 100svh; padding: 64px var(--pad) 0; display: grid; grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr); gap: clamp(38px, 6vw, 100px); align-items: stretch; border-bottom: 1px solid var(--rule); }
+    .hero-copy { align-self: end; max-width: 650px; padding: clamp(70px, 10vh, 130px) 0 clamp(64px, 9vh, 110px); }
+    .hero-name { margin: 0 0 34px; color: var(--muted); font-size: 13px; letter-spacing: .08em; }
+    .hero h1 { margin: 0; font-family: var(--serif); font-size: clamp(58px, 7vw, 110px); font-weight: 400; line-height: .96; letter-spacing: -.06em; }
+    .hero-intro { max-width: 590px; margin: 34px 0 0; color: #c8cdc9; font-size: clamp(16px, 1.45vw, 20px); line-height: 1.8; }
+    .hero-cases { margin: 44px 0 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+    .hero-cases li { border-bottom: 1px solid var(--rule); }
+    .hero-cases a { min-height: 58px; display: grid; grid-template-columns: 36px 1fr auto; gap: 12px; align-items: center; color: #d7d9d5; text-decoration: none; font-size: 13px; }
+    .hero-cases small { color: var(--faint); font-size: 10px; }
+    .hero-cases em { color: var(--muted); font-style: normal; transition: transform .25s; }
+    .hero-cases a:hover em, .hero-cases a:focus-visible em { transform: translateX(5px); }
+    .hero-photo { position: relative; min-height: calc(100svh - 64px); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; }
+    .hero-photo::before { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(90deg, var(--bg), transparent 22%), linear-gradient(0deg, var(--bg), transparent 18%); pointer-events: none; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; filter: saturate(.72) contrast(1.05) brightness(.86); }
+    .hero-photo figcaption { position: absolute; z-index: 2; right: 0; bottom: 26px; width: min(340px, 70%); color: #9ba39e; font-size: 11px; line-height: 1.65; }
+
+    .works-intro { padding-block: var(--space) clamp(70px, 8vw, 120px); }
+    .case { scroll-margin-top: 80px; }
+    .case-heading { margin-bottom: clamp(38px, 5vw, 72px); }
+    .case-heading h3 { margin: 0; font-family: var(--serif); font-size: clamp(44px, 6vw, 82px); font-weight: 400; line-height: 1; letter-spacing: -.045em; }
+    .case-heading .case-line { max-width: 760px; margin: 22px 0 0; color: var(--muted); font-family: var(--serif); font-size: clamp(22px, 2.6vw, 36px); line-height: 1.35; }
+    .case-copy p { margin: 0 0 1.2em; font-size: 16px; line-height: 1.88; }
+    .caption { margin: 12px 0 0; color: var(--faint); font-size: 11px; line-height: 1.6; }
+
+    .ecosystem { padding-bottom: var(--space); }
+    .ecosystem-layout { display: grid; grid-template-columns: minmax(0, 1.32fr) minmax(330px, .68fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+    .ecosystem-photo img { aspect-ratio: 16 / 9; object-fit: cover; object-position: center; }
+    .ecosystem .case-copy { padding-top: 2px; color: #ced2cf; }
+    .facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin: 62px 0 0; padding: 28px 0 0; border-top: 1px solid var(--rule); }
+    .fact b { display: block; font-family: var(--serif); font-size: clamp(28px, 3.2vw, 48px); font-weight: 400; }
+    .fact span { display: block; margin-top: 8px; color: var(--faint); font-size: 11px; line-height: 1.55; }
+    .field-list { margin-top: 58px; border-top: 1px solid var(--rule); }
+    .field-row { display: grid; grid-template-columns: 130px 1fr; gap: 32px; padding: 25px 0; border-bottom: 1px solid var(--rule); }
+    .field-row dt { color: var(--faint); font-size: 12px; }
+    .field-row dd { margin: 0; max-width: 830px; color: #d5d8d5; font-size: 15px; line-height: 1.75; }
+    .honest-note { max-width: 870px; margin: 56px 0 0 auto; padding-left: 26px; border-left: 1px solid var(--gold); color: #c7cbc8; font-family: var(--serif); font-size: clamp(20px, 2vw, 28px); line-height: 1.55; }
+
+    .story { padding-block: var(--space); background: var(--paper); color: var(--paper-ink); }
+    .story-layout { display: grid; grid-template-columns: minmax(300px, .72fr) minmax(0, 1.28fr); gap: clamp(46px, 7vw, 110px); align-items: start; }
+    .story .section-label { color: #666b65; }
+    .story .case-heading { margin: 0; }
+    .story .case-heading .case-line { color: #494e49; }
+    .story-cover { position: sticky; top: 96px; padding: clamp(28px, 4vw, 52px); border: 1px solid rgba(0,0,0,.24); }
+    .story-cover small { color: #686d67; font-size: 11px; letter-spacing: .08em; }
+    .story-cover h4 { margin: clamp(64px, 10vw, 140px) 0 28px; font-family: var(--serif); font-size: clamp(34px, 4vw, 58px); font-weight: 400; line-height: 1.14; letter-spacing: -.04em; }
+    .story-cover p { margin: 0; color: #4c514b; font-size: 13px; line-height: 1.7; }
+    .story-quote { margin: 48px 0 34px; font-family: var(--serif); font-size: clamp(27px, 3.3vw, 48px); line-height: 1.35; letter-spacing: -.025em; }
+    .story .case-copy { color: #30332f; }
+    .story .facts { border-color: rgba(0,0,0,.18); }
+    .story .fact span { color: #666b65; }
+    .story .text-link { margin-top: 20px; }
+
+    .workflow { padding-block: var(--space); background: var(--green); color: var(--green-light); }
+    .workflow-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(460px, 1.2fr); gap: clamp(50px, 8vw, 130px); align-items: start; }
+    .workflow .case-heading .case-line { color: #b8c4bb; }
+    .workflow .case-copy { color: #d2dad3; }
+    .workflow-scene { margin: 10px 0 0; padding: clamp(28px, 4vw, 54px); background: #17271f; border-top: 1px solid #5d7064; border-bottom: 1px solid #5d7064; }
+    .day-night { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #526157; }
+    .day-night div { min-height: 190px; padding: 24px; background: #17271f; }
+    .day-night b { display: block; color: #93a498; font-size: 11px; letter-spacing: .1em; }
+    .day-night p { margin: 52px 0 0; font-family: var(--serif); font-size: clamp(22px, 2.5vw, 34px); line-height: 1.4; }
+    .process { margin: 46px 0 0; padding: 0; list-style: none; counter-reset: flow; }
+    .process li { counter-increment: flow; display: grid; grid-template-columns: 42px 1fr; gap: 18px; align-items: baseline; padding: 16px 0; border-top: 1px solid #536158; font-size: 16px; }
+    .process li::before { content: "0" counter(flow); color: #8fa095; font-size: 11px; }
+    .process li:last-child { border-bottom: 1px solid #536158; }
+    .workflow-boundary { margin: 36px 0 0; color: #b7c3ba; font-size: 13px; line-height: 1.75; }
+
+    .delivery { padding-block: var(--space); }
+    .delivery-photo { width: min(1200px, 100%); margin-left: auto; }
+    .delivery-photo img { aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
+    .delivery-layout { display: grid; grid-template-columns: minmax(0, .78fr) minmax(420px, 1.22fr); gap: clamp(48px, 8vw, 130px); margin-top: 58px; align-items: start; }
+    .delivery .case-heading { margin: 0; }
+    .delivery .case-copy { color: #cbd0cc; }
+    .assignment { margin: 34px 0 0; padding: 24px 0; border-block: 1px solid var(--rule); }
+    .assignment b { display: block; margin-bottom: 12px; color: var(--faint); font-size: 11px; font-weight: 400; letter-spacing: .08em; }
+    .assignment p { margin: 0; color: #d5d8d5; font-size: 14px; line-height: 1.75; }
+    .delivery .text-link { margin-top: 26px; }
+
+    .route { padding-block: var(--space); background: #0b0c0b; border-block: 1px solid var(--rule); }
+    .route-layout { display: grid; grid-template-columns: minmax(300px, .75fr) minmax(0, 1.25fr); gap: clamp(50px, 8vw, 130px); margin-top: 70px; align-items: start; }
+    .route-photo { position: sticky; top: 92px; }
+    .route-photo img { aspect-ratio: 4 / 3; object-fit: contain; object-position: center; background: #050605; }
+    .route-list { margin: 0; }
+    .route-stop { display: grid; grid-template-columns: 100px 1fr; gap: 26px; padding: 30px 0 42px; border-top: 1px solid var(--rule); }
+    .route-stop:last-child { border-bottom: 1px solid var(--rule); }
+    .route-stop dt { color: var(--faint); font-size: 11px; line-height: 1.6; }
+    .route-stop dd { margin: 0; }
+    .route-stop h3 { margin: 0 0 16px; font-family: var(--serif); font-size: clamp(26px, 2.8vw, 42px); font-weight: 400; line-height: 1.2; }
+    .route-stop p { margin: 0; max-width: 690px; color: var(--muted); font-size: 15px; line-height: 1.82; }
+
+    .now { padding-block: var(--space); background: var(--paper); color: var(--paper-ink); }
+    .now .section-label { color: #6c716b; }
+    .now-list { margin-top: 70px; border-top: 1px solid rgba(0,0,0,.22); }
+    .now-row { display: grid; grid-template-columns: 130px minmax(220px, .8fr) minmax(0, 1.2fr); gap: 28px; padding: 25px 0; border-bottom: 1px solid rgba(0,0,0,.22); }
+    .now-row time { color: #70756f; font-size: 12px; }
+    .now-row b { font-family: var(--serif); font-size: 21px; font-weight: 400; }
+    .now-row p { margin: 0; color: #4e534e; font-size: 14px; line-height: 1.7; }
+
+    .index { padding-block: var(--space); }
+    .work-index { display: grid; grid-template-columns: 1fr 1fr; gap: 0 54px; margin-top: 70px; border-top: 1px solid var(--rule); }
+    .work-link { display: grid; grid-template-columns: 42px 1fr auto; gap: 18px; align-items: center; min-height: 108px; border-bottom: 1px solid var(--rule); text-decoration: none; }
+    .work-link > span:first-child { color: var(--faint); font-size: 11px; }
+    .work-link b { display: block; font-family: var(--serif); font-size: clamp(19px, 2vw, 27px); font-weight: 400; line-height: 1.3; }
+    .work-link small { display: block; margin-top: 8px; color: var(--faint); font-size: 11px; }
+    .work-link .arrow { color: var(--muted); transition: transform .25s; }
+    .work-link:hover .arrow, .work-link:focus-visible .arrow { transform: translateX(5px); color: var(--ink); }
+
+    .end-image { position: relative; min-height: 64svh; overflow: hidden; }
+    .end-image img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 72%; filter: saturate(.45) brightness(.56) contrast(1.08); }
+    .end-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, var(--bg), transparent 50%, rgba(6,7,6,.5)); }
+    .end-note { position: absolute; z-index: 2; left: var(--pad); bottom: clamp(40px, 6vw, 80px); max-width: 510px; }
+    .end-note p { margin: 0 0 18px; font-family: var(--serif); font-size: clamp(24px, 3vw, 42px); line-height: 1.35; }
+    .end-note small { color: #a8afa9; font-size: 11px; letter-spacing: .08em; }
+
+    .footer { padding: 56px var(--pad) 70px; border-top: 1px solid var(--rule); }
+    .footer-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; }
+    .footer h2 { margin: 0; font-family: var(--serif); font-size: 30px; font-weight: 400; }
+    .footer p { margin: 12px 0 0; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .footer-links { display: flex; align-items: flex-start; justify-content: flex-end; flex-wrap: wrap; gap: 20px 28px; }
+    .footer-links a { color: #d7dad7; font-size: 13px; text-decoration: none; border-bottom: 1px solid var(--faint); }
+
+    .reveal { opacity: 0; transform: translateY(12px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 920px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 64px; }
+      .hero-copy { max-width: none; padding-bottom: 20px; }
+      .hero-photo { min-height: 62svh; }
+      .ecosystem-layout, .story-layout, .workflow-layout, .delivery-layout, .route-layout { grid-template-columns: 1fr; }
+      .story-cover { position: static; }
+      .workflow-layout { gap: 56px; }
+      .delivery-photo { width: 100%; }
+      .route-photo { position: static; max-width: 620px; }
+      .now-row { grid-template-columns: 100px minmax(180px, .7fr) 1fr; }
+    }
+
+    @media (max-width: 680px) {
+      :root { --pad: 20px; --space: 92px; }
+      .site-header { height: 58px; }
+      .site-header .inner { padding-inline: 20px; }
+      .site-nav a:not(:first-child):not(:last-child) { display: none; }
+      .site-nav { gap: 18px; }
+      .hero { padding: 58px 20px 0; gap: 0; }
+      .hero-copy { padding: 68px 0 38px; }
+      .hero-name { margin-bottom: 26px; }
+      .hero h1 { font-size: clamp(52px, 16vw, 74px); }
+      .hero-intro { margin-top: 26px; font-size: 16px; }
+      .hero-cases { margin-top: 34px; }
+      .hero-cases a { min-height: 62px; grid-template-columns: 30px 1fr auto; font-size: 12px; }
+      .hero-photo { min-height: 54svh; margin-inline: -20px; }
+      .hero-photo::before { background: linear-gradient(0deg, var(--bg), transparent 17%, transparent 84%, var(--bg)); }
+      .hero-photo img { object-position: center bottom; }
+      .hero-photo figcaption { right: 20px; bottom: 18px; width: 64%; }
+      .section-title { font-size: 46px; }
+      .section-lede { margin-left: 0; font-size: 15px; }
+      .case-heading h3 { font-size: 46px; }
+      .case-heading .case-line { font-size: 24px; }
+      .case-copy p { font-size: 15px; line-height: 1.82; }
+      .ecosystem-layout { gap: 34px; }
+      .facts { grid-template-columns: 1fr; gap: 20px; }
+      .fact { display: grid; grid-template-columns: 130px 1fr; gap: 16px; align-items: baseline; }
+      .fact b { font-size: 30px; }
+      .field-row { grid-template-columns: 1fr; gap: 10px; }
+      .honest-note { margin-top: 42px; font-size: 20px; }
+      .story-layout { gap: 38px; }
+      .story-cover h4 { margin-top: 58px; font-size: 38px; }
+      .story-quote { margin-top: 36px; font-size: 28px; }
+      .day-night { grid-template-columns: 1fr; }
+      .day-night div { min-height: 160px; }
+      .day-night p { margin-top: 34px; font-size: 24px; }
+      .workflow-scene { padding: 22px; }
+      .delivery-layout { margin-top: 38px; gap: 32px; }
+      .route-layout { margin-top: 48px; gap: 38px; }
+      .route-photo img { aspect-ratio: 4 / 3; }
+      .route-stop { grid-template-columns: 1fr; gap: 10px; }
+      .now-list { margin-top: 48px; }
+      .now-row { grid-template-columns: 1fr; gap: 8px; }
+      .work-index { grid-template-columns: 1fr; margin-top: 48px; }
+      .work-link { min-height: 100px; grid-template-columns: 30px 1fr auto; }
+      .end-image { min-height: 48svh; }
+      .end-image img { object-position: 53% 72%; }
+      .end-note { right: 20px; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-links { justify-content: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .text-link .arrow, .work-link .arrow, .hero-cases em { transition: none; }
+    }
   </style>
 </head>
 <body>
-  <div class="hud"><div class="orb"></div><div class="save">MOON ARCHIVE<br/>ACCOUNT: MOON<br/>SAVED: CREATOR FIELD</div><div class="plus">＋</div></div>
-  <main>
-    <section class="opening grid" id="top">
-      <div class="opening-image"><img src="assets/vitality/moon-game-character-v1.png" alt="Moon game character"/></div>
-      <nav class="game-menu" aria-label="home menu"><div class="new-game"><span class="box-plus">＋</span>Moon / Creator Ecosystem</div><a class="continue" href="#character"><b>→</b><span>Enter Field</span></a><a class="minor" href="#character"><span class="box-empty"></span>Operating Profile</a><a class="minor" href="#route"><span class="box-empty"></span>Field Route</a><a class="minor" href="#skills"><span class="box-empty"></span>Work Archive</a><strong class="opening-name">张婵媛（月亮）</strong><strong class="opening-role">AI 创造者生态建设者<br/>Storytelling Architect<br/>Vitality Studio 发起人</strong><p class="opening-tagline">一个向 AI 走去的人类学冒险家</p><p class="opening-copy">我进入年轻、跨界和非共识网络，发现已经开始行动的人；通过田野、深访与共同实践理解他们，再用内容、反馈、关系和工具，把一次相遇接到下一步。</p><p class="opening-proof">3 YEARS · 500+ BUILDERS · 10+ EVENTS · 30+ PARTNERS</p><div class="opening-jumps"><a href="#case-ecosystem">生态运营案例 ↓</a><a href="#case-workflow">AI 工作流案例 ↓</a></div></nav>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="inner wrap">
+      <a class="brand" href="#top">MOON / 张婵媛</a>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="#work">案例</a>
+        <a href="#route">路径</a>
+        <a href="#now">正在做</a>
+        <a href="#index">公开作品</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-copy reveal">
+        <p class="hero-name">张婵媛（月亮）</p>
+        <h1>AI 创造者<br />生态运营</h1>
+        <p class="hero-intro">我在早期 AI 创造者和开发者社区里找人、做活动、写人物，也把现场反复出现的协作问题做成能用的小工具。</p>
+        <ol class="hero-cases" aria-label="核心案例入口">
+          <li><a href="#ecosystem"><small>01</small><span>超级个体实验室｜一个社区怎么从零开始</span><em>↓</em></a></li>
+          <li><a href="#story"><small>02</small><span>默子与 Redink｜一篇人物稿怎么做出来</span><em>↓</em></a></li>
+          <li><a href="#workflow"><small>03</small><span>七天成长反馈｜一个工具怎么在现场长出来</span><em>↓</em></a></li>
+        </ol>
+      </div>
+      <figure class="hero-photo reveal">
+        <img src="assets/vitality/moon-field-portrait.jpg" alt="月亮在杭州九溪的自然环境中" />
+        <figcaption>我更习惯先到现场，再决定应该写什么、组织什么、做什么工具。</figcaption>
+      </figure>
     </section>
-    <section class="character grid" id="character">
-      <nav class="char-nav" aria-label="作品集章节"><a href="#character">Profile</a><a href="#route">Field Route</a><a href="#skills">Work Archive</a><a href="#practice">Current Practice</a><a href="#fields">Working Loop</a><a href="#open-archive">Open Evidence</a><a href="#quests">Next Questions</a></nav>
-      <div class="char-title reveal"><h2>Profile</h2><p>AI CREATOR ECOSYSTEM · HUMAN STORY · AI WORKFLOW / 月亮反复做的三类工作</p></div>
-      <div class="char-photo"><img src="assets/feishu/2050-stage-highres.jpg" alt="Moon speaking at the 2050 festival"/></div>
-      <article class="char-panel education reveal"><h3>Core Question / 我长期追的问题</h3><p>当 AI 浪潮涌来，人如何形成主体性、开始创造、建立关系，并找到自己的独特价值与社会位置？</p><p><b>主要对象</b><br/>早期 AI Builder、研究者、青年创造者与尚未进入主流视野的项目。</p></article>
-      <article class="char-panel experience reveal"><h3>How I Work / 我怎样进入</h3><p><b>发现</b>｜进入网络，找到已经开始行动的人。</p><p><b>理解</b>｜用田野、深访和共同实践看见动力、处境与早期信号。</p><p><b>支持</b>｜用叙事、反馈、社区机制与生态连接，把相遇接到下一步。</p></article>
-      <article class="char-panel attributes reveal"><h3>Evidence / 可核对的事实</h3><div class="stat"><b>Builders Reached</b><span class="bar"><i style="width:100%"></i></span><em>500+</em></div><div class="stat"><b>AI Events</b><span class="bar"><i style="width:100%"></i></span><em>10+</em></div><div class="stat"><b>Ecosystem Partners</b><span class="bar"><i style="width:100%"></i></span><em>30+</em></div><div class="stat"><b>Camps / Youth</b><span class="bar"><i style="width:100%"></i></span><em>6 / 80+</em></div><div class="confirm">把一次性现场，变成可以继续理解、跟进和使用的关系与内容资产。</div></article>
+
+    <section class="works-intro wrap" id="work">
+      <p class="section-label reveal">Selected work / 2025—2026</p>
+      <h2 class="section-title reveal">先看我做过的事。</h2>
+      <p class="section-lede reveal">下面四件事，分别发生在一个社区、一次深访、七天营地和大型开发者活动里。它们留下了人、内容、工具，也留下了没有做完的部分。</p>
     </section>
-    <section class="field-route grid" id="route">
-      <div class="route-head reveal"><div><div class="route-kicker">Field Notes / 我是怎么走到这里的</div><h2>先去现场<br/>后来开始<br/>自己搭东西</h2></div><p>我最早做的事很简单：和一个人待久一点，把他的故事听完。后来去了更多创造现场，我开始关心一个想法怎么被做出来，人与人相遇之后又会发生什么。</p></div>
-      <div class="route-story">
-        <figure class="route-photo reveal"><img src="assets/vitality/moon-field-portrait.jpg" alt="月亮在大理的田野现场"/><figcaption><span>大理 / 田野</span>第一次长期待在一个社区里，看人的选择怎样慢慢发生。</figcaption></figure>
-        <div class="route-notes">
-          <article class="route-note reveal"><span>起点</span><div><h3>先学会把一个人听完</h3><p>做深度媒体、接触大理的创新教育和数字游民社区时，我常常从生活史聊起：哪些转折真的改变了一个人，他为什么会做后来的选择。</p></div></article>
-          <article class="route-note reveal"><span>后来</span><div><h3>跟着一个想法，直到它变成东西</h3><p>在 6 个 AI 营地和黑客松里，我观察 80 多名青少年从日常问题走到第一个可体验的原型，也记录他们收到真实反馈以后改了什么。</p></div></article>
-          <article class="route-note reveal"><span>2025</span><div><h3>我自己搭了一个入口</h3><p>超级个体实验室从一场小聚开始。100 多天里来了 400 多位创造者；截至 2025 年 9 月，累计连接和触达近 500 人。活动结束之后，关系怎么办？这个问题留了下来。</p></div></article>
-          <article class="route-note reveal"><span>现在</span><div><h3>这些事还在长</h3><p>我进入早期团队、开发者社区和 AI for Good 现场，继续研究、采访和写作，也把反复遇到的问题做成工作台、档案和小工具。Vitality Studio 是我暂时给这组实践起的名字。</p></div></article>
+
+    <article class="case ecosystem wrap" id="ecosystem">
+      <header class="case-heading reveal">
+        <p class="section-label">社区 · 上海 · 2025</p>
+        <h3>超级个体实验室</h3>
+        <p class="case-line">从一场 30 人的客厅开始。</p>
+      </header>
+      <div class="ecosystem-layout">
+        <figure class="ecosystem-photo reveal">
+          <img src="assets/vitality/researcher-party-group.jpg" alt="超级个体实验室与 Research AI+ 的活动合影" />
+          <figcaption class="caption">与 Research AI+ 共创的活动现场。百人场仍被拆成小组，让交流发生在桌边和人群之间。</figcaption>
+        </figure>
+        <div class="case-copy reveal">
+          <p>2025 年，我在上海交大工研院期间发起并参与运营超级个体实验室。那时，一批年轻 AI Builder 已经在做原型，却分散在高校、黑客松、开源社区和数字游民网络里，彼此很少真正认识。</p>
+          <p>我们最先做的是 30—40 人的「AI 跨界客厅」。没有很长的演讲，大家席地而坐，带着正在做的项目和还没想清楚的问题来聊天。活动常常结束了，人还不愿意走。</p>
+          <p>我负责定义最初的人群、逐一认识新成员、设计主题、连接伙伴和主持现场。群里开始形成讨论以后，我会刻意往后退，把问题留给更懂这件事的人，也和活跃成员、社区主理人一起做后来的活动。</p>
+        </div>
+      </div>
+      <div class="facts reveal" aria-label="超级个体实验室数据">
+        <div class="fact"><b>约 100 天</b><span>社群形成 400 余人规模</span></div>
+        <div class="fact"><b>近 500 人</b><span>随后累计连接与触达；不是长期活跃人数</span></div>
+        <div class="fact"><b>10+ 场</b><span>策划或联合参与的活动</span></div>
+      </div>
+      <dl class="field-list reveal">
+        <div class="field-row"><dt>进入方式</dt><dd>前期从已有关系和活动现场冷启动；后期更审慎地邀请我认识、了解过其项目的人进入。</dd></div>
+        <div class="field-row"><dt>共同运营</dt><dd>识别活跃成员和小型主理人，和 Research AI+ 等社区共创活动，也为更垂直的讨论另建小群。</dd></div>
+        <div class="field-row"><dt>我的边界</dt><dd>人群判断和关系仍然高度依赖我本人。活动之后，没有形成一套团队可以接手的分层回访机制。</dd></div>
+      </dl>
+      <p class="honest-note reveal">它做出了一个入口，也让我第一次真正碰到社区的上限：人来了以后，关系怎样继续？</p>
+    </article>
+
+    <article class="case story" id="story">
+      <div class="wrap story-layout">
+        <aside class="story-cover reveal" aria-label="默子人物稿信息">
+          <small>人物稿 / 流浪月亮计划</small>
+          <h4>从小不写作业的 00 后，3 天做出了 4.5K+ Stars 的开源项目</h4>
+          <p>默子 · Redink · 多轮深访与材料核对</p>
+        </aside>
+        <div>
+          <header class="case-heading reveal">
+            <p class="section-label">人物研究 · Builder story</p>
+            <h3>默子与 Redink</h3>
+            <p class="case-line">我想知道，一个人为什么会走上这条路。</p>
+          </header>
+          <blockquote class="story-quote reveal">“我觉得，我本来就在广阔的地方。”</blockquote>
+          <div class="case-copy reveal">
+            <p>凌晨四点半，杭州的出租屋里，默子正趁用户起床前修完刚刚反馈的 bug。写这篇稿子时，Redink 已经在 GitHub 上获得 4.5K+ Stars。Stars 是结果，我更想追的是它前面的连续性。</p>
+            <p>我和默子做了 2—3 轮访谈，每轮约 2 小时。我们从父母开过的县城网吧、初中搭博客、大学边接项目边学技术，一路聊到只有 40 个用户且收到不少差评的上一个工具，再回到 Redink 的开发、开源和迭代。</p>
+            <p>访谈之外，我也看了他的旧照片、聊天记录、产品页面、日记和公开仓库。三天做出 Redink 并不是突然发生的天才时刻；他很多年都在重复同一种动作：好奇、动手、发布、听反馈，再继续改。</p>
+          </div>
+          <div class="facts reveal" aria-label="默子人物稿数据">
+            <div class="fact"><b>2—3 轮</b><span>深度访谈</span></div>
+            <div class="fact"><b>约 2 小时</b><span>每轮访谈</span></div>
+            <div class="fact"><b>4.5K+</b><span>Redink GitHub Stars</span></div>
+          </div>
+          <a class="text-link reveal" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>阅读默子的故事</span><span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="case workflow" id="workflow">
+      <div class="wrap workflow-layout">
+        <div>
+          <header class="case-heading reveal">
+            <p class="section-label">现场工具 · 七天真实使用</p>
+            <h3>营地成长反馈工具</h3>
+            <p class="case-line">老师已经很累了，反馈还没写。</p>
+          </header>
+          <div class="case-copy reveal">
+            <p>白天，老师要陪学生找问题、做项目、处理现场变化。到了晚上，还要把一天里零散的观察重新写成家长能够读懂的个人反馈。这是营地里反复出现、也最消耗老师的一件事。</p>
+            <p>我也在一线参与教学。老师怎样观察一个学生、哪些话容易失真、什么内容必须由本人判断，我每天都能在现场看见。</p>
+            <p>七天里，这套流程每天都在使用，也每天根据新问题修改。AI 负责整理分散的信息，不负责替老师判断一个学生；观察来自人，最后的文字也由人确认。</p>
+          </div>
+        </div>
+        <div class="workflow-scene reveal" aria-label="营地成长反馈工作方式">
+          <div class="day-night">
+            <div><b>白天 / 现场</b><p>陪学生找问题、做原型，也记下他们真实的变化。</p></div>
+            <div><b>晚上 / 交付</b><p>把分散观察整理成家长能读懂、老师敢确认的反馈。</p></div>
+          </div>
+          <ol class="process">
+            <li>老师按照提示口述当天观察</li>
+            <li>内容进入飞书，按学生归集</li>
+            <li>编辑器整理到反馈页</li>
+            <li>老师核对事实和措辞</li>
+            <li>形成待发送的个人反馈</li>
+          </ol>
+          <p class="workflow-boundary">目前只在一次七天营地中真实使用。进入其他团队之前，还要重新处理数据授权、角色权限、版本记录和审核责任。</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case delivery wrap" id="delivery">
+      <figure class="delivery-photo reveal">
+        <img src="assets/feishu/2050-stage-highres.jpg" alt="月亮在 2050 大会舞台分享 AI 田野观察" />
+        <figcaption class="caption">Photo / 2050。开发者现场不只有技术议程，也有人如何进入开源、找到同伴和成为贡献者。</figcaption>
+      </figure>
+      <div class="delivery-layout">
+        <header class="case-heading reveal">
+          <p class="section-label">机构交付 · Datawhale × AMD</p>
+          <h3>在别人的目标和截止时间里，完成一篇长文。</h3>
+        </header>
+        <div>
+          <div class="case-copy reveal">
+            <p>这不是我自己发起的项目。5 月 19 日，我以 Datawhale 生态伙伴和作者的身份进入 AMD AI 开发者日。现场有两三千名参与者，也同时存在企业、开源社区、贡献者和普通开发者等多条叙事线。</p>
+            <p>我在现场记录人物和事件，回到 Datawhale 与 AMD 的合作时间线，再把算力、开源模型与学习社区之间的关系写回几个具体的人身上。</p>
+            <p>这项工作的难点不是把大会写得热闹，而是在发布时间、技术事实和多方关系之间，找到一条读者能进入的线。</p>
+          </div>
+          <div class="assignment reveal">
+            <b>我的交付边界</b>
+            <p>我负责 AMD 开发者日的现场采写、叙事组织与公开内容；大会运营和合作谈判不在我的职责里。</p>
+          </div>
+          <a class="text-link reveal" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>阅读公开长文《七年时间，我们和苏妈握手了！》</span><span class="arrow">↗</span></a>
+        </div>
+      </div>
+    </article>
+
+    <section class="route" id="route">
+      <div class="wrap">
+        <p class="section-label reveal">Field route</p>
+        <h2 class="section-title reveal">先学会把一个人听完。<br />后来开始自己搭东西。</h2>
+        <div class="route-layout">
+          <figure class="route-photo reveal">
+            <img src="assets/feishu/digital-china-workshop-highres.jpg" alt="月亮在复旦大学工作坊分享 AI 田野观察" />
+            <figcaption class="caption">复旦大学工作坊，2026。分享我在 AI 创新教育与创业社区里看到的变化。</figcaption>
+          </figure>
+          <dl class="route-list">
+            <div class="route-stop reveal"><dt>起点 / 大理</dt><dd><h3>先和一个人待久一点</h3><p>最早在深度媒体、创新教育和数字游民社区里，我常常从生活史聊起：哪些转折真的改变了一个人，他为什么会做后来的选择。</p></dd></div>
+            <div class="route-stop reveal"><dt>后来 / AI 营地</dt><dd><h3>跟着一个想法，直到它变成东西</h3><p>我参与过 6 次 AI 营地与黑客松，观察 80 余名青少年的创造过程：他们怎样提出问题、使用工具、做出原型，又怎样面对第一轮反馈。</p></dd></div>
+            <div class="route-stop reveal"><dt>2025 / 上海</dt><dd><h3>第一次自己搭一个入口</h3><p>我发起超级个体实验室。人来了，活动也发生了；但活动结束以后，关系怎么办？这个问题一直留到现在。</p></dd></div>
+            <div class="route-stop reveal"><dt>现在</dt><dd><h3>继续进入真实的组织现场</h3><p>我继续进入早期团队、开发者社区和 AI for Good 项目，研究、采访、写作，也把反复遇到的问题做成档案和小工具。Vitality Studio 是我暂时给这组实践起的名字。</p></dd></div>
+          </dl>
         </div>
       </div>
     </section>
-    <section class="archive" id="skills"><h2 class="reveal"><span>Work</span><span>Archive</span></h2><p class="archive-intro reveal">六个案例按工作责任排序：建立创造者入口、把 AI 变成多人工作流、研究人与现场、完成跨团队交付，再把内容沉淀成可继续访问的资产。</p><nav class="case-filters reveal" aria-label="案例分类"><button class="case-filter active" data-filter="all">全部案例 <span>06</span></button><button class="case-filter" data-filter="ecosystem">创造者生态 <span>01</span></button><button class="case-filter" data-filter="story">研究与叙事 <span>02</span></button><button class="case-filter" data-filter="delivery">复杂协作交付 <span>01</span></button><button class="case-filter" data-filter="system">工具与知识系统 <span>02</span></button></nav><div class="case-row">
-      <button class="case-card reveal" id="case-ecosystem" data-case="access" data-category="ecosystem" data-tier="flagship"><div class="case-id">01 / FLAGSHIP · ECOSYSTEM</div><figure><img src="assets/vitality/researcher-party-group.jpg" alt="超级个体实验室创业者现场"/></figure><div class="case-type">创造者生态</div><h3>超级个体实验室</h3><p>从 0 到 1 搭建年轻 AI Builder 的入口：主题召集、项目展示、同伴反馈、伙伴协作，并留下可继续回访的项目与关系线索。</p><small>2025 · ~500 REACHED · 10+ EVENTS · 30+ PARTNERS</small><span class="case-open">OPEN FIELD FILE →</span></button>
-      <button class="case-card reveal" id="case-workflow" data-case="ai" data-category="system" data-tier="flagship"><div class="case-id">02 / FLAGSHIP · TEAM WORKFLOW</div><figure><div class="workflow-diagram" role="img" aria-label="现场输入、结构化、人工校对与批量交付的工作流"><span class="workflow-label">7-Day Field Workflow</span><div class="workflow-pipeline"><div class="workflow-step">现场观察</div><div class="workflow-step">结构化输入</div><div class="workflow-step">人工校对</div><div class="workflow-step">批量交付</div></div></div></figure><div class="case-type">工具与知识系统</div><h3>AI 创造者观察编辑器</h3><p>把多人产生的现场观察接进一条可追溯的协作链：结构化、AI 综合、人工校对与批量交付。</p><small>7-DAY FIELD TEST · DAILY ITERATION · HUMAN REVIEW</small><span class="case-open">OPEN FIELD FILE →</span></button>
-      <button class="case-card reveal" data-case="story" data-category="story"><div class="case-id">03 / DEEP RESEARCH</div><figure><img src="assets/vitality/research-ai-circle.jpg" alt="早期 AI 创造者研究与深访现场"/></figure><div class="case-type">研究与叙事</div><h3>创业者人物深访</h3><p>从 life history、关键选择和产品路径进入一个人，理解他为什么选择这个问题，再决定如何写。</p><small>2–3H INTERVIEW · FOUNDER STORY · TRACEABLE MATERIAL</small><span class="case-open">OPEN FIELD FILE →</span></button>
-      <button class="case-card reveal" data-case="event" data-category="story"><div class="case-id">04 / LIVE EXPERIENCE</div><figure><img src="assets/feishu/ai-cross-border-group-highres.jpg" alt="AI 与人文跨界议题活动合影"/></figure><div class="case-type">研究与叙事</div><h3>AI × 人文议题现场</h3><p>围绕一个公共问题，连接研究者、技术实践者与社区伙伴，同时设计现场体验与活动后的内容留存。</p><small>TOPIC · GUEST · PARTNER · EXPERIENCE · ARCHIVE</small><span class="case-open">OPEN FIELD FILE →</span></button>
-      <button class="case-card reveal" data-case="delivery" data-category="delivery"><div class="case-id">05 / COMPLEX DELIVERY</div><figure><img src="assets/feishu/2050-stage-highres.jpg" alt="月亮在 Datawhale 开发者生态现场分享"/></figure><div class="case-type">复杂协作交付</div><h3>Datawhale 开发者生态叙事</h3><p>在 AMD 开发者日、2050 与 OPC 等多方现场中，完成研究、采访、叙事架构、现场内容与公开长文。</p><small>ON-SITE RESEARCH · MULTI-PARTNER · PUBLIC OUTPUT</small><span class="case-open">OPEN FIELD FILE →</span></button>
-      <button class="case-card reveal" data-case="museum" data-category="system"><div class="case-id">06 / LIVING ARCHIVE</div><figure><img src="assets/vitality/vitality-museum-life-map.png" alt="生命力博物馆在线展厅界面"/></figure><div class="case-type">工具与知识系统</div><h3>生命力博物馆</h3><p>把散落在营地、活动和人物故事里的作品、过程与成长记录，做成可继续访问的线上展馆。</p><small>40+ YOUTH PROJECTS · WAIC FIELD · ONLINE ARCHIVE</small><span class="case-open">OPEN FIELD FILE →</span></button>
-    </div></section>
-    <section class="current-practice grid" id="practice">
-      <div class="practice-head reveal"><div><div class="route-kicker">Vitality Studio / 当前实践容器</div><h2>Now<br/>In Motion</h2></div><p>这里单独标注当前状态，避免把正在推进或仍在探索的合作包装成完成案例。我的日常工作落在早期团队研究、开发者生态叙事、AI for Good 议题与自有内容基础设施之间。</p></div>
-      <div class="practice-grid">
-        <article class="practice-card reveal"><span class="status delivered">Delivered / 已交付</span><h3>Datawhale</h3><p>AMD 开发者日、2050 与 OPC 等开发者生态现场的研究、采访、叙事架构与公开内容。</p><small>Developer Ecosystem · Event Narrative</small></article>
-        <article class="practice-card reveal"><span class="status">In Progress / 进行中</span><h3>Physical AI 早期团队</h3><p>进入团队现场，推进创始人、产品与开发者生态的研究和叙事。</p><small>Founder · Product · Developer Story</small></article>
-        <article class="practice-card reveal"><span class="status">Exploring / 探索中</span><h3>Overseas & AI for Good</h3><p>探索海外开发者叙事，以及 AI for Good 与 AI and Society 议题。</p><small>尚未作为完成案例呈现</small></article>
-        <article class="practice-card reveal"><span class="status">Owned / 持续经营</span><h3>Moon's Living Infrastructure</h3><p>Co-building 生命力、AI 田野志与生命力博物馆，继续承接人物、项目、现场与长期观察。</p><small>Community · Field Notes · Living Archive</small></article>
+
+    <section class="now" id="now">
+      <div class="wrap">
+        <p class="section-label reveal">最近在做</p>
+        <h2 class="section-title reveal">还在现场里的事。</h2>
+        <div class="now-list">
+          <div class="now-row reveal"><time>持续研究</time><b>早期 Builder 人物</b><p>继续做多轮访谈，整理一个人如何形成判断、做出产品和接住真实反馈。</p></div>
+          <div class="now-row reveal"><time>持续合作</time><b>Datawhale</b><p>继续进入开发者活动与人物现场，完成研究、采访和公开内容。</p></div>
+          <div class="now-row reveal"><time>持续经营</time><b>生命力博物馆</b><p>把营地、人物和作品的制作过程整理成可以继续访问的线上展馆。</p></div>
+        </div>
       </div>
     </section>
-    <section class="map" id="fields"><div class="map-bg"><img src="assets/vitality/researcher-party-group.jpg" alt="Moon's creator ecosystem field"/></div><h2 class="map-title reveal"><span>One</span><span>Working Loop</span></h2><div class="map-cluster m1 reveal"><b>01 / 发现信号</b><p>进入非共识网络<br/>找到已经行动的人</p></div><div class="map-cluster m2 reveal"><b>02 / 理解人与项目</b><p>田野 · 深访<br/>共同实践</p></div><div class="map-cluster m3 reveal"><b>03 / 组织反馈与关系</b><p>召集 · 展示<br/>回访 · 连接</p></div><div class="map-cluster m4 reveal"><b>04 / 沉淀为系统</b><p>故事 · 档案<br/>图谱 · Workflow</p></div></section>
-    <section class="current-quests grid" id="quests">
-      <div class="quests-head reveal"><div><div class="route-kicker">Evidence Boundary / 还没有假装解决的事</div><h2>Next<br/>Questions</h2></div><p>这些问题来自已经做过的实践，也是我下一步真正需要在更完整的组织与业务现场里继续验证的部分。</p></div>
-      <div class="quest-grid">
-        <article class="quest reveal"><b>QUEST 01 / SELECTIVITY</b><h3>从广泛触达到选择性跟进，怎样更早辨认真正值得长期关注的人？</h3><p>过去证明了我能进入网络、建立信任；下一步需要把项目阶段、行动连续性与外部反馈一起纳入判断。</p></article>
-        <article class="quest reveal"><b>QUEST 02 / COMPOUNDING</b><h3>一场活动之后，关系怎样被分层、回访和复用，而不只停在联系人列表？</h3><p>超级个体实验室验证了入口与氛围，但还没有完成组织级 CRM 与商业指标闭环。</p></article>
-        <article class="quest reveal"><b>QUEST 03 / TEAM WORKFLOW</b><h3>AI 怎样把个人经验变成多人可协作的流程，又不替代人的判断？</h3><p>观察编辑器已完成小型真实场景测试；迁移到团队仍要补齐责任、权限、版本与审核机制。</p></article>
+
+    <section class="index wrap" id="index">
+      <p class="section-label reveal">公开作品</p>
+      <h2 class="section-title reveal">继续往下看。</h2>
+      <div class="work-index">
+        <a class="work-link reveal" href="https://mp.weixin.qq.com/s/NlHPL9TGlsSac6SzpU6sVg" target="_blank" rel="noreferrer"><span>01</span><span><b>默子与 Redink</b><small>人物深访</small></span><span class="arrow">↗</span></a>
+        <a class="work-link reveal" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>02</span><span><b>Datawhale × AMD</b><small>开发者现场长文</small></span><span class="arrow">↗</span></a>
+        <a class="work-link reveal" href="https://mp.weixin.qq.com/s/rtvXRlS_lKHpkE3LacCnYQ" target="_blank" rel="noreferrer"><span>03</span><span><b>浪潮之中，人们正在经历什么</b><small>AI 创新教育田野</small></span><span class="arrow">↗</span></a>
+        <a class="work-link reveal" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/waic" target="_blank" rel="noreferrer"><span>04</span><span><b>生命力博物馆</b><small>在线展馆</small></span><span class="arrow">↗</span></a>
+        <a class="work-link reveal" href="https://voyayueliang.github.io/moon-becoming-portfolio/" target="_blank" rel="noreferrer"><span>05</span><span><b>Becoming</b><small>人物作品集</small></span><span class="arrow">↗</span></a>
+        <a class="work-link reveal" href="https://voyayueliang.github.io/Content-Creators/share.html" target="_blank" rel="noreferrer"><span>06</span><span><b>内容创作工作台</b><small>工具试作</small></span><span class="arrow">↗</span></a>
       </div>
     </section>
-    <section class="open-assets" id="open-archive">
-      <div class="assets-head reveal"><div><div class="route-kicker">Open Evidence / 可直接核验的公开产物</div><h2>Open<br/>The Work</h2></div><p>这里保留原始作品与工具入口。核心案例负责说明我做了什么；这些链接让读者继续查看文章、展馆、产品和研究基础设施。</p></div>
-      <div class="asset-grid">
-        <a class="asset-link reveal" href="https://voyayueliang.github.io/moon-becoming-portfolio/" target="_blank" rel="noreferrer"><span>Story Archive</span><b>人物与创业者叙事 ↗</b><small>Becoming · Field Story · Longform</small></a>
-        <a class="asset-link reveal" href="https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg" target="_blank" rel="noreferrer"><span>Delivered Article</span><b>Datawhale × AMD 现场长文 ↗</b><small>公开署名 · 现场研究 · 多方生态</small></a>
-        <a class="asset-link reveal" href="https://mp.weixin.qq.com/s/rtvXRlS_lKHpkE3LacCnYQ" target="_blank" rel="noreferrer"><span>Field Article</span><b>AI 创新教育田野 ↗</b><small>6 Camps · 80+ Youth · Real Problem to MVP</small></a>
-        <a class="asset-link reveal" href="https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/waic" target="_blank" rel="noreferrer"><span>Living Archive</span><b>生命力博物馆 ↗</b><small>People · Work · Change</small></a>
-        <a class="asset-link reveal" href="https://voyayueliang.github.io/Content-Creators/share.html" target="_blank" rel="noreferrer"><span>AI Workflow</span><b>内容创作工作台 ↗</b><small>Research · Delivery · Assets</small></a>
-        <a class="asset-link reveal" href="https://voyayueliang.github.io/voice-ai-industry-map/network/" target="_blank" rel="noreferrer"><span>Research Prototype</span><b>Voice AI 人物图谱 ↗</b><small>People · Technology · Relationship</small></a>
+
+    <section class="end-image" aria-label="作品集结尾影像">
+      <img src="assets/feishu/doc-avatar-full.jpg" alt="山野与远方的风景" />
+      <div class="end-note reveal">
+        <p>我还在继续进入现场，也继续把遇见的人和问题留下来。</p>
+        <small>MOON / FIELD NOTES &amp; SELECTED WORK / 2026</small>
       </div>
     </section>
-    <section class="ending" id="end"><img src="assets/feishu/doc-avatar-full.jpg" alt="Mountain field at the end of Moon Archive"/><div class="end-menu reveal"><div class="system">[ NEXT CHAPTER // A FULLER SUPPORT SYSTEM ]</div><h2>Next<br/>Field?</h2><p class="end-copy">我想把项目发现、田野理解、生态连接和知识沉淀，放进一套更完整的创业者支持系统：更早看见正在行动的人，陪他们经过真实反馈，也让值得持续关注的关系与经验被保存下来。</p><a class="find" href="#top">Back to Start</a><p>MOON<br/>CREATOR ECOSYSTEM × HUMAN STORY × AI WORKFLOW<br/>PORTFOLIO / 2026</p></div></section>
   </main>
-  <dialog class="case-dialog" id="case-dialog"><button class="dialog-close" aria-label="关闭案例">×</button><div id="case-detail"></div></dialog>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <div>
+        <h2>张婵媛（月亮）</h2>
+        <p>公众号 / 小红书 / 即刻：@流浪月亮计划<br />作品集更新于 2026 年。</p>
+      </div>
+      <nav class="footer-links" aria-label="页尾链接">
+        <a href="https://github.com/voyayueliang" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://voyayueliang.github.io/moon-becoming-portfolio/" target="_blank" rel="noreferrer">人物作品集 ↗</a>
+        <a href="#top">回到顶部 ↑</a>
+      </nav>
+    </div>
+  </footer>
+
   <script>
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-    const cases={
-      access:{
-        kicker:'CASE 01 / FLAGSHIP · CREATOR ECOSYSTEM',
-        title:'超级个体实验室',
-        image:'assets/vitality/researcher-party-group.jpg',
-        question:'如何让分散在黑客松、开源社区和高校里的年轻 Builder，获得一个被发现、相遇，并留下后续关系线索的入口？',
-        tags:['2025 MAR–SEP','400+ / FIRST 100 DAYS','~500 CUMULATIVE','10+ EVENTS','30+ PARTNERS'],
-        blocks:[
-          ['现场问题','许多年轻 AI 创造者已经在做 prototype，却分散在黑客松、开源社区、高校与数字游民网络，缺少稳定的展示、反馈和同伴入口。'],
-          ['目标对象','早期 AI Builder、独立开发者、青年研究者，以及正在寻找真实场景与合作伙伴的小型团队。'],
-          ['我的角色','项目发起人；负责用户研究、人群定义、社区冷启动、活动机制、内容沉淀与生态伙伴协作。'],
-          ['关键动作','用主题召集、项目展示、小型深聊、同伴反馈与跨社区共创，让每一次活动既产生相遇，也留下项目和关系线索。'],
-          ['留下的东西','项目于 2025 年 3 月启动；100 多天聚集 400+ 创造者，截至 2025 年 9 月累计连接与触达近 500 人；联动 10+ 场活动、30+ 生态伙伴。'],
-          ['仍未解决','做成了入口、氛围与关系密度，但还没有完成组织级 CRM、分层回访和商业指标闭环；近 500 是累计触达与连接，不等于长期活跃用户。']
-        ],
-        note:'活动不是生态的终点。真正需要继续验证的是：如何辨认值得长期跟进的人，并让关系与项目进展在团队中持续复用。'
-      },
-      delivery:{
-        kicker:'CASE 05 / COMPLEX DELIVERY · DEVELOPER ECOSYSTEM',
-        title:'Datawhale 开发者生态叙事',
-        image:'assets/feishu/2050-stage-highres.jpg',
-        question:'在大型开发者活动、多方合作伙伴和密集现场信息之间，如何完成一份既准确、有人味、又能留下生态关系的公共内容？',
-        tags:['AMD × MODELSCOPE × DATAWHALE','2K–3K EVENT','ON-SITE RESEARCH','PUBLIC LONGFORM'],
-        blocks:[
-          ['现场问题','AMD AI 开发者日汇集两三千名参与者、多个开源生态伙伴、技术工作坊与社区贡献者。现场信息密集，内容需要同时处理技术事实、合作历史和具体人物。'],
-          ['目标对象','Datawhale 学习者与开发者、AMD 与 ModelScope 等生态伙伴，以及希望理解中国开源学习生态的公共读者。'],
-          ['我的角色','Datawhale 生态伙伴与内容作者；参与现场观察、人物与技术线索采集、叙事结构设计，并与社区团队核对公开事实。'],
-          ['关键动作','从大会现场进入合作时间线，采访和记录工程师、开源贡献者与社区成员，再把算力、模型与人的关系组织成可读长文。'],
-          ['留下的东西','公开署名长文《七年时间，我们和苏妈握手了！》，以及 AMD 开发者日、2050、OPC 等现场中的人物与生态内容素材。'],
-          ['仍未解决','这个案例能够证明跨伙伴的现场研究与内容交付，但不把它包装成我独立完成了整场大会运营或商业闭环。']
-        ],
-        note:'复杂交付的重点是先判断共同目标和事实边界，再在截止时间、现场变量与多方协作之间完成可公开核验的产物。',
-        link:'https://mp.weixin.qq.com/s/_Vo3S7n-lxPJEm0pkWbSXg',
-        linkText:'OPEN PUBLISHED ARTICLE ↗'
-      },
-      ai:{
-        kicker:'CASE 02 / TEAM WORKFLOW · 7-DAY FIELD TEST',
-        title:'AI 创造者观察编辑器',
-        visual:'workflow',
-        question:'如何把多人、每天产生的一线观察接成一条可追溯、可审核、可批量交付的协作工作流？',
-        tags:['7-DAY FIELD TEST','DAILY ITERATION','HUMAN REVIEW','FIELD PROTOTYPE'],
-        blocks:[
-          ['现场问题','7 天营地中，一线老师每天产生大量语音与文字观察；信息源分散，最终又需要形成可读、可核对的个人成长反馈。'],
-          ['目标对象','一线老师、编辑与最终接收成长反馈的家庭；工具服务协作过程，不直接替代任何人的判断。'],
-          ['我的角色','梳理输入与交付、设计信息结构、搭建原型，并在真实使用中每天收集问题、修改流程。'],
-          ['关键动作','现场观察 / 语音 → 结构化输入 → AI 综合 → 人工校对 → 批量导出；事实、语气与最终判断始终由人确认。'],
-          ['留下的东西','一个在真实 7 天项目中持续 build / use / iterate 的可用原型，以及关于多人输入、审核责任与批量交付的工作流经验。'],
-          ['仍未解决','迁移到其他团队前，仍需重新确认信息源、权限、数据授权、版本管理、审核责任与最终交付标准。']
-        ],
-        note:'重点不是 AI 写得更快，而是让多源信息、跨角色协作、人工判断与交付责任出现在同一条链路里。'
-      },
-      story:{
-        kicker:'CASE 03 / DEEP RESEARCH · FOUNDER STORY',
-        title:'创业者人物深访',
-        image:'assets/vitality/research-ai-circle.jpg',
-        question:'除了知道一个创业者做什么，如何理解他的长期动力、关键选择，以及产品为什么走到当前版本？',
-        tags:['2–3H DEEP INTERVIEW','LIFE HISTORY','FOUNDER & PRODUCT','LONGFORM'],
-        blocks:[
-          ['现场问题','标准项目介绍常常只剩标签、功能和融资故事，难以看见创始人的长期动力、选择形成的过程与真实判断。'],
-          ['目标对象','早期创业者、独立 Builder 与尚未被主流媒体充分理解的创造者。'],
-          ['我的角色','发现人物、建立信任、设计访谈、完成 2–3 小时深访，并把 life history、产品路径与一手证据组织成长篇叙事。'],
-          ['关键动作','从家庭与转折点进入关键选择，再回到产品、用户与团队；保留原始材料，区分当事人陈述、公开事实与作者判断。'],
-          ['留下的东西','Becoming、观猹人物与早期团队研究中的人物长稿、访谈档案和可以继续回看的判断线索。'],
-          ['仍未解决','内容能建立理解与信任，但阅读与反馈不等于项目质量判断；仍需结合产品、市场、团队与行动连续性。']
-        ],
-        note:'人物叙事不是项目包装。它是研究一个人如何形成判断的入口，也必须保留“还不能据此判断什么”的边界。',
-        link:'https://voyayueliang.github.io/moon-becoming-portfolio/',
-        linkText:'OPEN STORY ARCHIVE ↗'
-      },
-      event:{
-        kicker:'CASE 04 / LIVE EXPERIENCE · AI × HUMANITIES',
-        title:'AI × 人文议题现场',
-        image:'assets/feishu/ai-cross-border-group-highres.jpg',
-        question:'如何让研究者、技术实践者与社区伙伴围绕同一个真实问题相遇，同时保留活动的质感、人味与后续内容？',
-        tags:['TOPIC DESIGN','GUEST & PARTNER','LIVE EXPERIENCE','CONTENT ARCHIVE'],
-        blocks:[
-          ['现场问题','跨界活动容易把不同人简单放进同一房间，却没有共同问题、交流密度和可以继续使用的内容。'],
-          ['目标对象','青年研究者、独立开发者、早期团队，以及关心 AI 如何进入社会与日常生活的人。'],
-          ['我的角色','议题研究、伙伴共创、嘉宾与参与者连接、现场体验设计、即时协调与活动后的内容整理。'],
-          ['关键动作','先对齐公共问题与参与者结构，再设计分享、分组交流与非正式相遇；现场之后继续整理观点、图片、伙伴记录和关系线索。'],
-          ['留下的东西','一场完成交付的跨界现场，以及可用于文章、后续对话与合作回访的嘉宾观点、议题素材和伙伴记录。'],
-          ['仍未解决','活动完成不等于关系完成。哪些参与者需要继续跟进、怎样分层、如何验证后续合作，仍需要独立机制。']
-        ],
-        note:'活动的质感来自人群、问题与细节的共同设计；活动的复利则取决于活动之后是否还有内容、关系与下一步。'
-      },
-      museum:{
-        kicker:'CASE 06 / LIVING ARCHIVE · VIBE CODING',
-        title:'生命力博物馆',
-        image:'assets/vitality/vitality-museum-life-map.png',
-        contain:true,
-        question:'一场营地或展会结束后，分散的作品、制作过程和人物变化，如何成为还能被访问、理解和继续使用的公共资产？',
-        tags:['40+ YOUTH PROJECTS','ONLINE MUSEUM','WAIC FIELD','STORY & PROCESS'],
-        blocks:[
-          ['现场问题','项目常在活动结束后只剩一张合照或一个 Demo 链接，人物的变化、制作过程与反馈无法被长期看见。'],
-          ['目标对象','青少年创造者、教育实践者、项目伙伴，以及希望理解 AI 时代人如何学习和创造的公众。'],
-          ['我的角色','提出策展问题，设计信息架构与叙事层级，整理作品、视频与人物材料，并完成网页原型与现场展示。'],
-          ['关键动作','把人物、作品、过程与主题重新编排成可浏览的线上展厅；在 WAIC 现场通过二维码让参观者进入展览。'],
-          ['留下的东西','一个持续可访问的线上展馆；2026 WAIC 现场集中收录 40+ 个青年项目，并保留故事与制作过程。'],
-          ['仍未解决','档案需要持续维护。项目更新、授权状态、访问反馈与后续复用仍要形成稳定的记录和治理方式。']
-        ],
-        note:'展览不是内容的终点，而是让一次实践获得第二次被理解、被回访和被连接的机会。',
-        link:'https://vitality-museum-aipet-d3g11ohg86b45de81.webapps.tcloudbase.com/waic',
-        linkText:'ENTER VITALITY MUSEUM ↗'
-      }
-    };
-    const dialog=document.querySelector('#case-dialog'),detail=document.querySelector('#case-detail');
-    const filterButtons=document.querySelectorAll('.case-filter'),caseCards=document.querySelectorAll('.case-card');
-    filterButtons.forEach(button=>button.addEventListener('click',()=>{const filter=button.dataset.filter;filterButtons.forEach(item=>item.classList.toggle('active',item===button));caseCards.forEach(card=>card.hidden=filter!=='all'&&card.dataset.category!==filter);document.querySelector('.case-row').scrollTo({left:0,behavior:'auto'});}));
-    const workflowVisual='<div class="workflow-diagram detail-workflow" role="img" aria-label="现场输入、结构化、人工校对与批量交付的工作流"><span class="workflow-label">Field Input → Human-reviewed Delivery</span><div class="workflow-pipeline"><div class="workflow-step">现场观察</div><div class="workflow-step">结构化输入</div><div class="workflow-step">人工校对</div><div class="workflow-step">批量交付</div></div></div>';
-    document.querySelectorAll('.case-card').forEach(card=>card.addEventListener('click',()=>{const d=cases[card.dataset.case];const media=d.visual==='workflow'?workflowVisual:`<div class="detail-media ${d.contain?'contain':''}"><img src="${d.image}" alt="${d.title}"></div>`;detail.innerHTML=`<div class="detail-hero">${media}<div class="detail-head"><div class="detail-kicker">${d.kicker}</div><h3>${d.title}</h3><p>${d.question}</p><div class="detail-tags">${d.tags.map(tag=>`<span>${tag}</span>`).join('')}</div></div></div><div class="detail-body"><div class="detail-grid">${d.blocks.map(x=>`<div class="detail-block"><b>${x[0]}</b><p>${x[1]}</p></div>`).join('')}</div><div class="detail-transfer"><b>FIELD NOTE / 我带走的判断</b><p>${d.note}</p></div>${d.link?`<div class="detail-actions"><a href="${d.link}" target="_blank" rel="noreferrer">${d.linkText}</a></div>`:''}</div>`;dialog.showModal();dialog.scrollTop=0;}));
-    document.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach((node) => observer.observe(node));
+    } else {
+      reveals.forEach((node) => node.classList.add('visible'));
+    }
   </script>
 </body>
 </html>
